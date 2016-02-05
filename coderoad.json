@@ -1,0 +1,41 @@
+{
+  "project": {
+    "title": "Functional School",
+    "description": "A trip through functional programming."
+  },
+  "chapters": [
+    {
+      "title": "The Basics",
+      "pages": [
+        {
+          "title": "Filter",
+          "description": "Last semester's grades just came in, but there's just too much data.",
+          "explanation": "Use the `filter` method to shorten the data to only what you need.\n\n```\n['a', 'b', 'c'].filter(function(item) {\n  return item === 'a';\n});\n// ['a']\n```",
+          "tasks": [
+            {
+              "description": "Set `var myData` equal to `filter`ed down data with your name: \"Jane\".",
+              "tests": [
+                "filter-01"
+              ],
+              "actions": [
+                "open('filter.js')",
+                "insert('let data = [  { name: \"Joe\", class: \"Computer Science\", grade: \"C\" },  { name: \"Jane\", class: \"Computer Science\", grade: \"D\" },  { name: \"Mo\", class: \"Computer Science\", grade: \"B\" },  { name: \"Bob\", class: \"Computer Science\", grade: \"F\" },  { name: \"Joe\", class: \"Math\", grade: \"C\" },  { name: \"Jane\", class: \"Math\", grade: \"B\" },  { name: \"Mo\", class: \"Math\", grade: \"D\" },  { name: \"Bob\", class: \"Math\", grade: \"A\" },  { name: \"Joe\", class: \"Art\", grade: \"C\" },  { name: \"Jane\", class: \"Art\", grade: \"F\" },  { name: \"Mo\", class: \"Art\", grade: \"B\" },  { name: \"Bob\", class: \"Math\", grade: \"F\" },  ]')"
+              ]
+            },
+            {
+              "description": "Set `var myFails` to `filter`ed down data with failing grades (\"D\" or \"F\").",
+              "tests": [
+                "filter-02"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map",
+          "description": "Now that we've filtered down our data, let's make some changes."
+        }
+      ],
+      "description": "Some basic methods in Javascript"
+    }
+  ]
+}

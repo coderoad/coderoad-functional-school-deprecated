@@ -1,0 +1,22 @@
+{
+  "name": "coderoad-functional-school",
+  "version": "0.1.0",
+  "description": "Coderoad tutorial",
+  "author": "",
+  "contributers": [],
+  "main": "coderoad.json",
+  "keywords": [
+    "coderoad"
+  ],
+  "dependencies": {
+    "chai": "3.5.0",
+    "chai-spies": "0.7.1",
+    "mocha": "2.4.5"
+  },
+  "devDependencies": {},
+  "license": "MIT",
+  "coderoad": {
+    "testDir": "test",
+    "testSuffix": ".spec.js"
+  }
+}
