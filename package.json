@@ -2,7 +2,7 @@
   "name": "coderoad-functional-school",
   "version": "0.1.0",
   "description": "Coderoad tutorial",
-  "author": "",
+  "author": "Shawn McKay <shawn.j.mckay@gmail.com>",
   "contributers": [],
   "main": "coderoad.json",
   "keywords": [
@@ -13,10 +13,9 @@
     "chai-spies": "0.7.1",
     "mocha": "2.4.5"
   },
-  "devDependencies": {},
   "license": "MIT",
   "coderoad": {
-    "testDir": "test",
+    "testDir": "tutorial",
     "testSuffix": ".spec.js"
   }
 }

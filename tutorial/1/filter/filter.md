@@ -11,11 +11,12 @@ Use the `filter` method to shorten the data to only what you need.
 ```
 
 + Set `var myData` equal to `filter`ed down data with your name: "Jane".
-@test('filter-01')
+@test('1/filter/filter-01')
 @action(open('filter.js'))
+@action(insert('// Welcome'));
 @action(insert(
   ```
-  let data = [
+  var data = [
   { name: "Joe", class: "Computer Science", grade: "C" },
   { name: "Jane", class: "Computer Science", grade: "D" },
   { name: "Mo", class: "Computer Science", grade: "B" },
@@ -26,11 +27,10 @@ Use the `filter` method to shorten the data to only what you need.
   { name: "Bob", class: "Math", grade: "A" },
   { name: "Joe", class: "Art", grade: "C" },
   { name: "Jane", class: "Art", grade: "F" },
-  { name: "Mo", class: "Art", grade: "B" },
-  { name: "Bob", class: "Math", grade: "F" },
+  { name: "Mo", class: "Art", grade: "B" },   { name: "Bob", class: "Math", grade: "F" },
   ]
 ```
 ))
 
 + Set `var myFails` to `filter`ed down data with failing grades ("D" or "F").
-@test('filter-02')
+@test('1/filter/filter-02')
