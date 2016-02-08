@@ -31,9 +31,8 @@ var data = [
   { name: "Mo", class: "Art", grade: "B" },
   { name: "Bob", class: "Math", grade: "F" }
 ];
+```))
 
-```
-))
 @action(insert(
 ```
 var myData = data.filter(function(item) {
@@ -42,6 +41,7 @@ var myData = data.filter(function(item) {
 ```))
 
 + Set `var myFails` to `filter`ed down your data to find only your failing grades ("D" or "F").
+
 @test('1/filter/filter-02')
 @action(insert(
 ```

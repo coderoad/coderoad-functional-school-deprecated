@@ -19,7 +19,7 @@
               ],
               "actions": [
                 "open('filter.js')",
-                "set('var data = [\n  { name: \"Joe\", class: \"Computer Science\", grade: \"C\" },\n  { name: \"Jane\", class: \"Computer Science\", grade: \"D\" },\n  { name: \"Mo\", class: \"Computer Science\", grade: \"B\" },\n  { name: \"Bob\", class: \"Computer Science\", grade: \"F\" },\n  { name: \"Joe\", class: \"Math\", grade: \"C\" },\n  { name: \"Jane\", class: \"Math\", grade: \"B\" },\n  { name: \"Mo\", class: \"Math\", grade: \"D\" },\n  { name: \"Bob\", class: \"Math\", grade: \"A\" },\n  { name: \"Joe\", class: \"Art\", grade: \"C\" },\n  { name: \"Jane\", class: \"Art\", grade: \"F\" },\n  { name: \"Mo\", class: \"Art\", grade: \"B\" },\n  { name: \"Bob\", class: \"Math\", grade: \"F\" }\n];\n')",
+                "set('var data = [\n  { name: \"Joe\", class: \"Computer Science\", grade: \"C\" },\n  { name: \"Jane\", class: \"Computer Science\", grade: \"D\" },\n  { name: \"Mo\", class: \"Computer Science\", grade: \"B\" },\n  { name: \"Bob\", class: \"Computer Science\", grade: \"F\" },\n  { name: \"Joe\", class: \"Math\", grade: \"C\" },\n  { name: \"Jane\", class: \"Math\", grade: \"B\" },\n  { name: \"Mo\", class: \"Math\", grade: \"D\" },\n  { name: \"Bob\", class: \"Math\", grade: \"A\" },\n  { name: \"Joe\", class: \"Art\", grade: \"C\" },\n  { name: \"Jane\", class: \"Art\", grade: \"F\" },\n  { name: \"Mo\", class: \"Art\", grade: \"B\" },\n  { name: \"Bob\", class: \"Math\", grade: \"F\" }\n];')",
                 "insert('var myData = data.filter(function(item) {\n    return // filter condition\n});')"
               ]
             },
@@ -29,7 +29,7 @@
                 "1/filter/filter-02"
               ],
               "actions": [
-                "insert('var myFails = myData.filter(\n// add filter here\n)')"
+                "insert('var myFails = myData.filter() // add filter here')"
               ]
             }
           ]
