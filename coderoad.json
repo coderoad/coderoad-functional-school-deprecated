@@ -9,8 +9,8 @@
       "pages": [
         {
           "title": "Filter",
-          "description": "Last semester's grades just came in, but there's just too much data.",
-          "explanation": "Use the `filter` method to shorten the data to only what you need.\n\n```\n['a', 'b', 'c'].filter(function(item) {\n  return item === 'a';\n});\n// ['a']\n```",
+          "description": "We'll start by looking at the `filter` method.",
+          "explanation": "Last semester's grades just came in, but there's just too much data.\n\nUse the `filter` method to shorten the data to only what you need.\n\n```\n['a', 'b', 'c'].filter(function(item) {\n  return item === 'a';\n});\n// ['a']\n```",
           "tasks": [
             {
               "description": "Set `var myData` equal to `filter`ed down data with your name: \"Jane\".",
@@ -19,21 +19,25 @@
               ],
               "actions": [
                 "open('filter.js')",
-                "('')",
-                "insert('var data = [  { name: \"Joe\", class: \"Computer Science\", grade: \"C\" },  { name: \"Jane\", class: \"Computer Science\", grade: \"D\" },  { name: \"Mo\", class: \"Computer Science\", grade: \"B\" },  { name: \"Bob\", class: \"Computer Science\", grade: \"F\" },  { name: \"Joe\", class: \"Math\", grade: \"C\" },  { name: \"Jane\", class: \"Math\", grade: \"B\" },  { name: \"Mo\", class: \"Math\", grade: \"D\" },  { name: \"Bob\", class: \"Math\", grade: \"A\" },  { name: \"Joe\", class: \"Art\", grade: \"C\" },  { name: \"Jane\", class: \"Art\", grade: \"F\" },  { name: \"Mo\", class: \"Art\", grade: \"B\" },   { name: \"Bob\", class: \"Math\", grade: \"F\" },  ]')"
+                "set('var data = [\n  { name: \"Joe\", class: \"Computer Science\", grade: \"C\" },\n  { name: \"Jane\", class: \"Computer Science\", grade: \"D\" },\n  { name: \"Mo\", class: \"Computer Science\", grade: \"B\" },\n  { name: \"Bob\", class: \"Computer Science\", grade: \"F\" },\n  { name: \"Joe\", class: \"Math\", grade: \"C\" },\n  { name: \"Jane\", class: \"Math\", grade: \"B\" },\n  { name: \"Mo\", class: \"Math\", grade: \"D\" },\n  { name: \"Bob\", class: \"Math\", grade: \"A\" },\n  { name: \"Joe\", class: \"Art\", grade: \"C\" },\n  { name: \"Jane\", class: \"Art\", grade: \"F\" },\n  { name: \"Mo\", class: \"Art\", grade: \"B\" },\n  { name: \"Bob\", class: \"Math\", grade: \"F\" }\n];\n')",
+                "insert('var myData = data.filter(function(item) {\n    return // filter condition\n});')"
               ]
             },
             {
-              "description": "Set `var myFails` to `filter`ed down data with failing grades (\"D\" or \"F\").",
+              "description": "Set `var myFails` to `filter`ed down your data to find only your failing grades (\"D\" or \"F\").",
               "tests": [
                 "1/filter/filter-02"
+              ],
+              "actions": [
+                "insert('var myFails = myData.filter(\n// add filter here\n)')"
               ]
             }
           ]
         },
         {
           "title": "Map",
-          "description": "Now that we've filtered down our data, let's make some changes."
+          "description": "Map is used to run a function over data in an array.",
+          "explanation": "Now that we've filtered down our data, let's make some changes."
         }
       ],
       "description": "Some basic methods in Javascript"

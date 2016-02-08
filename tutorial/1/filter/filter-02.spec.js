@@ -1,7 +1,7 @@
+
 var expect = require('chai').expect;
 var context = require('test-context');
-var filePath = path.join('..', '..', '..', 'filter.js');
-context(filePath);
+context('../../../../../filter.js');
 
 describe('var myData', function() {
 
@@ -13,12 +13,12 @@ describe('var myData', function() {
     expect(myFails).to.be.an('array');
   });
 
-  it('doesn\'t have three items', function() {
+  it('doesn\'t have exactly two items', function() {
     expect(myFails.length).to.equal(2);
   });
 
   it('isn\'t the right data for Jane', function() {
-    expect(myData).to.equal([
+    expect(myFails).to.deep.equal([
       { name: "Jane", class: "Computer Science", grade: "D" },
       { name: "Jane", class: "Art", grade: "F" }
     ]);

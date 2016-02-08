@@ -25,8 +25,8 @@ Some basic methods in Javascript
 
 ##### Filter
 
-Last semester's grades just came in, but there's just too much data.
+We'll start by looking at the `filter` method.
 
 ##### Map
 
-Now that we've filtered down our data, let's make some changes.
+Map is used to run a function over data in an array.

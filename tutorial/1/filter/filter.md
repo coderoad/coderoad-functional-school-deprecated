@@ -1,4 +1,6 @@
 ### Filter
+We'll start by looking at the `filter` method.
+
 Last semester's grades just came in, but there's just too much data.
 
 Use the `filter` method to shorten the data to only what you need.
@@ -13,10 +15,9 @@ Use the `filter` method to shorten the data to only what you need.
 + Set `var myData` equal to `filter`ed down data with your name: "Jane".
 @test('1/filter/filter-01')
 @action(open('filter.js'))
-@action(insert('// Welcome'));
-@action(insert(
-  ```
-  var data = [
+@action(set(
+```
+var data = [
   { name: "Joe", class: "Computer Science", grade: "C" },
   { name: "Jane", class: "Computer Science", grade: "D" },
   { name: "Mo", class: "Computer Science", grade: "B" },
@@ -27,10 +28,22 @@ Use the `filter` method to shorten the data to only what you need.
   { name: "Bob", class: "Math", grade: "A" },
   { name: "Joe", class: "Art", grade: "C" },
   { name: "Jane", class: "Art", grade: "F" },
-  { name: "Mo", class: "Art", grade: "B" },   { name: "Bob", class: "Math", grade: "F" },
-  ]
+  { name: "Mo", class: "Art", grade: "B" },
+  { name: "Bob", class: "Math", grade: "F" }
+];
+
 ```
 ))
+@action(insert(
+```
+var myData = data.filter(function(item) {
+    return // filter condition
+});
+```))
 
-+ Set `var myFails` to `filter`ed down data with failing grades ("D" or "F").
++ Set `var myFails` to `filter`ed down your data to find only your failing grades ("D" or "F").
 @test('1/filter/filter-02')
+@action(insert(
+```
+var myFails = myData.filter() // add filter here
+```))
