@@ -1,11 +1,10 @@
-
 var expect = require('chai').expect;
 // use to ensure a specific method has been called
 // var spies = require('chai-spies');
 
 // loads file context to allow globals
 var context = require('test-context');
-var filePath = '../../../../../filter.js';
+var filePath = '../../../../../01-filter.js';
 context(filePath);
 
 describe('var myData', function() {

@@ -18,18 +18,18 @@
                 "1/filter/filter-01"
               ],
               "actions": [
-                "open('filter.js')",
-                "set('var data = [\n  { name: \"Joe\", class: \"Computer Science\", grade: \"C\" },\n  { name: \"Jane\", class: \"Computer Science\", grade: \"D\" },\n  { name: \"Mo\", class: \"Computer Science\", grade: \"B\" },\n  { name: \"Bob\", class: \"Computer Science\", grade: \"F\" },\n  { name: \"Joe\", class: \"Math\", grade: \"C\" },\n  { name: \"Jane\", class: \"Math\", grade: \"B\" },\n  { name: \"Mo\", class: \"Math\", grade: \"D\" },\n  { name: \"Bob\", class: \"Math\", grade: \"A\" },\n  { name: \"Joe\", class: \"Art\", grade: \"C\" },\n  { name: \"Jane\", class: \"Art\", grade: \"F\" },\n  { name: \"Mo\", class: \"Art\", grade: \"B\" },\n  { name: \"Bob\", class: \"Math\", grade: \"F\" }\n];')",
-                "insert('var myData = data.filter(function(item) {\n    return // filter condition\n});')"
+                "open('01-filter.js')",
+                "set('var data = [\n  { name: \"Joe\", class: \"Computer Science\", grade: \"C\" },\n  { name: \"Jane\", class: \"Computer Science\", grade: \"D\" },\n  { name: \"Mo\", class: \"Computer Science\", grade: \"B\" },\n  { name: \"Bob\", class: \"Computer Science\", grade: \"F\" },\n  { name: \"Joe\", class: \"Math\", grade: \"C\" },\n  { name: \"Jane\", class: \"Math\", grade: \"B\" },\n  { name: \"Mo\", class: \"Math\", grade: \"D\" },\n  { name: \"Bob\", class: \"Math\", grade: \"A\" },\n  { name: \"Joe\", class: \"Art\", grade: \"C\" },\n  { name: \"Jane\", class: \"Art\", grade: \"F\" },\n  { name: \"Mo\", class: \"Art\", grade: \"B\" },\n  { name: \"Bob\", class: \"Math\", grade: \"F\" }\n];\n')",
+                "insert('var myData = data.filter(function(item) {\n    // return true to add the item to the list\n});\n\n')"
               ]
             },
             {
-              "description": "Set `var myFails` to `filter`ed down your data to find only your failing grades (\"D\" or \"F\").",
+              "description": "Set `var myFails` to the result of `filter`ing down your data to only your failing grades (\"D\" or \"F\").",
               "tests": [
                 "1/filter/filter-02"
               ],
               "actions": [
-                "insert('var myFails = myData.filter() // add filter here')"
+                "insert('var myFails = myData.filter(function() {\n    // add filter here, don't forget the parameter\n});\n\n')"
               ]
             }
           ]
@@ -37,7 +37,26 @@
         {
           "title": "Map",
           "description": "Map is used to run a function over data in an array.",
-          "explanation": "Now that we've filtered down our data, let's make some changes."
+          "explanation": "```\n[1, 2, 3].map(function(num) {\n  return num + 1;\n});\n// [2, 3, 4]\n```\n\nNow that we've filtered down our data, let's make some changes. Those D & F's would look a lot better if they suddenly became A's.",
+          "tasks": [
+            {
+              "description": "Make a function `changeGrades` that that takes a name and changes all of that person's grades to an A",
+              "tests": [
+                "1/map/map-01"
+              ],
+              "actions": [
+                "open('02-map.js')",
+                "set('var data = [\n  { name: \"Joe\", class: \"Computer Science\", grade: \"C\" },\n  { name: \"Jane\", class: \"Computer Science\", grade: \"D\" },\n  { name: \"Mo\", class: \"Computer Science\", grade: \"B\" },\n  { name: \"Bob\", class: \"Computer Science\", grade: \"F\" },\n  { name: \"Joe\", class: \"Math\", grade: \"C\" },\n  { name: \"Jane\", class: \"Math\", grade: \"B\" },\n  { name: \"Mo\", class: \"Math\", grade: \"D\" },\n  { name: \"Bob\", class: \"Math\", grade: \"A\" },\n  { name: \"Joe\", class: \"Art\", grade: \"C\" },\n  { name: \"Jane\", class: \"Art\", grade: \"F\" },\n  { name: \"Mo\", class: \"Art\", grade: \"B\" },\n  { name: \"Bob\", class: \"Math\", grade: \"F\" }\n];\n')",
+                "insert('function changeGrades(name) {\n    // filter to name\n    // map over grades and change them to an A\n}\n\n')"
+              ]
+            },
+            {
+              "description": "Work in Progress. Unfinished.",
+              "tests": [
+                "1/map/map-02"
+              ]
+            }
+          ]
         }
       ],
       "description": "Some basic methods in Javascript"

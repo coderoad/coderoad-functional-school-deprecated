@@ -14,7 +14,7 @@ Use the `filter` method to shorten the data to only what you need.
 
 + Set `var myData` equal to `filter`ed down data with your name: "Jane".
 @test('1/filter/filter-01')
-@action(open('filter.js'))
+@action(open('01-filter.js'))
 @action(set(
 ```
 var data = [
@@ -32,18 +32,21 @@ var data = [
   { name: "Bob", class: "Math", grade: "F" }
 ];
 ```))
-
 @action(insert(
 ```
 var myData = data.filter(function(item) {
-    return // filter condition
+    // return true to add the item to the list
 });
+
 ```))
 
-+ Set `var myFails` to `filter`ed down your data to find only your failing grades ("D" or "F").
++ Set `var myFails` to the result of `filter`ing down your data to only your failing grades ("D" or "F").
 
 @test('1/filter/filter-02')
 @action(insert(
 ```
-var myFails = myData.filter() // add filter here
+var myFails = myData.filter(function() {
+    // add filter here, don't forget the parameter
+});
+
 ```))

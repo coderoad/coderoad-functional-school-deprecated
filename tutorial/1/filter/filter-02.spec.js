@@ -1,7 +1,7 @@
 
 var expect = require('chai').expect;
 var context = require('test-context');
-context('../../../../../filter.js');
+context('../../../../../01-filter.js');
 
 describe('var myData', function() {
 
