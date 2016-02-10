@@ -13,7 +13,7 @@ Use the `filter` method to shorten the data to only what you need.
 ```
 
 + Set `var myData` equal to `filter`ed down data with your name: "Jane".
-@test('1/filter/filter-01')
+@test('1/01/filter-01')
 @action(open('01-filter.js'))
 @action(set(
 ```
@@ -42,7 +42,7 @@ var myData = data.filter(function(item) {
 
 + Set `var myFails` to the result of `filter`ing down your data to only your failing grades ("D" or "F").
 
-@test('1/filter/filter-02')
+@test('1/01/filter-02')
 @action(insert(
 ```
 var myFails = myData.filter(function() {

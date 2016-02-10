@@ -30,3 +30,27 @@ We'll start by looking at the `filter` method.
 ##### Map
 
 Map is used to run a function over data in an array.
+
+##### forEach
+
+coming soon
+
+##### find
+
+coming soon
+
+##### concat
+
+coming soon
+
+##### reduce
+
+coming soon
+
+##### Challenge 1
+
+coming soon
+
+##### Challenge 2
+
+coming soon

@@ -15,7 +15,7 @@
             {
               "description": "Set `var myData` equal to `filter`ed down data with your name: \"Jane\".",
               "tests": [
-                "1/filter/filter-01"
+                "1/01/filter-01"
               ],
               "actions": [
                 "open('01-filter.js')",
@@ -26,7 +26,7 @@
             {
               "description": "Set `var myFails` to the result of `filter`ing down your data to only your failing grades (\"D\" or \"F\").",
               "tests": [
-                "1/filter/filter-02"
+                "1/01/filter-02"
               ],
               "actions": [
                 "insert('var myFails = myData.filter(function() {\n    // add filter here, don't forget the parameter\n});\n\n')"
@@ -42,7 +42,7 @@
             {
               "description": "Make a function `changeGrades` that that takes a name and changes all of that person's grades to an A",
               "tests": [
-                "1/map/map-01"
+                "1/02/map-01"
               ],
               "actions": [
                 "open('02-map.js')",
@@ -53,10 +53,34 @@
             {
               "description": "Work in Progress. Unfinished.",
               "tests": [
-                "1/map/map-02"
+                "1/02/map-02"
               ]
             }
           ]
+        },
+        {
+          "title": "forEach",
+          "description": "coming soon"
+        },
+        {
+          "title": "find",
+          "description": "coming soon"
+        },
+        {
+          "title": "concat",
+          "description": "coming soon"
+        },
+        {
+          "title": "reduce",
+          "description": "coming soon"
+        },
+        {
+          "title": "Challenge 1",
+          "description": "coming soon"
+        },
+        {
+          "title": "Challenge 2",
+          "description": "coming soon"
         }
       ],
       "description": "Some basic methods in Javascript"

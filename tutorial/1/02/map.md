@@ -11,7 +11,7 @@ Map is used to run a function over data in an array.
 Now that we've filtered down our data, let's make some changes. Those D & F's would look a lot better if they suddenly became A's.
 
 + Make a function `changeGrades` that that takes a name and changes all of that person's grades to an A
-@test('1/map/map-01')
+@test('1/02/map-01')
 @action(open('02-map.js'))
 @action(set(
 ```
@@ -40,4 +40,4 @@ function changeGrades(name) {
 ```))
 
 + Work in Progress. Unfinished.
-@test('1/map/map-02')
+@test('1/02/map-02')
