@@ -1,8 +1,8 @@
 # Functional School
-A trip through functional programming.
+A trip through functional programming in Javascript.
 
-## The Basics
-Some basic methods in Javascript
+## Array Methods
+Using built-in Javascript array methods such as `map` & `reduce`.
 
 @import('./tutorial/1/01/filter-sort')
 @import('./tutorial/1/02/map')

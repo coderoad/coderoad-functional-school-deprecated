@@ -33,7 +33,7 @@
     console.log("[");
     output.forEach(function(classItem, index) {
       console.log(`{ "course": "${classItem.course}", "instructor": "${classItem.instructor}", "average": "${classItem.average}", "students": [${classItem.students.map(function(student) {
-        return `{ "classNumber": "${student.classNumber}", "name": "${student.name}", "score": ${student.score}, "grade": "${student.grade}" }`
+        return `{ "section": "${student.section}", "name": "${student.name}", "score": ${student.score}, "grade": "${student.grade}" }`
       })}] }`);
       if (index !== output.length - 1) {
         console.log(',')
@@ -52,7 +52,7 @@
   function getStudent(name) {
     var score = getScore();
     return {
-      classNumber: classes[Math.floor(Math.random() * classes.length)],
+      section: classes[Math.floor(Math.random() * classes.length)],
       name: name,
       score: score,
       grade: getGrade(score)
@@ -89,20 +89,12 @@
 
   function getGrade(score) {
     switch (true) {
-      case (score >= 95):
-        return 'A+';
       case (score >= 90):
         return "A";
-      case (score >= 85):
-        return 'B+';
       case (score >= 80):
         return "B";
-      case (score >= 75):
-        return "C+";
       case (score >= 70):
         return "C";
-      case (score >= 65):
-        return "D+";
       case (score >= 60):
         return "D";
       default:
