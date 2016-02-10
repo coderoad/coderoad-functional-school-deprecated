@@ -6,14 +6,4 @@ Array.prototype.concatAll = function() {
     });
   });
   return results;
-};
-
-// Array.prototype.flatten = function() {
-//   return this.reduce(function(a, b) {
-//     if (Array.isArray(a)) {
-//       return a.concat(b);
-//     } else {
-//       a.push(b);
-//     }
-//   });
-// };
+}

@@ -1,35 +1,44 @@
 {
   "project": {
     "title": "Functional School",
-    "description": "A trip through functional programming."
+    "description": "A trip through functional programming in Javascript."
   },
   "chapters": [
     {
-      "title": "The Basics",
+      "title": "Array Methods",
       "pages": [
         {
           "title": "Filter",
-          "description": "We'll start by looking at the `filter` method.",
-          "explanation": "Last semester's grades just came in, but there's just too much data.\n\nUse the `filter` method to shorten the data to only what you need.\n\n```\n['a', 'b', 'c'].filter(function(item) {\n  return item === 'a';\n});\n// ['a']\n```",
+          "description": "Array -> Array of items that match a condition",
+          "explanation": "You've hacked into the school's computer system, and just in time. The grades are in, aren't you're not too proud of your performance. But that's okay, you have a plan: you're going to create a fake report card.\n\nIt would be great if you could `filter` the scores that your parents will see. A `filter` takes a matching condition function and only returns items that result in true. As an example, look at `isB` below:\n\n```\nfunction isB(x) {\n  return x === 'b';\n}\n```\n\nLike all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it after any array. Each item is passed into the params of the condition function, one by one.\n\n```\nvar list = ['a', 'b', 'c'];\nlist.filter(isB);\n//> ['b']\n```\n\nThere's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:\n\n```\nconsole.log(studentData[0]);\n//> { course: 'Web Security',\n//    instructor: 'Sue Denim',\n//    name: 'Rebecca Heineman',\n//    score: 93,\n//    grade: 'A' }\n```",
           "tasks": [
             {
-              "description": "Set `var myData` equal to `filter`ed down data with your name: \"Jane\".",
+              "description": "Write a filter condition function called `isAda` that returns true if param.`name` is true",
               "tests": [
-                "1/01/filter-01"
+                "1/01/01-filter"
               ],
               "actions": [
                 "open('01-filter.js')",
-                "set('var data = [\n  { name: \"Joe\", class: \"Computer Science\", grade: \"C\" },\n  { name: \"Jane\", class: \"Computer Science\", grade: \"D\" },\n  { name: \"Mo\", class: \"Computer Science\", grade: \"B\" },\n  { name: \"Bob\", class: \"Computer Science\", grade: \"F\" },\n  { name: \"Joe\", class: \"Math\", grade: \"C\" },\n  { name: \"Jane\", class: \"Math\", grade: \"B\" },\n  { name: \"Mo\", class: \"Math\", grade: \"D\" },\n  { name: \"Bob\", class: \"Math\", grade: \"A\" },\n  { name: \"Joe\", class: \"Art\", grade: \"C\" },\n  { name: \"Jane\", class: \"Art\", grade: \"F\" },\n  { name: \"Mo\", class: \"Art\", grade: \"B\" },\n  { name: \"Bob\", class: \"Math\", grade: \"F\" }\n];\n')",
-                "insert('var myData = data.filter(function(item) {\n    // return true to add the item to the list\n});\n\n')"
+                "set('function isAda(x) {\n  // write condition here\n  // the name must match \"Ada Lovelace\"\n}\n')"
               ]
             },
             {
-              "description": "Set `var myFails` to the result of `filter`ing down your data to only your failing grades (\"D\" or \"F\").",
+              "description": "Set `var myData` equal to data matching your name, \"Ada Lovelace\".",
               "tests": [
-                "1/01/filter-02"
+                "1/01/02-filter"
               ],
               "actions": [
-                "insert('var myFails = myData.filter(function() {\n    // add filter here, don't forget the parameter\n});\n\n')"
+                "insert('var data = require('./tutorial/data/students')(require('./tutorial/data/courses.json')).slice(0);\n')",
+                "insert('var myData = data.filter // call filter condition here\n')"
+              ]
+            },
+            {
+              "description": "Set `var myBest` to your scores, excluding any grades that are \"D\" or \"F\".",
+              "tests": [
+                "1/01/03-filter"
+              ],
+              "actions": [
+                "insert('var myBest = myData.filter // filter out \"D\"'s and \"F\"'s here\n')"
               ]
             }
           ]
@@ -83,7 +92,7 @@
           "description": "coming soon"
         }
       ],
-      "description": "Some basic methods in Javascript"
+      "description": "Using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data."
     }
   ]
 }

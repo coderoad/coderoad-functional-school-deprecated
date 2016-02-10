@@ -1,30 +1,34 @@
 var expect = require('chai').expect;
-
 // loads file context to allow globals
 var context = require('test-context');
 var filePath = '../../../../../01-filter.js';
 context(filePath);
 
-describe('var myData', function() {
+describe('isAda', function() {
 
   it('doesn\'t exist', function() {
-    expect(myData).to.not.be.undefined;
+    expect(isAda).to.not.be.undefined;
   });
 
-  it('isn\'t an array', function() {
-    expect(myData).to.be.an('array');
+  it('isn\'t a Function', function() {
+    expect(isAda).to.be.a('function');
   });
 
-  it('doesn\'t have three items', function() {
-    expect(myData.length).to.equal(3);
+  it('doesn\'t have any params', function() {
+    expect(isAda.length).to.equal(1);
   });
 
-  it('isn\'t the right data for Jane', function() {
-    expect(myData).to.deep.equal([
-      { name: "Jane", class: "Computer Science", grade: "D" },
-      { name: "Jane", class: "Math", grade: "B" },
-      { name: "Jane", class: "Art", grade: "F" }
-    ]);
+  it('doesn\'t return true when an items name matches "Ada Lovelace"', function() {
+    var test = [{
+      name: 'Jane'
+    }, {
+      name: 'Joe'
+    }, {
+      name: 'Ada Lovelace'
+    }];
+    expect(test.filter(isAda)).to.deep.equal([{
+      name: "Ada Lovelace"
+    }]);
   });
 
 });

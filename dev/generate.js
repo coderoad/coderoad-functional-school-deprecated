@@ -1,38 +1,22 @@
 #!/usr/bin/env node
 
 (function() {
-  var data = require('./data.json').slice(0);
-  var classes = [1, 2, 3, 4];
-  var name = "Ada Lovelace";
-  var names = [
-    "Grace Hopper",
-    "Danielle Bunten Berry",
-    "Rebecca Heineman",
-    "Xiao Tian",
-    "Ying Cracker",
-    "Niklaus Wirth",
-    "James Gosling",
-    "Ken Thompson",
-    "Donald Knuth",
-    "Brian Kernaghan",
-    "Tim Berners-Lee",
-    "Linus Torvalds",
-    "Hack Kerr",
-    "Kevin Mitnick",
-    "Albert Gonzalez"
-  ];
-  var output = [];
+    var data = require('./data.json').slice(0);
+    var classes = [1, 2, 3, 4];
+    var name = "Ada Lovelace";
+    var names = ["Albert Gonzalez", "Brian Kernaghan", "Danielle Bunten Berry", "Donald Knuth", "Grace Hopper", "Hack Kerr", "James Gosling", "Ken Thompson", "Kevin Mitnick", "Linus Torvalds", "Niklaus Wirth", "Rebecca Heineman", "Tim Berners-Lee", "Xiao Tian", "Ying Cracker"];
+    var output = [];
 
-  function generate(data) {
-    console.log('generating data...');
-    output = data.map(function(classItem) {
-      classItem.students = createStudentsInClass();
-      classItem.average = classAverage(classItem.students);
-      return classItem;
-    });
-    console.log("[");
-    output.forEach(function(classItem, index) {
-      console.log(`{ "course": "${classItem.course}", "instructor": "${classItem.instructor}", "average": "${classItem.average}", "students": [${classItem.students.map(function(student) {
+    function generate(data) {
+      console.log('generating data...');
+      output = data.map(function(classItem) {
+        classItem.students = createStudentsInClass();
+        classItem.average = classAverage(classItem.students);
+        return classItem;
+      });
+      console.log("[");
+      output.forEach(function(classItem, index) {
+            console.log(`{ "course": "${classItem.course}", "instructor": "${classItem.instructor}", "average": "${classItem.average}", "students": [${classItem.students.map(function(student) {
         return `{ "section": "${student.section}", "name": "${student.name}", "score": ${student.score}, "grade": "${student.grade}" }`
       })}] }`);
       if (index !== output.length - 1) {

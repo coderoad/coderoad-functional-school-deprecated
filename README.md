@@ -1,6 +1,6 @@
 # Functional School
 
-A trip through functional programming.
+A trip through functional programming in Javascript.
 
 
 ## CodeRoad
@@ -19,13 +19,15 @@ CodeRoad is an open-sourced interactive tutorial platform for the Atom Editor. L
 
 ## Outline
 
-### The Basics
+### Array Methods
 
-Some basic methods in Javascript
+Using common built-in Javascript array methods such as `map` & `reduce`.
+
+By the end, you should have an understanding of how to use array methods to manipulate semi-complex data.
 
 ##### Filter
 
-We'll start by looking at the `filter` method.
+Array -> Array of items that match a condition
 
 ##### Map
 
