@@ -1,4 +1,4 @@
-var courses = require('./courses.json');
+var courses = require('./courses2.json');
 require('../common/array');
 
 module.exports = getStudentsInCourses();

@@ -1,6 +1,8 @@
 var expect = require('chai').expect;
-var context = require('test-context');
-context('../../../../../01-filter.js');
+var path = require('path');
+var loadContext = require('../../common/loadContext');
+var filePath = path.join(process.env.DIR, '01-filter.js');
+loadContext(filePath);
 
 describe('var myBest', function() {
 

@@ -47,7 +47,8 @@ function isAda(x) {
 @test('1/01/02-filter')
 @action(insert(
 ```
-var data = require('./tutorial/data/students')(require('./tutorial/data/courses.json')).slice(0);
+// load data
+var data = require('./node_modules/coderoad-functional-school/tutorial/lib/students').slice(0);
 ```))
 @action(insert(
 ```

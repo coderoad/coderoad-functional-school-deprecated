@@ -10,7 +10,7 @@
         {
           "title": "Filter",
           "description": "Array -> Array of items that match a condition",
-          "explanation": "You've hacked into the school's computer system, and just in time. The grades are in, aren't you're not too proud of your performance. But that's okay, you have a plan: you're going to create a fake report card.\n\nIt would be great if you could `filter` the scores that your parents will see. A `filter` takes a matching condition function and only returns items that result in true. As an example, look at `isB` below:\n\n```\nfunction isB(x) {\n  return x === 'b';\n}\n```\n\nLike all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it after any array. Each item is passed into the params of the condition function, one by one.\n\n```\nvar list = ['a', 'b', 'c'];\nlist.filter(isB);\n//> ['b']\n```\n\nThere's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:\n\n```\nconsole.log(studentData[0]);\n//> { course: 'Web Security',\n//    instructor: 'Sue Denim',\n//    name: 'Rebecca Heineman',\n//    score: 93,\n//    grade: 'A' }\n```",
+          "explanation": "You've hacked into the school's computer system, and just in time. The grades are in, aren't you're not too proud of your performance. But that's okay, you have a plan: you're going to create a fake report card.\n\nIt would be great if you could `filter` the scores that your parents will see. A `filter` takes a matching condition function and only returns items that result in true. As an example, look at `isB` below:\n\n```\nfunction isB(x) {\n  return x === 'b';\n}\n```\n\n\nLike all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it after any array. Each item is passed into the params of the condition function, one by one.\n\n```\nvar list = ['a', 'b', 'c'];\nlist.filter(isB);\n//> ['b']\n```\n\n\nThere's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:\n\n```\nconsole.log(studentData[0]);\n//> { course: 'Web Security',\n//    instructor: 'Sue Denim',\n//    name: 'Rebecca Heineman',\n//    score: 93,\n//    grade: 'A' }\n```",
           "tasks": [
             {
               "description": "Write a filter condition function called `isAda` that returns true if param.`name` is true",
@@ -28,7 +28,7 @@
                 "1/01/02-filter"
               ],
               "actions": [
-                "insert('var data = require('./tutorial/data/students')(require('./tutorial/data/courses.json')).slice(0);\n')",
+                "insert('// load data\nvar data = require('./node_modules/coderoad-functional-school/tutorial/data/students').slice(0);\n')",
                 "insert('var myData = data.filter // call filter condition here\n')"
               ]
             },
