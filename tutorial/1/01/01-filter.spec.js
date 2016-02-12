@@ -1,9 +1,11 @@
 var expect = require('chai').expect;
 var path = require('path');
+// run test file in the context of 01-filter.js
 var loadContext = require('../../common/loadContext');
 var filePath = path.join(process.env.DIR, '01-filter.js');
-loadContext(filePath);
+// global.data = require(process.env.TUTORIAL_DIR + '/tutorial/data/students').slice(0);
 
+loadContext(filePath);
 
 describe('isAda', function() {
 

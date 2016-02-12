@@ -2,7 +2,7 @@ var expect = require('chai').expect;
 var path = require('path');
 var loadContext = require('../../common/loadContext');
 var filePath = path.join(process.env.DIR, '01-filter.js');
-loadContext(filePath);
+// global.data = require(process.env.TUTORIAL_DIR + '/tutorial/data/students').slice(0);
 
 describe('var myBest', function() {
 
