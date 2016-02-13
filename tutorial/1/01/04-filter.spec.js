@@ -16,7 +16,7 @@ describe('var myBest', function() {
     expect(myBest).to.be.an('array');
   });
 
-  it('doesn\'t output exactly ten items', function() {
+  it('doesn\'t output exactly seven items', function() {
     expect(myBest).to.have.length(7);
   });
 

@@ -1,37 +1,37 @@
 ### Map
 Array -> run a function over each item -> Array
 
+You've filtered and sorted our data, but wouldn't it be better if you could change your grades? You can use the array method `map` to run a function that returns changes to your data.
+
 ```
-[1, 2, 3].map(function(num) {
+function addOne(num) {
   return num + 1;
-});
-// [2, 3, 4]
+}
+
+function addTwo(num) {
+  return num + 2;
+}
+
+[1, 2, 3].map(addOne);
+//> [2, 3, 4]
+
+[1, 2, 3].map(addOne).map(addTwo);
+//> [4, 5, 6]
 ```
 
-Now that we've filtered down our data, let's make some changes. Those D & F's would look a lot better if they suddenly became A's.
+Those D & F's would look a lot better if they suddenly became A's. Let's go back before we filtered out the bad grades.
 
-+ Make a function `changeGrades` that that takes a name and changes all of that person's grades to an A
-@test('1/02/map-01')
-@action(open('02-map.js'))
++ Make a function `changeGrades` that takes student data and changes the grade to "A" if it is a "D" or "F".
+@test('1/03/map-01')
+@action(open('03-map.js'))
 @action(set(
 ```
-var data = [
-  { name: "Joe", class: "Computer Science", grade: "C" },
-  { name: "Jane", class: "Computer Science", grade: "D" },
-  { name: "Mo", class: "Computer Science", grade: "B" },
-  { name: "Bob", class: "Computer Science", grade: "F" },
-  { name: "Joe", class: "Math", grade: "C" },
-  { name: "Jane", class: "Math", grade: "B" },
-  { name: "Mo", class: "Math", grade: "D" },
-  { name: "Bob", class: "Math", grade: "A" },
-  { name: "Joe", class: "Art", grade: "C" },
-  { name: "Jane", class: "Art", grade: "F" },
-  { name: "Mo", class: "Art", grade: "B" },
-  { name: "Bob", class: "Math", grade: "F" }
-];
+  myGoodGrades = myData.filter() // TODO
 ```))
 @action(insert(
 ```
+myData.
+
 function changeGrades(name) {
     // filter to name
     // map over grades and change them to an A
@@ -40,4 +40,4 @@ function changeGrades(name) {
 ```))
 
 + Work in Progress. Unfinished.
-@test('1/02/map-02')
+@test('1/03/map-02')

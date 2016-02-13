@@ -54,7 +54,7 @@ console.log(data[0]);
 @action(open('01-filter.js'))
 @action(set(
 ```
-function isAda(x) {
+function isAda(student) {
   // write condition here
   // the name must match "Ada Lovelace"
 
@@ -91,7 +91,7 @@ var myData = data.filter();
 @action(insert(
 ```
 // return true if student "grade" is not a "D" or "F"
-function isGoodGrade() {
+function isGoodGrade(student) {
 
 }
 ```
