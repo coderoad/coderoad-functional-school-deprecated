@@ -65,14 +65,44 @@ function isAda(x) {
 @test('1/01/02-filter')
 @action(insert(
 ```
-// note: data is set as a global
-var myData = data.filter // call filter condition here
+/**
+ * Data is set as a global. Example:
+ * [{
+ * "course": "Relational Databases",
+ * "instructor": "Sean Quentin Lewis",
+ * "name": "Ada Lovelace",
+ * "score": 91,
+ * "grade": "A"
+ * },
+ * ...
+ * ]
+ */
+```
+))
+@action(insert(
+```
+// call filter condition here
+var myData = data.filter();
+
 ```))
 
-+ Set `var myBest` to your scores, excluding any grades that are "D" or "F".
-
++ Write a filter condition called `isGoodGrade` that will filter out any "D" or "F" grades.
 @test('1/01/03-filter')
 @action(insert(
 ```
-var myBest = myData.filter // filter out "D"'s and "F"'s here
+// return true if student "grade" is not a "D" or "F"
+function isGoodGrade() {
+
+}
+```
+))
+
++ Set `var myBest` to your scores, excluding any grades that are "D" or "F".
+
+@test('1/01/04-filter')
+@action(insert(
+```
+// filter out "D"'s and "F"'s here
+var myBest = myData.filter();
+
 ```))

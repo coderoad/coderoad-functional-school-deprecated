@@ -28,23 +28,46 @@
                 "1/01/02-filter"
               ],
               "actions": [
-                "insert('// note: data is set as a global\nvar myData = data.filter // call filter condition here\n')"
+                "insert('/**\n * Data is set as a global. Example:\n * [{\n * \"course\": \"Relational Databases\",\n * \"instructor\": \"Sean Quentin Lewis\",\n * \"name\": \"Ada Lovelace\",\n * \"score\": 91,\n * \"grade\": \"A\"\n * },\n * ...\n * ]\n */\n')",
+                "insert('// call filter condition here\nvar myData = data.filter();\n\n')"
+              ]
+            },
+            {
+              "description": "Write a filter condition called `isGoodGrade` that will filter out any \"D\" or \"F\" grades.",
+              "tests": [
+                "1/01/03-filter"
+              ],
+              "actions": [
+                "insert('// return true if student \"grade\" is not a \"D\" or \"F\"\nfunction isGoodGrade() {\n\n}\n')"
               ]
             },
             {
               "description": "Set `var myBest` to your scores, excluding any grades that are \"D\" or \"F\".",
               "tests": [
-                "1/01/03-filter"
+                "1/01/04-filter"
               ],
               "actions": [
-                "insert('var myBest = myData.filter // filter out \"D\"'s and \"F\"'s here\n')"
+                "insert('// filter out \"D\"'s and \"F\"'s here\nvar myBest = myData.filter();\n\n')"
               ]
             }
           ]
         },
         {
           "title": "Sort",
-          "description": "Array -> sorted Array"
+          "description": "Array -> sorted Array",
+          "explanation": "Your grades are filtered down to your name and good scores - but wouldn't it be better if your best grades were shown at the top? Besides, your parents rarely read all the way down to the bottom.\n\nWe can use the array method `sort` to arrange our data. Let's see how it works.",
+          "tasks": [
+            {
+              "description": "Write a sort condition function called `sortByScore` that can sort your data by score.",
+              "tests": [
+                "1/02/01-sort"
+              ],
+              "actions": [
+                "open('02-sort.js')",
+                "set('function sortByScore(a, b) {\n  // it should return -1 a's score is bigger than b's\n\n  // it should return 1 if a's score is less than b's\n\n  // it should return 0 if a has the same score as b\n\n}\n')"
+              ]
+            }
+          ]
         },
         {
           "title": "Map",

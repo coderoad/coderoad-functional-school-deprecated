@@ -2,32 +2,39 @@ var expect = require('chai').expect;
 var path = require('path');
 var loadJS = require('../../common/loadJS').default;
 if (!global.data) {
-  global.data = JSON.parse(JSON.stringify(require('./data.json')));
+  global.data = JSON.parse(JSON.stringify(require('../../data/students.json')));
 }
 loadJS('01-filter.js');
 
-describe('var myBest', function() {
+describe('isGoodGrade', function() {
 
   it('doesn\'t exist', function() {
-    expect(myBest).to.not.be.undefined;
+    expect(isGoodGrade).to.not.be.undefined;
   });
 
-  it('doesn\'t output an array', function() {
-    expect(myBest).to.be.an('array');
+  it('isn\'t a Function', function() {
+    expect(isGoodGrade).to.be.a('function');
   });
 
-  it('doesn\'t output exactly ten items', function() {
-    expect(myBest).to.have.length(7);
+  it('doesn\'t have any params', function() {
+    expect(isGoodGrade.length).to.equal(1);
   });
 
-  it('isn\'t the right filtered data for "Ada Lovelace"', function() {
-    var values = [91, 88, 81, 73, 93, 82, 88];
-    myBestVals = myBest.map(function(x) {
-      return x.score;
-    });
-    values.forEach(function(value) {
-      expect(myBestVals).contains(value);
-    });
+  it('doesn\'t return true when an items name matches "Ada Lovelace"', function() {
+    var test = [{
+      grade: 'A'
+    }, {
+      grade: 'D'
+    }, {
+      grade: 'F'
+    }, {
+      grade: 'B'
+    }];
+    expect(test.filter(isGoodGrade)).to.deep.equal([{
+      grade: 'A'
+    }, {
+      grade: 'B'
+    }]);
   });
 
 });

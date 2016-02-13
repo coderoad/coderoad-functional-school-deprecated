@@ -6,27 +6,27 @@ if (!global.data) {
 }
 loadJS('01-filter.js');
 
-describe('var myData', function() {
+describe('var myBest', function() {
 
   it('doesn\'t exist', function() {
-    expect(myData).to.not.be.undefined;
+    expect(myBest).to.not.be.undefined;
   });
 
   it('doesn\'t output an array', function() {
-    expect(myData).to.be.an('array');
+    expect(myBest).to.be.an('array');
   });
 
   it('doesn\'t output exactly ten items', function() {
-    expect(myData).to.have.length(10);
+    expect(myBest).to.have.length(7);
   });
 
   it('isn\'t the right filtered data for "Ada Lovelace"', function() {
-    var values = [91, 88, 61, 81, 73, 58, 93, 82, 88, 65];
-    myVals = myData.map(function(x) {
+    var values = [91, 88, 81, 73, 93, 82, 88];
+    myBestVals = myBest.map(function(x) {
       return x.score;
     });
     values.forEach(function(value) {
-      expect(myVals).contains(value);
+      expect(myBestVals).contains(value);
     });
   });
 
