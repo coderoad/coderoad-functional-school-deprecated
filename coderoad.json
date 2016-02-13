@@ -43,8 +43,12 @@
           ]
         },
         {
+          "title": "Sort",
+          "description": "Array -> sorted Array"
+        },
+        {
           "title": "Map",
-          "description": "Map is used to run a function over data in an array.",
+          "description": "Array -> run a function over each item -> Array",
           "explanation": "```\n[1, 2, 3].map(function(num) {\n  return num + 1;\n});\n// [2, 3, 4]\n```\n\nNow that we've filtered down our data, let's make some changes. Those D & F's would look a lot better if they suddenly became A's.",
           "tasks": [
             {
@@ -68,19 +72,19 @@
         },
         {
           "title": "forEach",
-          "description": "coming soon"
+          "description": "Array -> run a function for each item"
         },
         {
           "title": "find",
-          "description": "coming soon"
+          "description": "Array -> find an item that matches a condition"
         },
         {
           "title": "concat",
-          "description": "coming soon"
+          "description": "Array + Array -> Array"
         },
         {
           "title": "reduce",
-          "description": "coming soon"
+          "description": "Array -> transform into anything"
         },
         {
           "title": "Challenge 1",

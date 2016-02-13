@@ -1,2 +1,2 @@
 ### find
-coming soon
+Array -> find an item that matches a condition

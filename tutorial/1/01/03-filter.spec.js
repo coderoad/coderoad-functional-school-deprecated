@@ -1,8 +1,10 @@
 var expect = require('chai').expect;
 var path = require('path');
-var loadContext = require('../../common/loadContext');
-var filePath = path.join(process.env.DIR, '01-filter.js');
-// global.data = require(process.env.TUTORIAL_DIR + '/tutorial/data/students').slice(0);
+var loadJS = require('../../common/loadJS').default;
+if (!global.data) {
+  global.data = JSON.parse(JSON.stringify(require('./data.json')));
+}
+loadJS('01-filter.js');
 
 describe('var myBest', function() {
 

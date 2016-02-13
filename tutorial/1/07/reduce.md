@@ -1,2 +1,2 @@
 ### reduce
-coming soon
+Array -> transform into anything

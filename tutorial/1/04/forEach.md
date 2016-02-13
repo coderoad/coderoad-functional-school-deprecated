@@ -1,2 +1,2 @@
 ### forEach
-coming soon
+Array -> run a function for each item

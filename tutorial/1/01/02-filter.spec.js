@@ -1,9 +1,10 @@
 var expect = require('chai').expect;
 var path = require('path');
-var loadContext = require('../../common/loadContext');
-var filePath = path.join(process.env.DIR, '01-filter.js');
-loadContext(filePath);
-global.data = require(process.env.TUTORIAL_DIR + '/tutorial/data/students').slice(0);
+var loadJS = require('../../common/loadJS').default;
+if (!global.data) {
+  global.data = JSON.parse(JSON.stringify(require('./data.json')));
+}
+loadJS('01-filter.js');
 
 describe('var myData', function() {
 
@@ -21,7 +22,7 @@ describe('var myData', function() {
 
   it('isn\'t the right filtered data for "Ada Lovelace"', function() {
     var values = [91, 88, 61, 81, 73, 58, 93, 82, 88, 65];
-    myVals = myBest.map(function(x) {
+    myVals = myData.map(function(x) {
       return x.score;
     });
     values.forEach(function(value) {

@@ -1,5 +1,5 @@
 ### Map
-Map is used to run a function over data in an array.
+Array -> run a function over each item -> Array
 
 ```
 [1, 2, 3].map(function(num) {

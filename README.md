@@ -29,25 +29,29 @@ By the end, you should have an understanding of how to use array methods to mani
 
 Array -> Array of items that match a condition
 
+##### Sort
+
+Array -> sorted Array
+
 ##### Map
 
-Map is used to run a function over data in an array.
+Array -> run a function over each item -> Array
 
 ##### forEach
 
-coming soon
+Array -> run a function for each item
 
 ##### find
 
-coming soon
+Array -> find an item that matches a condition
 
 ##### concat
 
-coming soon
+Array + Array -> Array
 
 ##### reduce
 
-coming soon
+Array -> transform into anything
 
 ##### Challenge 1
 

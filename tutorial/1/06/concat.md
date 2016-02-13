@@ -1,2 +1,2 @@
 ### concat
-coming soon
+Array + Array -> Array
