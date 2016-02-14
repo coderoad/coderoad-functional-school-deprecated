@@ -1,8 +1,9 @@
 var expect = require('chai').expect;
-// loads file context to allow globals
-var context = require('test-context');
-var filePath = '../../../../../02-map.js';
-context(filePath);
+var path = require('path');
+var loadJS = require('../../common/loadJS').default;
+if (!global.myData) {
+  global.myData = JSON.parse(JSON.stringify(require('./myData.json')));
+}
 
 describe('changeGrades', function() {
 
@@ -14,15 +15,29 @@ describe('changeGrades', function() {
     expect(changeGrades).to.be.a('function');
   });
 
-  it('doesn\'t change all grades for a name', function() {
-    let changed = changeGrades('Bob');
-    let arrayOfGrades = data.filter(function(item) {
-      return item.name === 'Bob';
-    }).map(function(item) {
-      item.grade = 'A';
-      return item;
+  it('shouldn\'t change other grades to an A', function() {
+    var test = {
+      grade: 'B'
+    };
+    expect(changeGrades(test)).to.deep.equal(test);
+  })
+
+  it('doesn\'t change grades from a D to an A', function() {
+    var test = {
+      grade: 'D'
+    };
+    expect(arrayOfGrades).to.deep.equal({
+      grade: 'A'
     });
-    expect(arrayOfGrades).to.deep.equal(changed);
+  });
+
+  it('doesn\'t change grades from a F to an A', function() {
+    var test = {
+      grade: 'F'
+    };
+    expect(arrayOfGrades).to.deep.equal({
+      grade: 'A'
+    });
   });
 
 });

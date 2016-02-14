@@ -25,7 +25,9 @@ Using common built-in Javascript array methods such as `map` & `reduce`.
 
 By the end, you should have an understanding of how to use array methods to manipulate semi-complex data.
 
-<!-- @import('./tutorial/1/01/filter') -->
+##### Filter
+
+Array -> Array of items that match a condition
 
 ##### Sort
 

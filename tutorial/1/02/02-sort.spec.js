@@ -6,7 +6,7 @@ if (!global.myBest) {
 }
 loadJS('02-sort.js');
 
-describe('mySorted', function () {
+describe('mySorted', function() {
 
   it('doesn\'t exist', function() {
     expect(mySorted).to.not.be.undefined;
@@ -31,7 +31,49 @@ describe('mySorted', function () {
           return 0;
       }
     }
-    expect(mySorted).to.deep.equal(myBest.sort(compareScore));
+    expect(mySorted).to.deep.equal([{
+      course: 'Relational Databases',
+      instructor: 'Sean Quentin Lewis',
+      name: 'Ada Lovelace',
+      score: 91,
+      grade: 'A'
+    }, {
+      course: '3D Computer Graphics',
+      instructor: 'G.L. Webb',
+      name: 'Ada Lovelace',
+      score: 88,
+      grade: 'B'
+    }, {
+      course: 'Web Security',
+      instructor: 'Sue Denim',
+      name: 'Ada Lovelace',
+      score: 81,
+      grade: 'B'
+    }, {
+      course: 'Javascript Fundamentals',
+      instructor: 'Jay Kweerie',
+      name: 'Ada Lovelace',
+      score: 73,
+      grade: 'C'
+    }, {
+      course: 'Algorithm Design',
+      instructor: 'Gale Shapely',
+      name: 'Ada Lovelace',
+      score: 93,
+      grade: 'A'
+    }, {
+      course: 'Data Abstraction',
+      instructor: 'Aster Ricks',
+      name: 'Ada Lovelace',
+      score: 82,
+      grade: 'B'
+    }, {
+      course: 'Data Structures',
+      instructor: 'Brodal Q.',
+      name: 'Ada Lovelace',
+      score: 88,
+      grade: 'B'
+    }]);
   });
 
 });

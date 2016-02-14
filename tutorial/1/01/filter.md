@@ -61,7 +61,7 @@ function isAda(student) {
 }
 ```))
 
-+ Set `var myData` equal to data matching your name, "Ada Lovelace".
++ Set `let myData` equal to data matching your name, "Ada Lovelace".
 @test('1/01/02-filter')
 @action(insert(
 ```
