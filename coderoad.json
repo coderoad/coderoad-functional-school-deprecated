@@ -133,7 +133,37 @@
         },
         {
           "title": "forEach",
-          "description": "Array -> run a function for each item"
+          "description": "Array -> run a function for each item",
+          "explanation": "You've updated your grades, but they're still in an array. It's time to loop over them and log them to the console.\n\n`forEach` has a lot in common with `map`, but the major differences between the two is important to understand the difference between \"functional\" & \"imperative\" programming.\n\n> Imperative programming describes the order of actions\n\n> Functional programming describes the data transformation\n\nFunctional programming is a lot like math. As in math, 1 + 1 always equals 2.\n\nIn the same way, a \"pure\" function will always have the same result from a given input. Input 1, output 2. Every time.\n\n```js\n// a pure function\nfunction addOne(x) {\n  return x + 1;\n}\naddOne(1)\n//> 2\naddOne(1)\n//> 2\n```\n\nA function is \"pure\" if it doesn't change anything outside of its scope. Pure functions are easy to test, reuse and reason about. Impure functions, on the other hand, are less predictable.\n\n```js\n// impure function\nvar y = 1;\nfunction increment(x) {\n  y += x;\n  return y;\n}\nincrement(1)\n//> 2\nincrement(1)\n//> 3\n```\n\nIt's good practice to ensure your `map` functions remain pure.\n\nBut `forEach` can be a little more dangerous. Why? Let's have a look.\n\n```js\n[1, 2, 3].map(addOne);\n//> [2, 3, 4]\n//\n[1, 2, 3].forEach(addOne);\n//> undefined\n```\n\nWhy `undefined`? `forEach` runs a function on each item in the array, and doesn't care what the function returns. The function must make changes, called \"side effects\", to even be noticed.\n\n```js\nfunction addOneToLog(x) {\n  console.log(x);\n}\n\n[1, 2, 3].forEach(addOneToLog);\n//> 2\n//> 3\n//> 4\n```",
+          "tasks": [
+            {
+              "description": "Use `forEach` to log out your report card to the console\n@open('04-forEach.js')",
+              "tests": [
+                "1/04/01-forEach"
+              ],
+              "actions": [
+                "set('function logCourse(course) {\n  console.log(`{course.grade}  {course.score}  {course.title}`);\n}\n\n// log your grades to the console\nmyFixed.forEach();\n')"
+              ]
+            },
+            {
+              "description": "Run `myFixed.forEach` on a second function called `logCourseWithIndex` which looks like `logCourse` but takes a second parameter called index.",
+              "tests": [
+                "1/04/02-forEach"
+              ],
+              "actions": [
+                "insert('function logCourseWithIndex(course, index) {\n  console.log(`${index + 1} {course.grade}  {course.score}  {course.title}`);\n}\n\n// log your grades to the console with an index\nmyFixed.forEach();\n')"
+              ]
+            },
+            {
+              "description": "Where does this second parameter come from? Array methods actually have two extra parameters: the index, and the entire array. Run `myFixed.forEach` with `logCourseWithIndexAndArray`.",
+              "tests": [
+                "1/04/03-forEach"
+              ],
+              "actions": [
+                "insert('function logCourseWithIndexAndArray(course, index, array) {\n  console.log(`${index + 1}/{array.length} {course.grade}  {course.score}  {course.title}`);\n}\n\n// log your grades to the console with an index and array length\nmyFixed.forEach();\n')"
+              ]
+            }
+          ]
         },
         {
           "title": "find",
