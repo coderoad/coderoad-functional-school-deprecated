@@ -7,7 +7,7 @@ if (!global.data) {
 }
 loadJS('01-filter.js');
 
-describe('isGoodGrade', function() {
+describe('function isGoodGrade', function() {
 
   it('doesn\'t exist', function() {
     expect(isGoodGrade).to.not.be.undefined;

@@ -7,7 +7,7 @@ if (!global.data) {
 }
 loadJS('01-filter.js');
 
-describe('isAda', function() {
+describe('function isAda', function() {
 
   it('doesn\'t exist', function() {
     expect(isAda).to.not.be.undefined;
@@ -21,8 +21,26 @@ describe('isAda', function() {
     expect(isAda.length).to.equal(1);
   });
 
-  it('doesn\'t return true when an items name matches "Ada Lovelace"', function() {
-    var test = [{
+  it('doesn\'t return a boolean', function () {
+    expect(isAda({name: 'Ada'})).to.be.a('boolean');
+  });
+
+  it('should match for name', function () {
+    let regex1 = /\[.name.\]/m;
+    let regex2 = /\.name/m;
+    let string = isAda.toString();
+    let result = !!string.match(regex1) || !!string.match(regex2);
+    expect(result).to.be.true;
+  });
+
+  it('requires the full name "Ada Lovelace"', function () {
+    let regex = /Ada Lovelace/m;
+    let string = isAda.toString();
+    expect(string.match(regex)).to.be.true;
+  });
+
+  it('doesn\'t match student.name to "Ada Lovelace"', function() {
+    let test = [{
       name: 'Jane'
     }, {
       name: 'Joe'

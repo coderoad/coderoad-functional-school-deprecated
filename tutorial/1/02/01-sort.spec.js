@@ -6,7 +6,7 @@ if (!global.myBest) {
 }
 loadJS('02-sort.js');
 
-describe('compareScore', function () {
+describe('function compareScore', function () {
   it('doesn\'t exist', function() {
     expect(compareScore).to.not.be.undefined;
   });

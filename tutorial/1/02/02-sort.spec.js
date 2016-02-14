@@ -6,7 +6,7 @@ if (!global.myBest) {
 }
 loadJS('02-sort.js');
 
-describe('mySorted', function() {
+describe('var mySorted', function() {
 
   it('doesn\'t exist', function() {
     expect(mySorted).to.not.be.undefined;

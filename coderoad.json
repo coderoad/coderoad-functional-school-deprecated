@@ -19,16 +19,16 @@
               ],
               "actions": [
                 "open('01-filter.js')",
-                "set('function isAda(student) {\n  // write condition here\n  // the name must match \"Ada Lovelace\"\n\n}\n')"
+                "set('/**\n * Data is set as a global. Example:\n * [{\n * \"course\": \"Relational Databases\",\n * \"instructor\": \"Sean Quentin Lewis\",\n * \"name\": \"Ada Lovelace\",\n * \"score\": 91,\n * \"grade\": \"A\"\n * },\n * ...\n * ]\n */\n')",
+                "insert('function isAda() {\n  // write condition here\n  // the student.name must match \"Ada Lovelace\"\n\n}\n')"
               ]
             },
             {
-              "description": "Set `let myData` equal to data matching your name, \"Ada Lovelace\".",
+              "description": "Set `var myData` equal to data matching your name, \"Ada Lovelace\".",
               "tests": [
                 "1/01/02-filter"
               ],
               "actions": [
-                "insert('/**\n * Data is set as a global. Example:\n * [{\n * \"course\": \"Relational Databases\",\n * \"instructor\": \"Sean Quentin Lewis\",\n * \"name\": \"Ada Lovelace\",\n * \"score\": 91,\n * \"grade\": \"A\"\n * },\n * ...\n * ]\n */\n')",
                 "insert('// call filter condition here\nvar myData = data.filter();\n\n')"
               ]
             },
@@ -108,7 +108,7 @@
                 "1/03/03-map"
               ],
               "actions": [
-                "insert('// map over `mySlightlyChanged` with a function to increment each score by 12\nvar mySlightlyChanged = myData.map();\n')"
+                "insert('// map over `mySlightlyChanged` with a function `increaseGrades` to increment each score by 12\nvar mySlightlyChanged = myData.map();\n')"
               ]
             },
             {
@@ -134,7 +134,7 @@
         {
           "title": "forEach",
           "description": "Array -> run a function for each item",
-          "explanation": "You've updated your grades, but they're still in an array. It's time to loop over them and log them to the console.\n\n`forEach` has a lot in common with `map`, but the major differences between the two is important to understand the difference between \"functional\" & \"imperative\" programming.\n\n> Imperative programming describes the order of actions\n\n> Functional programming describes the data transformation\n\nFunctional programming is a lot like math. As in math, 1 + 1 always equals 2.\n\nIn the same way, a \"pure\" function will always have the same result from a given input. Input 1, output 2. Every time.\n\n```js\n// a pure function\nfunction addOne(x) {\n  return x + 1;\n}\naddOne(1)\n//> 2\naddOne(1)\n//> 2\n```\n\nA function is \"pure\" if it doesn't change anything outside of its scope. Pure functions are easy to test, reuse and reason about. Impure functions, on the other hand, are less predictable.\n\n```js\n// impure function\nvar y = 1;\nfunction increment(x) {\n  y += x;\n  return y;\n}\nincrement(1)\n//> 2\nincrement(1)\n//> 3\n```\n\nIt's good practice to ensure your `map` functions remain pure.\n\nBut `forEach` can be a little more dangerous. Why? Let's have a look.\n\n```js\n[1, 2, 3].map(addOne);\n//> [2, 3, 4]\n//\n[1, 2, 3].forEach(addOne);\n//> undefined\n```\n\nWhy `undefined`? `forEach` runs a function on each item in the array, and doesn't care what the function returns. The function must make changes, called \"side effects\", to even be noticed.\n\n```js\nfunction addOneToLog(x) {\n  console.log(x);\n}\n\n[1, 2, 3].forEach(addOneToLog);\n//> 2\n//> 3\n//> 4\n```",
+          "explanation": "You've updated your grades, but they're still in an array. It's time to loop over them and log them to the console.\n\n`forEach` has a lot in common with `map`, but the major differences between the two is important to understand the difference between \"functional\" & \"imperative\" programming.\n\n> Imperative programming describes the order of actions\n\n> Functional programming describes the data transformation\n\nFunctional programming is a lot like math. As in math, 1 + 1 always equals 2.\n\nIn the same way, a \"pure\" function will always have the same result from a given input. Input 1, output 2. Every time.\n\n```js\n// a pure function\nfunction addOne(x) {\n  return x + 1;\n}\naddOne(1)\n//> 2\naddOne(1)\n//> 2\n```\n\nA function is \"pure\" if it doesn't change anything outside of its scope. Pure functions are easy to test, reuse and reason about. On the other hand, \"impure\" functions are less predictable.\n\n```js\nvar y = 1;\n// impure function\nfunction increment(x) {\n  y += x;\n  return y;\n}\nincrement(1)\n//> 2\nincrement(1)\n//> 3\n```\n\nIt's good practice to ensure your `map` functions remain pure.\n\nBut `forEach` can be a little more dangerous. Why? Let's have a look.\n\n```js\n[1, 2, 3].map(addOne);\n//> [2, 3, 4]\n//\n[1, 2, 3].forEach(addOne);\n//> undefined\n```\n\nWhat? `undefined`? `forEach` runs a function on each item in the array, and doesn't care what the function returns. The function must make changes, called \"side effects\", to even be noticed.\n\n```js\n// impure function, changes log\nfunction addOneToLog(x) {\n  console.log(x);\n}\n\n[1, 2, 3].forEach(addOneToLog);\n//> 2\n//> 3\n//> 4\n```",
           "tasks": [
             {
               "description": "Use `forEach` to log out your report card to the console\n@open('04-forEach.js')",
@@ -162,12 +162,11 @@
               "actions": [
                 "insert('function logCourseWithIndexAndArray(course, index, array) {\n  console.log(`${index + 1}/{array.length} {course.grade}  {course.score}  {course.title}`);\n}\n\n// log your grades to the console with an index and array length\nmyFixed.forEach();\n')"
               ]
+            },
+            {
+              "description": "What??? Your data has all disappeared? It seems `myFixed` relies on a chain of methods.\n```js\nmyFixed = students\n    .filter(isAda)\n    .sort(compareScore)\n    .map(increaseScore)\n    .map(getGrade)\n\n```"
             }
           ]
-        },
-        {
-          "title": "find",
-          "description": "Array -> find an item that matches a condition"
         },
         {
           "title": "concat",
@@ -180,13 +179,9 @@
         {
           "title": "Challenge 1",
           "description": "coming soon"
-        },
-        {
-          "title": "Challenge 2",
-          "description": "coming soon"
         }
       ],
-      "description": "Using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data."
+      "description": "Using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data.\n\n<!-- @import('./tutorial/1/05/find')\n@import('./tutorial/1/09/challenge-2') -->"
     }
   ]
 }

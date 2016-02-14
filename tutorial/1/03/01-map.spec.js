@@ -5,7 +5,7 @@ if (!global.myData) {
   global.myData = JSON.parse(JSON.stringify(require('./myData.json')));
 }
 
-describe('changeGrades', function() {
+describe('function changeGrades', function() {
 
   it('doesn\'t exist', function() {
     expect(changeGrades).to.not.be.undefined;

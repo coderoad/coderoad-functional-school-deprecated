@@ -24,11 +24,11 @@ addOne(1)
 //> 2
 ```
 
-A function is "pure" if it doesn't change anything outside of its scope. Pure functions are easy to test, reuse and reason about. Impure functions, on the other hand, are less predictable.
+A function is "pure" if it doesn't change anything outside of its scope. Pure functions are easy to test, reuse and reason about. On the other hand, "impure" functions are less predictable.
 
 ```js
-// impure function
 var y = 1;
+// impure function
 function increment(x) {
   y += x;
   return y;
@@ -51,9 +51,10 @@ But `forEach` can be a little more dangerous. Why? Let's have a look.
 //> undefined
 ```
 
-Why `undefined`? `forEach` runs a function on each item in the array, and doesn't care what the function returns. The function must make changes, called "side effects", to even be noticed.
+What? `undefined`? `forEach` runs a function on each item in the array, and doesn't care what the function returns. The function must make changes, called "side effects", to even be noticed.
 
 ```js
+// impure function, changes log
 function addOneToLog(x) {
   console.log(x);
 }
@@ -103,3 +104,13 @@ function logCourseWithIndexAndArray(course, index, array) {
 myFixed.forEach();
 ```
 ))
+
++ What??? Your data has all disappeared? It seems `myFixed` relies on a chain of methods.
+```js
+myFixed = students
+    .filter(isAda)
+    .sort(compareScore)
+    .map(increaseScore)
+    .map(getGrade)
+
+```

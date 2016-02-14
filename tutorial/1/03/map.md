@@ -53,7 +53,7 @@ Instead, let's go back to myData and increment each score by 12 points.
 @test('1/03/03-map')
 @action(insert(
 ```
-// map over `mySlightlyChanged` with a function to increment each score by 12
+// map over `mySlightlyChanged` with a function `increaseGrades` to increment each score by 12
 var mySlightlyChanged = myData.map();
 ```
 ))

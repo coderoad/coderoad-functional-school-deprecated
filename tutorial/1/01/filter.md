@@ -54,18 +54,6 @@ console.log(data[0]);
 @action(open('01-filter.js'))
 @action(set(
 ```
-function isAda(student) {
-  // write condition here
-  // the name must match "Ada Lovelace"
-
-}
-```
-))
-
-+ Set `let myData` equal to data matching your name, "Ada Lovelace".
-@test('1/01/02-filter')
-@action(insert(
-```
 /**
  * Data is set as a global. Example:
  * [{
@@ -80,6 +68,18 @@ function isAda(student) {
  */
 ```
 ))
+@action(insert(
+```
+function isAda() {
+  // write condition here
+  // the student.name must match "Ada Lovelace"
+
+}
+```
+))
+
++ Set `var myData` equal to data matching your name, "Ada Lovelace".
+@test('1/01/02-filter')
 @action(insert(
 ```
 // call filter condition here
