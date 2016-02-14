@@ -41,7 +41,8 @@ function compareScore(a, b) {
       return;
   }
 }
-```))
+```
+))
 
 + Set `mySortedGrades` to `myBest` data sorted with `compareScore`
 @test('1/02/01-sort')

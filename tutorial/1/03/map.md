@@ -36,7 +36,8 @@ Let's go back to before we filtered out the bad grades.
 function changeGrades(student) {
 
 }
-```))
+```
+))
 
 + Map over the student data with the `changeGrades` function
 @test('1/03/02-map')
@@ -44,7 +45,8 @@ function changeGrades(student) {
 ```
 // map over `myData` with the `changeGrades` function
 var myChanged = myData.map();
-```))
+```
+))
 
 + Hold up. An A in Data Science looks way to suspicious. Your parents might catch on.
 Instead, let's go back to myData and increment each score by 12 points.
@@ -53,7 +55,8 @@ Instead, let's go back to myData and increment each score by 12 points.
 ```
 // map over `mySlightlyChanged` with a function to increment each score by 12
 var mySlightlyChanged = myData.map();
-```))
+```
+))
 
 + Wait. Now you're getting 105 in Algorithm Design class. Set `mySlightlyFixed` to your scores with a maximum score of 95. That should be less suspicious.
 @test('1/03/04-map')
@@ -61,7 +64,8 @@ var mySlightlyChanged = myData.map();
 ```
 // set `mySlightlyFixed` to change any scores over 100 to a score of 95
 var mySlightlyFixed = mySlightlyChanged.map();
-```))
+```
+))
 
 + One more problem. Now the scores don't match the grades. Set `myFixed` as the result of using the `getGrade` function to set grades according to the new scores.
 @test('1/03/05-map')
@@ -83,4 +87,5 @@ function getGrade(score) {
 }
 // set `myFixed` to update grades to the new scores
 var myFixed = mySlightlyChanged.map();
-```))
+```
+))

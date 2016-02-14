@@ -81,23 +81,52 @@
         {
           "title": "Map",
           "description": "Array -> run a function over each item -> Array",
-          "explanation": "You've filtered and sorted our data, but wouldn't it be better if you could change your grades? You can use the array method `map` to run a function that returns changes to your data.\n\n```\nfunction addOne(num) {\n  return num + 1;\n}\n\nfunction addTwo(num) {\n  return num + 2;\n}\n\n[1, 2, 3].map(addOne);\n//> [2, 3, 4]\n\n[1, 2, 3].map(addOne).map(addTwo);\n//> [4, 5, 6]\n```\n\nThose D & F's would look a lot better if they suddenly became A's. Let's go back before we filtered out the bad grades.",
+          "explanation": "You've filtered and sorted our data, but wouldn't it be better if you could just change your grades? You can use the array method `map` to run a function that returns changes to your data.\n\nAs an example, let's look at how you would increment each number in an array.\n\n```\nfunction addOne(num) {\n  return num + 1;\n}\n\nfunction addTwo(num) {\n  return num + 2;\n}\n\n[1, 2, 3].map(addOne);\n//> [2, 3, 4]\n\n[1, 2, 3].map(addOne).map(addTwo);\n//> [4, 5, 6]\n```\n\n`map` is powerful.\n\nThose D & F's would look a lot better if they suddenly became A's.\n\nLet's go back to before we filtered out the bad grades.",
           "tasks": [
             {
-              "description": "Make a function `changeGrades` that takes student data and changes the grade to \"A\" if it is a \"D\" or \"F\".",
+              "description": "Make a function `changeGrades` that takes student data and changes any \"D\"s and \"F\"s to \"A\"s.",
               "tests": [
-                "1/03/map-01"
+                "1/03/01-map"
               ],
               "actions": [
                 "open('03-map.js')",
-                "set('  myGoodGrades = myData.filter() // TODO\n')",
-                "insert('myData.\n\nfunction changeGrades(name) {\n    // filter to name\n    // map over grades and change them to an A\n}\n\n')"
+                "set('// change any student.grade's that are D's or F's into A's\nfunction changeGrades(student) {\n\n}\n')"
               ]
             },
             {
-              "description": "Work in Progress. Unfinished.",
+              "description": "Map over the student data with the `changeGrades` function",
               "tests": [
-                "1/03/map-02"
+                "1/03/02-map"
+              ],
+              "actions": [
+                "insert('// map over `myData` with the `changeGrades` function\nvar myChanged = myData.map();\n')"
+              ]
+            },
+            {
+              "description": "Hold up. An A in Data Science looks way to suspicious. Your parents might catch on.\nInstead, let's go back to myData and increment each score by 12 points.",
+              "tests": [
+                "1/03/03-map"
+              ],
+              "actions": [
+                "insert('// map over `mySlightlyChanged` with a function to increment each score by 12\nvar mySlightlyChanged = myData.map();\n')"
+              ]
+            },
+            {
+              "description": "Wait. Now you're getting 105 in Algorithm Design class. Set `mySlightlyFixed` to your scores with a maximum score of 95. That should be less suspicious.",
+              "tests": [
+                "1/03/04-map"
+              ],
+              "actions": [
+                "insert('// set `mySlightlyFixed` to change any scores over 100 to a score of 95\nvar mySlightlyFixed = mySlightlyChanged.map();\n')"
+              ]
+            },
+            {
+              "description": "One more problem. Now the scores don't match the grades. Set `myFixed` as the result of using the `getGrade` function to set grades according to the new scores.",
+              "tests": [
+                "1/03/05-map"
+              ],
+              "actions": [
+                "insert('function getGrade(score) {\n  switch (true) {\n    case (score >= 90):\n      return \"A\";\n    case (score >= 80):\n      return \"B\";\n    case (score >= 70):\n      return \"C\";\n    case (score >= 60):\n      return \"D\";\n    default:\n      return \"F\";\n  }\n}\n// set `myFixed` to update grades to the new scores\nvar myFixed = mySlightlyChanged.map();\n')"
               ]
             }
           ]

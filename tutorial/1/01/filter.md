@@ -59,7 +59,8 @@ function isAda(student) {
   // the name must match "Ada Lovelace"
 
 }
-```))
+```
+))
 
 + Set `let myData` equal to data matching your name, "Ada Lovelace".
 @test('1/01/02-filter')
@@ -84,7 +85,8 @@ function isAda(student) {
 // call filter condition here
 var myData = data.filter();
 
-```))
+```
+))
 
 + Write a filter condition called `isGoodGrade` that will filter out any "D" or "F" grades.
 @test('1/01/03-filter')
@@ -105,4 +107,5 @@ function isGoodGrade(student) {
 // filter out "D"'s and "F"'s here
 var myBest = myData.filter();
 
-```))
+```
+))
