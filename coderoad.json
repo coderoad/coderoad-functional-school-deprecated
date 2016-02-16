@@ -50,15 +50,93 @@
         },
         {
           "title": "find",
-          "description": "Array -> find an item that matches a condition"
+          "description": "Array -> find an item that matches a condition",
+          "tasks": [
+            {
+              "description": "`find` the name that isn't in the list of known students",
+              "tests": [
+                "1/05/01-find"
+              ]
+            },
+            {
+              "description": "`filter` down to students without known names",
+              "tests": [
+                "1/05/02-find"
+              ]
+            },
+            {
+              "description": "`map` over the result to get only the `name` property",
+              "tests": [
+                "1/05/03-find"
+              ]
+            },
+            {
+              "description": "`join('')` the array of names to output result",
+              "tests": [
+                "1/05/04-find"
+              ]
+            }
+          ]
         },
         {
           "title": "concat",
-          "description": "Array + Array -> Array"
+          "description": "Array + Array -> Array",
+          "tasks": [
+            {
+              "description": "`filter` down \"Hack Kerr\"'s data",
+              "tests": [
+                "1/06/01-concat"
+              ]
+            },
+            {
+              "description": "`concat` two more suspects to the suspect list, \"Kevin Mitnick\" & \"Albert Gonzalez\"",
+              "tests": [
+                "1/06/02-concat"
+              ]
+            },
+            {
+              "description": "create a `concatAll` array method",
+              "tests": [
+                "1/06/03-concat"
+              ]
+            },
+            {
+              "description": "Use `concatAll` to put all data into a single array",
+              "tests": [
+                "1/06/04-concat"
+              ]
+            }
+          ]
         },
         {
           "title": "reduce",
-          "description": "Array -> transform into anything"
+          "description": "Array -> transform into anything",
+          "tasks": [
+            {
+              "description": "Use `reduce` to calculate the class average",
+              "tests": [
+                "1/07/01-reduce"
+              ]
+            },
+            {
+              "description": "`reduce` to suspect scores",
+              "tests": [
+                "1/07/02-reduce"
+              ]
+            },
+            {
+              "description": "`map` over suspect data to find the score differences",
+              "tests": [
+                "1/07/03-reduce"
+              ]
+            },
+            {
+              "description": "`reduce` down to likely suspect names",
+              "tests": [
+                "1/07/04-reduce"
+              ]
+            }
+          ]
         },
         {
           "title": "Challenge 1",
