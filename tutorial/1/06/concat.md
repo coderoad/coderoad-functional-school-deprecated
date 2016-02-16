@@ -3,6 +3,7 @@ Array + Array -> Array
 
 + `filter` down "Hack Kerr"'s data
 @test('1/06/01-concat')
+@action(open('06-concat.js'))
 
 + `concat` two more suspects to the suspect list, "Kevin Mitnick" & "Albert Gonzalez"
 @test('1/06/02-concat')
