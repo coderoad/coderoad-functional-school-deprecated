@@ -67,11 +67,11 @@ function addOneToLog(x) {
 
 + Use `forEach` to log out your report card to the console
 @test('1/04/01-forEach')
-@open('04-forEach.js')
+@action(open('04-forEach.js'))
 @action(set(
 ```
 function logCourse(course) {
-  console.log(`{course.grade}  {course.score}  {course.title}`);
+  console.log(`${course.grade}  ${course.score}  ${course.title}`);
 }
 
 // log your grades to the console
@@ -83,8 +83,9 @@ myFixed.forEach();
 @test('1/04/02-forEach')
 @action(insert(
 ```
+
 function logCourseWithIndex(course, index) {
-  console.log(`${index + 1} {course.grade}  {course.score}  {course.title}`);
+  console.log(`${index + 1}  ${course.grade}  ${course.score}  ${course.title}`);
 }
 
 // log your grades to the console with an index
@@ -96,8 +97,9 @@ myFixed.forEach();
 @test('1/04/03-forEach')
 @action(insert(
 ```
+
 function logCourseWithIndexAndArray(course, index, array) {
-  console.log(`${index + 1}/{array.length} {course.grade}  {course.score}  {course.title}`);
+  console.log(`${index + 1}/${array.length}  ${course.grade}  ${course.score}  ${course.title}`);
 }
 
 // log your grades to the console with an index and array length
@@ -112,5 +114,10 @@ myFixed = students
     .sort(compareScore)
     .map(increaseScore)
     .map(getGrade)
-
+    .forEach(logCourseWithIndexAndArray)
 ```
+
+This is why side-effects are dangerous. Students data must have changed, and now all of your transformations are effected.
+
+Something strange is going on. In the next step we'll try to `find` your data.
+@test('1/04/04-forEach')

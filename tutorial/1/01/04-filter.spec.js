@@ -23,43 +23,43 @@ describe('var myBest', function() {
 
   it('isn\'t the right filtered data for "Ada Lovelace"', function() {
     expect(myBest).to.deep.equal([{
-      course: 'Relational Databases',
+      title: 'Relational Databases',
       instructor: 'Sean Quentin Lewis',
       name: 'Ada Lovelace',
       score: 91,
       grade: 'A'
     }, {
-      course: '3D Computer Graphics',
+      title: '3D Computer Graphics',
       instructor: 'G.L. Webb',
       name: 'Ada Lovelace',
       score: 88,
       grade: 'B'
     }, {
-      course: 'Web Security',
+      title: 'Web Security',
       instructor: 'Sue Denim',
       name: 'Ada Lovelace',
       score: 81,
       grade: 'B'
     }, {
-      course: 'Javascript Fundamentals',
+      title: 'Javascript Fundamentals',
       instructor: 'Jay Kweerie',
       name: 'Ada Lovelace',
       score: 73,
       grade: 'C'
     }, {
-      course: 'Algorithm Design',
+      title: 'Algorithm Design',
       instructor: 'Gale Shapely',
       name: 'Ada Lovelace',
       score: 93,
       grade: 'A'
     }, {
-      course: 'Data Abstraction',
+      title: 'Data Abstraction',
       instructor: 'Aster Ricks',
       name: 'Ada Lovelace',
       score: 82,
       grade: 'B'
     }, {
-      course: 'Data Structures',
+      title: 'Data Structures',
       instructor: 'Brodal Q.',
       name: 'Ada Lovelace',
       score: 88,

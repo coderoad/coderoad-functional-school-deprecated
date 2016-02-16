@@ -25,24 +25,17 @@ Using common built-in Javascript array methods such as `map` & `reduce`.
 
 By the end, you should have an understanding of how to use array methods to manipulate semi-complex data.
 
-<!-- @import('./tutorial/1/05/find')
-@import('./tutorial/1/09/challenge-2') -->
-
-##### Filter
-
-Array -> Array of items that match a condition
-
-##### Sort
-
-Array -> sorted Array
-
-##### Map
-
-Array -> run a function over each item -> Array
+<!-- @import('./tutorial/1/01/filter') -->
+<!-- @import('./tutorial/1/02/sort') -->
+<!-- @import('./tutorial/1/03/map') -->
 
 ##### forEach
 
 Array -> run a function for each item
+
+##### find
+
+Array -> find an item that matches a condition
 
 ##### concat
 
@@ -53,5 +46,9 @@ Array + Array -> Array
 Array -> transform into anything
 
 ##### Challenge 1
+
+coming soon
+
+##### Challenge 2
 
 coming soon

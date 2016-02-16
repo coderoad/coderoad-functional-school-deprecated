@@ -1,10 +1,12 @@
 "use strict";
 var expect = require('chai').expect;
 var path = require('path');
-var loadJS = require('../../common/loadJS').default;
+
 if (!global.data) {
   global.data = JSON.parse(JSON.stringify(require('../../data/students.json')));
 }
+
+var loadJS = require('../../common/loadJS').default;
 loadJS('01-filter.js');
 
 describe('function isAda', function() {
@@ -26,17 +28,17 @@ describe('function isAda', function() {
   });
 
   it('should match for name', function () {
-    let regex1 = /\[.name.\]/m;
-    let regex2 = /\.name/m;
+    let regex1 = /\.name/;
+    let regex2 = /\[.name.\]/;
     let string = isAda.toString();
     let result = !!string.match(regex1) || !!string.match(regex2);
     expect(result).to.be.true;
   });
 
   it('requires the full name "Ada Lovelace"', function () {
-    let regex = /Ada Lovelace/m;
+    let regex = /Ada Lovelace/;
     let string = isAda.toString();
-    expect(string.match(regex)).to.be.true;
+    expect(!!string.match(regex)).to.be.true;
   });
 
   it('doesn\'t match student.name to "Ada Lovelace"', function() {

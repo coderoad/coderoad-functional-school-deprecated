@@ -57,7 +57,7 @@ console.log(data[0]);
 /**
  * Data is set as a global. Example:
  * [{
- * "course": "Relational Databases",
+ * "title": "Relational Databases",
  * "instructor": "Sean Quentin Lewis",
  * "name": "Ada Lovelace",
  * "score": 91,
@@ -72,7 +72,8 @@ console.log(data[0]);
 ```
 function isAda() {
   // write condition here
-  // the student.name must match "Ada Lovelace"
+  // return true if student name
+  // matches "Ada Lovelace"
 
 }
 ```
