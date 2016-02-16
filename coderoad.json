@@ -8,6 +8,130 @@
       "title": "Array Methods",
       "pages": [
         {
+          "title": "Filter",
+          "description": "Array -> Array of items that match a condition",
+          "explanation": "You've hacked into the school's computer system, and just in time. The grades are in, aren't you're not too proud of your performance. But that's okay, you have a plan: you're going to create a fake report card.\n\nIt would be great if you could `filter` the scores that your parents will see. A `filter` takes a matching condition function and only returns items that result in true. As an example, look at `isA` below:\n\n```\nfunction isA(x) {\n  return x === 'a';\n}\n```\n\n\nLike all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one.\n\n```\nvar list = ['a', 'b'];\nlist.filter(isA);\n\n// if isA(list[0]), add to output array\n// if isA(list[1]), add to output array\n//\n//> ['a']\n```\n\nIf your data was composed of objects, we could use dot notation to find matches. Checkout `isB` below.\n\n```\nfunction isB(x) {\n  return x.item === 'b'\n}\n\nvar list = [{item: 'a'}, {item: 'b'}];\nlist.filter(isB);\n//> [{item: 'b'}]\n```\n\nWhere were we? Back to filtering our grades.\n\nThere's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:\n\n```\nconsole.log(data[0]);\n//> { course: 'Web Security',\n//    instructor: 'Sue Denim',\n//    name: 'Rebecca Heineman',\n//    score: 93,\n//    grade: 'A' }\n```",
+          "tasks": [
+            {
+              "description": "Write a filter condition function called `isAda` that returns true only if the name matches your name: \"Ada Lovelace\".",
+              "tests": [
+                "1/01/01-filter"
+              ],
+              "actions": [
+                "open('01-filter.js')",
+                "set('/**\n * Data is set as a global. Example:\n * [{\n * \"title\": \"Relational Databases\",\n * \"instructor\": \"Sean Quentin Lewis\",\n * \"name\": \"Ada Lovelace\",\n * \"score\": 91,\n * \"grade\": \"A\"\n * },\n * ...\n * ]\n */\n')",
+                "insert('function isAda() {\n  // write condition here\n  // return true if student name\n  // matches \"Ada Lovelace\"\n\n}\n')"
+              ]
+            },
+            {
+              "description": "Set `var myData` equal to data matching your name, \"Ada Lovelace\".",
+              "tests": [
+                "1/01/02-filter"
+              ],
+              "actions": [
+                "insert('// call filter condition here\nvar myData = data.filter();\n\n')"
+              ]
+            },
+            {
+              "description": "Write a filter condition called `isGoodGrade` that will filter out any \"D\" or \"F\" grades.",
+              "tests": [
+                "1/01/03-filter"
+              ],
+              "actions": [
+                "insert('// return true if student \"grade\" is not a \"D\" or \"F\"\nfunction isGoodGrade(student) {\n\n}\n')"
+              ]
+            },
+            {
+              "description": "Set `var myBest` to your scores, excluding any grades that are \"D\" or \"F\".",
+              "tests": [
+                "1/01/04-filter"
+              ],
+              "actions": [
+                "insert('// filter out \"D\"'s and \"F\"'s here\nvar myBest = myData.filter();\n\n')"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Sort",
+          "description": "Array -> sorted Array",
+          "explanation": "Your grades are filtered down to your name and good scores - but wouldn't it be better if your best grades were shown at the top? Besides, your parents rarely read all the way down to the bottom.\n\nWe can use the array method `sort` to arrange our data. Let's see how it works.\n\n```js\n['c', 'b', 'a'].sort();\n//> ['a', 'b', 'c']\n\n[3, 2, 1].sort();\n//> [1, 2, 3]\n```\n\nBut what about sorting the scores inside of an object? We can write a custom `compareScore` function.\n\nA sort function takes two params, and compares the first to the second. It should return values saying where the second value should go:\n\n  * -1 : sort to a lower index\n  * 1 : sort to a higher index\n  * 0 : stay the same\n\nAlright, now time to sort your best grades to the top.",
+          "tasks": [
+            {
+              "description": "Write a sort condition function called `compareScore` that can sort your data by score.",
+              "tests": [
+                "1/02/01-sort"
+              ],
+              "actions": [
+                "open('02-sort.js')",
+                "set('function compareScore(a, b) {\n  switch (true) {\n    case b < a:\n    // it should return 1 if b's score is less than a's\n      return;\n    case b > a:\n    // it should return -1 if b's score is more than a's\n      return;\n    default:\n    // it should return 0 if b has the same score as a\n      return;\n  }\n}\n')"
+              ]
+            },
+            {
+              "description": "Set `mySortedGrades` to `myBest` data sorted with `compareScore`",
+              "tests": [
+                "1/02/01-sort"
+              ],
+              "actions": [
+                "insert('// use the compare function to sort myBest\nvar mySorted = myBest\n')"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Map",
+          "description": "Array -> run a function over each item -> Array",
+          "explanation": "You've filtered and sorted our data, but wouldn't it be better if you could just change your grades? You can use the array method `map` to run a function that returns changes to your data.\n\nAs an example, let's look at how you would increment each number in an array.\n\n```\nfunction addOne(num) {\n  return num + 1;\n}\n\nfunction addTwo(num) {\n  return num + 2;\n}\n\n[1, 2, 3].map(addOne);\n//> [2, 3, 4]\n\n[1, 2, 3].map(addOne).map(addTwo);\n//> [4, 5, 6]\n```\n\n`map` is powerful.\n\nThose D & F's would look a lot better if they suddenly became A's.\n\nLet's go back to before we filtered out the bad grades.",
+          "tasks": [
+            {
+              "description": "Make a function `changeGrades` that takes student data and changes any \"D\"s and \"F\"s to \"A\"s.",
+              "tests": [
+                "1/03/01-map"
+              ],
+              "actions": [
+                "open('03-map.js')",
+                "set('// change any student.grade's that are D's or F's into A's\nfunction changeGrades(student) {\n\n}\n')"
+              ]
+            },
+            {
+              "description": "Map over the student data with the `changeGrades` function",
+              "tests": [
+                "1/03/02-map"
+              ],
+              "actions": [
+                "insert('// map over `myData` with the `changeGrades` function\nvar myChanged = myData.map();\n')"
+              ]
+            },
+            {
+              "description": "Hold up. An A in Data Science looks way to suspicious. Your parents might catch on.\nInstead, let's go back to myData and increment each score by 12 points.",
+              "tests": [
+                "1/03/03-map"
+              ],
+              "actions": [
+                "insert('// map over `mySlightlyChanged` with a function `increaseGrades` to increment each score by 12\nvar mySlightlyChanged = myData.map();\n')"
+              ]
+            },
+            {
+              "description": "Wait. Now you're getting 105 in Algorithm Design class. Set `mySlightlyFixed` to your scores with a maximum score of 95. That should be less suspicious.",
+              "tests": [
+                "1/03/04-map"
+              ],
+              "actions": [
+                "insert('// set `mySlightlyFixed` to change any scores over 100 to a score of 95\nvar mySlightlyFixed = mySlightlyChanged.map();\n')"
+              ]
+            },
+            {
+              "description": "One more problem. Now the scores don't match the grades. Set `myFixed` as the result of using the `getGrade` function to set grades according to the new scores.",
+              "tests": [
+                "1/03/05-map"
+              ],
+              "actions": [
+                "insert('function getGrade(score) {\n  switch (true) {\n    case (score >= 90):\n      return \"A\";\n    case (score >= 80):\n      return \"B\";\n    case (score >= 70):\n      return \"C\";\n    case (score >= 60):\n      return \"D\";\n    default:\n      return \"F\";\n  }\n}\n// set `myFixed` to update grades to the new scores\nvar myFixed = mySlightlyChanged.map();\n')"
+              ]
+            }
+          ]
+        },
+        {
           "title": "forEach",
           "description": "Array -> run a function for each item",
           "explanation": "You've updated your grades, but they're still in an array. It's time to loop over them and log them to the console.\n\n`forEach` has a lot in common with `map`, but the major differences between the two is important to understand the difference between \"functional\" & \"imperative\" programming.\n\n> Imperative programming describes the order of actions\n\n> Functional programming describes the data transformation\n\nFunctional programming is a lot like math. As in math, 1 + 1 always equals 2.\n\nIn the same way, a \"pure\" function will always have the same result from a given input. Input 1, output 2. Every time.\n\n```js\n// a pure function\nfunction addOne(x) {\n  return x + 1;\n}\naddOne(1)\n//> 2\naddOne(1)\n//> 2\n```\n\nA function is \"pure\" if it doesn't change anything outside of its scope. Pure functions are easy to test, reuse and reason about. On the other hand, \"impure\" functions are less predictable.\n\n```js\nvar y = 1;\n// impure function\nfunction increment(x) {\n  y += x;\n  return y;\n}\nincrement(1)\n//> 2\nincrement(1)\n//> 3\n```\n\nIt's good practice to ensure your `map` functions remain pure.\n\nBut `forEach` can be a little more dangerous. Why? Let's have a look.\n\n```js\n[1, 2, 3].map(addOne);\n//> [2, 3, 4]\n//\n[1, 2, 3].forEach(addOne);\n//> undefined\n```\n\nWhat? `undefined`? `forEach` runs a function on each item in the array, and doesn't care what the function returns. The function must make changes, called \"side effects\", to even be noticed.\n\n```js\n// impure function, changes log\nfunction addOneToLog(x) {\n  console.log(x);\n}\n\n[1, 2, 3].forEach(addOneToLog);\n//> 2\n//> 3\n//> 4\n```",
@@ -56,6 +180,9 @@
               "description": "`find` the name that isn't in the list of known students",
               "tests": [
                 "1/05/01-find"
+              ],
+              "actions": [
+                "open('05-find.js')"
               ]
             },
             {
@@ -86,6 +213,9 @@
               "description": "`filter` down \"Hack Kerr\"'s data",
               "tests": [
                 "1/06/01-concat"
+              ],
+              "actions": [
+                "open('06-concat.js')"
               ]
             },
             {
@@ -116,6 +246,9 @@
               "description": "Use `reduce` to calculate the class average",
               "tests": [
                 "1/07/01-reduce"
+              ],
+              "actions": [
+                "open('07-reduce.js')"
               ]
             },
             {
@@ -147,7 +280,7 @@
           "description": "coming soon"
         }
       ],
-      "description": "Using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data.\n\n<!-- @import('./tutorial/1/01/filter') -->\n<!-- @import('./tutorial/1/02/sort') -->\n<!-- @import('./tutorial/1/03/map') -->"
+      "description": "Using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data."
     }
   ]
 }
