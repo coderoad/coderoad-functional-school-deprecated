@@ -10,7 +10,10 @@ if (!global.courses) {
   global.courses = JSON.parse(JSON.stringify(require('../../data/courses2.json')));
 }
 
-describe('var flattenedArray', function() {
+describe('var suspectData', function() {
 
+  it('should filter if the `indexOf` the suspects name is greater than -1', function() {
+    
+  });
 
 });

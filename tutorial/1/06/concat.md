@@ -92,9 +92,41 @@ We have a suspect in mind: a classmate named "Hack Kerr". He's a nice guy, and h
 First let's recreate our student array of data from the course data.
 
 + First, test out `flatten` on the `flattenedArray`
-  @test('1/06/01-concat')
-  @open('06-concat.js')
-  @action(set(
+@test('1/06/01-concat')
+@open('06-concat.js')
+@hint(
+```js
+var start = [{
+  a: 1,
+  c: [
+    { b: 1 }
+  ]
+}, {
+  a: 2,
+  c: [
+    { b: 2 }, { b: 3 }
+  ]
+}];
+
+var middle = start.map(function(outer) {
+  return outer.c.map(function(inner) {
+    return {
+      a: outer.a,
+      b: inner.b
+    };
+  });
+});
+//> [ [{ a: 1, b: 1 }], [{a: 2, b: 2}, {a: 2, b: 3}] ]
+```
+)
+@hint(Flatten the resulting arrays)
+@hint(
+```js
+var end = pre.flatten();
+//> [{a: 1, b: 1}, {a: 2, b: 2}, {a: 2, b: 3}]
+```
+)
+@action(set(
 ```
 // Array.prototype can be used to create new Array methods
 Array.prototype.flatten = function() {
@@ -104,11 +136,13 @@ Array.prototype.flatten = function() {
   }, []);
 });
 ```    
-))
+)
 @action(insert(
 ```
-// use `flatten` to set flattenedArray to [1, 2, 3, 4]
-var flattenedArray = [[1, 2], [3, 4]];
+
+// use `flatten` on `numberedList` to set flattenedArray to [1, 2, 3, 4]
+var numberedList = [[1, 2], [3, 4]]
+var flattenedArray;
 ```  
 ))
 
@@ -124,12 +158,41 @@ var flattenedArray = [[1, 2], [3, 4]];
   }
 ```
 @test('1/06/02-concat')
+@action(insert(
+```
 
-+ Use `flatten` to put all data into a single array. Set `flattened` to the result.
-  @test('1/06/03-concat')
+// map over doubleArray twice
+var doubleArray = courses;
+```
+))
 
-+ Use the `suspects` array to `filter` down "Hack Kerr"'s data
-  @test('1/06/04-concat')
++ Use `flatten` to put all data into a single array. Set `students` to the result.
+@test('1/06/03-concat')
+@action(insert(
+```
 
-+ You just thought of two more suspects: `concat` two more suspects to the suspect list, "Kevin Mitnick" & "Albert Gonzalez"
-  @test('1/06/05-concat')
+// flatten doubleArray
+var students = doubleArray;
+```  
+))
+
++ Use the `suspects` array to `filter` to only "Hack Kerr"'s data
+@test('1/06/04-concat')
+@action(insert(
+```
+
+var suspects = ["Hack Kerr"];
+
+// filter to data matching `suspects`
+var suspectData = students;
+```  
+))
+
++ You just thought of two more suspects!  `concat` the new suspects array onto the `suspects` list.
+@test('1/06/05-concat')
+@action(insert(
+```
+
+var newSuspects = ["Kevin Mitnick", "Albert Gonzalez"];
+```  
+))

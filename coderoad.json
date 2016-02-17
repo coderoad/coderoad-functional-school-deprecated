@@ -225,25 +225,55 @@
               ]
             },
             {
-              "description": "First, test out `flatten` on the `flattenedArray`\n  @test('1/06/01-concat')\n  @open('06-concat.js')\n  @action(set(\n```\n// Array.prototype can be used to create new Array methods\nArray.prototype.flatten = function() {\n  // more on `reduce` coming up next\n  return this.reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n});\n```    \n))",
+              "description": "First, test out `flatten` on the `flattenedArray`\n@open('06-concat.js')",
+              "tests": [
+                "1/06/01-concat"
+              ],
+              "hints": [
+                "js\nvar start = [{\n  a: 1,\n  c: [\n    { b: 1 }\n  ]\n}, {\n  a: 2,\n  c: [\n    { b: 2 }, { b: 3 }\n  ]\n}];\n\nvar middle = start.map(function(outer) {\n  return outer.c.map(function(inner) {\n    return {\n      a: outer.a,\n      b: inner.b\n    };\n  });\n});\n//> [ [{ a: 1, b: 1 }], [{a: 2, b: 2}, {a: 2, b: 3}] ]",
+                "Flatten the resulting arrays",
+                "js\nvar end = pre.flatten();\n//> [{a: 1, b: 1}, {a: 2, b: 2}, {a: 2, b: 3}]"
+              ],
               "actions": [
-                "insert('// use `flatten` to set flattenedArray to [1, 2, 3, 4]\nvar flattenedArray = [[1, 2], [3, 4]];\n')"
+                "set('`\n// Array.prototype can be used to create new Array methods\nArray.prototype.flatten = function() {\n  // more on `reduce` coming up next\n  return this.reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n});')",
+                "insert('\n// use `flatten` on `numberedList` to set flattenedArray to [1, 2, 3, 4]\nvar numberedList = [[1, 2], [3, 4]]\nvar flattenedArray;\n')"
               ]
             },
             {
               "description": "Map over the course data array, and map over the student array inside of the course data. Set `doubleArray` to return an array of array of objects that looks like this:\n\n```js\n  {\n  \"title\": \"Relational Databases\",\n  \"instructor\": \"Sean Quentin Lewis\",\n  \"name\": \"Rebecca Heineman\",\n  \"score\": 71,\n  \"grade\": \"C\"\n  }\n```",
               "tests": [
                 "1/06/02-concat"
+              ],
+              "actions": [
+                "insert('\n// map over doubleArray twice\nvar doubleArray = courses;\n')"
               ]
             },
             {
-              "description": "Use `flatten` to put all data into a single array. Set `flattened` to the result.\n  @test('1/06/03-concat')"
+              "description": "Use `flatten` to put all data into a single array. Set `students` to the result.",
+              "tests": [
+                "1/06/03-concat"
+              ],
+              "actions": [
+                "insert('\n// flatten doubleArray\nvar students = doubleArray;\n')"
+              ]
             },
             {
-              "description": "Use the `suspects` array to `filter` down \"Hack Kerr\"'s data\n  @test('1/06/04-concat')"
+              "description": "Use the `suspects` array to `filter` to only \"Hack Kerr\"'s data",
+              "tests": [
+                "1/06/04-concat"
+              ],
+              "actions": [
+                "insert('\nvar suspects = [\"Hack Kerr\"];\n\n// filter to data matching `suspects`\nvar suspectData = students;\n')"
+              ]
             },
             {
-              "description": "You just thought of two more suspects: `concat` two more suspects to the suspect list, \"Kevin Mitnick\" & \"Albert Gonzalez\"\n  @test('1/06/05-concat')"
+              "description": "You just thought of two more suspects!  `concat` the new suspects array onto the `suspects` list.",
+              "tests": [
+                "1/06/05-concat"
+              ],
+              "actions": [
+                "insert('\nvar newSuspects = [\"Kevin Mitnick\", \"Albert Gonzalez\"];\n')"
+              ]
             }
           ]
         },
