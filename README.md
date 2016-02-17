@@ -45,10 +45,6 @@ Array -> run a function for each item
 
 Array -> find an item that matches a condition
 
-##### concat
-
-Array + Array -> Array
-
 ##### reduce
 
 Array -> transform into anything

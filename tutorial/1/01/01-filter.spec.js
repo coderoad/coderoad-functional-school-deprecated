@@ -19,8 +19,8 @@ describe('function isAda', function() {
     expect(isAda).to.be.a('function');
   });
 
-  it('doesn\'t have any params', function() {
-    expect(isAda.length).to.equal(1);
+  it('doesn\'t take a parameter', function() {
+    expect(isAda).to.have.length(1);
   });
 
   it('doesn\'t return a boolean', function () {

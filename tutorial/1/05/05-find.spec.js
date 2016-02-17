@@ -8,11 +8,10 @@ if (!global.data) {
 }
 loadJS('05-find.js');
 
-describe('var unknownStudentNames', function() {
+describe('var decodedName', function() {
 
   it('should find 10 unknown students names', function() {
-    let names = unknownStudentNames.join('');
-    expect(names).to.equal('!findthebestrevenge!');
+    expect(decodedName).to.equal('!findthebestrevenge!');
   });
 
 });

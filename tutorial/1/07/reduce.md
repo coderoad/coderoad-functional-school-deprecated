@@ -1,6 +1,8 @@
 ### reduce
 Array -> transform into anything
 
+
+
 + Use `reduce` to calculate the class average
 @test('1/07/01-reduce')
 @action(open('07-reduce.js'))

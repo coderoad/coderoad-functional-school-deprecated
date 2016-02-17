@@ -175,72 +175,82 @@
         {
           "title": "find",
           "description": "Array -> find an item that matches a condition",
+          "explanation": "Somehow your name has disappeared from the computer system. We'll have to `find` a way to get it back.\n\nYou quickly put together a list of other students in class. If someone changed your name, it'll be the name that is not in that list.\n\n`find` works similar to `filter`, but returns only the first match.\n\n```\nvar data = [1, 2, 3, 4, 5, 6];\n\nfunction isEven(num) {\n  return num % 2 === 0;\n}\n\n// returns all matching data to a condition\ndata.filter(isEven);\n//> [2, 4, 6]\n\n// returns the first match\ndata.find(isEven);\n//> [2]\n```\n\nFind is great for performantly matching unique values in data, such as \"id\"'s, or in our case, names.",
           "tasks": [
             {
-              "description": "`find` the name that isn't in the list of known students",
+              "description": "`filter` down students in the class titled Web Security (`{ title: \"Web Security\" }`)",
               "tests": [
                 "1/05/01-find"
               ],
               "actions": [
-                "open('05-find.js')"
+                "open('05-find.js')",
+                "set('var otherStudents = [\"Albert Gonzalez\", \"Brian Kernaghan\", \"Danielle Bunten Berry\", \"Donald Knuth\", \"Grace Hopper\", \"Hack Kerr\", \"James Gosling\", \"Ken Thompson\", \"Kevin Mitnick\", \"Linus Torvalds\", \"Niklaus Wirth\", \"Rebecca Heineman\", \"Tim Berners-Lee\", \"Xiao Tian\", \"Ying Cracker\"];\n\nvar classTitle = \"Web Security\";\n')",
+                "insert('var myClass\n')"
+              ]
+            },
+            {
+              "description": "`find` the name in `myClass` that isn't in the list of known students",
+              "tests": [
+                "1/05/02-find"
+              ],
+              "actions": [
+                "insert('var unknownStudent  \n')"
               ]
             },
             {
               "description": "`filter` down to students without known names",
               "tests": [
-                "1/05/02-find"
+                "1/05/03-find"
+              ],
+              "actions": [
+                "insert('var unknownStudentList\n')"
               ]
             },
             {
               "description": "`map` over the result to get only the `name` property",
               "tests": [
-                "1/05/03-find"
-              ]
-            },
-            {
-              "description": "`join('')` the array of names to output result",
-              "tests": [
                 "1/05/04-find"
-              ]
-            }
-          ]
-        },
-        {
-          "title": "concat",
-          "description": "Array + Array -> Array",
-          "tasks": [
-            {
-              "description": "`filter` down \"Hack Kerr\"'s data",
-              "tests": [
-                "1/06/01-concat"
               ],
               "actions": [
-                "open('06-concat.js')"
+                "insert('var unknownStudentNames\n')"
               ]
             },
             {
-              "description": "`concat` two more suspects to the suspect list, \"Kevin Mitnick\" & \"Albert Gonzalez\"",
+              "description": "`join('')` the array of names to output result\n\n# concat\nArray + Array -> Array\n\nBefore we've been working on a structured set of student data.\n\n```js\n// array of students\n[\n  {\n  \"title\": \"Relational Databases\",\n  \"instructor\": \"Sean Quentin Lewis\",\n  \"name\": \"Rebecca Heineman\",\n  \"score\": 71,\n  \"grade\": \"C\"\n  }\n// students in courses...\n]\n```\n\nTo be safe, let's now work on the original data set. Notice how it is structured differently.\n\n```js\n// array of courses\n[\n  {\n    \"title\": \"Relational Databases\",\n    \"instructor\": \"Sean Quentin Lewis\",\n    \"students\": [\n      {\n        \"name\": \"Rebecca Heineman\",\n        \"score\": 71,\n        \"grade\": \"C\"\n      }\n    // students...\n    ]\n  }\n  // courses...\n]\n```\n\nIn this data set, there is an array of students within an array of courses. So how can we recreate our original array of students from the courses? We can use `concat`.\n\nWeird things happen when you start combining arrays. `concat` brings sanity.\n\n```js\n[1, 2] + [3, 4];\n//> \"1, 23, 4\"\n\n[1, 2].push([3, 4]);\n//> 3\n\n[1, 2].join([3, 4]);\n//> \"13, 42\"\n\n[1, 2].concat([3, 4]);\n//> [1, 2, 3, 4]\n```\n\nUnfortunately, Javascript is missing a built in array method to concat multiple arrays together: let's call it `flatten` (often called `concatAll`). `flatten` should loop over an array and concat each element.\n\n```js\nvar start = [{\n  a: 1,\n  c: [\n    { b: 1 }\n  ]\n}, {\n  a: 2,\n  c: [\n    { b: 2 }, { b: 3 }\n  ]\n}];\n\nvar middle = start.map(function(outer) {\n  return outer.c.map(function(inner) {\n    return {\n      a: outer.a,\n      b: inner.b\n    };\n  });\n});\n//> [ [{ a: 1, b: 1 }], [{a: 2, b: 2}, {a: 2, b: 3}] ]\n\nvar end = pre.flatten();\n//> [{a: 1, b: 1}, {a: 2, b: 2}, {a: 2, b: 3}]\n```\n\nBack to business.\n\nWe have a suspect in mind: a classmate named \"Hack Kerr\". He's a nice guy, and he's always been friendly to you - but there's something suspicious about him: his name.\n\nFirst let's recreate our student array of data from the course data.",
+              "tests": [
+                "1/05/05-find"
+              ],
+              "actions": [
+                "insert('var decodedName\n')"
+              ]
+            },
+            {
+              "description": "First, test out `flatten` on the `flattenedArray`\n  @test('1/06/01-concat')\n  @open('06-concat.js')\n  @action(set(\n```\n// Array.prototype can be used to create new Array methods\nArray.prototype.flatten = function() {\n  // more on `reduce` coming up next\n  return this.reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n});\n```    \n))",
+              "actions": [
+                "insert('// use `flatten` to set flattenedArray to [1, 2, 3, 4]\nvar flattenedArray = [[1, 2], [3, 4]];\n')"
+              ]
+            },
+            {
+              "description": "Map over the course data array, and map over the student array inside of the course data. Set `doubleArray` to return an array of array of objects that looks like this:\n\n```js\n  {\n  \"title\": \"Relational Databases\",\n  \"instructor\": \"Sean Quentin Lewis\",\n  \"name\": \"Rebecca Heineman\",\n  \"score\": 71,\n  \"grade\": \"C\"\n  }\n```",
               "tests": [
                 "1/06/02-concat"
               ]
             },
             {
-              "description": "create a `concatAll` array method",
-              "tests": [
-                "1/06/03-concat"
-              ]
+              "description": "Use `flatten` to put all data into a single array. Set `flattened` to the result.\n  @test('1/06/03-concat')"
             },
             {
-              "description": "Use `concatAll` to put all data into a single array",
-              "tests": [
-                "1/06/04-concat"
-              ]
+              "description": "Use the `suspects` array to `filter` down \"Hack Kerr\"'s data\n  @test('1/06/04-concat')"
+            },
+            {
+              "description": "You just thought of two more suspects: `concat` two more suspects to the suspect list, \"Kevin Mitnick\" & \"Albert Gonzalez\"\n  @test('1/06/05-concat')"
             }
           ]
         },
         {
           "title": "reduce",
           "description": "Array -> transform into anything",
+          "explanation": "",
           "tasks": [
             {
               "description": "Use `reduce` to calculate the class average",

@@ -85,6 +85,4 @@ describe('var myData', function() {
     }]);
   });
 
-
-
 });
