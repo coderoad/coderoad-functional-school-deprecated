@@ -2,23 +2,38 @@
   "name": "coderoad-functional-school",
   "version": "0.1.0",
   "description": "Coderoad tutorial",
-  "author": "Shawn McKay <shawn.j.mckay@gmail.com>",
+  "author": "Shawn McKay <shawn.j.mckay@gmail.com> (http://shmck.com)",
   "contributers": [],
-  "main": "coderoad.json",
   "keywords": [
-    "coderoad"
+    "coderoad", "tutorial", "functional"
   ],
+  "main": "coderoad.json",
+  "files": [
+    "coderoad.json",
+    "tutorial"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coderoad/coderoad-functional-school.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coderoad/coderoad-functional-school/issues"
+  },
+  "engines": {
+    "node" : ">=0.10.3"
+  },
   "dependencies": {
     "chai": "3.5.0",
     "chai-spies": "0.7.1",
     "lodash": "4.3.0",
     "mocha": "2.4.5",
-    "mocha-coderoad": "0.2.1"
+    "mocha-coderoad": "^0.2.1"
   },
   "license": "MIT",
-  "coderoad": {
+  "config": {
     "testDir": "tutorial",
     "testSuffix": ".spec.js",
-    "testRunner": "mocha-coderoad"
+    "testRunner": "mocha-coderoad",
+    "edit": true
   }
 }

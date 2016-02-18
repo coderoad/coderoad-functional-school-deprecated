@@ -10,7 +10,7 @@
         {
           "title": "Filter",
           "description": "Array -> Array of items that match a condition",
-          "explanation": "You've hacked into the school's computer system, and just in time. The grades are in, aren't you're not too proud of your performance. But that's okay, you have a plan: you're going to create a fake report card.\n\nIt would be great if you could `filter` the scores that your parents will see. A `filter` takes a matching condition function and only returns items that result in true. As an example, look at `isA` below:\n\n```\nfunction isA(x) {\n  return x === 'a';\n}\n```\n\n\nLike all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one.\n\n```\nvar list = ['a', 'b'];\nlist.filter(isA);\n\n// if isA(list[0]), add to output array\n// if isA(list[1]), add to output array\n//\n//> ['a']\n```\n\nIf your data was composed of objects, we could use dot notation to find matches. Checkout `isB` below.\n\n```\nfunction isB(x) {\n  return x.item === 'b'\n}\n\nvar list = [{item: 'a'}, {item: 'b'}];\nlist.filter(isB);\n//> [{item: 'b'}]\n```\n\nWhere were we? Back to filtering our grades.\n\nThere's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:\n\n```\nconsole.log(data[0]);\n//> { course: 'Web Security',\n//    instructor: 'Sue Denim',\n//    name: 'Rebecca Heineman',\n//    score: 93,\n//    grade: 'A' }\n```",
+          "explanation": "You've hacked into the school's computer system, and just in time. The grades are in, but you're not too proud of your performance. That's okay, you have a plan: you're going to create a fake report card.\n\nIt would be great if you could `filter` the scores that your parents will see.\n\n`filter` takes a matching condition function and only returns items that result in true. As an example, look at `isA` below:\n\n```\nfunction isA(x) {\n  return x === 'a';\n}\n```\n\n\nLike all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one. [Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).\n\n```\nvar list = ['a', 'b'];\nlist.filter(isA);\n\n// if isA(list[0]), add to output array\n// if isA(list[1]), add to output array\n//\n//> ['a']\n```\n\nIf your data was composed of objects, we could use dot notation to find matches. Checkout `isB` below.\n\n```\nfunction isB(x) {\n  return x.item === 'b'\n}\n\nvar list = [{item: 'a'}, {item: 'b'}];\nlist.filter(isB);\n//> [{item: 'b'}]\n```\n\nWhere were we? Back to filtering our grades.\n\nThere's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:\n\n```\nconsole.log(data[0]);\n//> { course: 'Web Security',\n//    instructor: 'Sue Denim',\n//    name: 'Rebecca Heineman',\n//    score: 93,\n//    grade: 'A' }\n```",
           "tasks": [
             {
               "description": "Write a filter condition function called `isAda` that returns true only if the name matches your name: \"Ada Lovelace\".",
@@ -55,7 +55,7 @@
         {
           "title": "Sort",
           "description": "Array -> sorted Array",
-          "explanation": "Your grades are filtered down to your name and good scores - but wouldn't it be better if your best grades were shown at the top? Besides, your parents rarely read all the way down to the bottom.\n\nWe can use the array method `sort` to arrange our data. Let's see how it works.\n\n```js\n['c', 'b', 'a'].sort();\n//> ['a', 'b', 'c']\n\n[3, 2, 1].sort();\n//> [1, 2, 3]\n```\n\nBut what about sorting the scores inside of an object? We can write a custom `compareScore` function.\n\nA sort function takes two params, and compares the first to the second. It should return values saying where the second value should go:\n\n  * -1 : sort to a lower index\n  * 1 : sort to a higher index\n  * 0 : stay the same\n\nAlright, now time to sort your best grades to the top.",
+          "explanation": "Your grades are filtered down to your name and good scores - but wouldn't it be better if your best grades were displayed first, at the top? Besides, your parents rarely read anything through.\n\nYou can use the array method `sort` to arrange your data. Let's see how it works.\n\n```js\n['c', 'b', 'a'].sort();\n//> ['a', 'b', 'c']\n\n[3, 2, 1].sort();\n//> [1, 2, 3]\n```\n\nBut what about sorting scores inside of an object?\n\n```js\n[{a: 3}, {a: 1}, {a: 2}].sort();\n//> [{a: 3}, {a: 1}, {a: 2}]\n```\n\nThat didn't work. Instead, you can write a custom `compareScore` function.\n\nA sort function takes two params, and compares the first to the second. It should return values saying where the second value should go in the array:\n\n  * -1 : sort to a lower index (front)\n  * 1 : sort to a higher index (back)\n  * 0 : stay the same\n\nAlright, now time to sort your best grades to the top.",
           "tasks": [
             {
               "description": "Write a sort condition function called `compareScore` that can sort your data by score.",
@@ -68,7 +68,7 @@
               ]
             },
             {
-              "description": "Set `mySortedGrades` to `myBest` data sorted with `compareScore`",
+              "description": "Set `mySortedGrades` to `myBest` data sorted by `compareScore`",
               "tests": [
                 "1/02/01-sort"
               ],
@@ -178,14 +178,14 @@
           "explanation": "Somehow your name has disappeared from the computer system. We'll have to `find` a way to get it back.\n\nYou quickly put together a list of other students in class. If someone changed your name, it'll be the name that is not in that list.\n\n`find` works similar to `filter`, but returns only the first match.\n\n```\nvar data = [1, 2, 3, 4, 5, 6];\n\nfunction isEven(num) {\n  return num % 2 === 0;\n}\n\n// returns all matching data to a condition\ndata.filter(isEven);\n//> [2, 4, 6]\n\n// returns the first match\ndata.find(isEven);\n//> [2]\n```\n\nFind is great for performantly matching unique values in data, such as \"id\"'s, or in our case, names.",
           "tasks": [
             {
-              "description": "`filter` down students in the class titled Web Security (`{ title: \"Web Security\" }`)",
+              "description": "`filter` to students in the class titled \"Web Security\"",
               "tests": [
                 "1/05/01-find"
               ],
               "actions": [
                 "open('05-find.js')",
-                "set('var otherStudents = [\"Albert Gonzalez\", \"Brian Kernaghan\", \"Danielle Bunten Berry\", \"Donald Knuth\", \"Grace Hopper\", \"Hack Kerr\", \"James Gosling\", \"Ken Thompson\", \"Kevin Mitnick\", \"Linus Torvalds\", \"Niklaus Wirth\", \"Rebecca Heineman\", \"Tim Berners-Lee\", \"Xiao Tian\", \"Ying Cracker\"];\n\nvar classTitle = \"Web Security\";\n')",
-                "insert('var myClass\n')"
+                "set('// search for a student with a name\n// not matching students in the list\nvar otherStudents = [\"Albert Gonzalez\", \"Brian Kernaghan\", \"Danielle Bunten Berry\", \"Donald Knuth\", \"Grace Hopper\", \"Hack Kerr\", \"James Gosling\", \"Ken Thompson\", \"Kevin Mitnick\", \"Linus Torvalds\", \"Niklaus Wirth\", \"Rebecca Heineman\", \"Tim Berners-Lee\", \"Xiao Tian\", \"Ying Cracker\"];\n')",
+                "insert('\n// filter for students.title is \"Web Security\"\nvar myClass = students\n')"
               ]
             },
             {
@@ -194,7 +194,7 @@
                 "1/05/02-find"
               ],
               "actions": [
-                "insert('var unknownStudent  \n')"
+                "insert('\n// hint: use `indexOf` to find if an item is in the array\nvar unknownStudent  \n')"
               ]
             },
             {
@@ -280,47 +280,55 @@
         {
           "title": "reduce",
           "description": "Array -> transform into anything",
-          "explanation": "",
+          "explanation": "```js\nfunction add(prev, curr) {\n    console.log(`add(${prev}, ${curr}) -> ${prev + curr}`)\n    return prev + curr;\n}\n\n[1, 5, 10].reduce(add, 100); // initial value\n\n// add(100, 1) -> 101\n// add(101, 5) -> 106\n// add(106, 10) -> 116\n//> 116\n```",
           "tasks": [
             {
-              "description": "Use `reduce` to calculate the class average",
+              "description": "Use `reduce` to sum the numbers in the `practice` array",
               "tests": [
                 "1/07/01-reduce"
               ],
               "actions": [
-                "open('07-reduce.js')"
+                "open('07-reduce.js')",
+                "set('var practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\n// total the numbers using a reduce function\n// hint: start at 0\nvar total = practice.reduce();\n')"
               ]
             },
             {
-              "description": "`reduce` to suspect scores",
+              "description": "`map` over each course and use `reduce` to calculate the class averages for each class. Set `averages` to the resulting array of all class averages.",
               "tests": [
                 "1/07/02-reduce"
+              ],
+              "actions": [
+                "insert('// Remember, an average is the sum of all student scores divided by the number of students\n// set the result to an array, for example: [50, 65, 75, 85, ...];\nvar averages = courses.reduce();\n')"
               ]
             },
             {
-              "description": "`map` over suspect data to find the score differences",
+              "description": "`reduce` to an array of suspect scores",
               "tests": [
                 "1/07/03-reduce"
+              ],
+              "actions": [
+                "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] }, ... ]\nvar suspectScores = courses.reduce();\n')"
               ]
             },
             {
-              "description": "`reduce` down to likely suspect names",
+              "description": "`map` over suspect data to find the `\"difference\"` from subtracting the students score from the average score. Add this to `suspectScores` using the key `difference`. The resulting array should look like this:\n```js\n[{\n  name: 'suspectName',\n  scores: [50, 65, 75, 85...],\n  difference: 15\n}]\n```",
               "tests": [
                 "1/07/04-reduce"
               ]
+            },
+            {
+              "description": "`reduce` down to any likely suspect names by filtering with the `isCheater` function",
+              "tests": [
+                "1/07/05-reduce"
+              ],
+              "actions": [
+                "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nvar likelySuspect = suspectScores.reduce().join(', ');\nconsole.log(likelySuspect);\n')"
+              ]
             }
           ]
-        },
-        {
-          "title": "Challenge 1",
-          "description": "coming soon"
-        },
-        {
-          "title": "Challenge 2",
-          "description": "coming soon"
         }
       ],
-      "description": "Using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data."
+      "description": "Using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data.\n\n<!-- @import('./tutorial/1/08/challenge-1') -->\n<!-- @import('./tutorial/1/09/challenge-2') -->"
     }
   ]
 }

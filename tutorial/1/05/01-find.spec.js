@@ -5,15 +5,15 @@ var path = require('path');
 var loadJS = require('../../common/loadJS').default;
 
 
-if (!global.data) {
-  global.data = JSON.parse(JSON.stringify(require('../../data/students2.json')));
+if (!global.students) {
+  global.students = JSON.parse(JSON.stringify(require('../../data/students2.json')));
 }
 loadJS('05-find.js');
 
 describe('var myClass', function() {
 
   it('should filter to "Web Security" class data', function () {
-    var result = global.data.filter(function (course) {
+    var result = global.students.filter(function (course) {
       return course.title === 'Web Security';
     });
     expect(myClass).to.deep.equal(result);

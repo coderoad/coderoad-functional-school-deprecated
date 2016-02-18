@@ -1,9 +1,9 @@
 ### Sort
 Array -> sorted Array
 
-Your grades are filtered down to your name and good scores - but wouldn't it be better if your best grades were shown at the top? Besides, your parents rarely read all the way down to the bottom.
+Your grades are filtered down to your name and good scores - but wouldn't it be better if your best grades were displayed first, at the top? Besides, your parents rarely read anything through.
 
-We can use the array method `sort` to arrange our data. Let's see how it works.
+You can use the array method `sort` to arrange your data. Let's see how it works.
 
 ```js
 ['c', 'b', 'a'].sort();
@@ -13,12 +13,19 @@ We can use the array method `sort` to arrange our data. Let's see how it works.
 //> [1, 2, 3]
 ```
 
-But what about sorting the scores inside of an object? We can write a custom `compareScore` function.
+But what about sorting scores inside of an object?
 
-A sort function takes two params, and compares the first to the second. It should return values saying where the second value should go:
+```js
+[{a: 3}, {a: 1}, {a: 2}].sort();
+//> [{a: 3}, {a: 1}, {a: 2}]
+```
 
-  * -1 : sort to a lower index
-  * 1 : sort to a higher index
+That didn't work. Instead, you can write a custom `compareScore` function.
+
+A sort function takes two params, and compares the first to the second. It should return values saying where the second value should go in the array:
+
+  * -1 : sort to a lower index (front)
+  * 1 : sort to a higher index (back)
   * 0 : stay the same
 
 Alright, now time to sort your best grades to the top.
@@ -44,7 +51,7 @@ function compareScore(a, b) {
 ```
 ))
 
-+ Set `mySortedGrades` to `myBest` data sorted with `compareScore`
++ Set `mySortedGrades` to `myBest` data sorted by `compareScore`
 @test('1/02/01-sort')
 @action(insert(
 ```

@@ -1,9 +1,11 @@
 ### Filter
 Array -> Array of items that match a condition
 
-You've hacked into the school's computer system, and just in time. The grades are in, aren't you're not too proud of your performance. But that's okay, you have a plan: you're going to create a fake report card.
+You've hacked into the school's computer system, and just in time. The grades are in, but you're not too proud of your performance. That's okay, you have a plan: you're going to create a fake report card.
 
-It would be great if you could `filter` the scores that your parents will see. A `filter` takes a matching condition function and only returns items that result in true. As an example, look at `isA` below:
+It would be great if you could `filter` the scores that your parents will see.
+
+`filter` takes a matching condition function and only returns items that result in true. As an example, look at `isA` below:
 
 ```
 function isA(x) {
@@ -12,7 +14,7 @@ function isA(x) {
 ```
 
 
-Like all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one.
+Like all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one. [Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
 
 ```
 var list = ['a', 'b'];

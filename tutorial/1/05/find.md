@@ -25,19 +25,21 @@ data.find(isEven);
 
 Find is great for performantly matching unique values in data, such as "id"'s, or in our case, names.
 
-+ `filter` down students in the class titled Web Security (`{ title: "Web Security" }`)
++ `filter` to students in the class titled "Web Security"
 @test('1/05/01-find')
 @action(open('05-find.js'))
 @action(set(
 ```
+// search for a student with a name
+// not matching students in the list
 var otherStudents = ["Albert Gonzalez", "Brian Kernaghan", "Danielle Bunten Berry", "Donald Knuth", "Grace Hopper", "Hack Kerr", "James Gosling", "Ken Thompson", "Kevin Mitnick", "Linus Torvalds", "Niklaus Wirth", "Rebecca Heineman", "Tim Berners-Lee", "Xiao Tian", "Ying Cracker"];
-
-var classTitle = "Web Security";
 ```
 ))
 @action(insert(
 ```
-var myClass
+
+// filter for students.title is "Web Security"
+var myClass = students
 ```
 ))
 
@@ -45,6 +47,8 @@ var myClass
 @test('1/05/02-find')
 @action(insert(
 ```
+
+// hint: use `indexOf` to find if an item is in the array
 var unknownStudent  
 ```
 ))

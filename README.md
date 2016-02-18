@@ -25,6 +25,9 @@ Using common built-in Javascript array methods such as `map` & `reduce`.
 
 By the end, you should have an understanding of how to use array methods to manipulate semi-complex data.
 
+<!-- @import('./tutorial/1/08/challenge-1') -->
+<!-- @import('./tutorial/1/09/challenge-2') -->
+
 ##### Filter
 
 Array -> Array of items that match a condition
@@ -48,11 +51,3 @@ Array -> find an item that matches a condition
 ##### reduce
 
 Array -> transform into anything
-
-##### Challenge 1
-
-coming soon
-
-##### Challenge 2
-
-coming soon
