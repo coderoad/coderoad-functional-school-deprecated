@@ -15,9 +15,9 @@ loadJS('04-forEach.js');
 
 describe('01 console.log', function() {
 
-  it('should be called 10 times', function () {
-    expect(spy).to.have.been.called.with('A  95  Relational Databases');
-    expect(spy).to.have.been.called.with('C  77  Networks');
-  });
+    it('should be called 10 times', function() {
+      expect(spy).to.have.been.called.with('A  95  Relational Databases');
+      expect(spy).to.have.been.called.with('C  77  Networks');
+    });
 
 });
