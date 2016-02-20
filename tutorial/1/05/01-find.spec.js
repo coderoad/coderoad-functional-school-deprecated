@@ -5,7 +5,7 @@ var path = require('path');
 var loadJS = require('./common/loadJS').default;
 
 if (!global.students) {
-  global.students = JSON.parse(JSON.stringify(require('data/students2.json')));
+  global.students = JSON.parse(JSON.stringify(require('./data/students2.json')));
 }
 loadJS('05-find.js');
 

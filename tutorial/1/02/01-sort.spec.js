@@ -18,16 +18,7 @@ describe('01 function compareScore', function () {
     expect(compareScore.length).to.equal(2);
   });
 
-  it('doesn\'t return 1 when b\'s score is less than a\'s', function() {
-    expect(compareScore(5, 3)).to.equal(1);
+  it('doesn\'t return 1 when b\'s score is more than a\'s', function() {
+    expect(compareScore({score: 3}, {score: 5})).to.equal(1);
   });
-
-  it('doesn\'t return -1 when b\'s score is more than a\'s', function() {
-    expect(compareScore(3, 5)).to.equal(-1);
-  });
-
-  it('doesn\'t return 0 when b\'s score equals a\'s', function() {
-    expect(compareScore(3, 3)).to.equal(0);
-  });
-
 });

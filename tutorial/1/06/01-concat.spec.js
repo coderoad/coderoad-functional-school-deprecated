@@ -4,10 +4,10 @@ var chai = require('chai');
 var spies = require('chai-spies');
 var expect = chai.expect;
 chai.use(spies);
-var loadJS = require('common/loadJS').default;
+var loadJS = require('./common/loadJS').default;
 
 if (!global.courses) {
-  global.courses = JSON.parse(JSON.stringify(require('data/courses2.json')));
+  global.courses = JSON.parse(JSON.stringify(require('./data/courses2.json')));
 }
 
 var spyFlat = chai.spy.on(Array, 'flatten');

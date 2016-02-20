@@ -30,29 +30,36 @@ A sort function takes two params, and compares the first to the second. It shoul
 
 Alright, now time to sort your best grades to the top.
 
-+ Write a sort condition function called `compareScore` that can sort your data by score.
+First you'll need to write a sort condition function called `compareScore`.
+
++ `compareScore` should return 1 if the first score is less than the second
 @test('1/02/01-sort')
 @action(open('02-sort.js'))
 @action(set(
 ```
 function compareScore(a, b) {
   switch (true) {
-    case b < a:
-    // it should return 1 if b's score is less than a's
-      return;
-    case b > a:
-    // it should return -1 if b's score is more than a's
-      return;
+    case b.score > a.score:
+      // it should return 1 if b's score is more than a's
+      return
+    case 'set condition here':
+      // it should return -1 if b's score is less than a's
+
     default:
-    // it should return 0 if b has the same score as a
-      return;
+      // it should return 0 if b and a have the same score
+
   }
 }
 ```
 ))
++ `compareScore` should return -1 if the first score is more than the second
+@test('1/02/02-sort')
 
-+ Set `mySortedGrades` to `myBest` data sorted by `compareScore`
-@test('1/02/01-sort')
++ `compareScore` should return 0 if the first score is the same as the second
+@test('1/02/03-sort')
+
++ Set `mySorted` to the result of `myBest` sorted by `compareScore`
+@test('1/02/04-sort')
 @action(insert(
 ```
 // use the compare function to sort myBest

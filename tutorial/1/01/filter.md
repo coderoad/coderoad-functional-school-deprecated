@@ -87,7 +87,6 @@ function isAda() {
 ```
 // call filter condition here
 var myData = data.filter();
-
 ```
 ))
 
@@ -95,7 +94,9 @@ var myData = data.filter();
 @test('1/01/03-filter')
 @action(insert(
 ```
-// return true if student "grade" is not a "D" or "F"
+
+
+// return true if student.grade is not a "D" or "F"
 function isGoodGrade(student) {
 
 }

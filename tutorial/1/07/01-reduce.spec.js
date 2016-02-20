@@ -3,7 +3,11 @@ var chai = require('chai');
 var expect = chai.expect;
 var spies = require('chai-spies');
 chai.use(spies);
-var loadJS = require('common/loadJS').default;
+var loadJS = require('./common/loadJS').default;
+
+if (!global.courses) {
+  global.courses = JSON.parse(JSON.stringify(require('./data/courses2.json')));
+}
 
 var spy = chai.spy.on(Array, 'reduce');
 loadJS('07-reduce.js');

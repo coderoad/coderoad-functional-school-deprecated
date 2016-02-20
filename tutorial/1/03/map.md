@@ -7,7 +7,7 @@ Wouldn't it be simpler if you could just change your grades? You can use the arr
 
 As an example, let's look at how you would increment each number in an array.
 
-```
+```js
 function addOne(num) {
   return num + 1;
 }
@@ -23,18 +23,32 @@ function addTwo(num) {
 //> [4, 5, 6]
 ```
 
-`map` is powerful.
+`map` can change data, but it can also restrict the data you want to work with. See the example below to see another way scores could be sorted.
+
+```js
+myBest
+  .map(function(student) {
+    return student.score;
+  })
+  .sort()
+  .reverse()
+//> [93, 91, 88, 88, 82, 81, 73]
+```
+
+In this example, `map` transformed an object with keys of 'title', 'instructor', 'name', 'score' and 'grade', to an array of scores only. Data wasn't changed, but it was limited to a smaller subset of scores.
+
+`map` is powerful. Let's see what you can do with it.
 
 Those D & F grades would look a lot better if they suddenly became A's.
 
-Let's go back to before we filtered out the bad grades, and instead change them.
+Let's go back to before we filtered out the bad grades, and instead change the grades to A's.
 
-+ Make a function `changeGrades` that takes student data and changes any "D"s and "F"s to "A"s.
++ Make a function `changeGrades` that takes student data and changes all grades to "A"s.
 @test('1/03/01-map')
 @action(open('03-map.js'))
 @action(set(
 ```
-// change any `student.grade`'s that are "D"'s or "F"'s into A's
+// change any `student.grade`'s into an 'A'
 function changeGrades(student) {
 
 }
@@ -42,7 +56,7 @@ function changeGrades(student) {
 ))
 
 
-+ Map over the student data with the `changeGrades` function
++ Map over the `myData` with the `changeGrades` function. Set `myChanged` to the result.
 @test('1/03/02-map')
 @action(insert(
 ```
@@ -51,7 +65,9 @@ var myChanged = myData.map();
 ```
 ))
 
-+ Hold up. An A in "Data Science" class looks way to suspicious. Your parents might catch on to your cheating. Instead, let's go back to myData and increment each score by 12 points.
++ Hold up. An A in "Data Science" class looks way to suspicious. Your parents might catch on to your cheating.
+
+Let's go back to `myData` and instead increment each score by 12 points.
 @test('1/03/03-map')
 @action(insert(
 ```
@@ -60,7 +76,7 @@ var mySlightlyChanged = myData.map();
 ```
 ))
 
-+ Wait. Now you're getting 105 in "Algorithm Design" class. Set `mySlightlyFixed` to your scores with a maximum score of 95. That should be less suspicious.
++ Wait. Now you're getting 105 in "Algorithm Design" class. Set `mySlightlyFixed` to have a maximum score of 95. That should be less suspicious.
 @test('1/03/04-map')
 @action(insert(
 ```
@@ -73,6 +89,7 @@ var mySlightlyFixed = mySlightlyChanged.map();
 @test('1/03/05-map')
 @action(insert(
 ```
+
 function getGrade(score) {
   switch (true) {
     case (score >= 90):
@@ -89,5 +106,16 @@ function getGrade(score) {
 }
 // set `myFixed` to update grades to the new scores
 var myFixed = mySlightlyChanged.map();
+```
+))
+
++ Check to make sure everything is working. Set `scoresAndGrades` to an array of scores and grades only.
+@test('1/03/06-map')
+@action(insert(
+```
+
+// set `scoresAndGrades` to an array of scores and grades
+// it should return an array of objects like this: {score: 75, grade: 'C'}
+var scoresAndGrades = myFixed;
 ```
 ))
