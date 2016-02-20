@@ -1,14 +1,4 @@
-"use strict";
-var chai = require('chai');
-var expect = chai.expect;
-var spies = require('chai-spies');
-chai.use(spies);
-var path = require('path');
-var loadJS = require('../../common/loadJS').default;
-
-loadJS('07-reduce.js');
-
-describe('var suspectScores', function() {
+describe('04 var suspectScores', function() {
 
   it('should map over suspect data to find the score differences', function() {
     var suspectData = [{

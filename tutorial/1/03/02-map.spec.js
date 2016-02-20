@@ -1,11 +1,6 @@
 var expect = require('chai').expect;
-var path = require('path');
-var loadJS = require('../../common/loadJS').default;
-if (!global.myData) {
-  global.myData = JSON.parse(JSON.stringify(require('./myData.json')));
-}
 
-describe('var myChanged', function() {
+describe('02 var myChanged', function() {
   it('doesn\'t exist', function() {
     expect(myChanged).to.not.be.undefined;
   });

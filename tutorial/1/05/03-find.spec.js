@@ -1,14 +1,4 @@
-"use strict";
-var expect = require('chai').expect;
-var path = require('path');
-var loadJS = require('../../common/loadJS').default;
-
-if (!global.data) {
-  global.data = JSON.parse(JSON.stringify(require('../../data/students2.json')));
-}
-loadJS('05-find.js');
-
-describe('var unknownStudentList', function() {
+describe('03 var unknownStudentList', function() {
 
   it('should find 10 students', function() {
     expect(unknownStudentList).to.have.length(10);

@@ -1,7 +1,7 @@
 "use strict";
 var expect = require('chai').expect;
 
-describe('log', function() {
+describe('04 log', function() {
 
   it('should pass', function () {
     expect(true).to.be.true;

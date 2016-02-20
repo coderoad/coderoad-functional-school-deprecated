@@ -1,12 +1,11 @@
 var expect = require('chai').expect;
-var path = require('path');
-var loadJS = require('../../common/loadJS').default;
+var loadJS = require('./common/loadJS').default;
 if (!global.myBest) {
-  global.myBest = JSON.parse(JSON.stringify(require('./myBest.json')));
+  global.myBest = JSON.parse(JSON.stringify(require('./1/02/myBest.json')));
 }
 loadJS('02-sort.js');
 
-describe('function compareScore', function () {
+describe('01 function compareScore', function () {
   it('doesn\'t exist', function() {
     expect(compareScore).to.not.be.undefined;
   });

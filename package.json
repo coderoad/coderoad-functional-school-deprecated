@@ -27,7 +27,7 @@
     "chai-spies": "0.7.1",
     "lodash": "4.3.0",
     "mocha": "2.4.5",
-    "mocha-coderoad": "^0.2.1"
+    "mocha-coderoad": "^0.3.0"
   },
   "license": "MIT",
   "config": {

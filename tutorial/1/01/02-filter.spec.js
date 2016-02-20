@@ -1,13 +1,7 @@
 "use strict";
 var expect = require('chai').expect;
-var path = require('path');
-var loadJS = require('../../common/loadJS').default;
-if (!global.data) {
-  global.data = JSON.parse(JSON.stringify(require('../../data/students.json')));
-}
-loadJS('01-filter.js');
 
-describe('var myData', function() {
+describe('02 var myData', function() {
 
   it('doesn\'t exist', function() {
     expect(myData).to.not.be.undefined;

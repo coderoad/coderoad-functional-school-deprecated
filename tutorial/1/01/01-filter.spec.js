@@ -1,15 +1,14 @@
 "use strict";
 var expect = require('chai').expect;
-var path = require('path');
+var loadJS = require('./common/loadJS').default;
 
 if (!global.data) {
-  global.data = JSON.parse(JSON.stringify(require('../../data/students.json')));
+  global.data = JSON.parse(JSON.stringify(require('./data/students.json')));
 }
 
-var loadJS = require('../../common/loadJS').default;
 loadJS('01-filter.js');
 
-describe('function isAda', function() {
+describe('01 function isAda', function() {
 
   it('doesn\'t exist', function() {
     expect(isAda).to.not.be.undefined;

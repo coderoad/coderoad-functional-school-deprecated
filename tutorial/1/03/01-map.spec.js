@@ -1,11 +1,11 @@
 var expect = require('chai').expect;
-var path = require('path');
-var loadJS = require('../../common/loadJS').default;
+var loadJS = require('./common/loadJS').default;
 if (!global.myData) {
-  global.myData = JSON.parse(JSON.stringify(require('./myData.json')));
+  global.myData = JSON.parse(JSON.stringify(require('./1/03/myData.json')));
 }
+loadJS('03-map.js')
 
-describe('function changeGrades', function() {
+describe('01 function changeGrades', function() {
 
   it('doesn\'t exist', function() {
     expect(changeGrades).to.not.be.undefined;

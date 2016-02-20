@@ -1,12 +1,7 @@
+'use strict';
 var expect = require('chai').expect;
-var path = require('path');
-var loadJS = require('../../common/loadJS').default;
-if (!global.myBest) {
-  global.myBest = JSON.parse(JSON.stringify(require('./myBest.json')));
-}
-loadJS('02-sort.js');
 
-describe('var mySorted', function() {
+describe('02 var mySorted', function() {
 
   it('doesn\'t exist', function() {
     expect(mySorted).to.not.be.undefined;
