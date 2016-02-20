@@ -1,5 +1,39 @@
 var expect = require('chai').expect;
 
+describe('04 function capScores', function() {
+
+  it('doesn\'t exist', function() {
+    expect(capScores).to.not.be.undefined;
+  });
+
+  it('should be a function', function() {
+    expect(capScores).to.be.a('function');
+  });
+
+  it('should take a parameter', function() {
+    expect(capScores).to.have.length(1);
+  });
+
+  it('shouldn\'t change scores under 100', function() {
+    var test = {
+      score: 99
+    };
+    expect(capScores(test)).to.deep.equal({
+      score: 99
+    });
+  });
+
+  it('should change scores over 100 to 95', function() {
+    var test = {
+      score: 101
+    };
+    expect(capScores(test)).to.deep.equal({
+      score: 95
+    });
+  });
+
+});
+
 describe('04 var mySlightlyFixed', function() {
 
   it('doesn\'t exist', function() {

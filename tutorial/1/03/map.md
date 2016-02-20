@@ -3,7 +3,9 @@ Array -> run a function over each item -> Array
 
 You've filtered and sorted our data, but neither of those actually change the data.
 
-Wouldn't it be simpler if you could just change your grades? You can use the array method `map` to run a function that returns changes to your data.
+Wouldn't it be simpler if you could just change your grades?
+
+You can use the array method `map` to run a function that returns changes to your data.
 
 As an example, let's look at how you would increment each number in an array.
 
@@ -12,18 +14,29 @@ function addOne(num) {
   return num + 1;
 }
 
-function addTwo(num) {
-  return num + 2;
-}
-
 [1, 2, 3].map(addOne);
 //> [2, 3, 4]
 
-[1, 2, 3].map(addOne).map(addTwo);
-//> [4, 5, 6]
+function addToVal(obj) {
+  obj.val += 1;
+  return obj;
+}
+[{ val: 1}].map(addToVal);
+//> [{ val: 2 }]
 ```
 
-`map` can change data, but it can also restrict the data you want to work with. See the example below to see another way scores could be sorted.
+`map` can change data, and it can also alter structure of the data you're working with.
+
+```js
+function makeObject(num) {
+  return { val: num };
+}
+
+[1, 2].map(makeObject);
+//> [{ val: 1 }, { val: 2 }]
+```
+
+Similarly, `map` can also restrict the data you want to work with.  See the example below to see another way scores could be sorted.
 
 ```js
 myBest
@@ -35,7 +48,7 @@ myBest
 //> [93, 91, 88, 88, 82, 81, 73]
 ```
 
-In this example, `map` transformed an object with keys of 'title', 'instructor', 'name', 'score' and 'grade', to an array of scores only. Data wasn't changed, but it was limited to a smaller subset of scores.
+In this example, `map` transformed an object with keys of 'title', 'instructor', 'name', 'score' and 'grade', to an array of just scores. Values weren't changed, but rather limited to a smaller subset of scores.
 
 `map` is powerful. Let's see what you can do with it.
 
@@ -49,7 +62,7 @@ Let's go back to before we filtered out the bad grades, and instead change the g
 @action(set(
 ```
 // change any `student.grade`'s into an 'A'
-function changeGrades(student) {
+function changeGrades() {
 
 }
 ```
@@ -71,8 +84,13 @@ Let's go back to `myData` and instead increment each score by 12 points.
 @test('1/03/03-map')
 @action(insert(
 ```
-// map over `mySlightlyChanged` with a function `increaseGrades` to increment each score by 12
-var mySlightlyChanged = myData.map();
+
+function increaseScores() {
+
+}
+
+// map over `mySlightlyChanged` with a function `increaseScores` to increment each score by 12
+var mySlightlyChanged = myData;
 ```
 ))
 
@@ -80,8 +98,13 @@ var mySlightlyChanged = myData.map();
 @test('1/03/04-map')
 @action(insert(
 ```
+
+function capScores() {
+
+}
+
 // set `mySlightlyFixed` to change any scores over 100 to a score of 95
-var mySlightlyFixed = mySlightlyChanged.map();
+var mySlightlyFixed = mySlightlyChanged;
 ```
 ))
 
@@ -104,8 +127,9 @@ function getGrade(score) {
       return "F";
   }
 }
+
 // set `myFixed` to update grades to the new scores
-var myFixed = mySlightlyChanged.map();
+var myFixed = mySlightlyChanged;
 ```
 ))
 

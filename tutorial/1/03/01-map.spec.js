@@ -15,11 +15,21 @@ describe('01 function changeGrades', function() {
     expect(changeGrades).to.be.a('function');
   });
 
+  it('should take a parameter', function() {
+    expect(changeGrades).to.have.length(1);
+  });
+
+  it('should try changing `student.grade` first before returning `student`', function () {
+    var regex = /return [a-zA-Z]+\.grade/;
+    var func = changeGrades.toString();
+    expect(func.match(regex)).to.be.null;
+  });
+
   it('should change grades from a D to an A', function() {
     var test = {
       grade: 'D'
     };
-    expect(arrayOfGrades).to.deep.equal({
+    expect(changeGrades(test)).to.deep.equal({
       grade: 'A'
     });
   });
@@ -28,7 +38,7 @@ describe('01 function changeGrades', function() {
     var test = {
       grade: 'F'
     };
-    expect(arrayOfGrades).to.deep.equal({
+    expect(changeGrades(test)).to.deep.equal({
       grade: 'A'
     });
   });
@@ -37,7 +47,7 @@ describe('01 function changeGrades', function() {
     var test = {
       grade: 'B'
     };
-    expect(arrayOfGrades).to.deep.equal({
+    expect(changeGrades(test)).to.deep.equal({
       grade: 'A'
     });
   });

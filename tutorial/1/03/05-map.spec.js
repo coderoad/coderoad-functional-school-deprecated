@@ -1,5 +1,20 @@
 var expect = require('chai').expect;
 
+describe('05 function getGrade', function() {
+
+  it('doesn\'t exist', function() {
+    expect(getGrade).to.not.be.undefined;
+  });
+
+  it('should be a function', function() {
+    expect(getGrade).to.be.a('function');
+  });
+
+  it('should take a parameter', function() {
+    expect(getGrade).to.have.length(1);
+  });
+});
+
 describe('05 var myFixed', function() {
 
   it('doesn\'t exist', function() {
