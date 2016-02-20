@@ -102,7 +102,7 @@
               ],
               "actions": [
                 "open('03-map.js')",
-                "set('// change any `student.grade`'s into an 'A'\nfunction changeGrades() {\n\n}\n')"
+                "set('// change any `student.grade`'s into an 'A'\nfunction changeGrade() {\n\n}\n')"
               ]
             },
             {
@@ -120,16 +120,13 @@
                 "1/03/03-map"
               ],
               "actions": [
-                "insert('\nfunction increaseScores() {\n\n}\n\n// map over `mySlightlyChanged` with a function `increaseScores` to increment each score by 12\nvar mySlightlyChanged = myData;\n')"
+                "insert('\nfunction increaseScore() {\n\n}\n\n// map over `mySlightlyChanged` with a function `increaseScore` to increment each score by 12\nvar mySlightlyChanged = myData;\n')"
               ]
             },
             {
-              "description": "Wait. Now you're getting 105 in \"Algorithm Design\" class. Set `mySlightlyFixed` to have a maximum score of 95. That should be less suspicious.",
+              "description": "Wait. Now you're getting 105 in \"Algorithm Design\" class. Fix `increaseScores` so that the maximum score is 95. That should be less suspicious.",
               "tests": [
                 "1/03/04-map"
-              ],
-              "actions": [
-                "insert('\nfunction capScores() {\n\n}\n\n// set `mySlightlyFixed` to change any scores over 100 to a score of 95\nvar mySlightlyFixed = mySlightlyChanged;\n')"
               ]
             },
             {
@@ -138,7 +135,7 @@
                 "1/03/05-map"
               ],
               "actions": [
-                "insert('\nfunction getGrade(score) {\n  switch (true) {\n    case (score >= 90):\n      return \"A\";\n    case (score >= 80):\n      return \"B\";\n    case (score >= 70):\n      return \"C\";\n    case (score >= 60):\n      return \"D\";\n    default:\n      return \"F\";\n  }\n}\n\n// set `myFixed` to update grades to the new scores\nvar myFixed = mySlightlyChanged;\n')"
+                "insert('\n// change `getGrade` to accept an object\n// and return an object\nfunction getGrade(score) {\n  switch (true) {\n    case (score >= 90):\n      return \"A\";\n    case (score >= 80):\n      return \"B\";\n    case (score >= 70):\n      return \"C\";\n    case (score >= 60):\n      return \"D\";\n    default:\n      return \"F\";\n  }\n}\n\n// map `myFixed` to update grades to the new scores\nvar myFixed = mySlightlyChanged;\n')"
               ]
             },
             {
@@ -195,7 +192,7 @@
         },
         {
           "title": "find",
-          "description": "Array -> find an item that matches a condition",
+          "description": "Array -> first element that matches a condition",
           "explanation": "Somehow your name has disappeared from the computer system. We'll have to `find` a way to get it back.\n\nYou quickly put together a list of other students in class. If someone changed your name, it'll be the name that is not in that list.\n\n`find` works similar to `filter`, but returns only the first match.\n\n```\nvar data = [1, 2, 3, 4, 5, 6];\n\nfunction isEven(num) {\n  return num % 2 === 0;\n}\n\n// returns all matching data to a condition\ndata.filter(isEven);\n//> [2, 4, 6]\n\n// returns the first match\ndata.find(isEven);\n//> [2]\n```\n\nFind is great for performantly matching unique values in data, such as \"id\"'s, or in our case, names.",
           "tasks": [
             {
@@ -300,7 +297,7 @@
         },
         {
           "title": "reduce",
-          "description": "Array -> transform into anything",
+          "description": "Array -> anything",
           "explanation": "```js\nfunction add(prev, curr) {\n    console.log(`add(${prev}, ${curr}) -> ${prev + curr}`)\n    return prev + curr;\n}\n\n[1, 5, 10].reduce(add, 100); // initial value\n\n// add(100, 1) -> 101\n// add(101, 5) -> 106\n// add(106, 10) -> 116\n//> 116\n```",
           "tasks": [
             {

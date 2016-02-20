@@ -46,8 +46,8 @@ Array -> run a function for each item
 
 ##### find
 
-Array -> find an item that matches a condition
+Array -> first element that matches a condition
 
 ##### reduce
 
-Array -> transform into anything
+Array -> anything

@@ -1,5 +1,5 @@
 ### reduce
-Array -> transform into anything
+Array -> anything
 
 ```js
 function add(prev, curr) {

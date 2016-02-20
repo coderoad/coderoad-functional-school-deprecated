@@ -5,23 +5,23 @@ if (!global.myData) {
 }
 loadJS('03-map.js')
 
-describe('01 function changeGrades', function() {
+describe('01 function changeGrade', function() {
 
   it('doesn\'t exist', function() {
-    expect(changeGrades).to.not.be.undefined;
+    expect(changeGrade).to.not.be.undefined;
   });
 
   it('isn\'t a function', function() {
-    expect(changeGrades).to.be.a('function');
+    expect(changeGrade).to.be.a('function');
   });
 
   it('should take a parameter', function() {
-    expect(changeGrades).to.have.length(1);
+    expect(changeGrade).to.have.length(1);
   });
 
   it('should try changing `student.grade` first before returning `student`', function () {
     var regex = /return [a-zA-Z]+\.grade/;
-    var func = changeGrades.toString();
+    var func = changeGrade.toString();
     expect(func.match(regex)).to.be.null;
   });
 
@@ -29,7 +29,7 @@ describe('01 function changeGrades', function() {
     var test = {
       grade: 'D'
     };
-    expect(changeGrades(test)).to.deep.equal({
+    expect(changeGrade(test)).to.deep.equal({
       grade: 'A'
     });
   });
@@ -38,7 +38,7 @@ describe('01 function changeGrades', function() {
     var test = {
       grade: 'F'
     };
-    expect(changeGrades(test)).to.deep.equal({
+    expect(changeGrade(test)).to.deep.equal({
       grade: 'A'
     });
   });
@@ -47,7 +47,7 @@ describe('01 function changeGrades', function() {
     var test = {
       grade: 'B'
     };
-    expect(changeGrades(test)).to.deep.equal({
+    expect(changeGrade(test)).to.deep.equal({
       grade: 'A'
     });
   });

@@ -1,5 +1,5 @@
 ### find
-Array -> find an item that matches a condition
+Array -> first element that matches a condition
 
 Somehow your name has disappeared from the computer system. We'll have to `find` a way to get it back.
 

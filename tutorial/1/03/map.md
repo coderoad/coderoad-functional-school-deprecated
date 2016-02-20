@@ -62,7 +62,7 @@ Let's go back to before we filtered out the bad grades, and instead change the g
 @action(set(
 ```
 // change any `student.grade`'s into an 'A'
-function changeGrades() {
+function changeGrade() {
 
 }
 ```
@@ -85,34 +85,25 @@ Let's go back to `myData` and instead increment each score by 12 points.
 @action(insert(
 ```
 
-function increaseScores() {
+function increaseScore() {
 
 }
 
-// map over `mySlightlyChanged` with a function `increaseScores` to increment each score by 12
+// map over `mySlightlyChanged` with a function `increaseScore` to increment each score by 12
 var mySlightlyChanged = myData;
 ```
 ))
 
-+ Wait. Now you're getting 105 in "Algorithm Design" class. Set `mySlightlyFixed` to have a maximum score of 95. That should be less suspicious.
++ Wait. Now you're getting 105 in "Algorithm Design" class. Fix `increaseScores` so that the maximum score is 95. That should be less suspicious.
 @test('1/03/04-map')
-@action(insert(
-```
-
-function capScores() {
-
-}
-
-// set `mySlightlyFixed` to change any scores over 100 to a score of 95
-var mySlightlyFixed = mySlightlyChanged;
-```
-))
 
 + One more problem. Now the scores don't match the grades. you have 95 score in "3D Computer Graphics", but only a "B" grade. Set `myFixed` as the result of using the `getGrade` function to set grades according to their new scores.
 @test('1/03/05-map')
 @action(insert(
 ```
 
+// change `getGrade` to accept an object
+// and return an object
 function getGrade(score) {
   switch (true) {
     case (score >= 90):
@@ -128,7 +119,7 @@ function getGrade(score) {
   }
 }
 
-// set `myFixed` to update grades to the new scores
+// map `myFixed` to update grades to the new scores
 var myFixed = mySlightlyChanged;
 ```
 ))
