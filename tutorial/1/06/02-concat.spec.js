@@ -1,8 +1,8 @@
 describe('02 var doubleArray', function() {
 
-  it('should call map twice', function() {
-    expect(spyMap).to.have.been.called.twice;
-  });
+  // it('should call map twice', function() {
+  //   expect(spy).to.have.been.called.at.least(2);
+  // });
 
   it('should create an array of arrays', function() {
     var result = courses.map(function(course) {

@@ -38,9 +38,9 @@ To be safe, let's now work on the original data set. Notice how it is structured
 ]
 ```
 
-In this data set, there is an array of students within an array of courses. So how can we recreate our original array of students from the courses? We can use `concat`.
+In this data set, there is an array of students within an array of courses. So how can we recreate our original array of students from the courses?
 
-Weird things happen when you start combining arrays. `concat` brings sanity.
+Weird things happen when you start combining arrays. We can use `concat` to bring sanity.
 
 ```js
 [1, 2] + [3, 4];
@@ -56,7 +56,11 @@ Weird things happen when you start combining arrays. `concat` brings sanity.
 //> [1, 2, 3, 4]
 ```
 
-Unfortunately, Javascript is missing a built in array method to concat multiple arrays together: let's call it `flatten` (often called `concatAll`). `flatten` should loop over an array and concat each element.
+Unfortunately, Javascript is missing a built in array method to concat multiple arrays together: let's call it `flatten` (sometimes called `concatAll`).
+
+`flatten` should loop over an array and `concat` each element.
+
+Let's look at an abstraction of what we need to do:
 
 ```js
 var start = [{
@@ -89,69 +93,36 @@ Back to business.
 
 We have a suspect in mind: a classmate named "Hack Kerr". He's a nice guy, and he's always been friendly to you - but there's something suspicious about him: his name.
 
-First let's recreate our student array of data from the course data.
+We'll test out flatten, then re-create our student array of data from the original course data.
 
 + First, test out `flatten` on the `flattenedArray`
 @test('1/06/01-concat')
-@open('06-concat.js')
-@hint(
-```js
-var start = [{
-  a: 1,
-  c: [
-    { b: 1 }
-  ]
-}, {
-  a: 2,
-  c: [
-    { b: 2 }, { b: 3 }
-  ]
-}];
-
-var middle = start.map(function(outer) {
-  return outer.c.map(function(inner) {
-    return {
-      a: outer.a,
-      b: inner.b
-    };
-  });
-});
-//> [ [{ a: 1, b: 1 }], [{a: 2, b: 2}, {a: 2, b: 3}] ]
-```
-)
-@hint(Flatten the resulting arrays)
-@hint(
-```js
-var end = pre.flatten();
-//> [{a: 1, b: 1}, {a: 2, b: 2}, {a: 2, b: 3}]
-```
-)
+@action(open('06-concat.js'))
 @action(set(
 ```
 // Array.prototype can be used to create new Array methods
 Array.prototype.flatten = function() {
-  // more on `reduce` coming up next
   return this.reduce(function(a, b) {
     return a.concat(b);
   }, []);
-});
-```    
-)
+};
+```
+))
 @action(insert(
 ```
 
-// use `flatten` on `numberedList` to set flattenedArray to [1, 2, 3, 4]
-var numberedList = [[1, 2], [3, 4]]
-var flattenedArray;
+var numberedList = [[1, 2], [3, 4]];
+
+// use `flatten` on `numberedList`
+var flattenedArray = numberedList;
 ```  
 ))
 
-+ Map over the course data array, and map over the student array inside of the course data. Set `doubleArray` to return an array of array of objects that looks like this:
-
++ `flatten` works as promised. Now `map` over the course data array, and `map` over the student array inside of the course data. Set `doubleArray` to return an array of array of objects that looks like this:
 ```js
-  {
+ {
   "title": "Relational Databases",
-  "instructor": "Sean Quentin Lewis",
+  "instructor": "SQ Lewis",
   "name": "Rebecca Heineman",
   "score": 71,
   "grade": "C"
@@ -162,6 +133,9 @@ var flattenedArray;
 ```
 
 // map over doubleArray twice
+// return an object with:
+//    course.title, course.instructor
+//    student.name, student.score, student.grade
 var doubleArray = courses;
 ```
 ))
@@ -171,9 +145,9 @@ var doubleArray = courses;
 @action(insert(
 ```
 
-// flatten doubleArray
+// `flatten` doubleArray
 var students = doubleArray;
-```  
+```
 ))
 
 + Use the `suspects` array to `filter` to only "Hack Kerr"'s data
@@ -181,11 +155,11 @@ var students = doubleArray;
 @action(insert(
 ```
 
-var suspects = ["Hack Kerr"];
 
+var suspects = ["Hack Kerr"];
 // filter to data matching `suspects`
 var suspectData = students;
-```  
+```
 ))
 
 + You just thought of two more suspects!  `concat` the new suspects array onto the `suspects` list.
