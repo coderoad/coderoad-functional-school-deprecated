@@ -5,11 +5,17 @@ describe('04 var suspectData', function() {
   });
 
   it('should filter if the `indexOf` the suspects name is greater than -1', function() {
-    if (suspectData.length === 10) {
-      suspectData.forEach(function(suspect) {
-        expect(suspect.name).to.equal('Hack Kerr');
-      });
-    }
+    var hackKerrData = suspectData.filter(function(suspect) {
+      return suspect.name === 'Hack Kerr';
+    });
+    expect(hackKerrData).to.have.length(10);
+    expect(hackKerrData[0]).to.deep.equal({
+      title: 'Relational Databases',
+      instructor: 'Sean Quentin Lewis',
+      name: 'Hack Kerr',
+      score: 85,
+      grade: 'F'
+    });
   });
-
+  
 });

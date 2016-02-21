@@ -267,12 +267,12 @@
               ]
             },
             {
-              "description": "`flatten` works as promised. Now `map` over the course data array, and `map` over the student array inside of the course data. Set `doubleArray` to return an array of array of objects that looks like this:\n```js\n {\n  \"title\": \"Relational Databases\",\n  \"instructor\": \"SQ Lewis\",\n  \"name\": \"Rebecca Heineman\",\n  \"score\": 71,\n  \"grade\": \"C\"\n  }\n```",
+              "description": "Now `map` over the courses array, and `map` over the students array inside of it.\n\nReturn the fields:\n\n  * title\n  * instructor\n  * name\n  * grade\n  * score",
               "tests": [
                 "1/06/02-concat"
               ],
               "actions": [
-                "insert('\n// map over doubleArray twice\n// return an object with:\n//    course.title, course.instructor\n//    student.name, student.score, student.grade\nvar doubleArray = courses;\n')"
+                "insert('// map over courses then\n// map over students inside of courses\n// return \"title\", \"instructor\",\n// \"name\", \"grade\", \"score\" fields\nvar doubleArray = courses;\n\n')"
               ]
             },
             {
@@ -281,7 +281,7 @@
                 "1/06/03-concat"
               ],
               "actions": [
-                "insert('\n// `flatten` doubleArray\nvar students = doubleArray;\n')"
+                "insert('// `flatten` doubleArray\nvar students = doubleArray;\n')"
               ]
             },
             {
@@ -290,7 +290,7 @@
                 "1/06/04-concat"
               ],
               "actions": [
-                "insert('\n\nvar suspects = [\"Hack Kerr\"];\n// filter to data matching `suspects`\nvar suspectData = students;\n')"
+                "insert('\nvar suspects = [\"Hack Kerr\"];\n// filter to data matching `suspects`\nvar suspectData = students;\n')"
               ]
             },
             {

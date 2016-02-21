@@ -108,6 +108,7 @@ Array.prototype.flatten = function() {
 };
 ```
 ))
+
 @action(insert(
 ```
 
@@ -118,25 +119,26 @@ var flattenedArray = numberedList;
 ```  
 ))
 
-+ `flatten` works as promised. Now `map` over the course data array, and `map` over the student array inside of the course data. Set `doubleArray` to return an array of array of objects that looks like this:
-```js
- {
-  "title": "Relational Databases",
-  "instructor": "SQ Lewis",
-  "name": "Rebecca Heineman",
-  "score": 71,
-  "grade": "C"
-  }
-```
+
++ Now `map` over the courses array, and `map` over the students array inside of it.
+
+Return the fields:
+
+  * title
+  * instructor
+  * name
+  * grade
+  * score
+
 @test('1/06/02-concat')
 @action(insert(
 ```
-
-// map over doubleArray twice
-// return an object with:
-//    course.title, course.instructor
-//    student.name, student.score, student.grade
+// map over courses then
+// map over students inside of courses
+// return "title", "instructor",
+// "name", "grade", "score" fields
 var doubleArray = courses;
+
 ```
 ))
 
@@ -144,7 +146,6 @@ var doubleArray = courses;
 @test('1/06/03-concat')
 @action(insert(
 ```
-
 // `flatten` doubleArray
 var students = doubleArray;
 ```
@@ -154,7 +155,6 @@ var students = doubleArray;
 @test('1/06/04-concat')
 @action(insert(
 ```
-
 
 var suspects = ["Hack Kerr"];
 // filter to data matching `suspects`

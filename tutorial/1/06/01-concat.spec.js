@@ -1,6 +1,5 @@
 'use strict';
-var chai = require('chai');
-var expect = chai.expect;
+var expect = require('chai').expect;
 var loadJS = require('./common/loadJS').default;
 
 if (!global.courses) {
@@ -11,13 +10,13 @@ loadJS('06-concat.js');
 
 describe('01 var flattenedArray', function() {
 
-  it('should flatten the array', function() {
+  it('should flatten the array', function () {
     expect(flattenedArray).to.have.length(4);
+  });
+
+  it('should flatten the array', function() {
     expect(flattenedArray).to.deep.equal([1, 2, 3, 4]);
   });
 
-  // it('should use the `flatten` Array method', function() {
-  //   expect(spy).to.have.been.called.with([[1, 2], [3, 4]]);
-  // });
 
 });
