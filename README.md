@@ -48,6 +48,10 @@ Array -> run a function for each item
 
 Array -> first element that matches a condition
 
+##### concat
+
+Array + Array -> Array
+
 ##### reduce
 
 Array -> anything

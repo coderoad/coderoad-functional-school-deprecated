@@ -1,4 +1,4 @@
-# concat
+### concat
 Array + Array -> Array
 
 Before we've been working on a structured set of student data.

@@ -193,7 +193,7 @@
         {
           "title": "find",
           "description": "Array -> first element that matches a condition",
-          "explanation": "Somehow your name has disappeared from the computer system. We'll have to `find` a way to get it back.\n\nYou quickly put together a list of other students in class. If someone changed your name, it'll be the name that is not in that list.\n\n`find` works similar to `filter`, but returns only the first match.\n\n```\nvar data = [1, 2, 3, 4, 5, 6];\n\nfunction isEven(num) {\n  return num % 2 === 0;\n}\n\n// returns all matching data to a condition\ndata.filter(isEven);\n//> [2, 4, 6]\n\n// returns the first match\ndata.find(isEven);\n//> [2]\n```\n\nFind is great for performantly matching unique values in data, such as \"id\"'s, or in our case, names.",
+          "explanation": "Somehow your name has disappeared from the computer system. We'll have to `find` a way to get it back.\n\nYou quickly put together a list of other students in class. If someone changed your name, it'll be the name that is not in that list.\n\n`find` works similar to `filter`, but returns only the first match.\n\n```\nvar data = [1, 2, 3, 4, 5, 6];\n\nfunction isEven(num) {\n  return num % 2 === 0;\n}\n\n// returns all matching data to a condition\ndata.filter(isEven);\n//> [2, 4, 6]\n\n// returns the first match\ndata.find(isEven);\n//> [2]\n```\n\nFind is great for performantly matching unique values in data, such as an \"id\", or in our case: a name.",
           "tasks": [
             {
               "description": "`filter` to students in the class titled \"Web Security\"",
@@ -202,8 +202,7 @@
               ],
               "actions": [
                 "open('05-find.js')",
-                "set('// search for a student with a name\n// not matching students in the list\nvar otherStudents = [\"Albert Gonzalez\", \"Brian Kernaghan\", \"Danielle Bunten Berry\", \"Donald Knuth\", \"Grace Hopper\", \"Hack Kerr\", \"James Gosling\", \"Ken Thompson\", \"Kevin Mitnick\", \"Linus Torvalds\", \"Niklaus Wirth\", \"Rebecca Heineman\", \"Tim Berners-Lee\", \"Xiao Tian\", \"Ying Cracker\"];\n')",
-                "insert('\n// filter for students.title is \"Web Security\"\nvar myClass = students\n')"
+                "set('// filter for students.title is \"Web Security\"\nvar myClass = students.filter();\n')"
               ]
             },
             {
@@ -212,7 +211,8 @@
                 "1/05/02-find"
               ],
               "actions": [
-                "insert('\n// hint: use `indexOf` to find if an item is in the array\nvar unknownStudent  \n')"
+                "insert('\n// search for a student with a name\n// not matching students in the list\nvar otherStudents = [\"Albert Gonzalez\", \"Brian Kernaghan\", \"Danielle Bunten Berry\", \"Donald Knuth\", \"Grace Hopper\", \"Hack Kerr\", \"James Gosling\", \"Ken Thompson\", \"Kevin Mitnick\", \"Linus Torvalds\", \"Niklaus Wirth\", \"Rebecca Heineman\", \"Tim Berners-Lee\", \"Xiao Tian\", \"Ying Cracker\"];\n\n')",
+                "insert('// hint: use `indexOf` to find if an item is in the array\nfunction notInList() {\n\n}\n\n// find using `notInList`\nvar unknownStudent = myClass.find();\n')"
               ]
             },
             {
@@ -221,7 +221,7 @@
                 "1/05/03-find"
               ],
               "actions": [
-                "insert('var unknownStudentList\n')"
+                "insert('\n// filter using `notInList`\nvar unknownStudentList = students.filter();\n')"
               ]
             },
             {
@@ -230,18 +230,31 @@
                 "1/05/04-find"
               ],
               "actions": [
-                "insert('var unknownStudentNames\n')"
+                "insert('\n// use `map` to return only the `student.name`\nvar unknownStudentNames = unknownStudentList.map();\n')"
               ]
             },
             {
-              "description": "`join('')` the array of names to output result\n\n# concat\nArray + Array -> Array\n\nBefore we've been working on a structured set of student data.\n\n```js\n// array of students\n[\n  {\n  \"title\": \"Relational Databases\",\n  \"instructor\": \"Sean Quentin Lewis\",\n  \"name\": \"Rebecca Heineman\",\n  \"score\": 71,\n  \"grade\": \"C\"\n  }\n// students in courses...\n]\n```\n\nTo be safe, let's now work on the original data set. Notice how it is structured differently.\n\n```js\n// array of courses\n[\n  {\n    \"title\": \"Relational Databases\",\n    \"instructor\": \"Sean Quentin Lewis\",\n    \"students\": [\n      {\n        \"name\": \"Rebecca Heineman\",\n        \"score\": 71,\n        \"grade\": \"C\"\n      }\n    // students...\n    ]\n  }\n  // courses...\n]\n```\n\nIn this data set, there is an array of students within an array of courses. So how can we recreate our original array of students from the courses? We can use `concat`.\n\nWeird things happen when you start combining arrays. `concat` brings sanity.\n\n```js\n[1, 2] + [3, 4];\n//> \"1, 23, 4\"\n\n[1, 2].push([3, 4]);\n//> 3\n\n[1, 2].join([3, 4]);\n//> \"13, 42\"\n\n[1, 2].concat([3, 4]);\n//> [1, 2, 3, 4]\n```\n\nUnfortunately, Javascript is missing a built in array method to concat multiple arrays together: let's call it `flatten` (often called `concatAll`). `flatten` should loop over an array and concat each element.\n\n```js\nvar start = [{\n  a: 1,\n  c: [\n    { b: 1 }\n  ]\n}, {\n  a: 2,\n  c: [\n    { b: 2 }, { b: 3 }\n  ]\n}];\n\nvar middle = start.map(function(outer) {\n  return outer.c.map(function(inner) {\n    return {\n      a: outer.a,\n      b: inner.b\n    };\n  });\n});\n//> [ [{ a: 1, b: 1 }], [{a: 2, b: 2}, {a: 2, b: 3}] ]\n\nvar end = pre.flatten();\n//> [{a: 1, b: 1}, {a: 2, b: 2}, {a: 2, b: 3}]\n```\n\nBack to business.\n\nWe have a suspect in mind: a classmate named \"Hack Kerr\". He's a nice guy, and he's always been friendly to you - but there's something suspicious about him: his name.\n\nFirst let's recreate our student array of data from the course data.",
+              "description": "`join('')` the array of names to output the result as a string",
               "tests": [
                 "1/05/05-find"
               ],
               "actions": [
-                "insert('var decodedName\n')"
+                "insert('\n// use `.join('')` to join the array of strings\nvar decodedName = unknownStudentNames;\nconsole.log(decodedName);\n')"
               ]
             },
+            {
+              "description": "Very strange. In the next step, let's find out who wants revenge, and give it to him!",
+              "tests": [
+                "1/05/06-find"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "concat",
+          "description": "Array + Array -> Array",
+          "explanation": "Before we've been working on a structured set of student data.\n\n```js\n// array of students\n[\n  {\n  \"title\": \"Relational Databases\",\n  \"instructor\": \"Sean Quentin Lewis\",\n  \"name\": \"Rebecca Heineman\",\n  \"score\": 71,\n  \"grade\": \"C\"\n  }\n// students in courses...\n]\n```\n\nTo be safe, let's now work on the original data set. Notice how it is structured differently.\n\n```js\n// array of courses\n[\n  {\n    \"title\": \"Relational Databases\",\n    \"instructor\": \"Sean Quentin Lewis\",\n    \"students\": [\n      {\n        \"name\": \"Rebecca Heineman\",\n        \"score\": 71,\n        \"grade\": \"C\"\n      }\n    // students...\n    ]\n  }\n  // courses...\n]\n```\n\nIn this data set, there is an array of students within an array of courses. So how can we recreate our original array of students from the courses? We can use `concat`.\n\nWeird things happen when you start combining arrays. `concat` brings sanity.\n\n```js\n[1, 2] + [3, 4];\n//> \"1, 23, 4\"\n\n[1, 2].push([3, 4]);\n//> 3\n\n[1, 2].join([3, 4]);\n//> \"13, 42\"\n\n[1, 2].concat([3, 4]);\n//> [1, 2, 3, 4]\n```\n\nUnfortunately, Javascript is missing a built in array method to concat multiple arrays together: let's call it `flatten` (often called `concatAll`). `flatten` should loop over an array and concat each element.\n\n```js\nvar start = [{\n  a: 1,\n  c: [\n    { b: 1 }\n  ]\n}, {\n  a: 2,\n  c: [\n    { b: 2 }, { b: 3 }\n  ]\n}];\n\nvar middle = start.map(function(outer) {\n  return outer.c.map(function(inner) {\n    return {\n      a: outer.a,\n      b: inner.b\n    };\n  });\n});\n//> [ [{ a: 1, b: 1 }], [{a: 2, b: 2}, {a: 2, b: 3}] ]\n\nvar end = pre.flatten();\n//> [{a: 1, b: 1}, {a: 2, b: 2}, {a: 2, b: 3}]\n```\n\nBack to business.\n\nWe have a suspect in mind: a classmate named \"Hack Kerr\". He's a nice guy, and he's always been friendly to you - but there's something suspicious about him: his name.\n\nFirst let's recreate our student array of data from the course data.",
+          "tasks": [
             {
               "description": "First, test out `flatten` on the `flattenedArray`\n@open('06-concat.js')",
               "tests": [

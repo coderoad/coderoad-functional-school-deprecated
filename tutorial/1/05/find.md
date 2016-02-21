@@ -23,23 +23,15 @@ data.find(isEven);
 //> [2]
 ```
 
-Find is great for performantly matching unique values in data, such as "id"'s, or in our case, names.
+Find is great for performantly matching unique values in data, such as an "id", or in our case: a name.
 
 + `filter` to students in the class titled "Web Security"
 @test('1/05/01-find')
 @action(open('05-find.js'))
 @action(set(
 ```
-// search for a student with a name
-// not matching students in the list
-var otherStudents = ["Albert Gonzalez", "Brian Kernaghan", "Danielle Bunten Berry", "Donald Knuth", "Grace Hopper", "Hack Kerr", "James Gosling", "Ken Thompson", "Kevin Mitnick", "Linus Torvalds", "Niklaus Wirth", "Rebecca Heineman", "Tim Berners-Lee", "Xiao Tian", "Ying Cracker"];
-```
-))
-@action(insert(
-```
-
 // filter for students.title is "Web Security"
-var myClass = students
+var myClass = students.filter();
 ```
 ))
 
@@ -48,8 +40,21 @@ var myClass = students
 @action(insert(
 ```
 
+// search for a student with a name
+// not matching students in the list
+var otherStudents = ["Albert Gonzalez", "Brian Kernaghan", "Danielle Bunten Berry", "Donald Knuth", "Grace Hopper", "Hack Kerr", "James Gosling", "Ken Thompson", "Kevin Mitnick", "Linus Torvalds", "Niklaus Wirth", "Rebecca Heineman", "Tim Berners-Lee", "Xiao Tian", "Ying Cracker"];
+
+```
+))
+@action(insert(
+```
 // hint: use `indexOf` to find if an item is in the array
-var unknownStudent  
+function notInList() {
+
+}
+
+// find using `notInList`
+var unknownStudent = myClass.find();
 ```
 ))
 
@@ -57,7 +62,9 @@ var unknownStudent
 @test('1/05/03-find')
 @action(insert(
 ```
-var unknownStudentList
+
+// filter using `notInList`
+var unknownStudentList = students.filter();
 ```  
 ))
 
@@ -65,14 +72,22 @@ var unknownStudentList
 @test('1/05/04-find')
 @action(insert(
 ```
-var unknownStudentNames
+
+// use `map` to return only the `student.name`
+var unknownStudentNames = unknownStudentList.map();
 ```  
 ))
 
-+ `join('')` the array of names to output result
++ `join('')` the array of names to output the result as a string
 @test('1/05/05-find')
 @action(insert(
 ```
-var decodedName
+
+// use `.join('')` to join the array of strings
+var decodedName = unknownStudentNames;
+console.log(decodedName);
 ```  
 ))
+
++ Very strange. In the next step, let's find out who wants revenge, and give it to him!
+@test('1/05/06-find')

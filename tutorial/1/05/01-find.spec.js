@@ -1,7 +1,6 @@
 'use strict';
 var expect = require('chai').expect;
 var spies = require('chai-spies');
-var path = require('path');
 var loadJS = require('./common/loadJS').default;
 
 if (!global.students) {

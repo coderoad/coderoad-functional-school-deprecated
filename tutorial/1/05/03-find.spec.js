@@ -5,7 +5,7 @@ describe('03 var unknownStudentList', function() {
   });
 
   it('should find 10 unknown students across classes', function() {
-    let names = unknownStudentList.map(function(student) {
+    var names = unknownStudentList.map(function(student) {
       return student.name;
     }).join('');
     expect(names).to.equal('!findthebestrevenge!');
