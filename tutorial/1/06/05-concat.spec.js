@@ -1,6 +1,22 @@
+describe('05 var newSuspects', function() {
+
+  it('should have "Albert Gonzalez" in the list', function() {
+    expect(newSuspects).to.contain('Albert Gonzalez');
+  });
+
+  it('should have "Kevin Mitnick" in the list', function() {
+    expect(newSuspects).to.contain('Kevin Mitnick');
+  });
+
+  it('should have only 2 names', function() {
+    expect(newSuspects).to.have.length(2);
+  });
+
+});
+
 describe('05 var suspectData', function() {
 
-  it('should have 30 items', function() {
+  it('should concat `newSuspects` onto `suspects`', function() {
     expect(suspectData).to.have.length(30);
   });
 
@@ -17,5 +33,5 @@ describe('05 var suspectData', function() {
       title: 'Relational Databases'
     });
   });
-  
+
 });

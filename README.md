@@ -2,6 +2,10 @@
 
 A trip through functional programming in Javascript.
 
+Level: Intermediate
+Keywords: javascript, functional
+Length: 1-2 hours
+
 
 ## CodeRoad
 

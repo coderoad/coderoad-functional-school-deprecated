@@ -18,5 +18,4 @@ describe('01 var flattenedArray', function() {
     expect(flattenedArray).to.deep.equal([1, 2, 3, 4]);
   });
 
-
 });

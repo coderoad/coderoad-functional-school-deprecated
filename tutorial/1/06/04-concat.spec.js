@@ -1,7 +1,7 @@
 describe('04 var suspectData', function() {
 
   it('should have 10 items', function() {
-    expect(suspectData).to.have.length.above(9);
+    expect(suspectData).to.have.length.below(31);
   });
 
   it('should filter if the `indexOf` the suspects name is greater than -1', function() {
@@ -17,5 +17,5 @@ describe('04 var suspectData', function() {
       grade: 'F'
     });
   });
-  
+
 });

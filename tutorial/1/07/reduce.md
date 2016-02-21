@@ -16,13 +16,16 @@ function add(prev, curr) {
 ```
 
 
-
 + Use `reduce` to sum the numbers in the `practice` array
 @test('1/07/01-reduce')
 @action(open('07-reduce.js'))
 @action(set(
 ```
 var practice = [1, 1, 2, 3, 5, 8, 13, 21];
+
+function add(a, b) {
+  return a + b;
+}
 
 // total the numbers using a reduce function
 // hint: start at 0
@@ -54,14 +57,14 @@ var suspectScores = courses.reduce();
 ```js
 [{
   name: 'suspectName',
-  scores: [50, 65, 75, 85...],
+  scores: [50, 65, 75 ...],
   difference: 15
 }]
 ```
 @test('1/07/04-reduce')
 
 
-+ `reduce` down to any likely suspect names by filtering with the `isCheater` function
++ `reduce` down to likely suspect names by filtering with the `isCheater` function
 @test('1/07/05-reduce')
 @action(insert(
 ```

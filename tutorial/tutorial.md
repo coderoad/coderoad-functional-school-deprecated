@@ -1,6 +1,10 @@
 # Functional School
 A trip through functional programming in Javascript.
 
+Level: Intermediate
+Keywords: javascript, functional
+Length: 1-2 hours
+
 ## Array Methods
 Using common built-in Javascript array methods such as `map` & `reduce`.
 

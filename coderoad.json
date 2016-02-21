@@ -1,7 +1,7 @@
 {
   "project": {
     "title": "Functional School",
-    "description": "A trip through functional programming in Javascript."
+    "description": "A trip through functional programming in Javascript.\n\nLevel: Intermediate\nKeywords: javascript, functional\nLength: 1-2 hours"
   },
   "chapters": [
     {
@@ -267,12 +267,12 @@
               ]
             },
             {
-              "description": "Now `map` over the courses array, and `map` over the students array inside of it.\n\nReturn the fields:\n\n  * title\n  * instructor\n  * name\n  * grade\n  * score",
+              "description": "Now `map` over the courses array, and `map` over the students array inside of it.\nReturn the fields:\n\n  * title\n  * instructor\n  * name\n  * grade\n  * score",
               "tests": [
                 "1/06/02-concat"
               ],
               "actions": [
-                "insert('// map over courses then\n// map over students inside of courses\n// return \"title\", \"instructor\",\n// \"name\", \"grade\", \"score\" fields\nvar doubleArray = courses;\n\n')"
+                "insert('\n// map over courses then\n// map over students inside of courses\nvar doubleArray = courses;\n\n')"
               ]
             },
             {
@@ -294,12 +294,9 @@
               ]
             },
             {
-              "description": "You just thought of two more suspects!  `concat` the new suspects array onto the `suspects` list.",
+              "description": "You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`. Set `newSuspects` to `['Albert Gonzalez', 'Kevin Mitnick']`\n\n`concat` the `newSuspects` onto the `suspects` list.",
               "tests": [
                 "1/06/05-concat"
-              ],
-              "actions": [
-                "insert('\nvar newSuspects = [\"Kevin Mitnick\", \"Albert Gonzalez\"];\n')"
               ]
             }
           ]
@@ -316,7 +313,7 @@
               ],
               "actions": [
                 "open('07-reduce.js')",
-                "set('var practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\n// total the numbers using a reduce function\n// hint: start at 0\nvar total = practice.reduce();\n')"
+                "set('var practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\nfunction add(a, b) {\n  return a + b;\n}\n\n// total the numbers using a reduce function\n// hint: start at 0\nvar total = practice.reduce();\n')"
               ]
             },
             {
@@ -338,13 +335,13 @@
               ]
             },
             {
-              "description": "`map` over suspect data to find the `\"difference\"` from subtracting the students score from the average score. Add this to `suspectScores` using the key `difference`. The resulting array should look like this:\n```js\n[{\n  name: 'suspectName',\n  scores: [50, 65, 75, 85...],\n  difference: 15\n}]\n```",
+              "description": "`map` over suspect data to find the `\"difference\"` from subtracting the students score from the average score. Add this to `suspectScores` using the key `difference`. The resulting array should look like this:\n```js\n[{\n  name: 'suspectName',\n  scores: [50, 65, 75 ...],\n  difference: 15\n}]\n```",
               "tests": [
                 "1/07/04-reduce"
               ]
             },
             {
-              "description": "`reduce` down to any likely suspect names by filtering with the `isCheater` function",
+              "description": "`reduce` down to likely suspect names by filtering with the `isCheater` function",
               "tests": [
                 "1/07/05-reduce"
               ],

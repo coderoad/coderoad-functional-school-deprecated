@@ -108,7 +108,6 @@ Array.prototype.flatten = function() {
 };
 ```
 ))
-
 @action(insert(
 ```
 
@@ -121,7 +120,6 @@ var flattenedArray = numberedList;
 
 
 + Now `map` over the courses array, and `map` over the students array inside of it.
-
 Return the fields:
 
   * title
@@ -129,14 +127,12 @@ Return the fields:
   * name
   * grade
   * score
-
 @test('1/06/02-concat')
 @action(insert(
 ```
+
 // map over courses then
 // map over students inside of courses
-// return "title", "instructor",
-// "name", "grade", "score" fields
 var doubleArray = courses;
 
 ```
@@ -162,11 +158,7 @@ var suspectData = students;
 ```
 ))
 
-+ You just thought of two more suspects!  `concat` the new suspects array onto the `suspects` list.
-@test('1/06/05-concat')
-@action(insert(
-```
++ You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`. Set `newSuspects` to `['Albert Gonzalez', 'Kevin Mitnick']`
 
-var newSuspects = ["Kevin Mitnick", "Albert Gonzalez"];
-```  
-))
+`concat` the `newSuspects` onto the `suspects` list.
+@test('1/06/05-concat')
