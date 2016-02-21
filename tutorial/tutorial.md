@@ -17,5 +17,5 @@ By the end, you should have an understanding of how to use array methods to mani
 @import('./tutorial/1/05/find')
 @import('./tutorial/1/06/concat')
 @import('./tutorial/1/07/reduce')
-<!-- @import('./tutorial/1/08/challenge-1') -->
-<!-- @import('./tutorial/1/09/challenge-2') -->
+@import('./tutorial/1/08/challenge-1')
+@import('./tutorial/1/09/challenge-2')

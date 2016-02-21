@@ -1,6 +1,6 @@
-describe('05 var likelySuspect', function() {
+describe('05 var likelySuspects', function() {
 
   it('should reduce down to a suspect name', function () {
-    expect(likelySuspect).to.equal('Hack Kerr');
+    expect(likelySuspects).to.equal('Hack Kerr');
   });
 });

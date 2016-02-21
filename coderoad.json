@@ -272,7 +272,7 @@
                 "1/06/02-concat"
               ],
               "actions": [
-                "insert('\n// map over courses then\n// map over students inside of courses\nvar doubleArray = courses;\n\n')"
+                "insert('\n// map over courses then\n// map over students inside of courses\nvar doubleArray = courses.map(function(course) {\n    return course.students.map(function(student) {\n      return {\n        // fill in the fields\n        title: '',\n        instructor: '',\n        name: '',\n        score: '',\n        grade: ''\n      };\n    });\n});\n\n')"
               ]
             },
             {
@@ -290,11 +290,11 @@
                 "1/06/04-concat"
               ],
               "actions": [
-                "insert('\nvar suspects = [\"Hack Kerr\"];\n// filter to data matching `suspects`\nvar suspectData = students;\n')"
+                "insert('\nvar suspects = [\"Hack Kerr\"];\n// filter to data matching `suspects`\n\nvar suspectData = students;\n')"
               ]
             },
             {
-              "description": "You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`. Set `newSuspects` to `['Albert Gonzalez', 'Kevin Mitnick']`\n\n`concat` the `newSuspects` onto the `suspects` list.",
+              "description": "You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`.\n\n```js\nvar newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];\n```\n\n`concat` the `newSuspects` onto the `suspects` list.",
               "tests": [
                 "1/06/05-concat"
               ]
@@ -304,7 +304,7 @@
         {
           "title": "reduce",
           "description": "Array -> anything",
-          "explanation": "```js\nfunction add(prev, curr) {\n    console.log(`add(${prev}, ${curr}) -> ${prev + curr}`)\n    return prev + curr;\n}\n\n[1, 5, 10].reduce(add, 100); // initial value\n\n// add(100, 1) -> 101\n// add(101, 5) -> 106\n// add(106, 10) -> 116\n//> 116\n```",
+          "explanation": "We know our likely suspect is also in the school computer system. Perhaps our suspect also changed his grades.\n\nYou can't be sure who is a cheater, but you can assume if the grades are well above the average, the person is likely to be the culprit. For this, we'll have to do some basic statistical calculations. We'll need a new tool for transforming arrays into different data representations.\n\n`map` has a major limitation: it will always output the same number of elements as the input array.\n\nWhen you want to transform data into something different, you'll likely want to use `reduce`.\n\nReduce requires two parameters:\n\n  * the running total (set by an initialValue)\n  * the next value in the array\n\n```js\nfunction add(total, next) {\n    console.log(`add(${total}, ${next}) -> ${total + next}`)\n    return total + next\n}\n\nvar initialValue = 100;\n[1, 5, 10].reduce(add, initialValue); // initial value\n\n// add(100, 1) -> 101\n// add(101, 5) -> 106\n// add(106, 10) -> 116\n//> 116\n```\n\nNotice in the example we input an array of 3 items and output a single number. The data has been transformed.\n\nIt takes a while to wrap your head around `reduce`, but once you do, you'll see it's usefulness everywhere.\n\nYou may have noticed we've already used `reduce` to `flatten` our arrays.\n\n```js\nArray.prototype.flatten = function() {\n  return this.reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n};\n```\n\nWith `flatten`, the initialValue was set to an empty array which each value was `concat` onto.\n\nDo some practice with `reduce`, before you use it to narrow down a cheating suspect.",
           "tasks": [
             {
               "description": "Use `reduce` to sum the numbers in the `practice` array",
@@ -313,46 +313,68 @@
               ],
               "actions": [
                 "open('07-reduce.js')",
-                "set('var practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\nfunction add(a, b) {\n  return a + b;\n}\n\n// total the numbers using a reduce function\n// hint: start at 0\nvar total = practice.reduce();\n')"
+                "set('var practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\nfunction add(a, b) {\n  return a + b;\n}\n\n// total the numbers using a reduce function\n// initialValue defaults to 0\nvar total = practice.reduce();\n')"
               ]
             },
             {
-              "description": "`map` over each course and use `reduce` to calculate the class averages for each class. Set `averages` to the resulting array of all class averages.",
+              "description": "Not all reduce functions are so easy. `reduce` is a little more difficult to master.\n\n`map` over each course and use `reduce` to calculate the class averages for each class. Set `averages` to the resulting array of all class averages.",
               "tests": [
                 "1/07/02-reduce"
               ],
               "actions": [
-                "insert('// Remember, an average is the sum of all student scores divided by the number of students\n// set the result to an array, for example: [50, 65, 75, 85, ...];\nvar averages = courses.reduce();\n')"
+                "insert('\nvar averages = courses.map(function(course) {\n  var sum = course.students.reduce(function(total, student) {\n    // calculate score totals here\n\n    // set initialValue to 0\n  });\n  return Math.round(sum / course.students.length, 0);\n});\n')"
               ]
             },
             {
-              "description": "`reduce` to an array of suspect scores",
+              "description": "`reduce` to an array of suspect scores from the `suspectData` we collected previously.",
               "tests": [
                 "1/07/03-reduce"
               ],
               "actions": [
-                "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] }, ... ]\nvar suspectScores = courses.reduce();\n')"
+                "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]\nvar suspectScores = suspectData.reduce(function(total, next) {\n  // see if suspect name has a list yet\n  var index = total.findIndex(function(suspect) {\n    return suspect.name === next.name;\n  });\n  if (index < 0) {\n    total.push({\n        // add a new {name: '', scores: [72]} object\n\n\n    });\n  } else {\n    // push the next score onto the suspects scores\n    total[index].scores.push();\n  }\n  return total;\n}, []);\n\n')"
               ]
             },
             {
               "description": "`map` over suspect data to find the `\"difference\"` from subtracting the students score from the average score. Add this to `suspectScores` using the key `difference`. The resulting array should look like this:\n```js\n[{\n  name: 'suspectName',\n  scores: [50, 65, 75 ...],\n  difference: 15\n}]\n```",
               "tests": [
                 "1/07/04-reduce"
+              ],
+              "actions": [
+                "insert('\nvar suspectStats = suspectScores.map(function(suspect) {\n    // calculate the total difference in scores from the averages\n    // you may want to third reduce param: index\n    var difference = suspect.scores.reduce();\n\n    return {\n      name: suspect.name,\n      scores: suspect.scores,\n      difference: difference\n    };\n});\n')"
               ]
             },
             {
-              "description": "`reduce` down to likely suspect names by filtering with the `isCheater` function",
+              "description": "`reduce` down to likely suspect names by filtering with the `isCheater` function.\n\nThis could be done with a `filter` & `map`, but it is simpler to just use one `reduce`.",
               "tests": [
                 "1/07/05-reduce"
               ],
               "actions": [
-                "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nvar likelySuspect = suspectScores.reduce().join(', ');\nconsole.log(likelySuspect);\n')"
+                "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nvar likelySuspects = suspectStats.reduce(function() {}, []).join(', ');\n')"
+              ]
+            },
+            {
+              "description": "It looks like we have a likely suspect.",
+              "tests": [
+                "1/07/06-reduce"
+              ],
+              "actions": [
+                "insert('console.log(likelySuspects);\n')"
               ]
             }
           ]
+        },
+        {
+          "title": "Challenge 1",
+          "description": "coming soon",
+          "explanation": "You'd better fix your name and scores back to the way they were."
+        },
+        {
+          "title": "Challenge 2",
+          "description": "coming soon",
+          "explanation": "It's time to get revenge."
         }
       ],
-      "description": "Using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data.\n\n<!-- @import('./tutorial/1/08/challenge-1') -->\n<!-- @import('./tutorial/1/09/challenge-2') -->"
+      "description": "Using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data."
     }
   ]
 }

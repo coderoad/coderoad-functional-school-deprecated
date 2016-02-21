@@ -4,6 +4,7 @@ var loadJS = require('./common/loadJS').default;
 
 if (!global.courses) {
   global.courses = JSON.parse(JSON.stringify(require('./data/courses2.json')));
+  global.suspectData = JSON.parse(JSON.stringify(require('./1/07/suspectData.json')));
 }
 
 loadJS('07-reduce.js');

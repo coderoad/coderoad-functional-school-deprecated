@@ -133,7 +133,18 @@ Return the fields:
 
 // map over courses then
 // map over students inside of courses
-var doubleArray = courses;
+var doubleArray = courses.map(function(course) {
+    return course.students.map(function(student) {
+      return {
+        // fill in the fields
+        title: '',
+        instructor: '',
+        name: '',
+        score: '',
+        grade: ''
+      };
+    });
+});
 
 ```
 ))
@@ -154,11 +165,16 @@ var students = doubleArray;
 
 var suspects = ["Hack Kerr"];
 // filter to data matching `suspects`
+
 var suspectData = students;
 ```
 ))
 
-+ You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`. Set `newSuspects` to `['Albert Gonzalez', 'Kevin Mitnick']`
++ You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`.
+
+```js
+var newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];
+```
 
 `concat` the `newSuspects` onto the `suspects` list.
 @test('1/06/05-concat')
