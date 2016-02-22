@@ -186,6 +186,9 @@
               "description": "What??? Suddenly Your data has all disappeared!\n\nIt seems `myFixed` relies on a chain of methods.\n\n```js\nmyFixed = students\n    .filter(isAda)\n    .sort(compareScore)\n    .map(increaseScore)\n    .map(getGrade)\n    .forEach(logCourseWithIndexAndArray)\n```\n\nThis is why side-effects are dangerous. Students data must have changed, and now all of your transformations are effected.\n\nSomething strange is going on. In the next step we'll try to `find` your data.",
               "tests": [
                 "1/04/04-forEach"
+              ],
+              "actions": [
+                "insert('\nconsole.log(myFixed);\n')"
               ]
             }
           ]

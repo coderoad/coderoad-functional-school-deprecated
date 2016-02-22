@@ -145,3 +145,9 @@ This is why side-effects are dangerous. Students data must have changed, and now
 
 Something strange is going on. In the next step we'll try to `find` your data.
 @test('1/04/04-forEach')
+@action(insert(
+```
+
+console.log(myFixed);
+```
+))
