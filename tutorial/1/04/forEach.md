@@ -3,6 +3,8 @@ Array -> run a function for each item
 
 You've updated your grades, but they're still in an array. It's time to loop over them and log them to the console.
 
+To open the console, go to *View* > *Developer* > *Toggle Developer Tools*. Or press *cmd+opt+I* on Mac, *ctrl+alt+I* on Windows.
+
 `forEach` has a lot in common with `map`, but there is a big difference. Understanding that difference is important for grasping the difference between:
 
   * **functional** & **imperative** programming

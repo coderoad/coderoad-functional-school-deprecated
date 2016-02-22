@@ -67,7 +67,7 @@ console.log(data[0]);
  * },
  * ...
  * ]
- */
+*/
 ```
 ))
 @action(insert(
