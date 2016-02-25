@@ -23,9 +23,10 @@
                 "insert('function isAda() {\n  // write condition here\n  // return true if student name\n  // matches \"Ada Lovelace\"\n\n}\n')"
               ],
               "hints": [
-                "Click here to get hints",
+                "Some tasks have hints",
                 "Pass in a parameter to `isAda`, let's call it \"student\"",
-                "Check if `student.name` matches \"Ada Lovelace\""
+                "Check if `student.name` matches \"Ada Lovelace\"",
+                "Use `===` to check equality"
               ]
             },
             {
@@ -35,6 +36,10 @@
               ],
               "actions": [
                 "insert('// call filter condition here\nvar myData = data.filter();\n')"
+              ],
+              "hints": [
+                "Array.filter(function() {})",
+                "Pass `isAda` into your `filter` call"
               ]
             },
             {
@@ -44,6 +49,11 @@
               ],
               "actions": [
                 "insert('\n\n// return true if student.grade is not a \"D\" or \"F\"\nfunction isGoodGrade(student) {\n\n}\n')"
+              ],
+              "hints": [
+                "match for `student.grade` that isn\\'t \"D\" or \"F\"",
+                "use `!==` to check non-equality",
+                "student.grade !== \"D\" && student.grade !== \"F\""
               ]
             },
             {

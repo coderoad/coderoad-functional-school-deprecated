@@ -80,9 +80,10 @@ function isAda() {
 }
 ```
 ))
-@hint('Click here to get hints')
+@hint('Some tasks have hints')
 @hint('Pass in a parameter to `isAda`, let's call it "student"')
 @hint('Check if `student.name` matches "Ada Lovelace"')
+@hint('Use `===` to check equality')
 
 + Set `var myData` equal to data matching your name, "Ada Lovelace".
 @test('1/01/02-filter')
@@ -92,6 +93,8 @@ function isAda() {
 var myData = data.filter();
 ```
 ))
+@hint('`Array.filter(function() {})`')
+@hint('Pass `isAda` into your `filter` call')
 
 + Write a filter condition called `isGoodGrade` that will filter out any "D" or "F" grades.
 @test('1/01/03-filter')
@@ -105,6 +108,9 @@ function isGoodGrade(student) {
 }
 ```
 ))
+@hint('match for `student.grade` that isn\'t "D" or "F"')
+@hint('use `!==` to check non-equality')
+@hint('`student.grade !== "D" && student.grade !== "F"`')
 
 + Set `var myBest` to your scores, excluding any grades that are "D" or "F".
 
