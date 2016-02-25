@@ -80,6 +80,9 @@ function isAda() {
 }
 ```
 ))
+@hint('Click here to get hints')
+@hint('Pass in a parameter to `isAda`, let's call it "student"')
+@hint('Check if `student.name` matches "Ada Lovelace"')
 
 + Set `var myData` equal to data matching your name, "Ada Lovelace".
 @test('1/01/02-filter')

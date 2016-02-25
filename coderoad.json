@@ -21,6 +21,11 @@
                 "open('01-filter.js')",
                 "set('/**\n * Data is set as a global. Example:\n * [{\n * \"title\": \"Relational Databases\",\n * \"instructor\": \"Sean Quentin Lewis\",\n * \"name\": \"Ada Lovelace\",\n * \"score\": 91,\n * \"grade\": \"A\"\n * },\n * ...\n * ]\n*/\n')",
                 "insert('function isAda() {\n  // write condition here\n  // return true if student name\n  // matches \"Ada Lovelace\"\n\n}\n')"
+              ],
+              "hints": [
+                "Click here to get hints",
+                "Pass in a parameter to `isAda`, let's call it \"student\"",
+                "Check if `student.name` matches \"Ada Lovelace\""
               ]
             },
             {
