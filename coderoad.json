@@ -38,7 +38,7 @@
                 "insert('// call filter condition here\nvar myData = data.filter();\n')"
               ],
               "hints": [
-                "Array.filter(function() {})",
+                "Add a function to the `filter` call: `Array.filter(function() {})`",
                 "Pass `isAda` into your `filter` call"
               ]
             },
@@ -51,9 +51,9 @@
                 "insert('\n\n// return true if student.grade is not a \"D\" or \"F\"\nfunction isGoodGrade(student) {\n\n}\n')"
               ],
               "hints": [
-                "match for `student.grade` that isn\\'t \"D\" or \"F\"",
+                "match for `student.grade` that isn't \"D\" or \"F\"",
                 "use `!==` to check non-equality",
-                "student.grade !== \"D\" && student.grade !== \"F\""
+                "Match for both: `student.grade !== \"D\" && student.grade !== \"F\"`"
               ]
             },
             {

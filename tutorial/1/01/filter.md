@@ -93,7 +93,7 @@ function isAda() {
 var myData = data.filter();
 ```
 ))
-@hint('`Array.filter(function() {})`')
+@hint('Add a function to the `filter` call: `Array.filter(function() {})`')
 @hint('Pass `isAda` into your `filter` call')
 
 + Write a filter condition called `isGoodGrade` that will filter out any "D" or "F" grades.
@@ -108,9 +108,9 @@ function isGoodGrade(student) {
 }
 ```
 ))
-@hint('match for `student.grade` that isn\'t "D" or "F"')
+@hint('match for `student.grade` that isn't "D" or "F"')
 @hint('use `!==` to check non-equality')
-@hint('`student.grade !== "D" && student.grade !== "F"`')
+@hint('Match for both: `student.grade !== "D" && student.grade !== "F"`')
 
 + Set `var myBest` to your scores, excluding any grades that are "D" or "F".
 
