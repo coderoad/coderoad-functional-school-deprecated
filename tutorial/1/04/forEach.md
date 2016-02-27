@@ -99,6 +99,7 @@ function logCourse(course) {
 myFixed.forEach();
 ```
 ))
+@hint('call `forEach` with `logCourse`')
 
 + Add a second parameter to `logCourseWithIndex` called `index`. Then call the function with `myFixed.forEach`.
 @test('1/04/02-forEach')
@@ -114,6 +115,8 @@ function logCourseWithIndex(course) {
 myFixed.forEach(logCourseWithIndex);
 ```
 ))
+@hint('Array methods can take more than one parameter')
+@hint('Add a second parameter to `logCourseWithIndex`')
 
 + Add a third parameter called `array` to `logCourseWithIndexAndArray`, then call the function with `myFixed.forEach`.
 @test('1/04/03-forEach')
@@ -129,6 +132,8 @@ function logCourseWithIndexAndArray(course, index) {
 myFixed.forEach(logCourseWithIndexAndArray);
 ```
 ))
+@hint('Array methods can take more than one parameter')
+@hint('Add a third parameter to `logCourseWithIndexAndArray`')
 
 + What??? Suddenly Your data has all disappeared!
 

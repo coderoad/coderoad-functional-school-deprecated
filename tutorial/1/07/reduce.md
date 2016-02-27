@@ -60,10 +60,11 @@ function add(a, b) {
 }
 
 // total the numbers using a reduce function
-// initialValue defaults to 0
 var total = practice.reduce();
 ```
 ))
+@hint('with only numbers, the initialValue defaults to 0')
+@hint('just call `reduce` with `add`')
 
 + Not all reduce functions are so easy. `reduce` is a little more difficult to master.
 
@@ -74,14 +75,17 @@ var total = practice.reduce();
 
 var averages = courses.map(function(course) {
   var sum = course.students.reduce(function(total, student) {
-    // calculate score totals here
 
-    // set initialValue to 0
+
   });
   return Math.round(sum / course.students.length, 0);
 });
 ```
 ))
+@hint('set the initialValue to 0')
+@hint('like this: `reduce(function () {}, 0)`')
+@hint('return the sum of `student.score` and `total`')
+
 
 + `reduce` to an array of suspect scores from the `suspectData` we collected previously.
 @test('1/07/03-reduce')
@@ -96,7 +100,6 @@ var suspectScores = suspectData.reduce(function(total, next) {
   });
   if (index < 0) {
     total.push({
-        // add a new {name: '', scores: [72]} object
 
 
     });
@@ -109,6 +112,10 @@ var suspectScores = suspectData.reduce(function(total, next) {
 
 ```
 ))
+@hint('if the name is new, push an object with name & scores: `{ name: '', scores: [42]}`')
+@hint('match for `next.name` & `next.score`')
+@hint('you can concat the scores onto an array: `[].concat(next.score)`')
+@hint('if the name is already in the list, just add the `next.score`')
 
 + `map` over suspect data to find the `"difference"` from subtracting the students score from the average score. Add this to `suspectScores` using the key `difference`. The resulting array should look like this:
 ```js
@@ -124,7 +131,6 @@ var suspectScores = suspectData.reduce(function(total, next) {
 
 var suspectStats = suspectScores.map(function(suspect) {
     // calculate the total difference in scores from the averages
-    // you may want to third reduce param: index
     var difference = suspect.scores.reduce();
 
     return {
@@ -135,6 +141,9 @@ var suspectStats = suspectScores.map(function(suspect) {
 });
 ```  
 ))
+@hint('You may want to use a second param: `index`')
+@hint('Compare the `suspect.scores[index]` with the `averages[index]`')
+@hint('To get a sum, start your `reduce` function at 0')
 
 
 + `reduce` down to likely suspect names by filtering with the `isCheater` function.
@@ -149,9 +158,10 @@ function isCheater(suspect) {
 }
 
 // reduce down to a string of likely suspects
-var likelySuspects = suspectStats.reduce(function() {}, []).join(', ');
+var likelySuspects = suspectStats.reduce(function() {}, []);
 ```
 ))
+@hint('use `.join(', ')`')
 
 + It looks like we have a likely suspect.
 @test('1/07/06-reduce')

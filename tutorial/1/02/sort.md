@@ -54,9 +54,11 @@ function compareScore(a, b) {
 ))
 + `compareScore` should return -1 if the first score is more than the second
 @test('1/02/02-sort')
+@hint('set the second case to `b.score < a.score`')
 
 + `compareScore` should return 0 if the first score is the same as the second
 @test('1/02/03-sort')
+@hint('no case is necessary, use the `default` case')
 
 + Set `mySorted` to the result of `myBest` sorted by `compareScore`
 @test('1/02/04-sort')
@@ -66,3 +68,4 @@ function compareScore(a, b) {
 var mySorted = myBest
 ```
 ))
+@hint('try using `myBest.sort()`')

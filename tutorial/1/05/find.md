@@ -30,25 +30,26 @@ Find is great for performantly matching unique values in data, such as an "id", 
 @action(open('05-find.js'))
 @action(set(
 ```
-// filter for students.title is "Web Security"
+// filter for the student title matches "Web Security"
 var myClass = students.filter();
 ```
 ))
+@hint('create a `filter` function')
+@hint('filter for `student.title === "Web Security"`')
 
 + `find` the name in `myClass` that isn't in the list of known students
 @test('1/05/02-find')
 @action(insert(
 ```
 
-// search for a student with a name
-// not matching students in the list
 var otherStudents = ["Albert Gonzalez", "Brian Kernaghan", "Danielle Bunten Berry", "Donald Knuth", "Grace Hopper", "Hack Kerr", "James Gosling", "Ken Thompson", "Kevin Mitnick", "Linus Torvalds", "Niklaus Wirth", "Rebecca Heineman", "Tim Berners-Lee", "Xiao Tian", "Ying Cracker"];
 
 ```
 ))
 @action(insert(
 ```
-// hint: use `indexOf` to find if an item is in the array
+// search for a student with a name
+// not matching students in `otherStudents`
 function notInList() {
 
 }
@@ -57,6 +58,9 @@ function notInList() {
 var unknownStudent = myClass.find();
 ```
 ))
+@hint('use `indexOf` to find what doesn't match')
+@hint('use `otherStudents.indexOf(x) === -1` to find what doesn't match')
+@hint('match for `student.name`')
 
 + `filter` down to students without known names
 @test('1/05/03-find')
@@ -67,16 +71,18 @@ var unknownStudent = myClass.find();
 var unknownStudentList = students.filter();
 ```  
 ))
+@hint('consider reusing a function')
 
 + `map` over the result to get only the `name` property
 @test('1/05/04-find')
 @action(insert(
 ```
 
-// use `map` to return only the `student.name`
+// list only student names
 var unknownStudentNames = unknownStudentList.map();
 ```  
 ))
+@hint('use `map` to return only the `student.name`')
 
 + `join('')` the array of names to output the result as a string
 @test('1/05/05-find')
@@ -88,6 +94,7 @@ var decodedName = unknownStudentNames;
 console.log(decodedName);
 ```  
 ))
+@hint('call `join` following `unknownStudentNames`')
 
 + Very strange. In the next step, let's find out who wants revenge, and give it to him!
 @test('1/05/06-find')

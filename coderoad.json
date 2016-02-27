@@ -86,12 +86,18 @@
               "description": "`compareScore` should return -1 if the first score is more than the second",
               "tests": [
                 "1/02/02-sort"
+              ],
+              "hints": [
+                "set the second case to `b.score < a.score`"
               ]
             },
             {
               "description": "`compareScore` should return 0 if the first score is the same as the second",
               "tests": [
                 "1/02/03-sort"
+              ],
+              "hints": [
+                "no case is necessary, use the `default` case"
               ]
             },
             {
@@ -101,6 +107,9 @@
               ],
               "actions": [
                 "insert('// use the compare function to sort myBest\nvar mySorted = myBest\n')"
+              ],
+              "hints": [
+                "try using `myBest.sort()`"
               ]
             }
           ]
@@ -118,6 +127,11 @@
               "actions": [
                 "open('03-map.js')",
                 "set('// change any `student.grade`'s into an 'A'\nfunction changeGrade() {\n\n}\n')"
+              ],
+              "hints": [
+                "give `changeGrade` a parameter, call it \"student\"",
+                "match for `student.grade`",
+                "match where `student.grade === 'A'`"
               ]
             },
             {
@@ -136,12 +150,21 @@
               ],
               "actions": [
                 "insert('\nfunction increaseScore() {\n\n}\n\n// map over `mySlightlyChanged` with a function `increaseScore` to increment each score by 12\nvar mySlightlyChanged = myData;\n')"
+              ],
+              "hints": [
+                "give `increaseScore` a parameter, call it \"student\"",
+                "it should increase `student.score`",
+                "return `student`"
               ]
             },
             {
-              "description": "Wait. Now you're getting 105 in \"Algorithm Design\" class. Fix `increaseScores` so that the maximum score is 95. That should be less suspicious.",
+              "description": "Wait. Now you're getting 105 in \"Algorithm Design\" class. Fix `increaseScore` so that the maximum score is 95. That should be less suspicious.",
               "tests": [
                 "1/03/04-map"
+              ],
+              "hints": [
+                "use an if clause within `increaseScore`",
+                "try `if (student.score >= 95) { student.score = 95 }`"
               ]
             },
             {
@@ -151,6 +174,11 @@
               ],
               "actions": [
                 "insert('\n// change `getGrade` to accept an object\n// and return an object\nfunction getGrade(score) {\n  switch (true) {\n    case (score >= 90):\n      return \"A\";\n    case (score >= 80):\n      return \"B\";\n    case (score >= 70):\n      return \"C\";\n    case (score >= 60):\n      return \"D\";\n    default:\n      return \"F\";\n  }\n}\n\n// map `myFixed` to update grades to the new scores\nvar myFixed = mySlightlyChanged;\n')"
+              ],
+              "hints": [
+                "change `getGrade` to take a `student` param instead of `score`",
+                "change the grade and return the `student`",
+                "set `student.grade = \"A\"` and return `student`"
               ]
             },
             {
@@ -160,6 +188,11 @@
               ],
               "actions": [
                 "insert('\n// set `scoresAndGrades` to an array of scores and grades\n// it should return an array of objects like this: {score: 75, grade: 'C'}\nvar scoresAndGrades = myFixed;\n')"
+              ],
+              "hints": [
+                "use `map` to return only the \"score\" & \"grade\" fields",
+                "map with a function with a parameter, call it \"student\"",
+                "return `{ score: student.score, grade: student.grade }`"
               ]
             }
           ]
@@ -177,6 +210,9 @@
               "actions": [
                 "open('04-forEach.js')",
                 "set('function logCourse(course) {\n  console.log(`${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console\nmyFixed.forEach();\n')"
+              ],
+              "hints": [
+                "call `forEach` with `logCourse`"
               ]
             },
             {
@@ -186,6 +222,10 @@
               ],
               "actions": [
                 "insert('\n// add a second param called 'index' to the function\nfunction logCourseWithIndex(course) {\n  console.log(`${index + 1}  ${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console with an index\nmyFixed.forEach(logCourseWithIndex);\n')"
+              ],
+              "hints": [
+                "Array methods can take more than one parameter",
+                "Add a second parameter to `logCourseWithIndex`"
               ]
             },
             {
@@ -195,6 +235,10 @@
               ],
               "actions": [
                 "insert('\n// add a third param called 'array' to the function\nfunction logCourseWithIndexAndArray(course, index) {\n  console.log(`${index + 1}/${array.length}  ${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console with an index and array length\nmyFixed.forEach(logCourseWithIndexAndArray);\n')"
+              ],
+              "hints": [
+                "Array methods can take more than one parameter",
+                "Add a third parameter to `logCourseWithIndexAndArray`"
               ]
             },
             {
@@ -220,7 +264,11 @@
               ],
               "actions": [
                 "open('05-find.js')",
-                "set('// filter for students.title is \"Web Security\"\nvar myClass = students.filter();\n')"
+                "set('// filter for the student title matches \"Web Security\"\nvar myClass = students.filter();\n')"
+              ],
+              "hints": [
+                "create a `filter` function",
+                "filter for `student.title === \"Web Security\"`"
               ]
             },
             {
@@ -229,8 +277,13 @@
                 "1/05/02-find"
               ],
               "actions": [
-                "insert('\n// search for a student with a name\n// not matching students in the list\nvar otherStudents = [\"Albert Gonzalez\", \"Brian Kernaghan\", \"Danielle Bunten Berry\", \"Donald Knuth\", \"Grace Hopper\", \"Hack Kerr\", \"James Gosling\", \"Ken Thompson\", \"Kevin Mitnick\", \"Linus Torvalds\", \"Niklaus Wirth\", \"Rebecca Heineman\", \"Tim Berners-Lee\", \"Xiao Tian\", \"Ying Cracker\"];\n\n')",
-                "insert('// hint: use `indexOf` to find if an item is in the array\nfunction notInList() {\n\n}\n\n// find using `notInList`\nvar unknownStudent = myClass.find();\n')"
+                "insert('\nvar otherStudents = [\"Albert Gonzalez\", \"Brian Kernaghan\", \"Danielle Bunten Berry\", \"Donald Knuth\", \"Grace Hopper\", \"Hack Kerr\", \"James Gosling\", \"Ken Thompson\", \"Kevin Mitnick\", \"Linus Torvalds\", \"Niklaus Wirth\", \"Rebecca Heineman\", \"Tim Berners-Lee\", \"Xiao Tian\", \"Ying Cracker\"];\n\n')",
+                "insert('// search for a student with a name\n// not matching students in `otherStudents`\nfunction notInList() {\n\n}\n\n// find using `notInList`\nvar unknownStudent = myClass.find();\n')"
+              ],
+              "hints": [
+                "use `indexOf` to find what doesn't match",
+                "use `otherStudents.indexOf(x) === -1` to find what doesn't match",
+                "match for `student.name`"
               ]
             },
             {
@@ -240,6 +293,9 @@
               ],
               "actions": [
                 "insert('\n// filter using `notInList`\nvar unknownStudentList = students.filter();\n')"
+              ],
+              "hints": [
+                "consider reusing a function"
               ]
             },
             {
@@ -248,7 +304,10 @@
                 "1/05/04-find"
               ],
               "actions": [
-                "insert('\n// use `map` to return only the `student.name`\nvar unknownStudentNames = unknownStudentList.map();\n')"
+                "insert('\n// list only student names\nvar unknownStudentNames = unknownStudentList.map();\n')"
+              ],
+              "hints": [
+                "use `map` to return only the `student.name`"
               ]
             },
             {
@@ -258,6 +317,9 @@
               ],
               "actions": [
                 "insert('\n// use `.join('')` to join the array of strings\nvar decodedName = unknownStudentNames;\nconsole.log(decodedName);\n')"
+              ],
+              "hints": [
+                "call `join` following `unknownStudentNames`"
               ]
             },
             {
@@ -282,6 +344,9 @@
                 "open('06-concat.js')",
                 "set('// Array.prototype can be used to create new Array methods\nArray.prototype.flatten = function() {\n  return this.reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n};\n')",
                 "insert('\nvar numberedList = [[1, 2], [3, 4]];\n\n// use `flatten` on `numberedList`\nvar flattenedArray = numberedList;\n')"
+              ],
+              "hints": [
+                "call `.flatten()` on `numberedList`"
               ]
             },
             {
@@ -291,6 +356,10 @@
               ],
               "actions": [
                 "insert('\n// map over courses then\n// map over students inside of courses\nvar doubleArray = courses.map(function(course) {\n    return course.students.map(function(student) {\n      return {\n        // fill in the fields\n        title: '',\n        instructor: '',\n        name: '',\n        score: '',\n        grade: ''\n      };\n    });\n});\n\n')"
+              ],
+              "hints": [
+                "pair `course.title`",
+                "pair `student.name`"
               ]
             },
             {
@@ -300,6 +369,9 @@
               ],
               "actions": [
                 "insert('// `flatten` doubleArray\nvar students = doubleArray;\n')"
+              ],
+              "hints": [
+                "call `.flatten()` on `doubleArray`"
               ]
             },
             {
@@ -315,6 +387,9 @@
               "description": "You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`.\n\n```js\nvar newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];\n```\n\n`concat` the `newSuspects` onto the `suspects` list.",
               "tests": [
                 "1/06/05-concat"
+              ],
+              "hints": [
+                "call `suspects.concat()` with `newSuspects`"
               ]
             }
           ]
@@ -331,7 +406,11 @@
               ],
               "actions": [
                 "open('07-reduce.js')",
-                "set('var practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\nfunction add(a, b) {\n  return a + b;\n}\n\n// total the numbers using a reduce function\n// initialValue defaults to 0\nvar total = practice.reduce();\n')"
+                "set('var practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\nfunction add(a, b) {\n  return a + b;\n}\n\n// total the numbers using a reduce function\nvar total = practice.reduce();\n')"
+              ],
+              "hints": [
+                "with only numbers, the initialValue defaults to 0",
+                "just call `reduce` with `add`"
               ]
             },
             {
@@ -340,7 +419,12 @@
                 "1/07/02-reduce"
               ],
               "actions": [
-                "insert('\nvar averages = courses.map(function(course) {\n  var sum = course.students.reduce(function(total, student) {\n    // calculate score totals here\n\n    // set initialValue to 0\n  });\n  return Math.round(sum / course.students.length, 0);\n});\n')"
+                "insert('\nvar averages = courses.map(function(course) {\n  var sum = course.students.reduce(function(total, student) {\n\n\n  });\n  return Math.round(sum / course.students.length, 0);\n});\n')"
+              ],
+              "hints": [
+                "set the initialValue to 0",
+                "like this: `reduce(function () {}, 0)`",
+                "return the sum of `student.score` and `total`"
               ]
             },
             {
@@ -349,7 +433,13 @@
                 "1/07/03-reduce"
               ],
               "actions": [
-                "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]\nvar suspectScores = suspectData.reduce(function(total, next) {\n  // see if suspect name has a list yet\n  var index = total.findIndex(function(suspect) {\n    return suspect.name === next.name;\n  });\n  if (index < 0) {\n    total.push({\n        // add a new {name: '', scores: [72]} object\n\n\n    });\n  } else {\n    // push the next score onto the suspects scores\n    total[index].scores.push();\n  }\n  return total;\n}, []);\n\n')"
+                "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]\nvar suspectScores = suspectData.reduce(function(total, next) {\n  // see if suspect name has a list yet\n  var index = total.findIndex(function(suspect) {\n    return suspect.name === next.name;\n  });\n  if (index < 0) {\n    total.push({\n\n\n    });\n  } else {\n    // push the next score onto the suspects scores\n    total[index].scores.push();\n  }\n  return total;\n}, []);\n\n')"
+              ],
+              "hints": [
+                "if the name is new, push an object with name & scores: `{ name: '', scores: [42]}`",
+                "match for `next.name` & `next.score`",
+                "you can concat the scores onto an array: `[].concat(next.score)`",
+                "if the name is already in the list, just add the `next.score`"
               ]
             },
             {
@@ -358,7 +448,12 @@
                 "1/07/04-reduce"
               ],
               "actions": [
-                "insert('\nvar suspectStats = suspectScores.map(function(suspect) {\n    // calculate the total difference in scores from the averages\n    // you may want to third reduce param: index\n    var difference = suspect.scores.reduce();\n\n    return {\n      name: suspect.name,\n      scores: suspect.scores,\n      difference: difference\n    };\n});\n')"
+                "insert('\nvar suspectStats = suspectScores.map(function(suspect) {\n    // calculate the total difference in scores from the averages\n    var difference = suspect.scores.reduce();\n\n    return {\n      name: suspect.name,\n      scores: suspect.scores,\n      difference: difference\n    };\n});\n')"
+              ],
+              "hints": [
+                "You may want to use a second param: `index`",
+                "Compare the `suspect.scores[index]` with the `averages[index]`",
+                "To get a sum, start your `reduce` function at 0"
               ]
             },
             {
@@ -367,7 +462,10 @@
                 "1/07/05-reduce"
               ],
               "actions": [
-                "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nvar likelySuspects = suspectStats.reduce(function() {}, []).join(', ');\n')"
+                "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nvar likelySuspects = suspectStats.reduce(function() {}, []);\n')"
+              ],
+              "hints": [
+                "use `.join(', ')`"
               ]
             },
             {

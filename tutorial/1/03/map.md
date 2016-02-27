@@ -67,6 +67,9 @@ function changeGrade() {
 }
 ```
 ))
+@hint('give `changeGrade` a parameter, call it "student"')
+@hint('match for `student.grade`')
+@hint('match where `student.grade === 'A'`')
 
 
 + Map over the `myData` with the `changeGrades` function. Set `myChanged` to the result.
@@ -77,6 +80,7 @@ function changeGrade() {
 var myChanged = myData.map();
 ```
 ))
+
 
 + Hold up. An A in "Data Science" class looks way to suspicious. Your parents might catch on to your cheating.
 
@@ -93,9 +97,14 @@ function increaseScore() {
 var mySlightlyChanged = myData;
 ```
 ))
+@hint('give `increaseScore` a parameter, call it "student"')
+@hint('it should increase `student.score`')
+@hint('return `student`')
 
-+ Wait. Now you're getting 105 in "Algorithm Design" class. Fix `increaseScores` so that the maximum score is 95. That should be less suspicious.
++ Wait. Now you're getting 105 in "Algorithm Design" class. Fix `increaseScore` so that the maximum score is 95. That should be less suspicious.
 @test('1/03/04-map')
+@hint('use an if clause within `increaseScore`')
+@hint('try `if (student.score >= 95) { student.score = 95 }`')
 
 + One more problem. Now the scores don't match the grades. you have 95 score in "3D Computer Graphics", but only a "B" grade. Set `myFixed` as the result of using the `getGrade` function to set grades according to their new scores.
 @test('1/03/05-map')
@@ -123,6 +132,9 @@ function getGrade(score) {
 var myFixed = mySlightlyChanged;
 ```
 ))
+@hint('change `getGrade` to take a `student` param instead of `score`')
+@hint('change the grade and return the `student`')
+@hint('set `student.grade = "A"` and return `student`')
 
 + Check to make sure everything is working. Set `scoresAndGrades` to an array of scores and grades only.
 @test('1/03/06-map')
@@ -134,3 +146,6 @@ var myFixed = mySlightlyChanged;
 var scoresAndGrades = myFixed;
 ```
 ))
+@hint('use `map` to return only the "score" & "grade" fields')
+@hint('map with a function with a parameter, call it "student"')
+@hint('return `{ score: student.score, grade: student.grade }`')

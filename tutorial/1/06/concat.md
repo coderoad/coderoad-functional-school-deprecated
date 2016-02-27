@@ -117,6 +117,7 @@ var numberedList = [[1, 2], [3, 4]];
 var flattenedArray = numberedList;
 ```  
 ))
+@hint('call `.flatten()` on `numberedList`')
 
 
 + Now `map` over the courses array, and `map` over the students array inside of it.
@@ -148,6 +149,8 @@ var doubleArray = courses.map(function(course) {
 
 ```
 ))
+@hint('pair `course.title`')
+@hint('pair `student.name`')
 
 + Use `flatten` to put all data into a single array. Set `students` to the result.
 @test('1/06/03-concat')
@@ -157,6 +160,7 @@ var doubleArray = courses.map(function(course) {
 var students = doubleArray;
 ```
 ))
+@hint('call `.flatten()` on `doubleArray`')
 
 + Use the `suspects` array to `filter` to only "Hack Kerr"'s data
 @test('1/06/04-concat')
@@ -178,3 +182,4 @@ var newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];
 
 `concat` the `newSuspects` onto the `suspects` list.
 @test('1/06/05-concat')
+@hint('call `suspects.concat()` with `newSuspects`')
