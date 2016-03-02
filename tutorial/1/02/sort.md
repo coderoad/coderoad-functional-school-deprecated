@@ -69,3 +69,5 @@ var mySorted = myBest
 ```
 ))
 @hint('try using `myBest.sort()`')
+
+@onPageComplete('In the next unit we'll look at changing data with `map`')
