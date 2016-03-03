@@ -66,7 +66,7 @@
               ]
             }
           ],
-          "onPageComplete": "In the next unit we'll look at how to `sort` data"
+          "onPageComplete": "In the next step we'll look at how to `sort` data"
         },
         {
           "title": "Sort",
@@ -113,7 +113,7 @@
               ]
             }
           ],
-          "onPageComplete": "In the next unit we'll look at changing data with `map`"
+          "onPageComplete": "In the next step we'll look at changing data with `map`"
         },
         {
           "title": "Map",
@@ -195,7 +195,8 @@
                 "return `{ score: student.score, grade: student.grade }`"
               ]
             }
-          ]
+          ],
+          "onPageComplete": "In the next step we'll compare `map` with `forEach`"
         },
         {
           "title": "forEach",
@@ -241,7 +242,7 @@
               ]
             },
             {
-              "description": "What??? Suddenly Your data has all disappeared!\n\nIt seems `myFixed` relies on a chain of methods.\n\n```js\nmyFixed = students\n    .filter(isAda)\n    .sort(compareScore)\n    .map(increaseScore)\n    .map(getGrade)\n    .forEach(logCourseWithIndexAndArray)\n```\n\nThis is why side-effects are dangerous. Students data must have changed, and now all of your transformations are effected.\n\nSomething strange is going on. In the next step we'll try to `find` your data.",
+              "description": "What??? Suddenly Your data has all disappeared!\n\nIt seems `myFixed` relies on a chain of methods.\n\n```js\nmyFixed = students\n    .filter(isAda)\n    .sort(compareScore)\n    .map(increaseScore)\n    .map(getGrade)\n    .forEach(logCourseWithIndexAndArray)\n```\n\nThis is why side-effects are dangerous. Students data must have changed, and now all of your transformations are effected.",
               "tests": [
                 "1/04/04-forEach"
               ],
@@ -249,7 +250,8 @@
                 "insert('\nconsole.log(myFixed);\n')"
               ]
             }
-          ]
+          ],
+          "onPageComplete": "Something strange is going on. In the next step we'll try to `find` your data."
         },
         {
           "title": "find",
@@ -319,14 +321,9 @@
               "hints": [
                 "call `join` following `unknownStudentNames`"
               ]
-            },
-            {
-              "description": "Very strange. In the next step, let's find out who wants revenge, and give it to him!",
-              "tests": [
-                "1/05/06-find"
-              ]
             }
-          ]
+          ],
+          "onPageComplete": "Very strange. In the next step, let's find out who wants revenge, and give it to him!"
         },
         {
           "title": "concat",
@@ -389,7 +386,8 @@
                 "call `suspects.concat()` with `newSuspects`"
               ]
             }
-          ]
+          ],
+          "onPageComplete": "In the next step, we'll look at using one of the most powerful methods: `reduce`"
         },
         {
           "title": "reduce",

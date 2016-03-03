@@ -150,7 +150,6 @@ myFixed = students
 
 This is why side-effects are dangerous. Students data must have changed, and now all of your transformations are effected.
 
-Something strange is going on. In the next step we'll try to `find` your data.
 @test('1/04/04-forEach')
 @action(insert(
 ```
@@ -158,3 +157,5 @@ Something strange is going on. In the next step we'll try to `find` your data.
 console.log(myFixed);
 ```
 ))
+
+@onPageComplete('Something strange is going on. In the next step we'll try to `find` your data.')

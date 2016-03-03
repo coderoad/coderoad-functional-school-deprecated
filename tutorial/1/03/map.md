@@ -149,3 +149,5 @@ var scoresAndGrades = myFixed;
 @hint('use `map` to return only the "score" & "grade" fields')
 @hint('map with a function with a parameter, call it "student"')
 @hint('return `{ score: student.score, grade: student.grade }`')
+
+@onPageComplete('In the next step we'll compare `map` with `forEach`')

@@ -96,5 +96,4 @@ console.log(decodedName);
 ))
 @hint('call `join` following `unknownStudentNames`')
 
-+ Very strange. In the next step, let's find out who wants revenge, and give it to him!
-@test('1/05/06-find')
+@onPageComplete('Very strange. In the next step, let's find out who wants revenge, and give it to him!')

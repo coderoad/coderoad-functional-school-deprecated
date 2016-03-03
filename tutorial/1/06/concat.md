@@ -183,3 +183,5 @@ var newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];
 `concat` the `newSuspects` onto the `suspects` list.
 @test('1/06/05-concat')
 @hint('call `suspects.concat()` with `newSuspects`')
+
+@onPageComplete('In the next step, we'll look at using one of the most powerful methods: `reduce`')

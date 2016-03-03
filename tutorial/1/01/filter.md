@@ -123,4 +123,4 @@ var myBest = myData.filter();
 ```
 ))
 
-@onPageComplete('In the next unit we'll look at how to `sort` data')
+@onPageComplete('In the next step we'll look at how to `sort` data')
