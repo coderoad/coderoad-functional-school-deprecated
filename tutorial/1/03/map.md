@@ -56,7 +56,7 @@ Those D & F grades would look a lot better if they suddenly became A's.
 
 Let's go back to before we filtered out the bad grades, and instead change the grades to A's.
 
-+ Make a function `changeGrades` that takes student data and changes all grades to "A"s.
++ Make a function `changeGrade` that takes student data and changes all grades to "A"s.
 @test('1/03/01-map')
 @action(open('03-map.js'))
 @action(set(
@@ -72,11 +72,11 @@ function changeGrade() {
 @hint('match where `student.grade === 'A'`')
 
 
-+ Map over the `myData` with the `changeGrades` function. Set `myChanged` to the result.
++ Map over the `myData` with the `changeGrade` function. Set `myChanged` to the result.
 @test('1/03/02-map')
 @action(insert(
 ```
-// map over `myData` with the `changeGrades` function
+// map over `myData` with the `changeGrade` function
 var myChanged = myData.map();
 ```
 ))

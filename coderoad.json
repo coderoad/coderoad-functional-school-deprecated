@@ -120,7 +120,7 @@
           "description": "Array -> run a function over each item -> Array\n\nYou've filtered and sorted our data, but neither of those actually change the data.\n\nWouldn't it be simpler if you could just change your grades?\n\nYou can use the array method `map` to run a function that returns changes to your data.\n\nAs an example, let's look at how you would increment each number in an array.\n\n```js\nfunction addOne(num) {\n  return num + 1;\n}\n\n[1, 2, 3].map(addOne);\n//> [2, 3, 4]\n\nfunction addToVal(obj) {\n  obj.val += 1;\n  return obj;\n}\n[{ val: 1}].map(addToVal);\n//> [{ val: 2 }]\n```\n\n`map` can change data, and it can also alter structure of the data you're working with.\n\n```js\nfunction makeObject(num) {\n  return { val: num };\n}\n\n[1, 2].map(makeObject);\n//> [{ val: 1 }, { val: 2 }]\n```\n\nSimilarly, `map` can also restrict the data you want to work with.  See the example below to see another way scores could be sorted.\n\n```js\nmyBest\n  .map(function(student) {\n    return student.score;\n  })\n  .sort()\n  .reverse()\n//> [93, 91, 88, 88, 82, 81, 73]\n```\n\nIn this example, `map` transformed an object with keys of 'title', 'instructor', 'name', 'score' and 'grade', to an array of just scores. Values weren't changed, but rather limited to a smaller subset of scores.\n\n`map` is powerful. Let's see what you can do with it.\n\nThose D & F grades would look a lot better if they suddenly became A's.\n\nLet's go back to before we filtered out the bad grades, and instead change the grades to A's.",
           "tasks": [
             {
-              "description": "Make a function `changeGrades` that takes student data and changes all grades to \"A\"s.",
+              "description": "Make a function `changeGrade` that takes student data and changes all grades to \"A\"s.",
               "tests": [
                 "1/03/01-map"
               ],
@@ -135,12 +135,12 @@
               ]
             },
             {
-              "description": "Map over the `myData` with the `changeGrades` function. Set `myChanged` to the result.",
+              "description": "Map over the `myData` with the `changeGrade` function. Set `myChanged` to the result.",
               "tests": [
                 "1/03/02-map"
               ],
               "actions": [
-                "insert('// map over `myData` with the `changeGrades` function\nvar myChanged = myData.map();\n')"
+                "insert('// map over `myData` with the `changeGrade` function\nvar myChanged = myData.map();\n')"
               ]
             },
             {
