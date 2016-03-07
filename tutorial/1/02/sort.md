@@ -41,7 +41,7 @@ function compareScore(a, b) {
   switch (true) {
     case b.score > a.score:
       // it should return 1 if b's score is more than a's
-      return
+      return ::>
     case 'set condition here':
       // it should return -1 if b's score is less than a's
 
@@ -65,7 +65,7 @@ function compareScore(a, b) {
 @action(insert(
 ```
 // use the compare function to sort myBest
-var mySorted = myBest
+var mySorted = myBest::>
 ```
 ))
 @hint('try using `myBest.sort()`')

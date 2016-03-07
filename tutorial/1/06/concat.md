@@ -114,7 +114,7 @@ Array.prototype.flatten = function() {
 var numberedList = [[1, 2], [3, 4]];
 
 // use `flatten` on `numberedList`
-var flattenedArray = numberedList;
+var flattenedArray = numberedList::>;
 ```  
 ))
 @hint('call `.flatten()` on `numberedList`')
@@ -138,7 +138,7 @@ var doubleArray = courses.map(function(course) {
     return course.students.map(function(student) {
       return {
         // fill in the fields
-        title: '',
+        title: ::>'',
         instructor: '',
         name: '',
         score: '',
@@ -157,7 +157,7 @@ var doubleArray = courses.map(function(course) {
 @action(insert(
 ```
 // `flatten` doubleArray
-var students = doubleArray;
+var students = doubleArray::>;
 ```
 ))
 @hint('call `.flatten()` on `doubleArray`')
@@ -170,7 +170,7 @@ var students = doubleArray;
 var suspects = ["Hack Kerr"];
 // filter to data matching `suspects`
 
-var suspectData = students;
+var suspectData = students::>;
 ```
 ))
 

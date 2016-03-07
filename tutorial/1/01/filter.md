@@ -72,8 +72,7 @@ console.log(data[0]);
 ))
 @action(insert(
 ```
-function isAda() {
-  // write condition here
+function isAda(::>) {
   // return true if student name
   // matches "Ada Lovelace"
 
@@ -90,7 +89,7 @@ function isAda() {
 @action(insert(
 ```
 // call filter condition here
-var myData = data.filter();
+var myData = data.filter(::>);
 ```
 ))
 @hint('Add a function to the `filter` call: `Array.filter(function() {})`')
@@ -104,7 +103,7 @@ var myData = data.filter();
 
 // return true if student.grade is not a "D" or "F"
 function isGoodGrade(student) {
-
+  ::>
 }
 ```
 ))
@@ -118,7 +117,7 @@ function isGoodGrade(student) {
 @action(insert(
 ```
 // filter out "D"'s and "F"'s here
-var myBest = myData.filter();
+var myBest = myData.filter(::>);
 
 ```
 ))

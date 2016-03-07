@@ -96,7 +96,7 @@ function logCourse(course) {
 }
 
 // log your grades to the console
-myFixed.forEach();
+myFixed.forEach(::>);
 ```
 ))
 @hint('call `forEach` with `logCourse`')
@@ -107,7 +107,7 @@ myFixed.forEach();
 ```
 
 // add a second param called 'index' to the function
-function logCourseWithIndex(course) {
+function logCourseWithIndex(course::>) {
   console.log(`${index + 1}  ${course.grade}  ${course.score}  ${course.title}`);
 }
 
@@ -124,7 +124,7 @@ myFixed.forEach(logCourseWithIndex);
 ```
 
 // add a third param called 'array' to the function
-function logCourseWithIndexAndArray(course, index) {
+function logCourseWithIndexAndArray(course, index::>) {
   console.log(`${index + 1}/${array.length}  ${course.grade}  ${course.score}  ${course.title}`);
 }
 

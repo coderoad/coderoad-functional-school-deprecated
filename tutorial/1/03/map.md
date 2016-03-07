@@ -62,7 +62,7 @@ Let's go back to before we filtered out the bad grades, and instead change the g
 @action(set(
 ```
 // change any `student.grade`'s into an 'A'
-function changeGrade() {
+function changeGrade(::>) {
 
 }
 ```
@@ -77,7 +77,7 @@ function changeGrade() {
 @action(insert(
 ```
 // map over `myData` with the `changeGrade` function
-var myChanged = myData.map();
+var myChanged = myData.map(::>);
 ```
 ))
 
@@ -89,7 +89,7 @@ Let's go back to `myData` and instead increment each score by 12 points.
 @action(insert(
 ```
 
-function increaseScore() {
+function increaseScore(::>) {
 
 }
 
@@ -143,7 +143,7 @@ var myFixed = mySlightlyChanged;
 
 // set `scoresAndGrades` to an array of scores and grades
 // it should return an array of objects like this: {score: 75, grade: 'C'}
-var scoresAndGrades = myFixed;
+var scoresAndGrades = myFixed::>
 ```
 ))
 @hint('use `map` to return only the "score" & "grade" fields')

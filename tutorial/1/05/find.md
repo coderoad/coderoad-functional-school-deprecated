@@ -31,7 +31,7 @@ Find is great for performantly matching unique values in data, such as an "id", 
 @action(set(
 ```
 // filter for the student title matches "Web Security"
-var myClass = students.filter();
+var myClass = students.filter(::>);
 ```
 ))
 @hint('create a `filter` function')
@@ -50,7 +50,7 @@ var otherStudents = ["Albert Gonzalez", "Brian Kernaghan", "Danielle Bunten Berr
 ```
 // search for a student with a name
 // not matching students in `otherStudents`
-function notInList() {
+function notInList(::>) {
 
 }
 
@@ -68,7 +68,7 @@ var unknownStudent = myClass.find();
 ```
 
 // filter using `notInList`
-var unknownStudentList = students.filter();
+var unknownStudentList = students.filter(::>);
 ```  
 ))
 @hint('consider reusing a function')
@@ -79,7 +79,7 @@ var unknownStudentList = students.filter();
 ```
 
 // list only student names
-var unknownStudentNames = unknownStudentList.map();
+var unknownStudentNames = unknownStudentList.map(::>);
 ```  
 ))
 @hint('use `map` to return only the `student.name`')
@@ -90,7 +90,7 @@ var unknownStudentNames = unknownStudentList.map();
 ```
 
 // use `.join('')` to join the array of strings
-var decodedName = unknownStudentNames;
+var decodedName = unknownStudentNames::>;
 console.log(decodedName);
 ```  
 ))

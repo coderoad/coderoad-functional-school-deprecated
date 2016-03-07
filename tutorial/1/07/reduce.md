@@ -60,7 +60,7 @@ function add(a, b) {
 }
 
 // total the numbers using a reduce function
-var total = practice.reduce();
+var total = practice.reduce(::>);
 ```
 ))
 @hint('with only numbers, the initialValue defaults to 0')
@@ -75,7 +75,7 @@ var total = practice.reduce();
 
 var averages = courses.map(function(course) {
   var sum = course.students.reduce(function(total, student) {
-
+    ::>
 
   });
   return Math.round(sum / course.students.length, 0);
@@ -100,7 +100,7 @@ var suspectScores = suspectData.reduce(function(total, next) {
   });
   if (index < 0) {
     total.push({
-
+      ::>
 
     });
   } else {
@@ -131,7 +131,7 @@ var suspectScores = suspectData.reduce(function(total, next) {
 
 var suspectStats = suspectScores.map(function(suspect) {
     // calculate the total difference in scores from the averages
-    var difference = suspect.scores.reduce();
+    var difference = suspect.scores.reduce(::>);
 
     return {
       name: suspect.name,
@@ -158,7 +158,7 @@ function isCheater(suspect) {
 }
 
 // reduce down to a string of likely suspects
-var likelySuspects = suspectStats.reduce(function() {}, []);
+var likelySuspects = suspectStats.reduce(function(::>) {}, []);
 ```
 ))
 @hint('use `.join(', ')`')

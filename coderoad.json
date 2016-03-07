@@ -20,7 +20,7 @@
               "actions": [
                 "open('01-filter.js')",
                 "set('/**\n * Data is set as a global. Example:\n * [{\n * \"title\": \"Relational Databases\",\n * \"instructor\": \"Sean Quentin Lewis\",\n * \"name\": \"Ada Lovelace\",\n * \"score\": 91,\n * \"grade\": \"A\"\n * },\n * ...\n * ]\n*/\n')",
-                "insert('function isAda() {\n  // write condition here\n  // return true if student name\n  // matches \"Ada Lovelace\"\n\n}\n')"
+                "insert('function isAda(::>) {\n  // return true if student name\n  // matches \"Ada Lovelace\"\n\n}\n')"
               ],
               "hints": [
                 "Some tasks have hints",
@@ -35,7 +35,7 @@
                 "1/01/02-filter"
               ],
               "actions": [
-                "insert('// call filter condition here\nvar myData = data.filter();\n')"
+                "insert('// call filter condition here\nvar myData = data.filter(::>);\n')"
               ],
               "hints": [
                 "Add a function to the `filter` call: `Array.filter(function() {})`",
@@ -48,7 +48,7 @@
                 "1/01/03-filter"
               ],
               "actions": [
-                "insert('\n\n// return true if student.grade is not a \"D\" or \"F\"\nfunction isGoodGrade(student) {\n\n}\n')"
+                "insert('\n\n// return true if student.grade is not a \"D\" or \"F\"\nfunction isGoodGrade(student) {\n  ::>\n}\n')"
               ],
               "hints": [
                 "match for `student.grade` that isn't \"D\" or \"F\"",
@@ -62,7 +62,7 @@
                 "1/01/04-filter"
               ],
               "actions": [
-                "insert('// filter out \"D\"'s and \"F\"'s here\nvar myBest = myData.filter();\n\n')"
+                "insert('// filter out \"D\"'s and \"F\"'s here\nvar myBest = myData.filter(::>);\n\n')"
               ]
             }
           ],
@@ -79,7 +79,7 @@
               ],
               "actions": [
                 "open('02-sort.js')",
-                "set('function compareScore(a, b) {\n  switch (true) {\n    case b.score > a.score:\n      // it should return 1 if b's score is more than a's\n      return\n    case 'set condition here':\n      // it should return -1 if b's score is less than a's\n\n    default:\n      // it should return 0 if b and a have the same score\n\n  }\n}\n')"
+                "set('function compareScore(a, b) {\n  switch (true) {\n    case b.score > a.score:\n      // it should return 1 if b's score is more than a's\n      return ::>\n    case 'set condition here':\n      // it should return -1 if b's score is less than a's\n\n    default:\n      // it should return 0 if b and a have the same score\n\n  }\n}\n')"
               ]
             },
             {
@@ -106,7 +106,7 @@
                 "1/02/04-sort"
               ],
               "actions": [
-                "insert('// use the compare function to sort myBest\nvar mySorted = myBest\n')"
+                "insert('// use the compare function to sort myBest\nvar mySorted = myBest::>\n')"
               ],
               "hints": [
                 "try using `myBest.sort()`"
@@ -126,7 +126,7 @@
               ],
               "actions": [
                 "open('03-map.js')",
-                "set('// change any `student.grade`'s into an 'A'\nfunction changeGrade() {\n\n}\n')"
+                "set('// change any `student.grade`'s into an 'A'\nfunction changeGrade(::>) {\n\n}\n')"
               ],
               "hints": [
                 "give `changeGrade` a parameter, call it \"student\"",
@@ -140,7 +140,7 @@
                 "1/03/02-map"
               ],
               "actions": [
-                "insert('// map over `myData` with the `changeGrade` function\nvar myChanged = myData.map();\n')"
+                "insert('// map over `myData` with the `changeGrade` function\nvar myChanged = myData.map(::>);\n')"
               ]
             },
             {
@@ -149,7 +149,7 @@
                 "1/03/03-map"
               ],
               "actions": [
-                "insert('\nfunction increaseScore() {\n\n}\n\n// map over `mySlightlyChanged` with a function `increaseScore` to increment each score by 12\nvar mySlightlyChanged = myData;\n')"
+                "insert('\nfunction increaseScore(::>) {\n\n}\n\n// map over `mySlightlyChanged` with a function `increaseScore` to increment each score by 12\nvar mySlightlyChanged = myData;\n')"
               ],
               "hints": [
                 "give `increaseScore` a parameter, call it \"student\"",
@@ -187,7 +187,7 @@
                 "1/03/06-map"
               ],
               "actions": [
-                "insert('\n// set `scoresAndGrades` to an array of scores and grades\n// it should return an array of objects like this: {score: 75, grade: 'C'}\nvar scoresAndGrades = myFixed;\n')"
+                "insert('\n// set `scoresAndGrades` to an array of scores and grades\n// it should return an array of objects like this: {score: 75, grade: 'C'}\nvar scoresAndGrades = myFixed::>\n')"
               ],
               "hints": [
                 "use `map` to return only the \"score\" & \"grade\" fields",
@@ -209,7 +209,7 @@
               ],
               "actions": [
                 "open('04-forEach.js')",
-                "set('function logCourse(course) {\n  console.log(`${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console\nmyFixed.forEach();\n')"
+                "set('function logCourse(course) {\n  console.log(`${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console\nmyFixed.forEach(::>);\n')"
               ],
               "hints": [
                 "call `forEach` with `logCourse`"
@@ -221,7 +221,7 @@
                 "1/04/02-forEach"
               ],
               "actions": [
-                "insert('\n// add a second param called 'index' to the function\nfunction logCourseWithIndex(course) {\n  console.log(`${index + 1}  ${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console with an index\nmyFixed.forEach(logCourseWithIndex);\n')"
+                "insert('\n// add a second param called 'index' to the function\nfunction logCourseWithIndex(course::>) {\n  console.log(`${index + 1}  ${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console with an index\nmyFixed.forEach(logCourseWithIndex);\n')"
               ],
               "hints": [
                 "Array methods can take more than one parameter",
@@ -234,7 +234,7 @@
                 "1/04/03-forEach"
               ],
               "actions": [
-                "insert('\n// add a third param called 'array' to the function\nfunction logCourseWithIndexAndArray(course, index) {\n  console.log(`${index + 1}/${array.length}  ${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console with an index and array length\nmyFixed.forEach(logCourseWithIndexAndArray);\n')"
+                "insert('\n// add a third param called 'array' to the function\nfunction logCourseWithIndexAndArray(course, index::>) {\n  console.log(`${index + 1}/${array.length}  ${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console with an index and array length\nmyFixed.forEach(logCourseWithIndexAndArray);\n')"
               ],
               "hints": [
                 "Array methods can take more than one parameter",
@@ -264,7 +264,7 @@
               ],
               "actions": [
                 "open('05-find.js')",
-                "set('// filter for the student title matches \"Web Security\"\nvar myClass = students.filter();\n')"
+                "set('// filter for the student title matches \"Web Security\"\nvar myClass = students.filter(::>);\n')"
               ],
               "hints": [
                 "create a `filter` function",
@@ -278,7 +278,7 @@
               ],
               "actions": [
                 "insert('\nvar otherStudents = [\"Albert Gonzalez\", \"Brian Kernaghan\", \"Danielle Bunten Berry\", \"Donald Knuth\", \"Grace Hopper\", \"Hack Kerr\", \"James Gosling\", \"Ken Thompson\", \"Kevin Mitnick\", \"Linus Torvalds\", \"Niklaus Wirth\", \"Rebecca Heineman\", \"Tim Berners-Lee\", \"Xiao Tian\", \"Ying Cracker\"];\n\n')",
-                "insert('// search for a student with a name\n// not matching students in `otherStudents`\nfunction notInList() {\n\n}\n\n// find using `notInList`\nvar unknownStudent = myClass.find();\n')"
+                "insert('// search for a student with a name\n// not matching students in `otherStudents`\nfunction notInList(::>) {\n\n}\n\n// find using `notInList`\nvar unknownStudent = myClass.find();\n')"
               ],
               "hints": [
                 "use `indexOf` to find what doesn't match",
@@ -292,7 +292,7 @@
                 "1/05/03-find"
               ],
               "actions": [
-                "insert('\n// filter using `notInList`\nvar unknownStudentList = students.filter();\n')"
+                "insert('\n// filter using `notInList`\nvar unknownStudentList = students.filter(::>);\n')"
               ],
               "hints": [
                 "consider reusing a function"
@@ -304,7 +304,7 @@
                 "1/05/04-find"
               ],
               "actions": [
-                "insert('\n// list only student names\nvar unknownStudentNames = unknownStudentList.map();\n')"
+                "insert('\n// list only student names\nvar unknownStudentNames = unknownStudentList.map(::>);\n')"
               ],
               "hints": [
                 "use `map` to return only the `student.name`"
@@ -316,7 +316,7 @@
                 "1/05/05-find"
               ],
               "actions": [
-                "insert('\n// use `.join('')` to join the array of strings\nvar decodedName = unknownStudentNames;\nconsole.log(decodedName);\n')"
+                "insert('\n// use `.join('')` to join the array of strings\nvar decodedName = unknownStudentNames::>;\nconsole.log(decodedName);\n')"
               ],
               "hints": [
                 "call `join` following `unknownStudentNames`"
@@ -337,7 +337,7 @@
               "actions": [
                 "open('06-concat.js')",
                 "set('// Array.prototype can be used to create new Array methods\nArray.prototype.flatten = function() {\n  return this.reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n};\n')",
-                "insert('\nvar numberedList = [[1, 2], [3, 4]];\n\n// use `flatten` on `numberedList`\nvar flattenedArray = numberedList;\n')"
+                "insert('\nvar numberedList = [[1, 2], [3, 4]];\n\n// use `flatten` on `numberedList`\nvar flattenedArray = numberedList::>;\n')"
               ],
               "hints": [
                 "call `.flatten()` on `numberedList`"
@@ -349,7 +349,7 @@
                 "1/06/02-concat"
               ],
               "actions": [
-                "insert('\n// map over courses then\n// map over students inside of courses\nvar doubleArray = courses.map(function(course) {\n    return course.students.map(function(student) {\n      return {\n        // fill in the fields\n        title: '',\n        instructor: '',\n        name: '',\n        score: '',\n        grade: ''\n      };\n    });\n});\n\n')"
+                "insert('\n// map over courses then\n// map over students inside of courses\nvar doubleArray = courses.map(function(course) {\n    return course.students.map(function(student) {\n      return {\n        // fill in the fields\n        title: ::>'',\n        instructor: '',\n        name: '',\n        score: '',\n        grade: ''\n      };\n    });\n});\n\n')"
               ],
               "hints": [
                 "pair `course.title`",
@@ -362,7 +362,7 @@
                 "1/06/03-concat"
               ],
               "actions": [
-                "insert('// `flatten` doubleArray\nvar students = doubleArray;\n')"
+                "insert('// `flatten` doubleArray\nvar students = doubleArray::>;\n')"
               ],
               "hints": [
                 "call `.flatten()` on `doubleArray`"
@@ -374,7 +374,7 @@
                 "1/06/04-concat"
               ],
               "actions": [
-                "insert('\nvar suspects = [\"Hack Kerr\"];\n// filter to data matching `suspects`\n\nvar suspectData = students;\n')"
+                "insert('\nvar suspects = [\"Hack Kerr\"];\n// filter to data matching `suspects`\n\nvar suspectData = students::>;\n')"
               ]
             },
             {
@@ -400,7 +400,7 @@
               ],
               "actions": [
                 "open('07-reduce.js')",
-                "set('var practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\nfunction add(a, b) {\n  return a + b;\n}\n\n// total the numbers using a reduce function\nvar total = practice.reduce();\n')"
+                "set('var practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\nfunction add(a, b) {\n  return a + b;\n}\n\n// total the numbers using a reduce function\nvar total = practice.reduce(::>);\n')"
               ],
               "hints": [
                 "with only numbers, the initialValue defaults to 0",
@@ -413,7 +413,7 @@
                 "1/07/02-reduce"
               ],
               "actions": [
-                "insert('\nvar averages = courses.map(function(course) {\n  var sum = course.students.reduce(function(total, student) {\n\n\n  });\n  return Math.round(sum / course.students.length, 0);\n});\n')"
+                "insert('\nvar averages = courses.map(function(course) {\n  var sum = course.students.reduce(function(total, student) {\n    ::>\n\n  });\n  return Math.round(sum / course.students.length, 0);\n});\n')"
               ],
               "hints": [
                 "set the initialValue to 0",
@@ -427,7 +427,7 @@
                 "1/07/03-reduce"
               ],
               "actions": [
-                "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]\nvar suspectScores = suspectData.reduce(function(total, next) {\n  // see if suspect name has a list yet\n  var index = total.findIndex(function(suspect) {\n    return suspect.name === next.name;\n  });\n  if (index < 0) {\n    total.push({\n\n\n    });\n  } else {\n    // push the next score onto the suspects scores\n    total[index].scores.push();\n  }\n  return total;\n}, []);\n\n')"
+                "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]\nvar suspectScores = suspectData.reduce(function(total, next) {\n  // see if suspect name has a list yet\n  var index = total.findIndex(function(suspect) {\n    return suspect.name === next.name;\n  });\n  if (index < 0) {\n    total.push({\n      ::>\n\n    });\n  } else {\n    // push the next score onto the suspects scores\n    total[index].scores.push();\n  }\n  return total;\n}, []);\n\n')"
               ],
               "hints": [
                 "if the name is new, push an object with name & scores: `{ name: '', scores: [42]}`",
@@ -442,7 +442,7 @@
                 "1/07/04-reduce"
               ],
               "actions": [
-                "insert('\nvar suspectStats = suspectScores.map(function(suspect) {\n    // calculate the total difference in scores from the averages\n    var difference = suspect.scores.reduce();\n\n    return {\n      name: suspect.name,\n      scores: suspect.scores,\n      difference: difference\n    };\n});\n')"
+                "insert('\nvar suspectStats = suspectScores.map(function(suspect) {\n    // calculate the total difference in scores from the averages\n    var difference = suspect.scores.reduce(::>);\n\n    return {\n      name: suspect.name,\n      scores: suspect.scores,\n      difference: difference\n    };\n});\n')"
               ],
               "hints": [
                 "You may want to use a second param: `index`",
@@ -456,7 +456,7 @@
                 "1/07/05-reduce"
               ],
               "actions": [
-                "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nvar likelySuspects = suspectStats.reduce(function() {}, []);\n')"
+                "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nvar likelySuspects = suspectStats.reduce(function(::>) {}, []);\n')"
               ],
               "hints": [
                 "use `.join(', ')`"
