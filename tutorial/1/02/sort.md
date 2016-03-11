@@ -37,6 +37,8 @@ First you'll need to write a sort condition function called `compareScore`.
 @action(open('02-sort.js'))
 @action(set(
 ```
+// Array.sort(fn)
+
 function compareScore(a, b) {
   switch (true) {
     case b.score > a.score:

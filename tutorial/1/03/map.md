@@ -61,6 +61,8 @@ Let's go back to before we filtered out the bad grades, and instead change the g
 @action(open('03-map.js'))
 @action(set(
 ```
+// Array.map(fn)
+
 // change any `student.grade`'s into an 'A'
 function changeGrade(::>) {
 

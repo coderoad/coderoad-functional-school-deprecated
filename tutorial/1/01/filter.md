@@ -54,41 +54,26 @@ console.log(data[0]);
 + Write a filter condition function called `isAda` that returns true only if the name matches your name: "Ada Lovelace".
 @test('1/01/01-filter')
 @action(open('01-filter.js'))
-@action(set(
-```
-/**
- * Data is set as a global. Example:
- * [{
- * "title": "Relational Databases",
- * "instructor": "Sean Quentin Lewis",
- * "name": "Ada Lovelace",
- * "score": 91,
- * "grade": "A"
- * },
- * ...
- * ]
-*/
-```
-))
 @action(insert(
 ```
-function isAda(::>) {
+// Array.filter(fn)
+
+function isAda(student) {
   // return true if student name
   // matches "Ada Lovelace"
-
+  ::>
 }
 ```
 ))
 @hint('Some tasks have hints')
-@hint('Pass in a parameter to `isAda`, let's call it "student"')
 @hint('Check if `student.name` matches "Ada Lovelace"')
 @hint('Use `===` to check equality')
 
-+ Set `var myData` equal to data matching your name, "Ada Lovelace".
++ Set `var myData` to filter with the `isAda` function.
 @test('1/01/02-filter')
 @action(insert(
 ```
-// call filter condition here
+// run the function name in filter
 var myData = data.filter(::>);
 ```
 ))

@@ -30,6 +30,8 @@ Find is great for performantly matching unique values in data, such as an "id", 
 @action(open('05-find.js'))
 @action(set(
 ```
+// Array.find(fn)
+
 // filter for the student title matches "Web Security"
 var myClass = students.filter(::>);
 ```

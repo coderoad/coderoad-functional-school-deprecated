@@ -29,6 +29,34 @@ Using common built-in Javascript array methods such as `map` & `reduce`.
 
 By the end, you should have an understanding of how to use array methods to manipulate semi-complex data.
 
+##### Start
+
+Understanding the Data Set
+
+Over this tutorial series, we'll be changing and working with two different data sets. It'll be a big help to first understand what the data looks like.
+
+```json
+var data = [
+  {
+    "title": "Relational Databases",
+    "instructor": "Sean Quentin Lewis",
+    "name": "Ada Lovelace",
+    "score": 91,
+    "grade": "A"
+  },
+  ...
+]
+```
+
+Here we have an array of "student" objects. To get the first item in the array, you can use the array index. Array indexes start at 0.
+
+```js
+console.log(
+  'first instructor', data[0].instructor
+);
+// first instructor Sean Quentin Lewis
+```
+
 ##### Filter
 
 Array -> Array of items that match a condition

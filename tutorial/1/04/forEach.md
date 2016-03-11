@@ -91,6 +91,8 @@ Now that we see how `forEach` works, let's use it to make calls to the `console`
 @action(open('04-forEach.js'))
 @action(set(
 ```
+// Array.forEach(fn)
+
 function logCourse(course) {
   console.log(`${course.grade}  ${course.score}  ${course.title}`);
 }

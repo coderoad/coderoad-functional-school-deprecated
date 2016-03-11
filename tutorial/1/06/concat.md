@@ -100,6 +100,8 @@ We'll test out flatten, then re-create our student array of data from the origin
 @action(open('06-concat.js'))
 @action(set(
 ```
+// Array.concat(any)
+
 // Array.prototype can be used to create new Array methods
 Array.prototype.flatten = function() {
   return this.reduce(function(a, b) {
