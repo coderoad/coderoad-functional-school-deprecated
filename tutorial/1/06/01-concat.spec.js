@@ -1,9 +1,10 @@
 'use strict';
 var expect = require('chai').expect;
-var loadJS = require('./common/loadJS').default;
+var path = require('path');
+var loadJS = require(path.join(process.env.TUTORIAL_DIR, 'loadJS')).default;
 
 if (!global.courses) {
-  global.courses = JSON.parse(JSON.stringify(require('./data/courses2.json')));
+  global.courses = JSON.parse(JSON.stringify(require(path.join(process.env.TUTORIAL_DIR, 'data', 'courses2.json'))));
 }
 
 loadJS('06-concat.js');

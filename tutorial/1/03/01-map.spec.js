@@ -1,7 +1,8 @@
 var expect = require('chai').expect;
-var loadJS = require('./common/loadJS').default;
+var path = require('path');
+var loadJS = require(path.join(process.env.TUTORIAL_DIR, 'loadJS')).default;
 if (!global.myData) {
-  global.myData = JSON.parse(JSON.stringify(require('./1/03/myData.json')));
+  global.myData = JSON.parse(JSON.stringify(require(path.join(process.env.TUTORIAL_DIR, '1', '03', 'myData.json'))));
 }
 loadJS('03-map.js')
 

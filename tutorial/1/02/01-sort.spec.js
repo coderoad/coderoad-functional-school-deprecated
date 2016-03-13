@@ -1,7 +1,8 @@
 var expect = require('chai').expect;
-var loadJS = require('./common/loadJS').default;
+var path = require('path');
+var loadJS = require(path.join(process.env.TUTORIAL_DIR, 'loadJS')).default;
 if (!global.myBest) {
-  global.myBest = JSON.parse(JSON.stringify(require('./1/02/myBest.json')));
+  global.myBest = JSON.parse(JSON.stringify(require(path.join(process.env.TUTORIAL_DIR, '1', '02', 'myBest.json'))));
 }
 loadJS('02-sort.js');
 

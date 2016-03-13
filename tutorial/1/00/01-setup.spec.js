@@ -2,12 +2,14 @@
 var chai = require('chai');
 var spies = require('chai-spies');
 var expect = chai.expect;
+var path = require('path');
 chai.use(spies);
 
-var loadJS = require('./common/loadJS').default;
+var loadJS = require(path.join(process.env.TUTORIAL_DIR, 'loadJS')).default;
 
 if (!global.data) {
-  global.data = JSON.parse(JSON.stringify(require('./data/students.json')));
+  let data = require(path.join(process.env.TUTORIAL_DIR, 'data', 'students.json'));
+  global.data = JSON.parse(JSON.stringify(data));
 }
 
 var spy = chai.spy.on(console, 'log');

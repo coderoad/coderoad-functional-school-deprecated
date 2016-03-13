@@ -54,7 +54,7 @@
               ]
             }
           ],
-          "onPageComplete": "Now we're ready to get started with `filter`ing our data.\\n\\n"
+          "onPageComplete": "Now we're ready to get started with `filter`ing our data."
         },
         {
           "title": "Filter",

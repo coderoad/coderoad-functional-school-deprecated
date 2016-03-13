@@ -4,9 +4,9 @@ var spies = require('chai-spies');
 var expect = chai.expect;
 chai.use(spies);
 var path = require('path');
-var loadJS = require('./common/loadJS').default;
+var loadJS = require(path.join(process.env.TUTORIAL_DIR, 'loadJS')).default;
 
-global.myFixed = JSON.parse(JSON.stringify(require('./1/04/myFixed.json')));
+global.myFixed = JSON.parse(JSON.stringify(require(path.join(process.env.TUTORIAL_DIR, '1', '04', 'myFixed.json'))));
 
 if (process.env.TASK_POSITION === '4') {
   global.myFixed = [];

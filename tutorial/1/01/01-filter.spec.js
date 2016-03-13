@@ -1,9 +1,10 @@
 "use strict";
 var expect = require('chai').expect;
-var loadJS = require('./common/loadJS').default;
+var path = require('path');
+var loadJS = require(path.join(process.env.TUTORIAL_DIR, 'loadJS')).default;
 
 if (!global.data) {
-  global.data = JSON.parse(JSON.stringify(require('./data/students.json')));
+  global.data = JSON.parse(JSON.stringify(require(path.join(process.env.TUTORIAL_DIR, 'data', 'students.json'))));
 }
 
 loadJS('01-filter.js');
