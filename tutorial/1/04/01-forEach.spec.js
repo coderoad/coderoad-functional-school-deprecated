@@ -3,17 +3,13 @@ var chai = require('chai');
 var spies = require('chai-spies');
 var expect = chai.expect;
 chai.use(spies);
-var path = require('path');
-var loadJS = require(path.join(process.env.TUTORIAL_DIR, 'loadJS')).default;
 
-global.myFixed = JSON.parse(JSON.stringify(require(path.join(process.env.TUTORIAL_DIR, '1', '04', 'myFixed.json'))));
-
+loadGlobal('myFixed', '1/04/myFixed.json');
 if (process.env.TASK_POSITION === '4') {
   global.myFixed = [];
 }
-
 var spy = chai.spy.on(console, 'log');
-loadJS('04-forEach.js');
+loadEditor('04-forEach.js');
 
 describe('01 console.log', function() {
 

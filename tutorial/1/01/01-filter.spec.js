@@ -1,13 +1,8 @@
 "use strict";
 var expect = require('chai').expect;
-var path = require('path');
-var loadJS = require(path.join(process.env.TUTORIAL_DIR, 'loadJS')).default;
 
-if (!global.data) {
-  global.data = JSON.parse(JSON.stringify(require(path.join(process.env.TUTORIAL_DIR, 'data', 'students.json'))));
-}
-
-loadJS('01-filter.js');
+loadGlobal('data', 'data/students.json');
+loadEditor('01-filter.js');
 
 describe('01 function isAda', function() {
 
