@@ -1,7 +1,7 @@
 'use strict';
 var expect = require('chai').expect;
 
-loadGlobal('data/courses2.json');
+loadGlobal('courses', 'data/courses2.json');
 loadEditor('06-concat.js');
 
 describe('01 var flattenedArray', function() {
