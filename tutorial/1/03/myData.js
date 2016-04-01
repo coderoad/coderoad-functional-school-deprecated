@@ -1,4 +1,4 @@
-[{
+var myData = [{
   "title": "Relational Databases",
   "instructor": "Sean Quentin Lewis",
   "name": "Ada Lovelace",

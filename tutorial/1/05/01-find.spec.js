@@ -2,8 +2,8 @@
 var expect = require('chai').expect;
 var spies = require('chai-spies');
 
-loadGlobal('students', 'data/students2.json');
-loadEditor('05-find.js');
+// load('data/students2.js', true)
+// loadEditor('05-find.js');
 
 describe('01 var myClass', function() {
 

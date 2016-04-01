@@ -1,7 +1,7 @@
-[{
+var students = [{
   "title": "Relational Databases",
   "instructor": "Sean Quentin Lewis",
-  "name": "!f",
+  "name": "Ada Lovelace",
   "score": 91,
   "grade": "A"
 }, {
@@ -97,7 +97,7 @@
 }, {
   "title": "3D Computer Graphics",
   "instructor": "G.L. Webb",
-  "name": "in",
+  "name": "Ada Lovelace",
   "score": 88,
   "grade": "B"
 }, {
@@ -193,7 +193,7 @@
 }, {
   "title": "Front End Web Development",
   "instructor": "Moe Zaick",
-  "name": "dt",
+  "name": "Ada Lovelace",
   "score": 61,
   "grade": "D"
 }, {
@@ -289,9 +289,9 @@
 }, {
   "title": "Web Security",
   "instructor": "Sue Denim",
-  "name": "Donald Knuth",
-  "score": 44,
-  "grade": "F"
+  "name": "Ada Lovelace",
+  "score": 81,
+  "grade": "B"
 }, {
   "title": "Web Security",
   "instructor": "Sue Denim",
@@ -313,9 +313,9 @@
 }, {
   "title": "Web Security",
   "instructor": "Sue Denim",
-  "name": "he",
-  "score": 81,
-  "grade": "B"
+  "name": "Donald Knuth",
+  "score": 44,
+  "grade": "F"
 }, {
   "title": "Web Security",
   "instructor": "Sue Denim",
@@ -385,7 +385,7 @@
 }, {
   "title": "Javascript Fundamentals",
   "instructor": "Jay Kweerie",
-  "name": "be",
+  "name": "Ada Lovelace",
   "score": 73,
   "grade": "C"
 }, {
@@ -481,7 +481,7 @@
 }, {
   "title": "Data Science",
   "instructor": "Ford Fulkerson",
-  "name": "st",
+  "name": "Ada Lovelace",
   "score": 58,
   "grade": "F"
 }, {
@@ -577,7 +577,7 @@
 }, {
   "title": "Algorithm Design",
   "instructor": "Gale Shapely",
-  "name": "re",
+  "name": "Ada Lovelace",
   "score": 93,
   "grade": "A"
 }, {
@@ -673,7 +673,7 @@
 }, {
   "title": "Data Abstraction",
   "instructor": "Aster Ricks",
-  "name": "ve",
+  "name": "Ada Lovelace",
   "score": 82,
   "grade": "B"
 }, {
@@ -769,7 +769,7 @@
 }, {
   "title": "Data Structures",
   "instructor": "Brodal Q.",
-  "name": "ng",
+  "name": "Ada Lovelace",
   "score": 88,
   "grade": "B"
 }, {
@@ -865,7 +865,7 @@
 }, {
   "title": "Networks",
   "instructor": "Van Emde Boas",
-  "name": "e!",
+  "name": "Ada Lovelace",
   "score": 65,
   "grade": "D"
 }, {

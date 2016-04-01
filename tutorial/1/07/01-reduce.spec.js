@@ -1,9 +1,9 @@
 "use strict";
 var expect = require('chai').expect;
 
-loadGlobal('courses', 'data/courses2.json');
-loadGlobal('suspectData', '1/07/suspectData.json');
-loadEditor('07-reduce.js');
+// load('data/courses2.json', true)
+// load('1/07/suspectData.js')
+// load('07-reduce.js')
 
 describe('01 var total', function() {
 

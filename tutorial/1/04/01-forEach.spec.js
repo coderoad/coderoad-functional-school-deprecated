@@ -4,12 +4,12 @@ var spies = require('chai-spies');
 var expect = chai.expect;
 chai.use(spies);
 
-loadGlobal('myFixed', '1/04/myFixed.json');
+// load('1/04/myFixed.js', true)
 if (process.env.TASK_POSITION === '4') {
-  global.myFixed = [];
+  myFixed = [];
 }
 var spy = chai.spy.on(console, 'log');
-loadEditor('04-forEach.js');
+// load('04-forEach.js')
 
 describe('01 console.log', function() {
 

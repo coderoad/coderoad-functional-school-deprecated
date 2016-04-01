@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 
-loadGlobal('myData', '1/03/myData.json');
-loadEditor('03-map.js');
+// load('1/03/myData.js', true)
+// load('03-map.js')
 
 describe('01 function changeGrade', function() {
 

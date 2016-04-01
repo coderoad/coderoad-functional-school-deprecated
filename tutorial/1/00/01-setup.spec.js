@@ -3,10 +3,10 @@ var chai = require('chai');
 var spies = require('chai-spies');
 var expect = chai.expect;
 chai.use(spies);
-
-loadGlobal('data', 'data/students.json');
 var spy = chai.spy.on(console, 'log');
-loadEditor('00-setup.js');
+
+// load('data/students.js', true)
+// load('00-setup.js')
 
 describe('01 first', function () {
 

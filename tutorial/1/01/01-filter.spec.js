@@ -1,8 +1,8 @@
 "use strict";
 var expect = require('chai').expect;
 
-loadGlobal('data', 'data/students.json');
-loadEditor('01-filter.js');
+// load('data/students.js', true)
+// load('01-filter.js')
 
 describe('01 function isAda', function() {
 

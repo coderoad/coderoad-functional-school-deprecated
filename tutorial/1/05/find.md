@@ -25,7 +25,7 @@ data.find(isEven);
 
 Find is great for performantly matching unique values in data, such as an "id", or in our case: a name.
 
-+ `filter` to students in the class titled "Web Security"
++ `filter` to `students` in the class titled "Web Security"
 @test('1/05/01-find')
 @action(open('05-find.js'))
 @action(set(

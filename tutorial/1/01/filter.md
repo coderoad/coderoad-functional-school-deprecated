@@ -43,7 +43,7 @@ Where were we? Back to filtering our grades.
 There's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:
 
 ```
-console.log(data[0]);
+console.log(students[0]);
 //> { course: 'Web Security',
 //    instructor: 'Sue Denim',
 //    name: 'Rebecca Heineman',
@@ -74,7 +74,7 @@ function isAda(student) {
 @action(insert(
 ```
 // run the function name in filter
-var myData = data.filter(::>);
+var myData = students.filter(::>);
 ```
 ))
 @hint('Add a function to the `filter` call: `Array.filter(function() {})`')

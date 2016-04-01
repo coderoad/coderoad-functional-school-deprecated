@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 
-loadGlobal('myBest', '1/02/myBest.json');
-loadEditor('02-sort.js');
+// load('1/02/myBest.js', true)
+// load('02-sort.js')
 
 describe('01 function compareScore', function () {
   it('doesn\'t exist', function() {

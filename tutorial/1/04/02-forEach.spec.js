@@ -1,5 +1,3 @@
-'use strict';
-
 describe('02 console.log', function() {
 
   if (process.env.TASK_POSITION !== '4') {
