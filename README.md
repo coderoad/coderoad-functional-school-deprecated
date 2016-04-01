@@ -36,7 +36,7 @@ Understanding the Data Set
 Over this tutorial series, we'll be changing and working with two different data sets. It'll be a big help to first understand what the data looks like.
 
 ```json
-var data = [
+var students = [
   {
     "title": "Relational Databases",
     "instructor": "Sean Quentin Lewis",
@@ -52,7 +52,7 @@ Here we have an array of "student" objects. To get the first item in the array, 
 
 ```js
 console.log(
-  'first instructor', data[0].instructor
+  'first instructor', students[0].instructor
 );
 // first instructor Sean Quentin Lewis
 ```
@@ -103,7 +103,7 @@ Where were we? Back to filtering our grades.
 There's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:
 
 ```
-console.log(data[0]);
+console.log(students[0]);
 //> { course: 'Web Security',
 //    instructor: 'Sue Denim',
 //    name: 'Rebecca Heineman',

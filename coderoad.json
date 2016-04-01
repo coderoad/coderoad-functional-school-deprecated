@@ -10,10 +10,10 @@
       "pages": [
         {
           "title": "Start",
-          "description": "Understanding the Data Set\n\nOver this tutorial series, we'll be changing and working with two different data sets. It'll be a big help to first understand what the data looks like.\n\n```json\nvar data = [\n  {\n    \"title\": \"Relational Databases\",\n    \"instructor\": \"Sean Quentin Lewis\",\n    \"name\": \"Ada Lovelace\",\n    \"score\": 91,\n    \"grade\": \"A\"\n  },\n  ...\n]\n```\n\nHere we have an array of \"student\" objects. To get the first item in the array, you can use the array index. Array indexes start at 0.\n\n```js\nconsole.log(\n  'first instructor', data[0].instructor\n);\n// first instructor Sean Quentin Lewis\n```",
+          "description": "Understanding the Data Set\n\nOver this tutorial series, we'll be changing and working with two different data sets. It'll be a big help to first understand what the data looks like.\n\n```json\nvar students = [\n  {\n    \"title\": \"Relational Databases\",\n    \"instructor\": \"Sean Quentin Lewis\",\n    \"name\": \"Ada Lovelace\",\n    \"score\": 91,\n    \"grade\": \"A\"\n  },\n  ...\n]\n```\n\nHere we have an array of \"student\" objects. To get the first item in the array, you can use the array index. Array indexes start at 0.\n\n```js\nconsole.log(\n  'first instructor', students[0].instructor\n);\n// first instructor Sean Quentin Lewis\n```",
           "tasks": [
             {
-              "description": "Set `first` to the first item in the `data` array.",
+              "description": "Set `first` to the first item in the `students` array.",
               "tests": [
                 "1/00/01-setup"
               ],
@@ -22,8 +22,8 @@
                 "set('// Welcome to CodeRoad!\n\nvar first = ::>\n')"
               ],
               "hints": [
-                "Get the first item in data using the array index",
-                "Access the title of `data[0]`"
+                "Get the first item in students using the array index",
+                "Access the title of `students[0]`"
               ]
             },
             {
@@ -35,7 +35,7 @@
                 "insert('var myName= ::>\n')"
               ],
               "hints": [
-                "Get the first \"name\" in the data using the array index",
+                "Get the first \"name\" in the students using the array index",
                 "Access the \"name\" of `first`",
                 "Try `first.name`"
               ]
@@ -58,7 +58,7 @@
         },
         {
           "title": "Filter",
-          "description": "Array -> Array of items that match a condition\n\nYou've hacked into the school's computer system, and just in time. The grades are in, but you're not too proud of your performance. That's okay, you have a plan: you're going to create a fake report card.\n\nIt would be great if you could `filter` the scores that your parents will see.\n\n`filter` takes a matching condition function and only returns items that result in true. As an example, look at `isA` below:\n\n```\nfunction isA(x) {\n  return x === 'a';\n}\n```\n\n\nLike all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one. [Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).\n\n```\nvar list = ['a', 'b'];\nlist.filter(isA);\n\n// if isA(list[0]), add to output array\n// if isA(list[1]), add to output array\n//\n//> ['a']\n```\n\nIf your data was composed of objects, we could use dot notation to find matches. Checkout `isB` below.\n\n```\nfunction isB(x) {\n  return x.item === 'b'\n}\n\nvar list = [{item: 'a'}, {item: 'b'}];\nlist.filter(isB);\n//> [{item: 'b'}]\n```\n\nWhere were we? Back to filtering our grades.\n\nThere's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:\n\n```\nconsole.log(data[0]);\n//> { course: 'Web Security',\n//    instructor: 'Sue Denim',\n//    name: 'Rebecca Heineman',\n//    score: 93,\n//    grade: 'A' }\n```",
+          "description": "Array -> Array of items that match a condition\n\nYou've hacked into the school's computer system, and just in time. The grades are in, but you're not too proud of your performance. That's okay, you have a plan: you're going to create a fake report card.\n\nIt would be great if you could `filter` the scores that your parents will see.\n\n`filter` takes a matching condition function and only returns items that result in true. As an example, look at `isA` below:\n\n```\nfunction isA(x) {\n  return x === 'a';\n}\n```\n\n\nLike all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one. [Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).\n\n```\nvar list = ['a', 'b'];\nlist.filter(isA);\n\n// if isA(list[0]), add to output array\n// if isA(list[1]), add to output array\n//\n//> ['a']\n```\n\nIf your data was composed of objects, we could use dot notation to find matches. Checkout `isB` below.\n\n```\nfunction isB(x) {\n  return x.item === 'b'\n}\n\nvar list = [{item: 'a'}, {item: 'b'}];\nlist.filter(isB);\n//> [{item: 'b'}]\n```\n\nWhere were we? Back to filtering our grades.\n\nThere's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:\n\n```\nconsole.log(students[0]);\n//> { course: 'Web Security',\n//    instructor: 'Sue Denim',\n//    name: 'Rebecca Heineman',\n//    score: 93,\n//    grade: 'A' }\n```",
           "tasks": [
             {
               "description": "Write a filter condition function called `isAda` that returns true only if the name matches your name: \"Ada Lovelace\".",
@@ -81,7 +81,7 @@
                 "1/01/02-filter"
               ],
               "actions": [
-                "insert('// run the function name in filter\nvar myData = data.filter(::>);\n')"
+                "insert('// run the function name in filter\nvar myData = students.filter(::>);\n')"
               ],
               "hints": [
                 "Add a function to the `filter` call: `Array.filter(function() {})`",
@@ -304,7 +304,7 @@
           "description": "Array -> first element that matches a condition\n\nSomehow your name has disappeared from the computer system. We'll have to `find` a way to get it back.\n\nYou quickly put together a list of other students in class. If someone changed your name, it'll be the name that is not in that list.\n\n`find` works similar to `filter`, but returns only the first match.\n\n```\nvar data = [1, 2, 3, 4, 5, 6];\n\nfunction isEven(num) {\n  return num % 2 === 0;\n}\n\n// returns all matching data to a condition\ndata.filter(isEven);\n//> [2, 4, 6]\n\n// returns the first match\ndata.find(isEven);\n//> [2]\n```\n\nFind is great for performantly matching unique values in data, such as an \"id\", or in our case: a name.",
           "tasks": [
             {
-              "description": "`filter` to students in the class titled \"Web Security\"",
+              "description": "`filter` to `students` in the class titled \"Web Security\"",
               "tests": [
                 "1/05/01-find"
               ],
