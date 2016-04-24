@@ -1,5 +1,5 @@
 {
-  "project": {
+  "info": {
     "title": "Functional School",
     "description": "A trip through functional programming in Javascript.\n\nLevel: Intermediate\nKeywords: javascript, functional\nLength: 1-2 hours"
   },

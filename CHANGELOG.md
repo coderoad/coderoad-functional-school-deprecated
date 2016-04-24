@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.0] - 2016-04-23
+- updated for atom-coderoad@0.7
+
 ## [0.3.0] - 2016-04-01
 - update tutorial for changes to loaders in Atom-CodeRoad
 
