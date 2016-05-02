@@ -1,4 +1,4 @@
-### Start
+## Start
 Understanding the Data Set
 
 Over this tutorial series, we'll be changing and working with two different data sets. It'll be a big help to first understand what the data looks like.

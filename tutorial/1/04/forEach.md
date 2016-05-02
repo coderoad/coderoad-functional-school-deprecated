@@ -1,4 +1,4 @@
-### forEach
+## forEach
 Array -> run a function for each item
 
 You've updated your grades, but they're still in an array. It's time to loop over them and log them to the console.

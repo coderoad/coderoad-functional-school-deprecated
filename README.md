@@ -1,6 +1,8 @@
 # Functional School
 
-A trip through functional programming in Javascript.
+A trip through functional programming in Javascript using common built-in Javascript array methods such as `map` & `reduce`.
+
+By the end, you should have an understanding of how to use array methods to manipulate semi-complex data.
 
 Level: Intermediate
 Keywords: javascript, functional
@@ -22,12 +24,6 @@ CodeRoad is an open-sourced interactive tutorial platform for the Atom Editor. L
 
 
 ## Outline
-
-### Array Methods
-
-Using common built-in Javascript array methods such as `map` & `reduce`.
-
-By the end, you should have an understanding of how to use array methods to manipulate semi-complex data.
 
 ##### Start
 

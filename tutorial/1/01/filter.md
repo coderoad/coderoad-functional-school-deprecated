@@ -1,4 +1,4 @@
-### Filter
+## Filter
 Array -> Array of items that match a condition
 
 You've hacked into the school's computer system, and just in time. The grades are in, but you're not too proud of your performance. That's okay, you have a plan: you're going to create a fake report card.

@@ -1,4 +1,4 @@
-### Map
+## Map
 Array -> run a function over each item -> Array
 
 You've filtered and sorted our data, but neither of those actually change the data.

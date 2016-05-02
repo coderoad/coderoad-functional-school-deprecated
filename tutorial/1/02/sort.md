@@ -1,4 +1,4 @@
-### Sort
+## Sort
 Array -> sorted Array
 
 Your grades are filtered down to your name and good scores - but wouldn't it be better if your best grades were displayed first, at the top? Besides, your parents rarely read anything through.

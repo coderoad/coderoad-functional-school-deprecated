@@ -1,4 +1,4 @@
-### reduce
+## reduce
 Array -> anything
 
 We know our likely suspect is also in the school computer system. Perhaps our suspect also changed his grades.
