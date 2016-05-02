@@ -1,6 +1,6 @@
 {
   "name": "coderoad-functional-school",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Coderoad tutorial",
   "author": "Shawn McKay <shawn.j.mckay@gmail.com> (http://shmck.com)",
   "contributers": [
@@ -28,7 +28,7 @@
     "chai": "3.5.0",
     "chai-spies": "0.7.1",
     "mocha": "2.4.5",
-    "mocha-coderoad": "^0.5.3"
+    "mocha-coderoad": "^0.6.0"
   },
   "license": "MIT",
   "config": {
