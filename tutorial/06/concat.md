@@ -96,7 +96,7 @@ We have a suspect in mind: a classmate named "Hack Kerr". He's a nice guy, and h
 We'll test out flatten, then re-create our student array of data from the original course data.
 
 + First, test out `flatten` on the `flattenedArray`
-@test('1/06/01-concat')
+@test('06/01-concat')
 @action(open('06-concat.js'))
 @action(set(
 ```
@@ -130,7 +130,7 @@ Return the fields:
   * name
   * grade
   * score
-@test('1/06/02-concat')
+@test('06/02-concat')
 @action(insert(
 ```
 
@@ -155,7 +155,7 @@ var doubleArray = courses.map(function(course) {
 @hint('pair `student.name`')
 
 + Use `flatten` to put all data into a single array. Set `students` to the result.
-@test('1/06/03-concat')
+@test('06/03-concat')
 @action(insert(
 ```
 // `flatten` doubleArray
@@ -165,7 +165,7 @@ var students = doubleArray::>;
 @hint('call `.flatten()` on `doubleArray`')
 
 + Use the `suspects` array to `filter` to only "Hack Kerr"'s data
-@test('1/06/04-concat')
+@test('06/04-concat')
 @action(insert(
 ```
 
@@ -183,7 +183,7 @@ var newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];
 ```
 
 `concat` the `newSuspects` onto the `suspects` list.
-@test('1/06/05-concat')
+@test('06/05-concat')
 @hint('call `suspects.concat()` with `newSuspects`')
 
 @onPageComplete('In the next step, we'll look at using one of the most powerful methods: `reduce`')

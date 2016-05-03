@@ -57,7 +57,7 @@ Those D & F grades would look a lot better if they suddenly became A's.
 Let's go back to before we filtered out the bad grades, and instead change the grades to A's.
 
 + Make a function `changeGrade` that takes student data and changes all grades to "A"s.
-@test('1/03/01-map')
+@test('03/01-map')
 @action(open('03-map.js'))
 @action(set(
 ```
@@ -75,7 +75,7 @@ function changeGrade(::>) {
 
 
 + Map over the `myData` with the `changeGrade` function. Set `myChanged` to the result.
-@test('1/03/02-map')
+@test('03/02-map')
 @action(insert(
 ```
 // map over `myData` with the `changeGrade` function
@@ -87,7 +87,7 @@ var myChanged = myData.map(::>);
 + Hold up. An A in "Data Science" class looks way to suspicious. Your parents might catch on to your cheating.
 
 Let's go back to `myData` and instead increment each score by 12 points.
-@test('1/03/03-map')
+@test('03/03-map')
 @action(insert(
 ```
 
@@ -109,7 +109,7 @@ var mySlightlyChanged = myData;
 @hint('try `if (student.score >= 95) { student.score = 95 }`')
 
 + One more problem. Now the scores don't match the grades. you have 95 score in "3D Computer Graphics", but only a "B" grade. Set `myFixed` as the result of using the `getGrade` function to set grades according to their new scores.
-@test('1/03/05-map')
+@test('03/05-map')
 @action(insert(
 ```
 
@@ -139,7 +139,7 @@ var myFixed = mySlightlyChanged;
 @hint('set `student.grade = "A"` and return `student`')
 
 + Check to make sure everything is working. Set `scoresAndGrades` to an array of scores and grades only.
-@test('1/03/06-map')
+@test('03/06-map')
 @action(insert(
 ```
 

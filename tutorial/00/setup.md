@@ -26,7 +26,7 @@ console.log(
 ```
 
 + Set `first` to the first item in the `students` array.
-@test('1/00/01-setup')
+@test('00/01-setup')
 @action(open('00-setup.js'))
 @action(set(
 ```
@@ -40,10 +40,10 @@ var first = ::>
 
 
 + Set `myName` to the "name" of the first student in the list.
-@test('1/00/02-setup')
+@test('00/02-setup')
 @action(insert(
 ```
-var myName= ::>
+var myName = ::>
 ```
 ))
 @hint('Get the first "name" in the students using the array index')
@@ -51,7 +51,7 @@ var myName= ::>
 @hint('Try `first.name`')
 
 + Log your name to the console.
-@test('1/00/03-setup')
+@test('00/03-setup')
 @action(insert(
 ```
 

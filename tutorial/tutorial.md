@@ -8,13 +8,13 @@ Keywords: javascript, functional
 Length: 1-2 hours
 
 
-@import('1/00/setup')
-@import('1/01/filter')
-@import('1/02/sort')
-@import('1/03/map')
-@import('1/04/forEach')
-@import('1/05/find')
-@import('1/06/concat')
-@import('1/07/reduce')
-@import('1/08/challenge-1')
-@import('1/09/challenge-2')
+@import('00/setup')
+@import('01/filter')
+@import('02/sort')
+@import('03/map')
+@import('04/forEach')
+@import('05/find')
+@import('06/concat')
+@import('07/reduce')
+@import('08/challenge-1')
+@import('09/challenge-2')

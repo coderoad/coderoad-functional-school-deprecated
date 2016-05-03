@@ -11,7 +11,7 @@
         {
           "description": "Set `first` to the first item in the `students` array.",
           "tests": [
-            "1/00/01-setup"
+            "00/01-setup"
           ],
           "actions": [
             "open('00-setup.js')",
@@ -25,7 +25,7 @@
         {
           "description": "Set `myName` to the \"name\" of the first student in the list.",
           "tests": [
-            "1/00/02-setup"
+            "00/02-setup"
           ],
           "actions": [
             "insert('var myName= ::>\n')"
@@ -39,7 +39,7 @@
         {
           "description": "Log your name to the console.",
           "tests": [
-            "1/00/03-setup"
+            "00/03-setup"
           ],
           "actions": [
             "insert('\nconsole.log(::>);\n')"
@@ -59,7 +59,7 @@
         {
           "description": "Write a filter condition function called `isAda` that returns true only if the name matches your name: \"Ada Lovelace\".",
           "tests": [
-            "1/01/01-filter"
+            "01/01-filter"
           ],
           "actions": [
             "open('01-filter.js')",
@@ -74,7 +74,7 @@
         {
           "description": "Set `var myData` to filter with the `isAda` function.",
           "tests": [
-            "1/01/02-filter"
+            "01/02-filter"
           ],
           "actions": [
             "insert('// run the function name in filter\nvar myData = students.filter(::>);\n')"
@@ -87,7 +87,7 @@
         {
           "description": "Write a filter condition called `isGoodGrade` that will filter out any \"D\" or \"F\" grades.",
           "tests": [
-            "1/01/03-filter"
+            "01/03-filter"
           ],
           "actions": [
             "insert('\n\n// return true if student.grade is not a \"D\" or \"F\"\nfunction isGoodGrade(student) {\n  ::>\n}\n')"
@@ -117,7 +117,7 @@
         {
           "description": "`compareScore` should return 1 if the first score is less than the second",
           "tests": [
-            "1/02/01-sort"
+            "02/01-sort"
           ],
           "actions": [
             "open('02-sort.js')",
@@ -127,7 +127,7 @@
         {
           "description": "`compareScore` should return -1 if the first score is more than the second",
           "tests": [
-            "1/02/02-sort"
+            "02/02-sort"
           ],
           "hints": [
             "set the second case to `b.score < a.score`"
@@ -136,7 +136,7 @@
         {
           "description": "`compareScore` should return 0 if the first score is the same as the second",
           "tests": [
-            "1/02/03-sort"
+            "02/03-sort"
           ],
           "hints": [
             "no case is necessary, use the `default` case"
@@ -145,7 +145,7 @@
         {
           "description": "Set `mySorted` to the result of `myBest` sorted by `compareScore`",
           "tests": [
-            "1/02/04-sort"
+            "02/04-sort"
           ],
           "actions": [
             "insert('// use the compare function to sort myBest\nvar mySorted = myBest::>\n')"
@@ -164,7 +164,7 @@
         {
           "description": "Make a function `changeGrade` that takes student data and changes all grades to \"A\"s.",
           "tests": [
-            "1/03/01-map"
+            "03/01-map"
           ],
           "actions": [
             "open('03-map.js')",
@@ -179,7 +179,7 @@
         {
           "description": "Map over the `myData` with the `changeGrade` function. Set `myChanged` to the result.",
           "tests": [
-            "1/03/02-map"
+            "03/02-map"
           ],
           "actions": [
             "insert('// map over `myData` with the `changeGrade` function\nvar myChanged = myData.map(::>);\n')"
@@ -188,7 +188,7 @@
         {
           "description": "Hold up. An A in \"Data Science\" class looks way to suspicious. Your parents might catch on to your cheating.\n\nLet's go back to `myData` and instead increment each score by 12 points.",
           "tests": [
-            "1/03/03-map"
+            "03/03-map"
           ],
           "actions": [
             "insert('\nfunction increaseScore(::>) {\n\n}\n\n// map over `mySlightlyChanged` with a function `increaseScore` to increment each score by 12\nvar mySlightlyChanged = myData;\n')"
@@ -212,7 +212,7 @@
         {
           "description": "One more problem. Now the scores don't match the grades. you have 95 score in \"3D Computer Graphics\", but only a \"B\" grade. Set `myFixed` as the result of using the `getGrade` function to set grades according to their new scores.",
           "tests": [
-            "1/03/05-map"
+            "03/05-map"
           ],
           "actions": [
             "insert('\n// change `getGrade` to accept an object\n// and return an object\nfunction getGrade(score) {\n  switch (true) {\n    case (score >= 90):\n      return \"A\";\n    case (score >= 80):\n      return \"B\";\n    case (score >= 70):\n      return \"C\";\n    case (score >= 60):\n      return \"D\";\n    default:\n      return \"F\";\n  }\n}\n\n// map `myFixed` to update grades to the new scores\nvar myFixed = mySlightlyChanged;\n')"
@@ -226,7 +226,7 @@
         {
           "description": "Check to make sure everything is working. Set `scoresAndGrades` to an array of scores and grades only.",
           "tests": [
-            "1/03/06-map"
+            "03/06-map"
           ],
           "actions": [
             "insert('\n// set `scoresAndGrades` to an array of scores and grades\n// it should return an array of objects like this: {score: 75, grade: 'C'}\nvar scoresAndGrades = myFixed::>\n')"
@@ -247,7 +247,7 @@
         {
           "description": "Use `forEach` to log out your report card to the console",
           "tests": [
-            "1/04/01-forEach"
+            "04/01-forEach"
           ],
           "actions": [
             "open('04-forEach.js')",
@@ -260,7 +260,7 @@
         {
           "description": "Add a second parameter to `logCourseWithIndex` called `index`. Then call the function with `myFixed.forEach`.",
           "tests": [
-            "1/04/02-forEach"
+            "04/02-forEach"
           ],
           "actions": [
             "insert('\n// add a second param called 'index' to the function\nfunction logCourseWithIndex(course::>) {\n  console.log(`${index + 1}  ${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console with an index\nmyFixed.forEach(logCourseWithIndex);\n')"
@@ -273,7 +273,7 @@
         {
           "description": "Add a third parameter called `array` to `logCourseWithIndexAndArray`, then call the function with `myFixed.forEach`.",
           "tests": [
-            "1/04/03-forEach"
+            "04/03-forEach"
           ],
           "actions": [
             "insert('\n// add a third param called 'array' to the function\nfunction logCourseWithIndexAndArray(course, index::>) {\n  console.log(`${index + 1}/${array.length}  ${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console with an index and array length\nmyFixed.forEach(logCourseWithIndexAndArray);\n')"
@@ -286,7 +286,7 @@
         {
           "description": "What??? Suddenly Your data has all disappeared!\n\nIt seems `myFixed` relies on a chain of methods.\n\n```js\nmyFixed = students\n    .filter(isAda)\n    .sort(compareScore)\n    .map(increaseScore)\n    .map(getGrade)\n    .forEach(logCourseWithIndexAndArray)\n```\n\nThis is why side-effects are dangerous. Students data must have changed, and now all of your transformations are effected.",
           "tests": [
-            "1/04/04-forEach"
+            "04/04-forEach"
           ],
           "actions": [
             "insert('\nconsole.log(myFixed);\n')"
@@ -302,7 +302,7 @@
         {
           "description": "`filter` to `students` in the class titled \"Web Security\"",
           "tests": [
-            "1/05/01-find"
+            "05/01-find"
           ],
           "actions": [
             "open('05-find.js')",
@@ -316,7 +316,7 @@
         {
           "description": "`find` the name in `myClass` that isn't in the list of known students",
           "tests": [
-            "1/05/02-find"
+            "05/02-find"
           ],
           "actions": [
             "insert('\nvar otherStudents = [\"Albert Gonzalez\", \"Brian Kernaghan\", \"Danielle Bunten Berry\", \"Donald Knuth\", \"Grace Hopper\", \"Hack Kerr\", \"James Gosling\", \"Ken Thompson\", \"Kevin Mitnick\", \"Linus Torvalds\", \"Niklaus Wirth\", \"Rebecca Heineman\", \"Tim Berners-Lee\", \"Xiao Tian\", \"Ying Cracker\"];\n\n')",
@@ -331,7 +331,7 @@
         {
           "description": "`filter` down to students without known names",
           "tests": [
-            "1/05/03-find"
+            "05/03-find"
           ],
           "actions": [
             "insert('\n// filter using `notInList`\nvar unknownStudentList = students.filter(::>);\n')"
@@ -343,7 +343,7 @@
         {
           "description": "`map` over the result to get only the `name` property",
           "tests": [
-            "1/05/04-find"
+            "05/04-find"
           ],
           "actions": [
             "insert('\n// list only student names\nvar unknownStudentNames = unknownStudentList.map(::>);\n')"
@@ -355,7 +355,7 @@
         {
           "description": "`join('')` the array of names to output the result as a string",
           "tests": [
-            "1/05/05-find"
+            "05/05-find"
           ],
           "actions": [
             "insert('\n// use `.join('')` to join the array of strings\nvar decodedName = unknownStudentNames::>;\nconsole.log(decodedName);\n')"
@@ -374,7 +374,7 @@
         {
           "description": "First, test out `flatten` on the `flattenedArray`",
           "tests": [
-            "1/06/01-concat"
+            "06/01-concat"
           ],
           "actions": [
             "open('06-concat.js')",
@@ -388,7 +388,7 @@
         {
           "description": "Now `map` over the courses array, and `map` over the students array inside of it.\nReturn the fields:\n\n  * title\n  * instructor\n  * name\n  * grade\n  * score",
           "tests": [
-            "1/06/02-concat"
+            "06/02-concat"
           ],
           "actions": [
             "insert('\n// map over courses then\n// map over students inside of courses\nvar doubleArray = courses.map(function(course) {\n    return course.students.map(function(student) {\n      return {\n        // fill in the fields\n        title: ::>'',\n        instructor: '',\n        name: '',\n        score: '',\n        grade: ''\n      };\n    });\n});\n\n')"
@@ -401,7 +401,7 @@
         {
           "description": "Use `flatten` to put all data into a single array. Set `students` to the result.",
           "tests": [
-            "1/06/03-concat"
+            "06/03-concat"
           ],
           "actions": [
             "insert('// `flatten` doubleArray\nvar students = doubleArray::>;\n')"
@@ -413,7 +413,7 @@
         {
           "description": "Use the `suspects` array to `filter` to only \"Hack Kerr\"'s data",
           "tests": [
-            "1/06/04-concat"
+            "06/04-concat"
           ],
           "actions": [
             "insert('\nvar suspects = [\"Hack Kerr\"];\n// filter to data matching `suspects`\n\nvar suspectData = students::>;\n')"
@@ -422,7 +422,7 @@
         {
           "description": "You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`.\n\n```js\nvar newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];\n```\n\n`concat` the `newSuspects` onto the `suspects` list.",
           "tests": [
-            "1/06/05-concat"
+            "06/05-concat"
           ],
           "hints": [
             "call `suspects.concat()` with `newSuspects`"
@@ -438,7 +438,7 @@
         {
           "description": "Use `reduce` to sum the numbers in the `practice` array",
           "tests": [
-            "1/07/01-reduce"
+            "07/01-reduce"
           ],
           "actions": [
             "open('07-reduce.js')",
@@ -452,7 +452,7 @@
         {
           "description": "Not all reduce functions are so easy. `reduce` is a little more difficult to master.\n\n`map` over each course and use `reduce` to calculate the class averages for each class. Set `averages` to the resulting array of all class averages.",
           "tests": [
-            "1/07/02-reduce"
+            "07/02-reduce"
           ],
           "actions": [
             "insert('\nvar averages = courses.map(function(course) {\n  var sum = course.students.reduce(function(total, student) {\n    ::>\n\n  });\n  return Math.round(sum / course.students.length, 0);\n});\n')"
@@ -466,7 +466,7 @@
         {
           "description": "`reduce` to an array of suspect scores from the `suspectData` we collected previously.",
           "tests": [
-            "1/07/03-reduce"
+            "07/03-reduce"
           ],
           "actions": [
             "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]\nvar suspectScores = suspectData.reduce(function(total, next) {\n  // see if suspect name has a list yet\n  var index = total.findIndex(function(suspect) {\n    return suspect.name === next.name;\n  });\n  if (index < 0) {\n    total.push({\n      ::>\n\n    });\n  } else {\n    // push the next score onto the suspects scores\n    total[index].scores.push();\n  }\n  return total;\n}, []);\n\n')"
@@ -481,7 +481,7 @@
         {
           "description": "`map` over suspect data to find the `\"difference\"` from subtracting the students score from the average score. Add this to `suspectScores` using the key `difference`. The resulting array should look like this:\n```js\n[{\n  name: 'suspectName',\n  scores: [50, 65, 75 ...],\n  difference: 15\n}]\n```",
           "tests": [
-            "1/07/04-reduce"
+            "07/04-reduce"
           ],
           "actions": [
             "insert('\nvar suspectStats = suspectScores.map(function(suspect) {\n    // calculate the total difference in scores from the averages\n    var difference = suspect.scores.reduce(::>);\n\n    return {\n      name: suspect.name,\n      scores: suspect.scores,\n      difference: difference\n    };\n});\n')"
@@ -495,7 +495,7 @@
         {
           "description": "`reduce` down to likely suspect names by filtering with the `isCheater` function.\n\nThis could be done with a `filter` & `map`, but it is simpler to just use one `reduce`.",
           "tests": [
-            "1/07/05-reduce"
+            "07/05-reduce"
           ],
           "actions": [
             "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nvar likelySuspects = suspectStats.reduce(function(::>) {}, []);\n')"
@@ -507,7 +507,7 @@
         {
           "description": "It looks like we have a likely suspect.",
           "tests": [
-            "1/07/06-reduce"
+            "07/06-reduce"
           ],
           "actions": [
             "insert('console.log(likelySuspects);\n')"

@@ -87,7 +87,7 @@ function addOneToLog(x) {
 Now that we see how `forEach` works, let's use it to make calls to the `console`.
 
 + Use `forEach` to log out your report card to the console
-@test('1/04/01-forEach')
+@test('04/01-forEach')
 @action(open('04-forEach.js'))
 @action(set(
 ```
@@ -104,7 +104,7 @@ myFixed.forEach(::>);
 @hint('call `forEach` with `logCourse`')
 
 + Add a second parameter to `logCourseWithIndex` called `index`. Then call the function with `myFixed.forEach`.
-@test('1/04/02-forEach')
+@test('04/02-forEach')
 @action(insert(
 ```
 
@@ -121,7 +121,7 @@ myFixed.forEach(logCourseWithIndex);
 @hint('Add a second parameter to `logCourseWithIndex`')
 
 + Add a third parameter called `array` to `logCourseWithIndexAndArray`, then call the function with `myFixed.forEach`.
-@test('1/04/03-forEach')
+@test('04/03-forEach')
 @action(insert(
 ```
 
@@ -152,7 +152,7 @@ myFixed = students
 
 This is why side-effects are dangerous. Students data must have changed, and now all of your transformations are effected.
 
-@test('1/04/04-forEach')
+@test('04/04-forEach')
 @action(insert(
 ```
 

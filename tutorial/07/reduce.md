@@ -49,7 +49,7 @@ Do some practice with `reduce`, before you use it to narrow down a cheating susp
 
 
 + Use `reduce` to sum the numbers in the `practice` array
-@test('1/07/01-reduce')
+@test('07/01-reduce')
 @action(open('07-reduce.js'))
 @action(set(
 ```
@@ -71,7 +71,7 @@ var total = practice.reduce(::>);
 + Not all reduce functions are so easy. `reduce` is a little more difficult to master.
 
 `map` over each course and use `reduce` to calculate the class averages for each class. Set `averages` to the resulting array of all class averages.
-@test('1/07/02-reduce')
+@test('07/02-reduce')
 @action(insert(
 ```
 
@@ -90,7 +90,7 @@ var averages = courses.map(function(course) {
 
 
 + `reduce` to an array of suspect scores from the `suspectData` we collected previously.
-@test('1/07/03-reduce')
+@test('07/03-reduce')
 @action(insert(
 ```
 
@@ -127,7 +127,7 @@ var suspectScores = suspectData.reduce(function(total, next) {
   difference: 15
 }]
 ```
-@test('1/07/04-reduce')
+@test('07/04-reduce')
 @action(insert(
 ```
 
@@ -151,7 +151,7 @@ var suspectStats = suspectScores.map(function(suspect) {
 + `reduce` down to likely suspect names by filtering with the `isCheater` function.
 
 This could be done with a `filter` & `map`, but it is simpler to just use one `reduce`.
-@test('1/07/05-reduce')
+@test('07/05-reduce')
 @action(insert(
 ```
 
@@ -166,7 +166,7 @@ var likelySuspects = suspectStats.reduce(function(::>) {}, []);
 @hint('use `.join(', ')`')
 
 + It looks like we have a likely suspect.
-@test('1/07/06-reduce')
+@test('07/06-reduce')
 @action(insert(
 ```
 console.log(likelySuspects);
