@@ -28,7 +28,7 @@
             "00/02-setup"
           ],
           "actions": [
-            "insert('var myName= ::>\n')"
+            "insert('var myName = ::>\n')"
           ],
           "hints": [
             "Get the first \"name\" in the students using the array index",
