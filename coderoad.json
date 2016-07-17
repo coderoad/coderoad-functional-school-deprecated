@@ -63,7 +63,7 @@
           ],
           "actions": [
             "open('01-filter.js')",
-            "insert('// Array.filter(fn)\n\nfunction isAda(student) {\n  // return true if student name\n  // matches \"Ada Lovelace\"\n  ::>\n}\n')"
+            "set('// Array.filter(fn)\n\nfunction isAda(student) {\n  // return true if student name\n  // matches \"Ada Lovelace\"\n  ::>\n}\n')"
           ],
           "hints": [
             "Some tasks have hints",

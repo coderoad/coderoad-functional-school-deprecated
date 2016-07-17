@@ -54,7 +54,7 @@ console.log(students[0]);
 + Write a filter condition function called `isAda` that returns true only if the name matches your name: "Ada Lovelace".
 @test('01/01-filter')
 @action(open('01-filter.js'))
-@action(insert(
+@action(set(
 ```
 // Array.filter(fn)
 
