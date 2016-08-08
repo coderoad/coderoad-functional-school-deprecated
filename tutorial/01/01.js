@@ -1,4 +1,3 @@
-'use strict';
 var expect = require('chai').expect;
 
 const filter = require('BASE/01-filter.js');

@@ -33,7 +33,7 @@ Alright, now time to sort your best grades to the top.
 First you'll need to write a sort condition function called `compareScore`.
 
 + `compareScore` should return 1 if the first score is less than the second
-@test('02/01-sort')
+@test('02/01')
 @action(open('02-sort.js'))
 @action(set(
 ```
@@ -55,15 +55,15 @@ function compareScore(a, b) {
 ```
 ))
 + `compareScore` should return -1 if the first score is more than the second
-@test('02/02-sort')
+@test('02/02')
 @hint('set the second case to `b.score < a.score`')
 
 + `compareScore` should return 0 if the first score is the same as the second
-@test('02/03-sort')
+@test('02/03')
 @hint('no case is necessary, use the `default` case')
 
 + Set `mySorted` to the result of `myBest` sorted by `compareScore`
-@test('02/04-sort')
+@test('02/04')
 @action(insert(
 ```
 // use the compare function to sort myBest
