@@ -26,7 +26,7 @@ data.find(isEven);
 Find is great for performantly matching unique values in data, such as an "id", or in our case: a name.
 
 + `filter` to `students` in the class titled "Web Security"
-@test('05/01-find')
+@test('05/01')
 @action(open('05-find.js'))
 @action(set(
 ```
@@ -40,7 +40,7 @@ var myClass = students.filter(::>);
 @hint('filter for `student.title === "Web Security"`')
 
 + `find` the name in `myClass` that isn't in the list of known students
-@test('05/02-find')
+@test('05/02')
 @action(insert(
 ```
 
@@ -65,7 +65,7 @@ var unknownStudent = myClass.find();
 @hint('match for `student.name`')
 
 + `filter` down to students without known names
-@test('05/03-find')
+@test('05/03')
 @action(insert(
 ```
 
@@ -76,7 +76,7 @@ var unknownStudentList = students.filter(::>);
 @hint('consider reusing a function')
 
 + `map` over the result to get only the `name` property
-@test('05/04-find')
+@test('05/04')
 @action(insert(
 ```
 
@@ -87,7 +87,7 @@ var unknownStudentNames = unknownStudentList.map(::>);
 @hint('use `map` to return only the `student.name`')
 
 + `join('')` the array of names to output the result as a string
-@test('05/05-find')
+@test('05/05')
 @action(insert(
 ```
 

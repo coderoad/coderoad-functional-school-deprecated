@@ -9,7 +9,7 @@ if (process.env.TASK_POSITION === '4') {
 }
 let spy = chai.spy.on(console, 'log');
 
-const map = require('BASE/04-forEach.js');
+require('BASE/04-forEach.js');
 
 describe('01 console.log', () => {
 
