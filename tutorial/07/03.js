@@ -1,6 +1,8 @@
-describe('03 var suspectScores', function() {
+describe('03 var suspectScores', () => {
 
-  it('should reduce to an array of suspect scores', function() {
+  it('should reduce to an array of suspect scores', () => {
+
+    const suspectScores = reduce.__get__('suspectScores');
 
     expect(suspectScores).to.deep.equal([{
       name: 'Albert Gonzalez',
