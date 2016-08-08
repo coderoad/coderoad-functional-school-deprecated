@@ -1,10 +1,12 @@
-describe('03 var students', function() {
+describe('03 var students', () => {
 
-  it('should have 160 items', function() {
+  const students = concat.__get__('students');
+
+  it('should have 160 items', () => {
     expect(students).to.have.length(160);
   });
 
-  it('should result in a single array of student data', function() {
+  it('should result in a single array of student data', () => {
     expect(students[0]).to.deep.equal({
       instructor: "Sean Quentin Lewis",
       title: "Relational Databases",

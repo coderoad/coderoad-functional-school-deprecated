@@ -1,11 +1,13 @@
-describe('04 var suspectData', function() {
+describe('04 var suspectData', () => {
 
-  it('should have 10 items', function() {
+  const suspectData = concat.__get__('suspectData');
+
+  it('should have 10 items', () => {
     expect(suspectData).to.have.length.below(31);
   });
 
-  it('should filter if the `indexOf` the suspects name is greater than -1', function() {
-    var hackKerrData = suspectData.filter(function(suspect) {
+  it('should filter if the `indexOf` the suspects name is greater than -1', () => {
+    const hackKerrData = suspectData.filter((suspect) => {
       return suspect.name === 'Hack Kerr';
     });
     expect(hackKerrData).to.have.length(10);
