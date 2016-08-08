@@ -1,7 +1,7 @@
 {
   "info": {
     "title": "Functional School",
-    "description": "A trip through functional programming in Javascript using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data.\n\nLevel: Intermediate\nKeywords: javascript, functional\nLength: 1-2 hours"
+    "description": "A trip through functional programming in Javascript using common built-in Javascript array methods such as `map` & `reduce`.\n\nBy the end, you should have an understanding of how to use array methods to manipulate semi-complex data.\n\nLevel: Intermediate\nKeywords: javascript, functional\nLength: 1-2 hours\n\n\n<!-- @import('01/filter') -->\n<!-- @import('02/sort') -->\n<!-- @import('03/map') -->\n<!-- @import('04/forEach') -->\n<!-- @import('05/find') -->\n<!-- @import('06/concat') -->\n<!-- @import('07/reduce') -->\n<!-- @import('08/challenge-1') -->\n<!-- @import('09/challenge-2') -->"
   },
   "pages": [
     {
@@ -9,13 +9,23 @@
       "description": "Understanding the Data Set\n\nOver this tutorial series, we'll be changing and working with two different data sets. It'll be a big help to first understand what the data looks like.\n\n```json\nvar students = [\n  {\n    \"title\": \"Relational Databases\",\n    \"instructor\": \"Sean Quentin Lewis\",\n    \"name\": \"Ada Lovelace\",\n    \"score\": 91,\n    \"grade\": \"A\"\n  },\n  ...\n]\n```\n\nHere we have an array of \"student\" objects. To get the first item in the array, you can use the array index. Array indexes start at 0.\n\n```js\nconsole.log(\n  'first instructor', students[0].instructor\n);\n// first instructor Sean Quentin Lewis\n```",
       "tasks": [
         {
+          "description": "Load the student data into \"students.js\"",
+          "tests": [
+            "00/01"
+          ],
+          "actions": [
+            "open('students.js')",
+            "set('var students=[{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Ada Lovelace\",score:91,grade:\"A\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Albert Gonzalez\",score:35,grade:\"F\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Brian Kernaghan\",score:35,grade:\"F\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Danielle Bunten Berry\",score:78,grade:\"C\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Donald Knuth\",score:94,grade:\"A\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Grace Hopper\",score:36,grade:\"F\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Hack Kerr\",score:85,grade:\"F\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"James Gosling\",score:30,grade:\"F\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Ken Thompson\",score:30,grade:\"F\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Kevin Mitnick\",score:72,grade:\"C\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Linus Torvalds\",score:34,grade:\"F\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Niklaus Wirth\",score:75,grade:\"C\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Rebecca Heineman\",score:71,grade:\"C\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Tim Berners-Lee\",score:54,grade:\"F\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Xiao Tian\",score:67,grade:\"D\"},{title:\"Relational Databases\",instructor:\"Sean Quentin Lewis\",name:\"Ying Cracker\",score:57,grade:\"F\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Ada Lovelace\",score:88,grade:\"B\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Albert Gonzalez\",score:37,grade:\"F\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Brian Kernaghan\",score:76,grade:\"C\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Danielle Bunten Berry\",score:53,grade:\"F\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Donald Knuth\",score:34,grade:\"F\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Grace Hopper\",score:74,grade:\"C\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Hack Kerr\",score:86,grade:\"F\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"James Gosling\",score:94,grade:\"A\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Ken Thompson\",score:48,grade:\"F\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Kevin Mitnick\",score:52,grade:\"F\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Linus Torvalds\",score:90,grade:\"A\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Niklaus Wirth\",score:78,grade:\"C\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Rebecca Heineman\",score:73,grade:\"C\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Tim Berners-Lee\",score:94,grade:\"A\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Xiao Tian\",score:45,grade:\"F\"},{title:\"3D Computer Graphics\",instructor:\"G.L. Webb\",name:\"Ying Cracker\",score:77,grade:\"C\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Ada Lovelace\",score:61,grade:\"D\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Albert Gonzalez\",score:73,grade:\"C\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Brian Kernaghan\",score:47,grade:\"F\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Danielle Bunten Berry\",score:87,grade:\"B\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Donald Knuth\",score:80,grade:\"B\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Grace Hopper\",score:80,grade:\"B\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Hack Kerr\",score:92,grade:\"C\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"James Gosling\",score:97,grade:\"A\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Ken Thompson\",score:64,grade:\"D\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Kevin Mitnick\",score:47,grade:\"F\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Linus Torvalds\",score:58,grade:\"F\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Niklaus Wirth\",score:93,grade:\"A\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Rebecca Heineman\",score:58,grade:\"F\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Tim Berners-Lee\",score:98,grade:\"A\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Xiao Tian\",score:36,grade:\"F\"},{title:\"Front End Web Development\",instructor:\"Moe Zaick\",name:\"Ying Cracker\",score:73,grade:\"C\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Ada Lovelace\",score:81,grade:\"B\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Albert Gonzalez\",score:74,grade:\"C\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Brian Kernaghan\",score:92,grade:\"A\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Danielle Bunten Berry\",score:34,grade:\"F\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Donald Knuth\",score:44,grade:\"F\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Grace Hopper\",score:81,grade:\"B\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Hack Kerr\",score:75,grade:\"F\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"James Gosling\",score:95,grade:\"A\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Ken Thompson\",score:84,grade:\"B\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Kevin Mitnick\",score:89,grade:\"B\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Linus Torvalds\",score:57,grade:\"F\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Niklaus Wirth\",score:88,grade:\"B\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Rebecca Heineman\",score:93,grade:\"A\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Tim Berners-Lee\",score:36,grade:\"F\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Xiao Tian\",score:87,grade:\"B\"},{title:\"Web Security\",instructor:\"Sue Denim\",name:\"Ying Cracker\",score:42,grade:\"F\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Ada Lovelace\",score:73,grade:\"C\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Albert Gonzalez\",score:94,grade:\"A\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Brian Kernaghan\",score:71,grade:\"C\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Danielle Bunten Berry\",score:66,grade:\"D\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Donald Knuth\",score:94,grade:\"A\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Grace Hopper\",score:99,grade:\"A\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Hack Kerr\",score:83,grade:\"F\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"James Gosling\",score:99,grade:\"A\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Ken Thompson\",score:65,grade:\"D\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Kevin Mitnick\",score:47,grade:\"F\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Linus Torvalds\",score:93,grade:\"A\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Niklaus Wirth\",score:50,grade:\"F\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Rebecca Heineman\",score:33,grade:\"F\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Tim Berners-Lee\",score:51,grade:\"F\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Xiao Tian\",score:87,grade:\"B\"},{title:\"Javascript Fundamentals\",instructor:\"Jay Kweerie\",name:\"Ying Cracker\",score:60,grade:\"D\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Ada Lovelace\",score:58,grade:\"F\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Albert Gonzalez\",score:67,grade:\"D\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Brian Kernaghan\",score:66,grade:\"D\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Danielle Bunten Berry\",score:36,grade:\"F\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Donald Knuth\",score:36,grade:\"F\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Grace Hopper\",score:66,grade:\"D\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Hack Kerr\",score:96,grade:\"A\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"James Gosling\",score:83,grade:\"B\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Ken Thompson\",score:35,grade:\"F\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Kevin Mitnick\",score:75,grade:\"C\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Linus Torvalds\",score:63,grade:\"D\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Niklaus Wirth\",score:75,grade:\"C\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Rebecca Heineman\",score:84,grade:\"B\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Tim Berners-Lee\",score:41,grade:\"F\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Xiao Tian\",score:49,grade:\"F\"},{title:\"Data Science\",instructor:\"Ford Fulkerson\",name:\"Ying Cracker\",score:96,grade:\"A\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Ada Lovelace\",score:93,grade:\"A\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Albert Gonzalez\",score:39,grade:\"F\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Brian Kernaghan\",score:69,grade:\"D\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Danielle Bunten Berry\",score:54,grade:\"F\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Donald Knuth\",score:83,grade:\"B\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Grace Hopper\",score:31,grade:\"F\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Hack Kerr\",score:94,grade:\"A\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"James Gosling\",score:35,grade:\"F\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Ken Thompson\",score:67,grade:\"D\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Kevin Mitnick\",score:81,grade:\"B\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Linus Torvalds\",score:70,grade:\"C\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Niklaus Wirth\",score:74,grade:\"C\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Rebecca Heineman\",score:92,grade:\"A\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Tim Berners-Lee\",score:48,grade:\"F\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Xiao Tian\",score:80,grade:\"B\"},{title:\"Algorithm Design\",instructor:\"Gale Shapely\",name:\"Ying Cracker\",score:84,grade:\"B\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Ada Lovelace\",score:82,grade:\"B\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Albert Gonzalez\",score:70,grade:\"C\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Brian Kernaghan\",score:89,grade:\"B\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Danielle Bunten Berry\",score:38,grade:\"F\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Donald Knuth\",score:86,grade:\"B\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Grace Hopper\",score:42,grade:\"F\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Hack Kerr\",score:87,grade:\"F\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"James Gosling\",score:89,grade:\"B\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Ken Thompson\",score:86,grade:\"B\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Kevin Mitnick\",score:41,grade:\"F\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Linus Torvalds\",score:76,grade:\"C\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Niklaus Wirth\",score:78,grade:\"C\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Rebecca Heineman\",score:70,grade:\"C\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Tim Berners-Lee\",score:74,grade:\"C\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Xiao Tian\",score:93,grade:\"A\"},{title:\"Data Abstraction\",instructor:\"Aster Ricks\",name:\"Ying Cracker\",score:95,grade:\"A\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Ada Lovelace\",score:88,grade:\"B\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Albert Gonzalez\",score:56,grade:\"F\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Brian Kernaghan\",score:58,grade:\"F\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Danielle Bunten Berry\",score:38,grade:\"F\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Donald Knuth\",score:85,grade:\"B\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Grace Hopper\",score:53,grade:\"F\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Hack Kerr\",score:89,grade:\"B\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"James Gosling\",score:42,grade:\"F\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Ken Thompson\",score:87,grade:\"B\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Kevin Mitnick\",score:40,grade:\"F\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Linus Torvalds\",score:91,grade:\"A\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Niklaus Wirth\",score:51,grade:\"F\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Rebecca Heineman\",score:79,grade:\"C\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Tim Berners-Lee\",score:37,grade:\"F\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Xiao Tian\",score:84,grade:\"B\"},{title:\"Data Structures\",instructor:\"Brodal Q.\",name:\"Ying Cracker\",score:45,grade:\"F\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Ada Lovelace\",score:65,grade:\"D\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Albert Gonzalez\",score:52,grade:\"F\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Brian Kernaghan\",score:61,grade:\"D\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Danielle Bunten Berry\",score:59,grade:\"F\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Donald Knuth\",score:89,grade:\"B\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Grace Hopper\",score:40,grade:\"F\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Hack Kerr\",score:102,grade:\"F\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"James Gosling\",score:39,grade:\"F\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Ken Thompson\",score:83,grade:\"B\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Kevin Mitnick\",score:37,grade:\"F\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Linus Torvalds\",score:65,grade:\"D\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Niklaus Wirth\",score:36,grade:\"F\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Rebecca Heineman\",score:32,grade:\"F\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Tim Berners-Lee\",score:70,grade:\"C\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Xiao Tian\",score:52,grade:\"F\"},{title:\"Networks\",instructor:\"Van Emde Boas\",name:\"Ying Cracker\",score:62,grade:\"D\"}];\nexport default students;\n')"
+          ]
+        },
+        {
           "description": "Set `first` to the first item in the `students` array.",
           "tests": [
-            "00/01-setup"
+            "00/02"
           ],
           "actions": [
             "open('00-setup.js')",
-            "set('// Welcome to CodeRoad!\n\nvar first = ::>\n')"
+            "set('// Welcome to CodeRoad!\nimport students from './students';\n\nvar first = ::>\n')"
           ],
           "hints": [
             "Get the first item in students using the array index",
@@ -25,7 +35,7 @@
         {
           "description": "Set `myName` to the \"name\" of the first student in the list.",
           "tests": [
-            "00/02-setup"
+            "00/03"
           ],
           "actions": [
             "insert('var myName = ::>\n')"
@@ -39,7 +49,7 @@
         {
           "description": "Log your name to the console.",
           "tests": [
-            "00/03-setup"
+            "00/04"
           ],
           "actions": [
             "insert('\nconsole.log(::>);\n')"
@@ -51,477 +61,6 @@
         }
       ],
       "onPageComplete": "Now we're ready to get started with `filter`ing our data."
-    },
-    {
-      "title": "Filter",
-      "description": "Array -> Array of items that match a condition\n\nYou've hacked into the school's computer system, and just in time. The grades are in, but you're not too proud of your performance. That's okay, you have a plan: you're going to create a fake report card.\n\nIt would be great if you could `filter` the scores that your parents will see.\n\n`filter` takes a matching condition function and only returns items that result in true. As an example, look at `isA` below:\n\n```\nfunction isA(x) {\n  return x === 'a';\n}\n```\n\n\nLike all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one. [Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).\n\n```\nvar list = ['a', 'b'];\nlist.filter(isA);\n\n// if isA(list[0]), add to output array\n// if isA(list[1]), add to output array\n//\n//> ['a']\n```\n\nIf your data was composed of objects, we could use dot notation to find matches. Checkout `isB` below.\n\n```\nfunction isB(x) {\n  return x.item === 'b'\n}\n\nvar list = [{item: 'a'}, {item: 'b'}];\nlist.filter(isB);\n//> [{item: 'b'}]\n```\n\nWhere were we? Back to filtering our grades.\n\nThere's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:\n\n```\nconsole.log(students[0]);\n//> { course: 'Web Security',\n//    instructor: 'Sue Denim',\n//    name: 'Rebecca Heineman',\n//    score: 93,\n//    grade: 'A' }\n```",
-      "tasks": [
-        {
-          "description": "Write a filter condition function called `isAda` that returns true only if the name matches your name: \"Ada Lovelace\".",
-          "tests": [
-            "01/01-filter"
-          ],
-          "actions": [
-            "open('01-filter.js')",
-            "set('// Array.filter(fn)\n\nfunction isAda(student) {\n  // return true if student name\n  // matches \"Ada Lovelace\"\n  ::>\n}\n')"
-          ],
-          "hints": [
-            "Some tasks have hints",
-            "Check if `student.name` matches \"Ada Lovelace\"",
-            "Use `===` to check equality"
-          ]
-        },
-        {
-          "description": "Set `var myData` to filter with the `isAda` function.",
-          "tests": [
-            "01/02-filter"
-          ],
-          "actions": [
-            "insert('// run the function name in filter\nvar myData = students.filter(::>);\n')"
-          ],
-          "hints": [
-            "Add a function to the `filter` call: `Array.filter(function() {})`",
-            "Pass `isAda` into your `filter` call"
-          ]
-        },
-        {
-          "description": "Write a filter condition called `isGoodGrade` that will filter out any \"D\" or \"F\" grades.",
-          "tests": [
-            "01/03-filter"
-          ],
-          "actions": [
-            "insert('\n\n// return true if student.grade is not a \"D\" or \"F\"\nfunction isGoodGrade(student) {\n  ::>\n}\n')"
-          ],
-          "hints": [
-            "match for `student.grade` that isn't \"D\" or \"F\"",
-            "use `!==` to check non-equality",
-            "Match for both: `student.grade !== \"D\" && student.grade !== \"F\"`"
-          ]
-        },
-        {
-          "description": "Set `var myBest` to your scores, excluding any grades that are \"D\" or \"F\".",
-          "tests": [
-            "1/01/04-filter"
-          ],
-          "actions": [
-            "insert('// filter out \"D\"'s and \"F\"'s here\nvar myBest = myData.filter(::>);\n\n')"
-          ]
-        }
-      ],
-      "onPageComplete": "In the next step we'll look at how to `sort` data"
-    },
-    {
-      "title": "Sort",
-      "description": "Array -> sorted Array\n\nYour grades are filtered down to your name and good scores - but wouldn't it be better if your best grades were displayed first, at the top? Besides, your parents rarely read anything through.\n\nYou can use the array method `sort` to arrange your data. Let's see how it works.\n\n```js\n['c', 'b', 'a'].sort();\n//> ['a', 'b', 'c']\n\n[3, 2, 1].sort();\n//> [1, 2, 3]\n```\n\nBut what about sorting scores inside of an object?\n\n```js\n[{a: 3}, {a: 1}, {a: 2}].sort();\n//> [{a: 3}, {a: 1}, {a: 2}]\n```\n\nThat didn't work. Instead, you can write a custom `compareScore` function.\n\nA sort function takes two params, and compares the first to the second. It should return values saying where the second value should go in the array:\n\n  * -1 : sort to a lower index (front)\n  * 1 : sort to a higher index (back)\n  * 0 : stay the same\n\nAlright, now time to sort your best grades to the top.\n\nFirst you'll need to write a sort condition function called `compareScore`.",
-      "tasks": [
-        {
-          "description": "`compareScore` should return 1 if the first score is less than the second",
-          "tests": [
-            "02/01-sort"
-          ],
-          "actions": [
-            "open('02-sort.js')",
-            "set('// Array.sort(fn)\n\nfunction compareScore(a, b) {\n  switch (true) {\n    case b.score > a.score:\n      // it should return 1 if b's score is more than a's\n      return ::>\n    case 'set condition here':\n      // it should return -1 if b's score is less than a's\n\n    default:\n      // it should return 0 if b and a have the same score\n\n  }\n}\n')"
-          ]
-        },
-        {
-          "description": "`compareScore` should return -1 if the first score is more than the second",
-          "tests": [
-            "02/02-sort"
-          ],
-          "hints": [
-            "set the second case to `b.score < a.score`"
-          ]
-        },
-        {
-          "description": "`compareScore` should return 0 if the first score is the same as the second",
-          "tests": [
-            "02/03-sort"
-          ],
-          "hints": [
-            "no case is necessary, use the `default` case"
-          ]
-        },
-        {
-          "description": "Set `mySorted` to the result of `myBest` sorted by `compareScore`",
-          "tests": [
-            "02/04-sort"
-          ],
-          "actions": [
-            "insert('// use the compare function to sort myBest\nvar mySorted = myBest::>\n')"
-          ],
-          "hints": [
-            "try using `myBest.sort()`"
-          ]
-        }
-      ],
-      "onPageComplete": "In the next step we'll look at changing data with `map`"
-    },
-    {
-      "title": "Map",
-      "description": "Array -> run a function over each item -> Array\n\nYou've filtered and sorted our data, but neither of those actually change the data.\n\nWouldn't it be simpler if you could just change your grades?\n\nYou can use the array method `map` to run a function that returns changes to your data.\n\nAs an example, let's look at how you would increment each number in an array.\n\n```js\nfunction addOne(num) {\n  return num + 1;\n}\n\n[1, 2, 3].map(addOne);\n//> [2, 3, 4]\n\nfunction addToVal(obj) {\n  obj.val += 1;\n  return obj;\n}\n[{ val: 1}].map(addToVal);\n//> [{ val: 2 }]\n```\n\n`map` can change data, and it can also alter structure of the data you're working with.\n\n```js\nfunction makeObject(num) {\n  return { val: num };\n}\n\n[1, 2].map(makeObject);\n//> [{ val: 1 }, { val: 2 }]\n```\n\nSimilarly, `map` can also restrict the data you want to work with.  See the example below to see another way scores could be sorted.\n\n```js\nmyBest\n  .map(function(student) {\n    return student.score;\n  })\n  .sort()\n  .reverse()\n//> [93, 91, 88, 88, 82, 81, 73]\n```\n\nIn this example, `map` transformed an object with keys of 'title', 'instructor', 'name', 'score' and 'grade', to an array of just scores. Values weren't changed, but rather limited to a smaller subset of scores.\n\n`map` is powerful. Let's see what you can do with it.\n\nThose D & F grades would look a lot better if they suddenly became A's.\n\nLet's go back to before we filtered out the bad grades, and instead change the grades to A's.",
-      "tasks": [
-        {
-          "description": "Make a function `changeGrade` that takes student data and changes all grades to \"A\"s.",
-          "tests": [
-            "03/01-map"
-          ],
-          "actions": [
-            "open('03-map.js')",
-            "set('// Array.map(fn)\n\n// change any `student.grade`'s into an 'A'\nfunction changeGrade(::>) {\n\n}\n')"
-          ],
-          "hints": [
-            "give `changeGrade` a parameter, call it \"student\"",
-            "match for `student.grade`",
-            "match where `student.grade === 'A'`"
-          ]
-        },
-        {
-          "description": "Map over the `myData` with the `changeGrade` function. Set `myChanged` to the result.",
-          "tests": [
-            "03/02-map"
-          ],
-          "actions": [
-            "insert('// map over `myData` with the `changeGrade` function\nvar myChanged = myData.map(::>);\n')"
-          ]
-        },
-        {
-          "description": "Hold up. An A in \"Data Science\" class looks way to suspicious. Your parents might catch on to your cheating.\n\nLet's go back to `myData` and instead increment each score by 12 points.",
-          "tests": [
-            "03/03-map"
-          ],
-          "actions": [
-            "insert('\nfunction increaseScore(::>) {\n\n}\n\n// map over `mySlightlyChanged` with a function `increaseScore` to increment each score by 12\nvar mySlightlyChanged = myData;\n')"
-          ],
-          "hints": [
-            "give `increaseScore` a parameter, call it \"student\"",
-            "it should increase `student.score`",
-            "return `student`"
-          ]
-        },
-        {
-          "description": "Wait. Now you're getting 105 in \"Algorithm Design\" class. Fix `increaseScore` so that the maximum score is 95. That should be less suspicious.",
-          "tests": [
-            "1/03/04-map"
-          ],
-          "hints": [
-            "use an if clause within `increaseScore`",
-            "try `if (student.score >= 95) { student.score = 95 }`"
-          ]
-        },
-        {
-          "description": "One more problem. Now the scores don't match the grades. you have 95 score in \"3D Computer Graphics\", but only a \"B\" grade. Set `myFixed` as the result of using the `getGrade` function to set grades according to their new scores.",
-          "tests": [
-            "03/05-map"
-          ],
-          "actions": [
-            "insert('\n// change `getGrade` to accept an object\n// and return an object\nfunction getGrade(score) {\n  switch (true) {\n    case (score >= 90):\n      return \"A\";\n    case (score >= 80):\n      return \"B\";\n    case (score >= 70):\n      return \"C\";\n    case (score >= 60):\n      return \"D\";\n    default:\n      return \"F\";\n  }\n}\n\n// map `myFixed` to update grades to the new scores\nvar myFixed = mySlightlyChanged;\n')"
-          ],
-          "hints": [
-            "change `getGrade` to take a `student` param instead of `score`",
-            "change the grade and return the `student`",
-            "set `student.grade = \"A\"` and return `student`"
-          ]
-        },
-        {
-          "description": "Check to make sure everything is working. Set `scoresAndGrades` to an array of scores and grades only.",
-          "tests": [
-            "03/06-map"
-          ],
-          "actions": [
-            "insert('\n// set `scoresAndGrades` to an array of scores and grades\n// it should return an array of objects like this: {score: 75, grade: 'C'}\nvar scoresAndGrades = myFixed::>\n')"
-          ],
-          "hints": [
-            "use `map` to return only the \"score\" & \"grade\" fields",
-            "map with a function with a parameter, call it \"student\"",
-            "return `{ score: student.score, grade: student.grade }`"
-          ]
-        }
-      ],
-      "onPageComplete": "In the next step we'll compare `map` with `forEach`"
-    },
-    {
-      "title": "forEach",
-      "description": "Array -> run a function for each item\n\nYou've updated your grades, but they're still in an array. It's time to loop over them and log them to the console.\n\nTo open the console, go to *View* > *Developer* > *Toggle Developer Tools*. Or press *cmd+opt+I* on Mac, *ctrl+alt+I* on Windows.\n\n`forEach` has a lot in common with `map`, but there is a big difference. Understanding that difference is important for grasping the difference between:\n\n  * **functional** & **imperative** programming\n  * **pure** & **impure** functions\n\nKnow it or not, you're probably already used to \"imperative\" programming.\n\n> **Imperative** programming describes the order of actions\n\nImperative code tells the computer what to do, step by step.\n\n```js\nvar x = 1; // make a variable\nx = x + 1; // add one\nx = x + 1; // add another\nconsole.log(x);\n//> 3\n```\n\n> **Functional** programming describes the data transformation\n\nFunctional programming is a lot like writing math equations. As in math, 1 + 1 always equals 2.\n\nIn the same way, a **pure** function will always have the same result from a given input. Input 1 -> output 2. Every time.\n\n```js\n// a pure function\nfunction addOne(x) {\n  return x + 1;\n}\naddOne(1)\n//> 2\naddOne(1)\n//> 2\n```\n\nA function is \"pure\" if it doesn't change anything outside of its scope. Pure functions are easy to test, reuse and reason about. In other words, they make your job easier.\n\nOn the other hand, **impure** functions are less predictable. The result may be different if you call it at a later time.\n\n```js\nvar y = 1;\n// impure function\nfunction increment(x) {\n  y += x;\n  return y;\n}\nincrement(1)\n//> 2\nincrement(1)\n//> 3\n```\n\nIt's good practice to ensure your `map` functions remain pure.\n\nBut `forEach` can be a little more dangerous. Why? Let's have a look.\n\n```js\n[1, 2, 3].map(addOne);\n//> [2, 3, 4]\n\n[1, 2, 3].forEach(addOne);\n//> undefined\n```\n\nWhat? `undefined`? `forEach` runs a function on each item in the array, and doesn't care what the function returns. Functions called by `forEach` must make changes, called **side effects**, to even be noticed.\n\n```js\n// impure function, changes log\nfunction addOneToLog(x) {\n  console.log(x);\n}\n\n[1, 2, 3].forEach(addOneToLog);\n//> 2\n//> 3\n//> 4\n```\n\nNow that we see how `forEach` works, let's use it to make calls to the `console`.",
-      "tasks": [
-        {
-          "description": "Use `forEach` to log out your report card to the console",
-          "tests": [
-            "04/01-forEach"
-          ],
-          "actions": [
-            "open('04-forEach.js')",
-            "set('// Array.forEach(fn)\n\nfunction logCourse(course) {\n  console.log(`${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console\nmyFixed.forEach(::>);\n')"
-          ],
-          "hints": [
-            "call `forEach` with `logCourse`"
-          ]
-        },
-        {
-          "description": "Add a second parameter to `logCourseWithIndex` called `index`. Then call the function with `myFixed.forEach`.",
-          "tests": [
-            "04/02-forEach"
-          ],
-          "actions": [
-            "insert('\n// add a second param called 'index' to the function\nfunction logCourseWithIndex(course::>) {\n  console.log(`${index + 1}  ${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console with an index\nmyFixed.forEach(logCourseWithIndex);\n')"
-          ],
-          "hints": [
-            "Array methods can take more than one parameter",
-            "Add a second parameter to `logCourseWithIndex`"
-          ]
-        },
-        {
-          "description": "Add a third parameter called `array` to `logCourseWithIndexAndArray`, then call the function with `myFixed.forEach`.",
-          "tests": [
-            "04/03-forEach"
-          ],
-          "actions": [
-            "insert('\n// add a third param called 'array' to the function\nfunction logCourseWithIndexAndArray(course, index::>) {\n  console.log(`${index + 1}/${array.length}  ${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console with an index and array length\nmyFixed.forEach(logCourseWithIndexAndArray);\n')"
-          ],
-          "hints": [
-            "Array methods can take more than one parameter",
-            "Add a third parameter to `logCourseWithIndexAndArray`"
-          ]
-        },
-        {
-          "description": "What??? Suddenly Your data has all disappeared!\n\nIt seems `myFixed` relies on a chain of methods.\n\n```js\nmyFixed = students\n    .filter(isAda)\n    .sort(compareScore)\n    .map(increaseScore)\n    .map(getGrade)\n    .forEach(logCourseWithIndexAndArray)\n```\n\nThis is why side-effects are dangerous. Students data must have changed, and now all of your transformations are effected.",
-          "tests": [
-            "04/04-forEach"
-          ],
-          "actions": [
-            "insert('\nconsole.log(myFixed);\n')"
-          ]
-        }
-      ],
-      "onPageComplete": "Something strange is going on. In the next step we'll try to `find` your data."
-    },
-    {
-      "title": "find",
-      "description": "Array -> first element that matches a condition\n\nSomehow your name has disappeared from the computer system. We'll have to `find` a way to get it back.\n\nYou quickly put together a list of other students in class. If someone changed your name, it'll be the name that is not in that list.\n\n`find` works similar to `filter`, but returns only the first match.\n\n```\nvar data = [1, 2, 3, 4, 5, 6];\n\nfunction isEven(num) {\n  return num % 2 === 0;\n}\n\n// returns all matching data to a condition\ndata.filter(isEven);\n//> [2, 4, 6]\n\n// returns the first match\ndata.find(isEven);\n//> [2]\n```\n\nFind is great for performantly matching unique values in data, such as an \"id\", or in our case: a name.",
-      "tasks": [
-        {
-          "description": "`filter` to `students` in the class titled \"Web Security\"",
-          "tests": [
-            "05/01-find"
-          ],
-          "actions": [
-            "open('05-find.js')",
-            "set('// Array.find(fn)\n\n// filter for the student title matches \"Web Security\"\nvar myClass = students.filter(::>);\n')"
-          ],
-          "hints": [
-            "create a `filter` function",
-            "filter for `student.title === \"Web Security\"`"
-          ]
-        },
-        {
-          "description": "`find` the name in `myClass` that isn't in the list of known students",
-          "tests": [
-            "05/02-find"
-          ],
-          "actions": [
-            "insert('\nvar otherStudents = [\"Albert Gonzalez\", \"Brian Kernaghan\", \"Danielle Bunten Berry\", \"Donald Knuth\", \"Grace Hopper\", \"Hack Kerr\", \"James Gosling\", \"Ken Thompson\", \"Kevin Mitnick\", \"Linus Torvalds\", \"Niklaus Wirth\", \"Rebecca Heineman\", \"Tim Berners-Lee\", \"Xiao Tian\", \"Ying Cracker\"];\n\n')",
-            "insert('// search for a student with a name\n// not matching students in `otherStudents`\nfunction notInList(::>) {\n\n}\n\n// find using `notInList`\nvar unknownStudent = myClass.find();\n')"
-          ],
-          "hints": [
-            "use `indexOf` to find what doesn't match",
-            "use `otherStudents.indexOf(x) === -1` to find what doesn't match",
-            "match for `student.name`"
-          ]
-        },
-        {
-          "description": "`filter` down to students without known names",
-          "tests": [
-            "05/03-find"
-          ],
-          "actions": [
-            "insert('\n// filter using `notInList`\nvar unknownStudentList = students.filter(::>);\n')"
-          ],
-          "hints": [
-            "consider reusing a function"
-          ]
-        },
-        {
-          "description": "`map` over the result to get only the `name` property",
-          "tests": [
-            "05/04-find"
-          ],
-          "actions": [
-            "insert('\n// list only student names\nvar unknownStudentNames = unknownStudentList.map(::>);\n')"
-          ],
-          "hints": [
-            "use `map` to return only the `student.name`"
-          ]
-        },
-        {
-          "description": "`join('')` the array of names to output the result as a string",
-          "tests": [
-            "05/05-find"
-          ],
-          "actions": [
-            "insert('\n// use `.join('')` to join the array of strings\nvar decodedName = unknownStudentNames::>;\nconsole.log(decodedName);\n')"
-          ],
-          "hints": [
-            "call `join` following `unknownStudentNames`"
-          ]
-        }
-      ],
-      "onPageComplete": "Very strange. In the next step, let's find out who wants revenge, and give it to him!"
-    },
-    {
-      "title": "concat",
-      "description": "Array + Array -> Array\n\nBefore we've been working on a structured set of student data.\n\n```js\n// array of students\n[\n  {\n  \"title\": \"Relational Databases\",\n  \"instructor\": \"Sean Quentin Lewis\",\n  \"name\": \"Rebecca Heineman\",\n  \"score\": 71,\n  \"grade\": \"C\"\n  }\n// students in courses...\n]\n```\n\nTo be safe, let's now work on the original data set. Notice how it is structured differently.\n\n```js\n// array of courses\n[\n  {\n    \"title\": \"Relational Databases\",\n    \"instructor\": \"Sean Quentin Lewis\",\n    \"students\": [\n      {\n        \"name\": \"Rebecca Heineman\",\n        \"score\": 71,\n        \"grade\": \"C\"\n      }\n    // students...\n    ]\n  }\n  // courses...\n]\n```\n\nIn this data set, there is an array of students within an array of courses. So how can we recreate our original array of students from the courses?\n\nWeird things happen when you start combining arrays. We can use `concat` to bring sanity.\n\n```js\n[1, 2] + [3, 4];\n//> \"1, 23, 4\"\n\n[1, 2].push([3, 4]);\n//> 3\n\n[1, 2].join([3, 4]);\n//> \"13, 42\"\n\n[1, 2].concat([3, 4]);\n//> [1, 2, 3, 4]\n```\n\nUnfortunately, Javascript is missing a built in array method to concat multiple arrays together: let's call it `flatten` (sometimes called `concatAll`).\n\n`flatten` should loop over an array and `concat` each element.\n\nLet's look at an abstraction of what we need to do:\n\n```js\nvar start = [{\n  a: 1,\n  c: [\n    { b: 1 }\n  ]\n}, {\n  a: 2,\n  c: [\n    { b: 2 }, { b: 3 }\n  ]\n}];\n\nvar middle = start.map(function(outer) {\n  return outer.c.map(function(inner) {\n    return {\n      a: outer.a,\n      b: inner.b\n    };\n  });\n});\n//> [ [{ a: 1, b: 1 }], [{a: 2, b: 2}, {a: 2, b: 3}] ]\n\nvar end = pre.flatten();\n//> [{a: 1, b: 1}, {a: 2, b: 2}, {a: 2, b: 3}]\n```\n\nBack to business.\n\nWe have a suspect in mind: a classmate named \"Hack Kerr\". He's a nice guy, and he's always been friendly to you - but there's something suspicious about him: his name.\n\nWe'll test out flatten, then re-create our student array of data from the original course data.",
-      "tasks": [
-        {
-          "description": "First, test out `flatten` on the `flattenedArray`",
-          "tests": [
-            "06/01-concat"
-          ],
-          "actions": [
-            "open('06-concat.js')",
-            "set('// Array.concat(any)\n\n// Array.prototype can be used to create new Array methods\nArray.prototype.flatten = function() {\n  return this.reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n};\n')",
-            "insert('\nvar numberedList = [[1, 2], [3, 4]];\n\n// use `flatten` on `numberedList`\nvar flattenedArray = numberedList::>;\n')"
-          ],
-          "hints": [
-            "call `.flatten()` on `numberedList`"
-          ]
-        },
-        {
-          "description": "Now `map` over the courses array, and `map` over the students array inside of it.\nReturn the fields:\n\n  * title\n  * instructor\n  * name\n  * grade\n  * score",
-          "tests": [
-            "06/02-concat"
-          ],
-          "actions": [
-            "insert('\n// map over courses then\n// map over students inside of courses\nvar doubleArray = courses.map(function(course) {\n    return course.students.map(function(student) {\n      return {\n        // fill in the fields\n        title: ::>'',\n        instructor: '',\n        name: '',\n        score: '',\n        grade: ''\n      };\n    });\n});\n\n')"
-          ],
-          "hints": [
-            "pair `course.title`",
-            "pair `student.name`"
-          ]
-        },
-        {
-          "description": "Use `flatten` to put all data into a single array. Set `students` to the result.",
-          "tests": [
-            "06/03-concat"
-          ],
-          "actions": [
-            "insert('// `flatten` doubleArray\nvar students = doubleArray::>;\n')"
-          ],
-          "hints": [
-            "call `.flatten()` on `doubleArray`"
-          ]
-        },
-        {
-          "description": "Use the `suspects` array to `filter` to only \"Hack Kerr\"'s data",
-          "tests": [
-            "06/04-concat"
-          ],
-          "actions": [
-            "insert('\nvar suspects = [\"Hack Kerr\"];\n// filter to data matching `suspects`\n\nvar suspectData = students::>;\n')"
-          ]
-        },
-        {
-          "description": "You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`.\n\n```js\nvar newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];\n```\n\n`concat` the `newSuspects` onto the `suspects` list.",
-          "tests": [
-            "06/05-concat"
-          ],
-          "hints": [
-            "call `suspects.concat()` with `newSuspects`"
-          ]
-        }
-      ],
-      "onPageComplete": "In the next step, we'll look at using one of the most powerful methods: `reduce`"
-    },
-    {
-      "title": "reduce",
-      "description": "Array -> anything\n\nWe know our likely suspect is also in the school computer system. Perhaps our suspect also changed his grades.\n\nYou can't be sure who is a cheater, but you can assume if the grades are well above the average, the person is likely to be the culprit. For this, we'll have to do some basic statistical calculations. We'll need a new tool for transforming arrays into different data representations.\n\n`map` has a major limitation: it will always output the same number of elements as the input array.\n\nWhen you want to transform data into something different, you'll likely want to use `reduce`.\n\nReduce requires two parameters:\n\n  * the running total (set by an initialValue)\n  * the next value in the array\n\n```js\nfunction add(total, next) {\n    console.log(`add(${total}, ${next}) -> ${total + next}`)\n    return total + next\n}\n\nvar initialValue = 100;\n[1, 5, 10].reduce(add, initialValue); // initial value\n\n// add(100, 1) -> 101\n// add(101, 5) -> 106\n// add(106, 10) -> 116\n//> 116\n```\n\nNotice in the example we input an array of 3 items and output a single number. The data has been transformed.\n\nIt takes a while to wrap your head around `reduce`, but once you do, you'll see it's usefulness everywhere.\n\nYou may have noticed we've already used `reduce` to `flatten` our arrays.\n\n```js\nArray.prototype.flatten = function() {\n  return this.reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n};\n```\n\nWith `flatten`, the initialValue was set to an empty array which each value was `concat` onto.\n\nDo some practice with `reduce`, before you use it to narrow down a cheating suspect.",
-      "tasks": [
-        {
-          "description": "Use `reduce` to sum the numbers in the `practice` array",
-          "tests": [
-            "07/01-reduce"
-          ],
-          "actions": [
-            "open('07-reduce.js')",
-            "set('// Array.reduce(fn(a, b), initialValue)\n\nvar practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\nfunction add(a, b) {\n  return a + b;\n}\n\n// total the numbers using a reduce function\nvar total = practice.reduce(::>);\n')"
-          ],
-          "hints": [
-            "with only numbers, the initialValue defaults to 0",
-            "just call `reduce` with `add`"
-          ]
-        },
-        {
-          "description": "Not all reduce functions are so easy. `reduce` is a little more difficult to master.\n\n`map` over each course and use `reduce` to calculate the class averages for each class. Set `averages` to the resulting array of all class averages.",
-          "tests": [
-            "07/02-reduce"
-          ],
-          "actions": [
-            "insert('\nvar averages = courses.map(function(course) {\n  var sum = course.students.reduce(function(total, student) {\n    ::>\n\n  });\n  return Math.round(sum / course.students.length, 0);\n});\n')"
-          ],
-          "hints": [
-            "set the initialValue to 0",
-            "like this: `reduce(function () {}, 0)`",
-            "return the sum of `student.score` and `total`"
-          ]
-        },
-        {
-          "description": "`reduce` to an array of suspect scores from the `suspectData` we collected previously.",
-          "tests": [
-            "07/03-reduce"
-          ],
-          "actions": [
-            "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]\nvar suspectScores = suspectData.reduce(function(total, next) {\n  // see if suspect name has a list yet\n  var index = total.findIndex(function(suspect) {\n    return suspect.name === next.name;\n  });\n  if (index < 0) {\n    total.push({\n      ::>\n\n    });\n  } else {\n    // push the next score onto the suspects scores\n    total[index].scores.push();\n  }\n  return total;\n}, []);\n\n')"
-          ],
-          "hints": [
-            "if the name is new, push an object with name & scores: `{ name: '', scores: [42]}`",
-            "match for `next.name` & `next.score`",
-            "you can concat the scores onto an array: `[].concat(next.score)`",
-            "if the name is already in the list, just add the `next.score`"
-          ]
-        },
-        {
-          "description": "`map` over suspect data to find the `\"difference\"` from subtracting the students score from the average score. Add this to `suspectScores` using the key `difference`. The resulting array should look like this:\n```js\n[{\n  name: 'suspectName',\n  scores: [50, 65, 75 ...],\n  difference: 15\n}]\n```",
-          "tests": [
-            "07/04-reduce"
-          ],
-          "actions": [
-            "insert('\nvar suspectStats = suspectScores.map(function(suspect) {\n    // calculate the total difference in scores from the averages\n    var difference = suspect.scores.reduce(::>);\n\n    return {\n      name: suspect.name,\n      scores: suspect.scores,\n      difference: difference\n    };\n});\n')"
-          ],
-          "hints": [
-            "You may want to use a second param: `index`",
-            "Compare the `suspect.scores[index]` with the `averages[index]`",
-            "To get a sum, start your `reduce` function at 0"
-          ]
-        },
-        {
-          "description": "`reduce` down to likely suspect names by filtering with the `isCheater` function.\n\nThis could be done with a `filter` & `map`, but it is simpler to just use one `reduce`.",
-          "tests": [
-            "07/05-reduce"
-          ],
-          "actions": [
-            "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nvar likelySuspects = suspectStats.reduce(function(::>) {}, []);\n')"
-          ],
-          "hints": [
-            "use `.join(', ')`"
-          ]
-        },
-        {
-          "description": "It looks like we have a likely suspect.",
-          "tests": [
-            "07/06-reduce"
-          ],
-          "actions": [
-            "insert('console.log(likelySuspects);\n')"
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Challenge 1",
-      "description": "coming soon\n\nYou'd better fix your name and scores back to the way they were."
-    },
-    {
-      "title": "Challenge 2",
-      "description": "coming soon\n\nIt's time to get revenge."
     }
   ]
 }

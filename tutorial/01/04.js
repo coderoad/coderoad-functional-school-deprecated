@@ -1,21 +1,20 @@
-"use strict";
-var expect = require('chai').expect;
+describe('04 var myBest', () => {
 
-describe('04 var myBest', function() {
+  const myBest = filter.__get__('myBest');
 
-  it('doesn\'t exist', function() {
+  it('doesn\'t exist', () => {
     expect(myBest).to.not.be.undefined;
   });
 
-  it('doesn\'t output an array', function() {
+  it('doesn\'t output an array', () => {
     expect(myBest).to.be.an('array');
   });
 
-  it('doesn\'t output exactly seven items', function() {
+  it('doesn\'t output exactly seven items', () => {
     expect(myBest).to.have.length(7);
   });
 
-  it('isn\'t the right filtered data for "Ada Lovelace"', function() {
+  it('isn\'t the right filtered data for "Ada Lovelace"', () => {
     expect(myBest).to.deep.equal([{
       title: 'Relational Databases',
       instructor: 'Sean Quentin Lewis',

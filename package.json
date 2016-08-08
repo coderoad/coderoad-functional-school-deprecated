@@ -1,6 +1,6 @@
 {
   "name": "coderoad-functional-school",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "description": "Coderoad tutorial",
   "author": "Shawn McKay <shawn.j.mckay@gmail.com> (http://shmck.com)",
   "contributers": [
@@ -34,7 +34,7 @@
   "config": {
     "language": "JS",
     "dir": "tutorial",
-    "testSuffix": ".spec.js",
+    "testSuffix": ".js",
     "runner": "mocha-coderoad",
     "edit": true
   }

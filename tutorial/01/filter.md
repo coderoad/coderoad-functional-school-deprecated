@@ -52,7 +52,7 @@ console.log(students[0]);
 ```
 
 + Write a filter condition function called `isAda` that returns true only if the name matches your name: "Ada Lovelace".
-@test('01/01-filter')
+@test('01/01')
 @action(open('01-filter.js'))
 @action(set(
 ```
@@ -70,7 +70,7 @@ function isAda(student) {
 @hint('Use `===` to check equality')
 
 + Set `var myData` to filter with the `isAda` function.
-@test('01/02-filter')
+@test('01/02')
 @action(insert(
 ```
 // run the function name in filter
@@ -81,7 +81,7 @@ var myData = students.filter(::>);
 @hint('Pass `isAda` into your `filter` call')
 
 + Write a filter condition called `isGoodGrade` that will filter out any "D" or "F" grades.
-@test('01/03-filter')
+@test('01/03')
 @action(insert(
 ```
 
@@ -98,7 +98,7 @@ function isGoodGrade(student) {
 
 + Set `var myBest` to your scores, excluding any grades that are "D" or "F".
 
-@test('1/01/04-filter')
+@test('01/04')
 @action(insert(
 ```
 // filter out "D"'s and "F"'s here

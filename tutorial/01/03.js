@@ -1,22 +1,21 @@
-"use strict";
-var expect = require('chai').expect;
+describe('03 function isGoodGrade', () => {
 
-describe('03 function isGoodGrade', function() {
+  const isGoodGrade = filter.__get__('isGoodGrade');
 
-  it('doesn\'t exist', function() {
+  it('doesn\'t exist', () => {
     expect(isGoodGrade).to.not.be.undefined;
   });
 
-  it('isn\'t a Function', function() {
+  it('isn\'t a Function', () => {
     expect(isGoodGrade).to.be.a('function');
   });
 
-  it('doesn\'t have any params', function() {
+  it('doesn\'t have any params', () => {
     expect(isGoodGrade.length).to.equal(1);
   });
 
-  it('doesn\'t return true when an items name matches "Ada Lovelace"', function() {
-    var test = [{
+  it('doesn\'t return true when an items name matches "Ada Lovelace"', () => {
+    const test = [{
       grade: 'A'
     }, {
       grade: 'D'
