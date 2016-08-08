@@ -1,9 +1,10 @@
-describe('05 var decodedName', () => {
+describe('05 var unknownStudentNames', () => {
 
-  const decodedName = find.__get__('decodedName');
+  const unknownStudentNames = find.__get__('unknownStudentNames');
 
   it('should find 10 unknown students names', () => {
-    expect(decodedName).to.equal('!findthebestrevenge!');
+    const names = unknownStudentNames.join('');
+    expect(names).to.equal('!findthebestrevenge!');
   });
 
 });

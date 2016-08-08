@@ -86,11 +86,22 @@ function addOneToLog(x) {
 
 Now that we see how `forEach` works, let's use it to make calls to the `console`.
 
-+ Use `forEach` to log out your report card to the console
++ load "myFixed"
 @test('04/01')
+@action(open('data/myFixed.js'))
+@action(set(
+```
+const myFixed=[{title:"Relational Databases",instructor:"Sean Quentin Lewis",name:"Ada Lovelace",score:95,grade:"A"},{title:"3D Computer Graphics",instructor:"G.L. Webb",name:"Ada Lovelace",score:95,grade:"A"},{title:"Front End Web Development",instructor:"Moe Zaick",name:"Ada Lovelace",score:73,grade:"C"},{title:"Web Security",instructor:"Sue Denim",name:"Ada Lovelace",score:93,grade:"A"},{title:"Javascript Fundamentals",instructor:"Jay Kweerie",name:"Ada Lovelace",score:85,grade:"B"},{title:"Data Science",instructor:"Ford Fulkerson",name:"Ada Lovelace",score:70,grade:"C"},{title:"Algorithm Design",instructor:"Gale Shapely",name:"Ada Lovelace",score:95,grade:"A"},{title:"Data Abstraction",instructor:"Aster Ricks",name:"Ada Lovelace",score:94,grade:"A"},{title:"Data Structures",instructor:"Brodal Q.",name:"Ada Lovelace",score:95,grade:"A"},{title:"Networks",instructor:"Van Emde Boas",name:"Ada Lovelace",score:77,grade:"C"}];
+export default myFixed;
+```  
+))
+
++ Use `forEach` to log out your report card to the console
+@test('04/02')
 @action(open('04-forEach.js'))
 @action(set(
 ```
+import myFixed from './data/myFixed';
 // Array.forEach(fn)
 
 function logCourse(course) {
@@ -104,7 +115,7 @@ myFixed.forEach(::>);
 @hint('call `forEach` with `logCourse`')
 
 + Add a second parameter to `logCourseWithIndex` called `index`. Then call the function with `myFixed.forEach`.
-@test('04/02')
+@test('04/03')
 @action(insert(
 ```
 
@@ -121,7 +132,7 @@ myFixed.forEach(logCourseWithIndex);
 @hint('Add a second parameter to `logCourseWithIndex`')
 
 + Add a third parameter called `array` to `logCourseWithIndexAndArray`, then call the function with `myFixed.forEach`.
-@test('04/03')
+@test('04/04')
 @action(insert(
 ```
 
@@ -152,7 +163,7 @@ myFixed = students
 
 This is why side-effects are dangerous. Students data must have changed, and now all of your transformations are effected.
 
-@test('04/04')
+@test('04/05')
 @action(insert(
 ```
 

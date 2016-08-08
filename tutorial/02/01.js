@@ -1,30 +1,11 @@
 const expect = require('chai').expect;
 
-// load('02/myBest.js', true)
+describe('01 myBest data', () => {
 
-const sort = require('BASE/02-sort.js');
-const compareScore = sort.__get__('compareScore');
+  const myBest = require('BASE/data/myBest.js');
 
-describe('01 function compareScore', () => {
-
-	it('doesn\'t exist', () => {
-		expect(compareScore).to.not.be.undefined;
-	});
-
-	it('isn\'t a Function', () => {
-		expect(compareScore).to.be.a('function');
-	});
-
-	it('doesn\'t have two params', () => {
-		expect(compareScore.length).to.equal(2);
-	});
-
-	it('doesn\'t return 1 when b\'s score is more than a\'s', () => {
-		expect(compareScore({
-			score: 3
-		}, {
-			score: 5
-		})).to.equal(1);
-	});
+  it('should be loaded in "data/myBest.js"', () => {
+    expect(myBest).to.be.defined;
+  });
 
 });

@@ -1,16 +1,23 @@
-describe('03 var unknownStudentList', () => {
+describe('03 function notInList', () => {
 
-  const unknownStudentList = find.__get__('unknownStudentList');
+  const notInList = find.__get__('notInList');
 
-  it('should find 10 students', () => {
-    expect(unknownStudentList).to.have.length(10);
+  it('should filter for student.name', () => {
+    const regex = /[a-zA-Z]+\.name/;
+    const str = notInList.toString();
+    expect(str.match(regex)).to.not.be.null;
   });
 
-  it('should find 10 unknown students across classes', () => {
-    const names = unknownStudentList.map((student) => {
-      return student.name;
-    }).join('');
-    expect(names).to.equal('!findthebestrevenge!');
+});
+
+describe('03 var unknownStudent', () => {
+
+  const unknownStudent = find.__get__('unknownStudent');
+
+  const otherStudents = ["Albert Gonzalez", "Brian Kernaghan", "Danielle Bunten Berry", "Donald Knuth", "Grace Hopper", "Hack Kerr", "James Gosling", "Ken Thompson", "Kevin Mitnick", "Linus Torvalds", "Niklaus Wirth", "Rebecca Heineman", "Tim Berners-Lee", "Xiao Tian", "Ying Cracker"];
+
+  it('should filter to "Web Security" class data', () => {
+    expect(unknownStudent.name).to.equal('he');
   });
 
 });

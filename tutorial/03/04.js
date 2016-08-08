@@ -14,35 +14,40 @@ describe('04 function increaseScore', () => {
     expect(increaseScore).to.have.length(1);
   });
 
-  it('shouldn\'t change scores under 95', () => {
-    const test = {
-      score: 82
-    };
-    expect(increaseScore(test)).to.deep.equal({
-      score: 94
-    });
+  it('should try changing the `score` first before returning the changed object', () => {
+    var regex = /return [a-zA-Z]+\.score/;
+    var func = increaseScore.toString();
+    expect(func.match(regex)).to.be.null;
   });
 
-  it('should change scores over 95 to 95', () => {
-    const test = {
-      score: 84
+  it('should increment scores by 12 points', () => {
+    var test = {
+      score: 50
     };
     expect(increaseScore(test)).to.deep.equal({
-      score: 95
+      score: 62
     });
   });
 
 });
 
-describe('04 var mySlightlyChanged', () => {
+describe('03 var mySlightlyChanged', () => {
 
   const mySlightlyChanged = map.__get__('mySlightlyChanged');
 
-  it('should cap scores at 95', () => {
-    const scores = mySlightlyChanged.map(function(x) {
+  it('doesn\'t exist', () => {
+    expect(mySlightlyChanged).to.not.be.undefined;
+  });
+
+  it('isn\'t an array', () => {
+    expect(mySlightlyChanged).to.be.an('array');
+  });
+
+  it('should increment scores by 12', () => {
+    var scores = mySlightlyChanged.map(function(x) {
       return x.score;
     });
-    expect(Math.max.apply(Math, scores)).to.equal(95);
+    expect(Math.min.apply(Math, scores)).to.equal(70);
   });
 
 });

@@ -1,22 +1,7 @@
-describe('04 var mySorted', () => {
+describe('04 function compareScore', () => {
 
-  const mySorted = sort.__get__('mySorted');
-
-  it('doesn\'t exist', () => {
-    expect(mySorted).to.not.be.undefined;
-  });
-
-  it('doesn\'t output an array', () => {
-    expect(mySorted).to.be.an('array');
-  });
-
-  it('doesn\'t output exactly seven items', () => {
-    expect(mySorted).to.have.length(7);
-  });
-
-  it('isn\'t the right sorted data', () => {
-    expect(mySorted[0].score).to.equal(93);
-    expect(mySorted[6].score).to.equal(73);
+  it('doesn\'t return 0 when b\'s score equals a\'s', () => {
+    expect(compareScore({score: 3}, {score: 3})).to.equal(0);
   });
 
 });

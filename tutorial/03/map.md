@@ -56,11 +56,22 @@ Those D & F grades would look a lot better if they suddenly became A's.
 
 Let's go back to before we filtered out the bad grades, and instead change the grades to A's.
 
-+ Make a function `changeGrade` that takes student data and changes all grades to "A"s.
++ load "myData"
 @test('03/01')
+@action(open('data/myData.js'))
+@action(set(
+```
+const myData=[{title:"Relational Databases",instructor:"Sean Quentin Lewis",name:"Ada Lovelace",score:91,grade:"A"},{title:"3D Computer Graphics",instructor:"G.L. Webb",name:"Ada Lovelace",score:88,grade:"B"},{title:"Front End Web Development",instructor:"Moe Zaick",name:"Ada Lovelace",score:61,grade:"D"},{title:"Web Security",instructor:"Sue Denim",name:"Ada Lovelace",score:81,grade:"B"},{title:"Javascript Fundamentals",instructor:"Jay Kweerie",name:"Ada Lovelace",score:73,grade:"C"},{title:"Data Science",instructor:"Ford Fulkerson",name:"Ada Lovelace",score:58,grade:"F"},{title:"Algorithm Design",instructor:"Gale Shapely",name:"Ada Lovelace",score:93,grade:"A"},{title:"Data Abstraction",instructor:"Aster Ricks",name:"Ada Lovelace",score:82,grade:"B"},{title:"Data Structures",instructor:"Brodal Q.",name:"Ada Lovelace",score:88,grade:"B"},{title:"Networks",instructor:"Van Emde Boas",name:"Ada Lovelace",score:65,grade:"D"}];
+export default myData;
+```
+))
+
++ Make a function `changeGrade` that takes student data and changes all grades to "A"s.
+@test('03/02')
 @action(open('03-map.js'))
 @action(set(
 ```
+import myData from './data/myData';
 // Array.map(fn)
 
 // change any `student.grade`'s into an 'A'
@@ -75,7 +86,7 @@ function changeGrade(::>) {
 
 
 + Map over the `myData` with the `changeGrade` function. Set `myChanged` to the result.
-@test('03/02')
+@test('03/03')
 @action(insert(
 ```
 // map over `myData` with the `changeGrade` function
@@ -87,7 +98,7 @@ var myChanged = myData.map(::>);
 + Hold up. An A in "Data Science" class looks way to suspicious. Your parents might catch on to your cheating.
 
 Let's go back to `myData` and instead increment each score by 12 points.
-@test('03/03')
+@test('03/04')
 @action(insert(
 ```
 
@@ -104,12 +115,12 @@ var mySlightlyChanged = myData;
 @hint('return `student`')
 
 + Wait. Now you're getting 105 in "Algorithm Design" class. Fix `increaseScore` so that the maximum score is 95. That should be less suspicious.
-@test('1/03/04')
+@test('1/03/05')
 @hint('use an if clause within `increaseScore`')
 @hint('try `if (student.score >= 95) { student.score = 95 }`')
 
 + One more problem. Now the scores don't match the grades. you have 95 score in "3D Computer Graphics", but only a "B" grade. Set `myFixed` as the result of using the `getGrade` function to set grades according to their new scores.
-@test('03/05')
+@test('03/06')
 @action(insert(
 ```
 
@@ -139,7 +150,7 @@ var myFixed = mySlightlyChanged;
 @hint('set `student.grade = "A"` and return `student`')
 
 + Check to make sure everything is working. Set `scoresAndGrades` to an array of scores and grades only.
-@test('03/06')
+@test('03/07')
 @action(insert(
 ```
 

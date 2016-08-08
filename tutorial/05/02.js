@@ -1,23 +1,15 @@
-describe('02 function notInList', () => {
+const find = require('BASE/05-find.js');
 
-  const notInList = find.__get__('notInList');
+describe('02 var myClass', () => {
 
-  it('should filter for student.name', () => {
-    const regex = /[a-zA-Z]+\.name/;
-    const str = notInList.toString();
-    expect(str.match(regex)).to.not.be.null;
-  });
-
-});
-
-describe('02 var unknownStudent', () => {
-
-  const unknownStudent = find.__get__('unknownStudent');
-
-  const otherStudents = ["Albert Gonzalez", "Brian Kernaghan", "Danielle Bunten Berry", "Donald Knuth", "Grace Hopper", "Hack Kerr", "James Gosling", "Ken Thompson", "Kevin Mitnick", "Linus Torvalds", "Niklaus Wirth", "Rebecca Heineman", "Tim Berners-Lee", "Xiao Tian", "Ying Cracker"];
+  const students = find.__get__('students');
+  const myClass = find.__get__('myClass');
 
   it('should filter to "Web Security" class data', () => {
-    expect(unknownStudent.name).to.equal('he');
+    const result = students.filter((course) => {
+      return course.title === 'Web Security';
+    });
+    expect(myClass).to.deep.equal(result);
   });
 
 });

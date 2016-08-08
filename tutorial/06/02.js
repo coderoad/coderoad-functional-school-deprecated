@@ -1,20 +1,15 @@
-describe('02 var doubleArray', () => {
+const concat = require('BASE/06-concat.js');
 
-  const doubleArray = concat.__get__('doubleArray');
+describe('02 var flattenedArray', () => {
 
-  it('should create an array of arrays', () => {
-    expect(doubleArray).to.have.length(10);
-    expect(doubleArray[0]).to.have.length(16);
+  const flattenedArray = concat.__get__('flattenedArray');
+
+  it('should flatten the array', () => {
+    expect(flattenedArray).to.have.length(4);
   });
 
-  it('should create an array of arrays', () => {
-    expect(doubleArray[0][0]).to.deep.equal({
-      instructor: "Sean Quentin Lewis",
-      title: "Relational Databases",
-      name: "!f",
-      grade: "D",
-      score: 61
-    });
+  it('should flatten the array', () => {
+    expect(flattenedArray).to.deep.equal([1, 2, 3, 4]);
   });
 
 });

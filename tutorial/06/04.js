@@ -1,22 +1,18 @@
-describe('04 var suspectData', () => {
+describe('04 var students', () => {
 
-  const suspectData = concat.__get__('suspectData');
+  const students = concat.__get__('students');
 
-  it('should have 10 items', () => {
-    expect(suspectData).to.have.length.below(31);
+  it('should have 160 items', () => {
+    expect(students).to.have.length(160);
   });
 
-  it('should filter if the `indexOf` the suspects name is greater than -1', () => {
-    const hackKerrData = suspectData.filter((suspect) => {
-      return suspect.name === 'Hack Kerr';
-    });
-    expect(hackKerrData).to.have.length(10);
-    expect(hackKerrData[0]).to.deep.equal({
-      title: 'Relational Databases',
-      instructor: 'Sean Quentin Lewis',
-      name: 'Hack Kerr',
-      score: 85,
-      grade: 'F'
+  it('should result in a single array of student data', () => {
+    expect(students[0]).to.deep.equal({
+      instructor: "Sean Quentin Lewis",
+      title: "Relational Databases",
+      name: "!f",
+      grade: "D",
+      score: 61
     });
   });
 

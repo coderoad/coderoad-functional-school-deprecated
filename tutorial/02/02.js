@@ -1,5 +1,26 @@
-describe('02 function compareScore', function () {
-  it('doesn\'t return -1 when b\'s score is less than a\'s', function() {
-    expect(compareScore({score: 5}, {score: 3})).to.equal(-1);
-  });
+const sort = require('BASE/02-sort.js');
+const compareScore = sort.__get__('compareScore');
+
+describe('02 function compareScore', () => {
+
+	it('doesn\'t exist', () => {
+		expect(compareScore).to.not.be.undefined;
+	});
+
+	it('isn\'t a Function', () => {
+		expect(compareScore).to.be.a('function');
+	});
+
+	it('doesn\'t have two params', () => {
+		expect(compareScore.length).to.equal(2);
+	});
+
+	it('doesn\'t return 1 when b\'s score is more than a\'s', () => {
+		expect(compareScore({
+			score: 3
+		}, {
+			score: 5
+		})).to.equal(1);
+	});
+
 });

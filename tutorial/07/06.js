@@ -1,7 +1,9 @@
 describe('06 var likelySuspects', () => {
 
-  it('should pass', () => {
-    expect(true).to.be.true;
+  const likelySuspects = reduce.__get__('likelySuspects');
+
+  it('should reduce down to a suspect name', () => {
+    expect(likelySuspects).to.equal('Hack Kerr');
   });
 
 });

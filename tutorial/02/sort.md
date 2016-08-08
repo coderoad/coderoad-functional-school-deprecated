@@ -32,11 +32,22 @@ Alright, now time to sort your best grades to the top.
 
 First you'll need to write a sort condition function called `compareScore`.
 
-+ `compareScore` should return 1 if the first score is less than the second
++ load `myBest`
 @test('02/01')
+@action(open('data/myBest.js'))
+@action(set(
+```
+const myBest=[{title:"Relational Databases",instructor:"Sean Quentin Lewis",name:"Ada Lovelace",score:91,grade:"A"},{title:"3D Computer Graphics",instructor:"G.L. Webb",name:"Ada Lovelace",score:88,grade:"B"},{title:"Web Security",instructor:"Sue Denim",name:"Ada Lovelace",score:81,grade:"B"},{title:"Javascript Fundamentals",instructor:"Jay Kweerie",name:"Ada Lovelace",score:73,grade:"C"},{title:"Algorithm Design",instructor:"Gale Shapely",name:"Ada Lovelace",score:93,grade:"A"},{title:"Data Abstraction",instructor:"Aster Ricks",name:"Ada Lovelace",score:82,grade:"B"},{title:"Data Structures",instructor:"Brodal Q.",name:"Ada Lovelace",score:88,grade:"B"}];
+export default myBest;
+```
+))
+
++ `compareScore` should return 1 if the first score is less than the second
+@test('02/02')
 @action(open('02-sort.js'))
 @action(set(
 ```
+import myBest from './data/myBest';
 // Array.sort(fn)
 
 function compareScore(a, b) {
@@ -55,15 +66,15 @@ function compareScore(a, b) {
 ```
 ))
 + `compareScore` should return -1 if the first score is more than the second
-@test('02/02')
+@test('02/03')
 @hint('set the second case to `b.score < a.score`')
 
 + `compareScore` should return 0 if the first score is the same as the second
-@test('02/03')
+@test('02/04')
 @hint('no case is necessary, use the `default` case')
 
 + Set `mySorted` to the result of `myBest` sorted by `compareScore`
-@test('02/04')
+@test('02/05')
 @action(insert(
 ```
 // use the compare function to sort myBest

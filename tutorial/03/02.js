@@ -1,27 +1,54 @@
-describe('02 var myChanged', () => {
+const expect = require('chai').expect;
 
-  const myChanged = map.__get__('myChanged');
+const map = require('BASE/03-map.js');
 
-  it('doesn\'t exist', () => {
-    expect(myChanged).to.not.be.undefined;
-  });
+describe('02 function changeGrade', () => {
 
-  it('isn\'t an array', () => {
-    expect(myChanged).to.be.an('array');
-  });
+	const changeGrade = map.__get__('changeGrade');
 
-  it('doesn\'t change all D\'s to A\'s', () => {
-    function filterD(student) {
-      return student.grade === 'D';
-    }
-    expect(myChanged.filter(filterD)).to.have.length(0);
-  });
+	it('doesn\'t exist', () => {
+		expect(changeGrade).to.not.be.undefined;
+	});
 
-  it('doesn\'t change all F\'s to A\'s', () => {
-    function filterD(student) {
-      return student.grade === 'F';
-    }
-    expect(myChanged.filter(filterD)).to.have.length(0);
-  });
+	it('isn\'t a function', () => {
+		expect(changeGrade).to.be.a('function');
+	});
+
+	it('should take a parameter', () => {
+		expect(changeGrade).to.have.length(1);
+	});
+
+	it('should try changing `student.grade` first before returning `student`', () => {
+		const regex = /return [a-zA-Z]+\.grade/;
+		const func = changeGrade.toString();
+		expect(func.match(regex)).to.be.null;
+	});
+
+	it('should change grades from a D to an A', () => {
+		const test = {
+			grade: 'D'
+		};
+		expect(changeGrade(test)).to.deep.equal({
+			grade: 'A'
+		});
+	});
+
+	it('should change grades from a F to an A', () => {
+		const test = {
+			grade: 'F'
+		};
+		expect(changeGrade(test)).to.deep.equal({
+			grade: 'A'
+		});
+	});
+
+	it('should change grades from a B to an A', () => {
+		const test = {
+			grade: 'B'
+		};
+		expect(changeGrade(test)).to.deep.equal({
+			grade: 'A'
+		});
+	});
 
 });

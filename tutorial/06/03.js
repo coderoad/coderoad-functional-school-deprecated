@@ -1,13 +1,14 @@
-describe('03 var students', () => {
+describe('03 var doubleArray', () => {
 
-  const students = concat.__get__('students');
+  const doubleArray = concat.__get__('doubleArray');
 
-  it('should have 160 items', () => {
-    expect(students).to.have.length(160);
+  it('should create an array of arrays', () => {
+    expect(doubleArray).to.have.length(10);
+    expect(doubleArray[0]).to.have.length(16);
   });
 
-  it('should result in a single array of student data', () => {
-    expect(students[0]).to.deep.equal({
+  it('should create an array of arrays', () => {
+    expect(doubleArray[0][0]).to.deep.equal({
       instructor: "Sean Quentin Lewis",
       title: "Relational Databases",
       name: "!f",

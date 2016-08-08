@@ -1,9 +1,15 @@
-describe('04 var unknownStudentNames', () => {
+describe('04 var unknownStudentList', () => {
 
-  const unknownStudentNames = find.__get__('unknownStudentNames');
+  const unknownStudentList = find.__get__('unknownStudentList');
 
-  it('should find 10 unknown students names', () => {
-    const names = unknownStudentNames.join('');
+  it('should find 10 students', () => {
+    expect(unknownStudentList).to.have.length(10);
+  });
+
+  it('should find 10 unknown students across classes', () => {
+    const names = unknownStudentList.map((student) => {
+      return student.name;
+    }).join('');
     expect(names).to.equal('!findthebestrevenge!');
   });
 

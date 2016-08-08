@@ -1,42 +1,48 @@
-describe('05 function getGrade', () => {
+describe('05 function increaseScore', () => {
 
-  const getGrade = map.__get__('getGrade');
+  const increaseScore = map.__get__('increaseScore');
 
   it('doesn\'t exist', () => {
-    expect(getGrade).to.not.be.undefined;
+    expect(increaseScore).to.not.be.undefined;
   });
 
   it('should be a function', () => {
-    expect(getGrade).to.be.a('function');
+    expect(increaseScore).to.be.a('function');
   });
 
   it('should take a parameter', () => {
-    expect(getGrade).to.have.length(1);
+    expect(increaseScore).to.have.length(1);
   });
 
+  it('shouldn\'t change scores under 95', () => {
+    const test = {
+      score: 82
+    };
+    expect(increaseScore(test)).to.deep.equal({
+      score: 94
+    });
+  });
+
+  it('should change scores over 95 to 95', () => {
+    const test = {
+      score: 84
+    };
+    expect(increaseScore(test)).to.deep.equal({
+      score: 95
+    });
+  });
 
 });
 
-describe('05 var myFixed', () => {
+describe('04 var mySlightlyChanged', () => {
 
-  const myFixed = map.__get__('myFixed');
+  const mySlightlyChanged = map.__get__('mySlightlyChanged');
 
-  it('doesn\'t exist', () => {
-    expect(myFixed).to.not.be.undefined;
-  });
-
-  it('isn\'t an array', () => {
-    expect(myFixed).to.be.an('array');
-  });
-
-  it('doesn\'t have 10 items', () => {
-    expect(myFixed).to.have.length(10);
-  });
-
-  it('doesn\'t update grades correctly', () => {
-    expect(myFixed.map((x) => {
-      return x.grade;
-    })).to.deep.equal(['A', 'A', 'C', 'A', 'B', 'C', 'A', 'A', 'A', 'C']);
+  it('should cap scores at 95', () => {
+    const scores = mySlightlyChanged.map(function(x) {
+      return x.score;
+    });
+    expect(Math.max.apply(Math, scores)).to.equal(95);
   });
 
 });

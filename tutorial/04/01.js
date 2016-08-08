@@ -3,21 +3,17 @@ const spies = require('chai-spies');
 const expect = chai.expect;
 chai.use(spies);
 
-// load('04/myFixed.js', true)
 if (process.env.TASK_POSITION === '4') {
 	myFixed = [];
 }
 let spy = chai.spy.on(console, 'log');
 
-require('BASE/04-forEach.js');
+describe('01 myFixed data', () => {
 
-describe('01 console.log', () => {
+  const myFixed = require('BASE/data/myFixed.js');
 
-	if (process.env.TASK_POSITION !== '4') {
-		it('should be called 10 times', () => {
-			expect(spy).to.have.been.called.with('A  95  Relational Databases');
-			expect(spy).to.have.been.called.with('C  77  Networks');
-		});
-	}
+  it('should be loaded in "data/myFixed.js"', () => {
+    expect(myFixed).to.be.defined;
+  });
 
 });

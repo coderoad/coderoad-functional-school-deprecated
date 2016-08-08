@@ -1,17 +1,11 @@
 const expect = require('chai').expect;
-// load('data/courses2.json', true)
-const concat = require('BASE/06-concat.js');
 
-describe('01 var flattenedArray', () => {
+describe('01 load courses', () => {
 
-  const flattenedArray = concat.__get__('flattenedArray');
+  const courses = require('BASE/data/courses2.js');
 
-  it('should flatten the array', () => {
-    expect(flattenedArray).to.have.length(4);
-  });
-
-  it('should flatten the array', () => {
-    expect(flattenedArray).to.deep.equal([1, 2, 3, 4]);
+  it('should be loaded in "data/courses2.js"', () => {
+    expect(courses).to.be.defined;
   });
 
 });

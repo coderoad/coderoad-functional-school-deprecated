@@ -6,10 +6,10 @@ let spy = chai.spy.on(console, 'log');
 
 describe('01 student data', () => {
 
-  const students = require('BASE/students.js');
+  const students = require('BASE/data/students.js');
 
-  it('should be loaded in "students.js"', () => {
+  it('should be loaded in "data/students.js"', () => {
     expect(students).to.be.defined;
   });
 
-})
+});
