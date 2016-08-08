@@ -1,20 +1,20 @@
-var expect = require('chai').expect;
+describe('04 function increaseScore', () => {
 
-describe('04 function increaseScore', function() {
+  const increaseScore = map.__get__('increaseScore');
 
-  it('doesn\'t exist', function() {
+  it('doesn\'t exist', () => {
     expect(increaseScore).to.not.be.undefined;
   });
 
-  it('should be a function', function() {
+  it('should be a function', () => {
     expect(increaseScore).to.be.a('function');
   });
 
-  it('should take a parameter', function() {
+  it('should take a parameter', () => {
     expect(increaseScore).to.have.length(1);
   });
 
-  it('shouldn\'t change scores under 95', function() {
+  it('shouldn\'t change scores under 95', () => {
     var test = {
       score: 82
     };
@@ -23,7 +23,7 @@ describe('04 function increaseScore', function() {
     });
   });
 
-  it('should change scores over 95 to 95', function() {
+  it('should change scores over 95 to 95', () => {
     var test = {
       score: 84
     };
@@ -34,9 +34,11 @@ describe('04 function increaseScore', function() {
 
 });
 
-describe('04 var mySlightlyChanged', function() {
+describe('04 var mySlightlyChanged', () => {
 
-  it('should cap scores at 95', function() {
+  const mySlightlyChanged = map.__get__('mySlightlyChanged');
+
+  it('should cap scores at 95', () => {
     var scores = mySlightlyChanged.map(function(x) {
       return x.score;
     });

@@ -1,8 +1,8 @@
-var expect = require('chai').expect;
+describe('06 var scoresAndGrades', () => {
 
-describe('06 var scoresAndGrades', function() {
+  const scoresAndGrades = map.__get__('scoresAndGrades');
 
-  it('should return an array of scores and grades', function() {
+  it('should return an array of scores and grades', () => {
     expect(scoresAndGrades[0]).to.deep.equal({
       grade: "A",
       score: 95

@@ -1,26 +1,26 @@
-var expect = require('chai').expect;
+describe('03 function increaseScore', () => {
 
-describe('03 function increaseScore', function() {
+  const increaseScore = map.__get__('increaseScore');
 
-  it('doesn\'t exist', function() {
+  it('doesn\'t exist', () => {
     expect(increaseScore).to.not.be.undefined;
   });
 
-  it('should be a function', function() {
+  it('should be a function', () => {
     expect(increaseScore).to.be.a('function');
   });
 
-  it('should take a parameter', function() {
+  it('should take a parameter', () => {
     expect(increaseScore).to.have.length(1);
   });
 
-  it('should try changing the `score` first before returning the changed object', function() {
+  it('should try changing the `score` first before returning the changed object', () => {
     var regex = /return [a-zA-Z]+\.score/;
     var func = increaseScore.toString();
     expect(func.match(regex)).to.be.null;
   });
 
-  it('should increment scores by 12 points', function() {
+  it('should increment scores by 12 points', () => {
     var test = {
       score: 50
     };
@@ -31,17 +31,19 @@ describe('03 function increaseScore', function() {
 
 });
 
-describe('03 var mySlightlyChanged', function() {
+describe('03 var mySlightlyChanged', () => {
 
-  it('doesn\'t exist', function() {
+  const mySlightlyChanged = map.__get__('mySlightlyChanged');
+
+  it('doesn\'t exist', () => {
     expect(mySlightlyChanged).to.not.be.undefined;
   });
 
-  it('isn\'t an array', function() {
+  it('isn\'t an array', () => {
     expect(mySlightlyChanged).to.be.an('array');
   });
 
-  it('should increment scores by 12', function() {
+  it('should increment scores by 12', () => {
     var scores = mySlightlyChanged.map(function(x) {
       return x.score;
     });
