@@ -1,5 +1,3 @@
-const expect = require('chai').expect;
-
 const map = require('BASE/03-map.js');
 
 describe('02 function changeGrade', () => {
