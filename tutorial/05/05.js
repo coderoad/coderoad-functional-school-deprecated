@@ -1,4 +1,4 @@
-describe('05 var unknownStudentNames', () => {
+describe('05 const unknownStudentNames', () => {
 
   const unknownStudentNames = find.__get__('unknownStudentNames');
 

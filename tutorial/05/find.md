@@ -8,7 +8,7 @@ You quickly put together a list of other students in class. If someone changed y
 `find` works similar to `filter`, but returns only the first match.
 
 ```
-var data = [1, 2, 3, 4, 5, 6];
+const data = [1, 2, 3, 4, 5, 6];
 
 function isEven(num) {
   return num % 2 === 0;
@@ -1004,7 +1004,7 @@ import students from './data/students2';
 // Array.find(fn)
 
 // filter for the student title matches "Web Security"
-var myClass = students.filter(::>);
+const myClass = students.filter(::>);
 ```
 ))
 @hint('create a `filter` function')
@@ -1015,7 +1015,7 @@ var myClass = students.filter(::>);
 @action(insert(
 ```
 
-var otherStudents = ["Albert Gonzalez", "Brian Kernaghan", "Danielle Bunten Berry", "Donald Knuth", "Grace Hopper", "Hack Kerr", "James Gosling", "Ken Thompson", "Kevin Mitnick", "Linus Torvalds", "Niklaus Wirth", "Rebecca Heineman", "Tim Berners-Lee", "Xiao Tian", "Ying Cracker"];
+const otherStudents = ["Albert Gonzalez", "Brian Kernaghan", "Danielle Bunten Berry", "Donald Knuth", "Grace Hopper", "Hack Kerr", "James Gosling", "Ken Thompson", "Kevin Mitnick", "Linus Torvalds", "Niklaus Wirth", "Rebecca Heineman", "Tim Berners-Lee", "Xiao Tian", "Ying Cracker"];
 
 ```
 ))
@@ -1028,7 +1028,7 @@ function notInList(::>) {
 }
 
 // find using `notInList`
-var unknownStudent = myClass.find();
+const unknownStudent = myClass.find();
 ```
 ))
 @hint('use `indexOf` to find what doesn't match')
@@ -1041,7 +1041,7 @@ var unknownStudent = myClass.find();
 ```
 
 // filter using `notInList`
-var unknownStudentList = students.filter(::>);
+const unknownStudentList = students.filter(::>);
 ```  
 ))
 @hint('consider reusing a function')
@@ -1052,7 +1052,7 @@ var unknownStudentList = students.filter(::>);
 ```
 
 // list only student names
-var unknownStudentNames = unknownStudentList.map(::>);
+const unknownStudentNames = unknownStudentList.map(::>);
 ```  
 ))
 @hint('use `map` to return only the `student.name`')
@@ -1063,7 +1063,7 @@ var unknownStudentNames = unknownStudentList.map(::>);
 ```
 
 // use `.join('')` to join the array of strings
-var decodedName = unknownStudentNames::>;
+const decodedName = unknownStudentNames::>;
 console.log(decodedName);
 ```  
 ))

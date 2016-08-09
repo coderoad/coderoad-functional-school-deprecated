@@ -1,4 +1,4 @@
-describe('02 var averages', () => {
+describe('02 const averages', () => {
 
   const averages = reduce.__get__('averages');
 

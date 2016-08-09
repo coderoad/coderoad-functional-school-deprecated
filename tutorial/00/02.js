@@ -1,6 +1,6 @@
 const setup = require('BASE/00-setup.js');
 
-describe('02 first', () => {
+describe('02 const first', () => {
 
 	// __get__ grabs global first
 	const first = setup.__get__('first');

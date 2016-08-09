@@ -1,4 +1,4 @@
-describe('04 var suspectScores', () => {
+describe('04 const suspectScores', () => {
 
   it('should reduce to an array of suspect scores', () => {
 

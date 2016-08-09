@@ -1,4 +1,4 @@
-describe('06 var likelySuspects', () => {
+describe('06 const likelySuspects', () => {
 
   const likelySuspects = reduce.__get__('likelySuspects');
 

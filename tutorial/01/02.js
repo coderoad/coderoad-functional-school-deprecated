@@ -1,9 +1,9 @@
-describe('02 var myData', () => {
+describe('02 const myData', () => {
 
   const myData = filter.__get__('myData');
 
   it('doesn\'t exist', () => {
-    expect(myData).to.not.be.undefined;
+    expect(myData).to.be.defined;
   });
 
   it('doesn\'t output an array', () => {

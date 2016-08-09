@@ -7,7 +7,7 @@ describe('01 function isAda', () => {
   const isAda = filter.__get__('isAda');
 
   it('doesn\'t exist', () => {
-    expect(isAda).to.not.be.undefined;
+    expect(isAda).to.be.defined;
   });
 
   it('isn\'t a Function', () => {

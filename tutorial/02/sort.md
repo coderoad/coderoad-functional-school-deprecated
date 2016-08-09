@@ -120,7 +120,7 @@ function compareScore(a, b) {
 @action(insert(
 ```
 // use the compare function to sort myBest
-var mySorted = myBest::>
+const mySorted = myBest::>
 ```
 ))
 @hint('try using `myBest.sort()`')

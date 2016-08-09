@@ -1,4 +1,4 @@
-describe('07 var scoresAndGrades', () => {
+describe('07 const scoresAndGrades', () => {
 
   const scoresAndGrades = map.__get__('scoresAndGrades');
 

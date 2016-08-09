@@ -4,7 +4,7 @@ const compareScore = sort.__get__('compareScore');
 describe('02 function compareScore', () => {
 
 	it('doesn\'t exist', () => {
-		expect(compareScore).to.not.be.undefined;
+		expect(compareScore).to.be.defined;
 	});
 
 	it('isn\'t a Function', () => {

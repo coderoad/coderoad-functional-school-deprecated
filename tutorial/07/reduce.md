@@ -20,7 +20,7 @@ function add(total, next) {
     return total + next
 }
 
-var initialValue = 100;
+const initialValue = 100;
 [1, 5, 10].reduce(add, initialValue); // initial value
 
 // add(100, 1) -> 101
@@ -56,14 +56,14 @@ Do some practice with `reduce`, before you use it to narrow down a cheating susp
 import courses from './data/courses2';
 // Array.reduce(fn(a, b), initialValue)
 
-var practice = [1, 1, 2, 3, 5, 8, 13, 21];
+const practice = [1, 1, 2, 3, 5, 8, 13, 21];
 
 function add(a, b) {
   return a + b;
 }
 
 // total the numbers using a reduce function
-var total = practice.reduce(::>);
+const total = practice.reduce(::>);
 ```
 ))
 @hint('with only numbers, the initialValue defaults to 0')
@@ -76,8 +76,8 @@ var total = practice.reduce(::>);
 @action(insert(
 ```
 
-var averages = courses.map(function(course) {
-  var sum = course.students.reduce(function(total, student) {
+const averages = courses.map(function(course) {
+  const sum = course.students.reduce(function(total, student) {
     ::>
 
   });
@@ -287,9 +287,9 @@ export default suspectData;
 ```
 
 // [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]
-var suspectScores = suspectData.reduce(function(total, next) {
+const suspectScores = suspectData.reduce(function(total, next) {
   // see if suspect name has a list yet
-  var index = total.findIndex(function(suspect) {
+  const index = total.findIndex(function(suspect) {
     return suspect.name === next.name;
   });
   if (index < 0) {
@@ -323,9 +323,9 @@ var suspectScores = suspectData.reduce(function(total, next) {
 @action(insert(
 ```
 
-var suspectStats = suspectScores.map(function(suspect) {
+const suspectStats = suspectScores.map(function(suspect) {
     // calculate the total difference in scores from the averages
-    var difference = suspect.scores.reduce(::>);
+    const difference = suspect.scores.reduce(::>);
 
     return {
       name: suspect.name,
@@ -352,7 +352,7 @@ function isCheater(suspect) {
 }
 
 // reduce down to a string of likely suspects
-var likelySuspects = suspectStats.reduce(function(::>) {}, []);
+const likelySuspects = suspectStats.reduce(function(::>) {}, []);
 ```
 ))
 @hint('use `.join(', ')`')

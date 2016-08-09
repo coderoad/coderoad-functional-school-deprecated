@@ -1,4 +1,4 @@
-describe('05 var suspectStats', () => {
+describe('05 const suspectStats', () => {
 
   it('should map over suspect data to find the score differences', () => {
 

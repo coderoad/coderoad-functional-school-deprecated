@@ -1,9 +1,9 @@
-describe('05 var mySorted', () => {
+describe('05 const mySorted', () => {
 
   const mySorted = sort.__get__('mySorted');
 
   it('doesn\'t exist', () => {
-    expect(mySorted).to.not.be.undefined;
+    expect(mySorted).to.be.defined;
   });
 
   it('doesn\'t output an array', () => {

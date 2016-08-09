@@ -1,6 +1,6 @@
 const concat = require('BASE/06-concat.js');
 
-describe('02 var flattenedArray', () => {
+describe('02 const flattenedArray', () => {
 
   const flattenedArray = concat.__get__('flattenedArray');
 

@@ -10,7 +10,7 @@ describe('03 function notInList', () => {
 
 });
 
-describe('03 var unknownStudent', () => {
+describe('03 const unknownStudent', () => {
 
   const unknownStudent = find.__get__('unknownStudent');
 

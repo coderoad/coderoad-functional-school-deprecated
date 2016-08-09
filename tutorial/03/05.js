@@ -3,7 +3,7 @@ describe('05 function increaseScore', () => {
   const increaseScore = map.__get__('increaseScore');
 
   it('doesn\'t exist', () => {
-    expect(increaseScore).to.not.be.undefined;
+    expect(increaseScore).to.be.defined;
   });
 
   it('should be a function', () => {

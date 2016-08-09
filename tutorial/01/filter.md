@@ -17,7 +17,7 @@ function isA(x) {
 Like all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one. [Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
 
 ```
-var list = ['a', 'b'];
+const list = ['a', 'b'];
 list.filter(isA);
 
 // if isA(list[0]), add to output array
@@ -33,7 +33,7 @@ function isB(x) {
   return x.item === 'b'
 }
 
-var list = [{item: 'a'}, {item: 'b'}];
+const list = [{item: 'a'}, {item: 'b'}];
 list.filter(isB);
 //> [{item: 'b'}]
 ```
@@ -70,12 +70,12 @@ function isAda(student) {
 @hint('Check if `student.name` matches "Ada Lovelace"')
 @hint('Use `===` to check equality')
 
-+ Set `var myData` to filter with the `isAda` function.
++ Set `const myData` to filter with the `isAda` function.
 @test('01/02')
 @action(insert(
 ```
 // run the function name in filter
-var myData = students.filter(::>);
+const myData = students.filter(::>);
 ```
 ))
 @hint('Add a function to the `filter` call: `Array.filter(function() {})`')
@@ -97,13 +97,13 @@ function isGoodGrade(student) {
 @hint('use `!==` to check non-equality')
 @hint('Match for both: `student.grade !== "D" && student.grade !== "F"`')
 
-+ Set `var myBest` to your scores, excluding any grades that are "D" or "F".
++ Set `const myBest` to your scores, excluding any grades that are "D" or "F".
 
 @test('01/04')
 @action(insert(
 ```
 // filter out "D"'s and "F"'s here
-var myBest = myData.filter(::>);
+const myBest = myData.filter(::>);
 
 ```
 ))

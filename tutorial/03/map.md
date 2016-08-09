@@ -131,53 +131,58 @@ export default myCourses;
 @action(open('03-map.js'))
 @action(set(
 ```
-import myData from './data/myCourses';
+import myCourses from './data/myCourses';
 // Array.map(fn)
 
-// change any `student.grade`'s into an 'A'
+/*
+  change any `course.grade`'s into an 'A'
+
+  example:
+  changeGrade({ grade: 'F' }) === { grade: 'A' };
+*/
 function changeGrade(course) {
   ::>
 }
-// example:
-// changeGrade({ grade: 'F' }) === { grade: 'A' };
+
 ```
 ))
-@hint('give `changeGrade` a parameter, call it "student"')
-@hint('match for `student.grade`')
-@hint('match where `student.grade === 'A'`')
+@hint('give `changeGrade` a parameter, call it "course"')
+@hint('set `course.grade` to "A"')
+@hint('return the changed course')
 
 
-+ Map over the `myData` with the `changeGrade` function. Set `myChanged` to the result.
++ Map over the `myCourses` with the `changeGrade` function. Set `myChanged` to the result.
 @test('03/03')
 @action(insert(
 ```
-// map over `myData` with the `changeGrade` function
-var myChanged = myData.map(::>);
+// map over `myCourses` and call `changeGrade` for each item
+const myChanged = myCourses.map(::>);
 ```
 ))
+@hint('simply call `.map(changeGrade)`')
 
 
 + Hold up. An A in "Data Science" class looks way to suspicious. Your parents might catch on to your cheating.
 
-Let's go back to `myData` and instead increment each score by 12 points.
+Let's go back to `myCourses` and instead increment each score by 12 points.
 @test('03/04')
 @action(insert(
 ```
 
-function increaseScore(::>) {
-
+function increaseScore(course) {
+  ::>
 }
 
 // map over `mySlightlyChanged` with a function `increaseScore` to increment each score by 12
-var mySlightlyChanged = myData;
+const mySlightlyChanged = myCourses;
 ```
 ))
-@hint('give `increaseScore` a parameter, call it "student"')
-@hint('it should increase `student.score`')
-@hint('return `student`')
+@hint('give `increaseScore` a parameter, call it "course"')
+@hint('it should increase `course.score`')
+@hint('return `course`')
 
 + Wait. Now you're getting 105 in "Algorithm Design" class. Fix `increaseScore` so that the maximum score is 95. That should be less suspicious.
-@test('1/03/05')
+@test('03/05')
 @hint('use an if clause within `increaseScore`')
 @hint('try `if (student.score >= 95) { student.score = 95 }`')
 
@@ -186,8 +191,8 @@ var mySlightlyChanged = myData;
 @action(insert(
 ```
 
-// change `getGrade` to accept an object
-// and return an object
+// change `getGrade` to accept a "course" instead of a "score"
+// and return that updated "course"
 function getGrade(score) {
   switch (true) {
     case (score >= 90):
@@ -204,12 +209,12 @@ function getGrade(score) {
 }
 
 // map `myFixed` to update grades to the new scores
-var myFixed = mySlightlyChanged;
+const myFixed = mySlightlyChanged;
 ```
 ))
-@hint('change `getGrade` to take a `student` param instead of `score`')
-@hint('change the grade and return the `student`')
-@hint('set `student.grade = "A"` and return `student`')
+@hint('change `getGrade` to take a `course` param instead of `score`')
+@hint('change the grade and return the `course`')
+@hint('set `course.grade = "A"` and return `course`')
 
 + Check to make sure everything is working. Set `scoresAndGrades` to an array of scores and grades only.
 @test('03/07')
@@ -218,7 +223,7 @@ var myFixed = mySlightlyChanged;
 
 // set `scoresAndGrades` to an array of scores and grades
 // it should return an array of objects like this: {score: 75, grade: 'C'}
-var scoresAndGrades = myFixed::>
+const scoresAndGrades = myFixed::>
 ```
 ))
 @hint('use `map` to return only the "score" & "grade" fields')

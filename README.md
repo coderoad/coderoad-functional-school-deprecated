@@ -9,6 +9,9 @@ Keywords: javascript, functional
 Length: 1-2 hours
 
 
+<!-- @import('00/setup') -->
+<!-- @import('01/filter') -->
+<!-- @import('02/sort') -->
 <!-- @import('08/challenge-1') -->
 <!-- @import('09/challenge-2') -->
 
@@ -28,123 +31,6 @@ CodeRoad is an open-sourced interactive tutorial platform for the Atom Editor. L
 
 
 ## Outline
-
-##### Start
-
-Understanding the Data Set
-
-Over this tutorial series, we'll be changing and working with two different data sets. It'll be a big help to first understand what the data looks like.
-
-```json
-var students = [
-  {
-    "title": "Relational Databases",
-    "instructor": "Sean Quentin Lewis",
-    "name": "Ada Lovelace",
-    "score": 91,
-    "grade": "A"
-  },
-  ...
-]
-```
-
-Here we have an array of "student" objects. To get the first item in the array, you can use the array index. Array indexes start at 0.
-
-```js
-console.log(
-  'first instructor', students[0].instructor
-);
-// first instructor Sean Quentin Lewis
-```
-
-##### Filter
-
-Array -> Array of items that match a condition
-
-You've hacked into the school's computer system, and just in time. The grades are in, but you're not too proud of your performance. That's okay, you have a plan: you're going to create a fake report card.
-
-It would be great if you could `filter` the scores that your parents will see.
-
-`filter` takes a matching condition function and only returns items that result in true. As an example, look at `isA` below:
-
-```
-function isA(x) {
-  return x === 'a';
-}
-```
-
-
-Like all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one. [Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
-
-```
-var list = ['a', 'b'];
-list.filter(isA);
-
-// if isA(list[0]), add to output array
-// if isA(list[1]), add to output array
-//
-//> ['a']
-```
-
-If your data was composed of objects, we could use dot notation to find matches. Checkout `isB` below.
-
-```
-function isB(x) {
-  return x.item === 'b'
-}
-
-var list = [{item: 'a'}, {item: 'b'}];
-list.filter(isB);
-//> [{item: 'b'}]
-```
-
-Where were we? Back to filtering our grades.
-
-There's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:
-
-```
-console.log(students[0]);
-//> { course: 'Web Security',
-//    instructor: 'Sue Denim',
-//    name: 'Rebecca Heineman',
-//    score: 93,
-//    grade: 'A' }
-```
-
-##### Sort
-
-Array -> sorted Array
-
-Your grades are filtered down to your name and good scores - but wouldn't it be better if your best grades were displayed first, at the top? Besides, your parents rarely read anything through.
-
-You can use the array method `sort` to arrange your data. Let's see how it works.
-
-```js
-['c', 'b', 'a'].sort();
-//> ['a', 'b', 'c']
-
-[3, 2, 1].sort();
-//> [1, 2, 3]
-```
-
-But what about sorting scores inside of an object?
-
-```js
-[{a: 3}, {a: 1}, {a: 2}].sort();
-//> [{a: 3}, {a: 1}, {a: 2}]
-```
-
-That didn't work. Instead, you can write a custom `compareScore` function.
-
-A sort function takes two params, and compares the first to the second. It should return values saying where the second value should go in the array:
-
-  * -1 : sort to a lower index (front)
-  * 1 : sort to a higher index (back)
-  * 0 : stay the same
-
-Alright, now time to sort your best grades to the top.
-
-First you'll need to write a sort condition function called `compareScore`.
 
 ##### Map
 

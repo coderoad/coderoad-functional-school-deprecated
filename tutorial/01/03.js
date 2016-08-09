@@ -3,7 +3,7 @@ describe('03 function isGoodGrade', () => {
   const isGoodGrade = filter.__get__('isGoodGrade');
 
   it('doesn\'t exist', () => {
-    expect(isGoodGrade).to.not.be.undefined;
+    expect(isGoodGrade).to.be.defined;
   });
 
   it('isn\'t a Function', () => {

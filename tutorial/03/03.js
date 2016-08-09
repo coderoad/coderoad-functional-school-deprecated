@@ -1,9 +1,9 @@
-describe('03 var myChanged', () => {
+describe('03 const myChanged', () => {
 
   const myChanged = map.__get__('myChanged');
 
   it('doesn\'t exist', () => {
-    expect(myChanged).to.not.be.undefined;
+    expect(myChanged).to.be.defined;
   });
 
   it('isn\'t an array', () => {

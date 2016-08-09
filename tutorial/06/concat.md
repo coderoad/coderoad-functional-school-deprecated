@@ -63,7 +63,7 @@ Unfortunately, Javascript is missing a built in array method to concat multiple 
 Let's look at an abstraction of what we need to do:
 
 ```js
-var start = [{
+const start = [{
   a: 1,
   c: [
     { b: 1 }
@@ -75,7 +75,7 @@ var start = [{
   ]
 }];
 
-var middle = start.map(function(outer) {
+const middle = start.map(function(outer) {
   return outer.c.map(function(inner) {
     return {
       a: outer.a,
@@ -85,7 +85,7 @@ var middle = start.map(function(outer) {
 });
 //> [ [{ a: 1, b: 1 }], [{a: 2, b: 2}, {a: 2, b: 3}] ]
 
-var end = pre.flatten();
+const end = pre.flatten();
 //> [{a: 1, b: 1}, {a: 2, b: 2}, {a: 2, b: 3}]
 ```
 
@@ -804,10 +804,10 @@ Array.prototype.flatten = function() {
 @action(insert(
 ```
 
-var numberedList = [[1, 2], [3, 4]];
+const numberedList = [[1, 2], [3, 4]];
 
 // use `flatten` on `numberedList`
-var flattenedArray = numberedList::>;
+const flattenedArray = numberedList::>;
 ```  
 ))
 @hint('call `.flatten()` on `numberedList`')
@@ -827,7 +827,7 @@ Return the fields:
 
 // map over courses then
 // map over students inside of courses
-var doubleArray = courses.map(function(course) {
+const doubleArray = courses.map(function(course) {
     return course.students.map(function(student) {
       return {
         // fill in the fields
@@ -850,7 +850,7 @@ var doubleArray = courses.map(function(course) {
 @action(insert(
 ```
 // `flatten` doubleArray
-var students = doubleArray::>;
+const students = doubleArray::>;
 ```
 ))
 @hint('call `.flatten()` on `doubleArray`')
@@ -860,17 +860,17 @@ var students = doubleArray::>;
 @action(insert(
 ```
 
-var suspects = ["Hack Kerr"];
+const suspects = ["Hack Kerr"];
 // filter to data matching `suspects`
 
-var suspectData = students::>;
+const suspectData = students::>;
 ```
 ))
 
 + You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`.
 
 ```js
-var newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];
+const newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];
 ```
 
 `concat` the `newSuspects` onto the `suspects` list.

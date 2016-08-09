@@ -5,7 +5,7 @@ describe('02 function changeGrade', () => {
 	const changeGrade = map.__get__('changeGrade');
 
 	it('doesn\'t exist', () => {
-		expect(changeGrade).to.not.be.undefined;
+		expect(changeGrade).to.be.defined;
 	});
 
 	it('isn\'t a function', () => {

@@ -1,9 +1,9 @@
-describe('04 var myBest', () => {
+describe('04 const myBest', () => {
 
   const myBest = filter.__get__('myBest');
 
   it('doesn\'t exist', () => {
-    expect(myBest).to.not.be.undefined;
+    expect(myBest).to.be.defined;
   });
 
   it('doesn\'t output an array', () => {

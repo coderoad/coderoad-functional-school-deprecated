@@ -1,4 +1,4 @@
-describe('03 myName', () => {
+describe('03 const myName', () => {
 
   // __get__ grabs global myName
   const myName = setup.__get__('myName');

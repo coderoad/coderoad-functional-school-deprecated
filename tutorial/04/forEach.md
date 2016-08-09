@@ -17,7 +17,7 @@ Know it or not, you're probably already used to "imperative" programming.
 Imperative code tells the computer what to do, step by step.
 
 ```js
-var x = 1; // make a variable
+let x = 1; // make a variable
 x = x + 1; // add one
 x = x + 1; // add another
 console.log(x);
@@ -46,7 +46,7 @@ A function is "pure" if it doesn't change anything outside of its scope. Pure fu
 On the other hand, **impure** functions are less predictable. The result may be different if you call it at a later time.
 
 ```js
-var y = 1;
+let y = 1;
 // impure function
 function increment(x) {
   y += x;

@@ -1,6 +1,6 @@
 const find = require('BASE/05-find.js');
 
-describe('02 var myClass', () => {
+describe('02 const myClass', () => {
 
   const students = find.__get__('students');
   const myClass = find.__get__('myClass');

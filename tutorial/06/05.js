@@ -1,4 +1,4 @@
-describe('05 var suspectData', () => {
+describe('05 const suspectData', () => {
 
   const suspectData = concat.__get__('suspectData');
 
