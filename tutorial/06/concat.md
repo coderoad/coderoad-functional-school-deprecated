@@ -795,9 +795,7 @@ import courses from './data/courses2';
 
 // Array.prototype can be used to create new Array methods
 Array.prototype.flatten = function() {
-  return this.reduce(function(a, b) {
-    return a.concat(b);
-  }, []);
+  return this.reduce((a, b) => a.concat(b), []);
 };
 ```
 ))
@@ -827,8 +825,8 @@ Return the fields:
 
 // map over courses then
 // map over students inside of courses
-const doubleArray = courses.map(function(course) {
-    return course.students.map(function(student) {
+const doubleArray = courses.map((course) => {
+    return course.students.map((student) => {
       return {
         // fill in the fields
         title: ::>'',
@@ -855,7 +853,7 @@ const students = doubleArray::>;
 ))
 @hint('call `.flatten()` on `doubleArray`')
 
-+ Use the `suspects` array to `filter` to only "Hack Kerr"'s data
++ Use the `suspects` array to `filter` to only data matching the names in the `suspects` array
 @test('06/05')
 @action(insert(
 ```

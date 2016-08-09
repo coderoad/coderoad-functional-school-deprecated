@@ -443,7 +443,7 @@
           ],
           "actions": [
             "open('06-concat.js')",
-            "set('import courses from './data/courses2';\n// Array.concat(any)\n\n// Array.prototype can be used to create new Array methods\nArray.prototype.flatten = function() {\n  return this.reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n};\n')",
+            "set('import courses from './data/courses2';\n// Array.concat(any)\n\n// Array.prototype can be used to create new Array methods\nArray.prototype.flatten = function() {\n  return this.reduce((a, b) => a.concat(b), []);\n};\n')",
             "insert('\nconst numberedList = [[1, 2], [3, 4]];\n\n// use `flatten` on `numberedList`\nconst flattenedArray = numberedList::>;\n')"
           ],
           "hints": [
@@ -456,7 +456,7 @@
             "06/03"
           ],
           "actions": [
-            "insert('\n// map over courses then\n// map over students inside of courses\nconst doubleArray = courses.map(function(course) {\n    return course.students.map(function(student) {\n      return {\n        // fill in the fields\n        title: ::>'',\n        instructor: '',\n        name: '',\n        score: '',\n        grade: ''\n      };\n    });\n});\n\n')"
+            "insert('\n// map over courses then\n// map over students inside of courses\nconst doubleArray = courses.map((course) => {\n    return course.students.map((student) => {\n      return {\n        // fill in the fields\n        title: ::>'',\n        instructor: '',\n        name: '',\n        score: '',\n        grade: ''\n      };\n    });\n});\n\n')"
           ],
           "hints": [
             "pair `course.title`",
@@ -476,7 +476,7 @@
           ]
         },
         {
-          "description": "Use the `suspects` array to `filter` to only \"Hack Kerr\"'s data",
+          "description": "Use the `suspects` array to `filter` to only data matching the names in the `suspects` array",
           "tests": [
             "06/05"
           ],
@@ -498,12 +498,22 @@
     },
     {
       "title": "reduce",
-      "description": "Array -> anything\n\nWe know our likely suspect is also in the school computer system. Perhaps our suspect also changed his grades.\n\nYou can't be sure who is a cheater, but you can assume if the grades are well above the average, the person is likely to be the culprit. For this, we'll have to do some basic statistical calculations. We'll need a new tool for transforming arrays into different data representations.\n\n`map` has a major limitation: it will always output the same number of elements as the input array.\n\nWhen you want to transform data into something different, you'll likely want to use `reduce`.\n\nReduce requires two parameters:\n\n  * the running total (set by an initialValue)\n  * the next value in the array\n\n```js\nfunction add(total, next) {\n    console.log(`add(${total}, ${next}) -> ${total + next}`)\n    return total + next\n}\n\nconst initialValue = 100;\n[1, 5, 10].reduce(add, initialValue); // initial value\n\n// add(100, 1) -> 101\n// add(101, 5) -> 106\n// add(106, 10) -> 116\n//> 116\n```\n\nNotice in the example we input an array of 3 items and output a single number. The data has been transformed.\n\nIt takes a while to wrap your head around `reduce`, but once you do, you'll see it's usefulness everywhere.\n\nYou may have noticed we've already used `reduce` to `flatten` our arrays.\n\n```js\nArray.prototype.flatten = function() {\n  return this.reduce(function(a, b) {\n    return a.concat(b);\n  }, []);\n};\n```\n\nWith `flatten`, the initialValue was set to an empty array which each value was `concat` onto.\n\nDo some practice with `reduce`, before you use it to narrow down a cheating suspect.",
+      "description": "Array -> anything\n\nWe know our likely suspect is also in the school computer system. Perhaps our suspect also changed his grades.\n\nYou can't be sure who is a cheater, but you can assume if the grades are well above the average, the person is likely to be the culprit. For this, we'll have to do some basic statistical calculations. We'll need a new tool for transforming arrays into different data representations.\n\n`map` has a major limitation: it will always output the same number of elements as the input array.\n\nWhen you want to transform data into something different, you'll likely want to use `reduce`.\n\nReduce requires two parameters:\n\n  * the running total (set by an initialValue)\n  * the next value in the array\n\n```js\nfunction add(total, next) {\n    console.log(`add(${total}, ${next}) -> ${total + next}`)\n    return total + next\n}\n\nconst initialValue = 100;\n[1, 5, 10].reduce(add, initialValue); // initial value\n\n// add(100, 1) -> 101\n// add(101, 5) -> 106\n// add(106, 10) -> 116\n//> 116\n```\n\nNotice in the example we input an array of 3 items and output a single number. The data has been transformed.\n\nIt takes a while to wrap your head around `reduce`, but once you do, you'll see it's usefulness everywhere.\n\nYou may have noticed we've already used `reduce` to `flatten` our arrays.\n\n```js\nArray.prototype.flatten = function() {\n  return this.reduce((a, b) => a.concat(b), []);\n};\n```\n\nWith `flatten`, the initialValue was set to an empty array which each value was `concat` onto.\n\nDo some practice with `reduce`, before you use it to narrow down a cheating suspect.",
       "tasks": [
+        {
+          "description": "load suspectData. We will come back to this after some practice;",
+          "tests": [
+            "07/01"
+          ],
+          "actions": [
+            "open('data/suspectData.js')",
+            "set('const suspectData = [{\n  title:\"Relational Databases\",\n  instructor:\"Sean Quentin Lewis\",\n  name:\"Albert Gonzalez\",\n  score:35,\n  grade:\"F\"\n}, {\n  title:\"Relational Databases\",\n  instructor:\"Sean Quentin Lewis\",\n  name:\"Hack Kerr\",\n  score:85,\n  grade:\"F\"\n}, {\n  title:\"Relational Databases\",\n  instructor:\"Sean Quentin Lewis\",\n  name:\"Kevin Mitnick\",\n  score:72,\n  grade:\"C\"\n}, {\n  title:\"3D Computer Graphics\",\n  instructor:\"G.L. Webb\",\n  name:\"Albert Gonzalez\",\n  score:37,\n  grade:\"F\"\n}, {\n  title:\"3D Computer Graphics\",\n  instructor:\"G.L. Webb\",\n  name:\"Hack Kerr\",\n  score:86,\n  grade:\"F\"\n}, {\n  title:\"3D Computer Graphics\",\n  instructor:\"G.L. Webb\",\n  name:\"Kevin Mitnick\",\n  score:52,\n  grade:\"F\"\n}, {\n  title:\"Front End Web Development\",\n  instructor:\"Moe Zaick\",\n  name:\"Albert Gonzalez\",\n  score:73,\n  grade:\"C\"\n}, {\n  title:\"Front End Web Development\",\n  instructor:\"Moe Zaick\",\n  name:\"Hack Kerr\",\n  score:92,\n  grade:\"C\"\n}, {\n  title:\"Front End Web Development\",\n  instructor:\"Moe Zaick\",\n  name:\"Kevin Mitnick\",\n  score:47,\n  grade:\"F\"\n}, {\n  title:\"Web Security\",\n  instructor:\"Sue Denim\",\n  name:\"Albert Gonzalez\",\n  score:74,\n  grade:\"C\"\n}, {\n  title:\"Web Security\",\n  instructor:\"Sue Denim\",\n  name:\"Hack Kerr\",\n  score:75,\n  grade:\"F\"\n}, {\n  title:\"Web Security\",\n  instructor:\"Sue Denim\",\n  name:\"Kevin Mitnick\",\n  score:89,\n  grade:\"B\"\n}, {\n  title:\"Javascript Fundamentals\",\n  instructor:\"Jay Kweerie\",\n  name:\"Albert Gonzalez\",\n  score:94,\n  grade:\"A\"\n}, {\n  title:\"Javascript Fundamentals\",\n  instructor:\"Jay Kweerie\",\n  name:\"Hack Kerr\",\n  score:83,\n  grade:\"F\"\n}, {\n  title:\"Javascript Fundamentals\",\n  instructor:\"Jay Kweerie\",\n  name:\"Kevin Mitnick\",\n  score:47,\n  grade:\"F\"\n},{\n  title:\"Data Science\",\n  instructor:\"Ford Fulkerson\",\n  name:\"Albert Gonzalez\",\n  score:67,\n  grade:\"D\"\n}, {\n  title:\"Data Science\",\n  instructor:\"Ford Fulkerson\",\n  name:\"Hack Kerr\",\n  score:96,\n  grade:\"A\"\n}, {\n  title:\"Data Science\",\n  instructor:\"Ford Fulkerson\",\n  name:\"Kevin Mitnick\",\n  score:75,\n  grade:\"C\"\n}, {\n  title:\"Algorithm Design\",\n  instructor:\"Gale Shapely\",\n  name:\"Albert Gonzalez\",\n  score:39,\n  grade:\"F\"\n}, {\n  title:\"Algorithm Design\",\n  instructor:\"Gale Shapely\",\n  name:\"Hack Kerr\",\n  score:94,\n  grade:\"A\"\n}, {\n  title:\"Algorithm Design\",\n  instructor:\"Gale Shapely\",\n  name:\"Kevin Mitnick\",\n  score:81,\n  grade:\"B\"\n}, {\n  title:\"Data Abstraction\",\n  instructor:\"Aster Ricks\",\n  name:\"Albert Gonzalez\",\n  score:70,\n  grade:\"C\"\n}, {\n  title:\"Data Abstraction\",\n  instructor:\"Aster Ricks\",\n  name:\"Hack Kerr\",\n  score:87,\n  grade:\"F\"\n}, {\n  title:\"Data Abstraction\",\n  instructor:\"Aster Ricks\",\n  name:\"Kevin Mitnick\",\n  score:41,\n  grade:\"F\"\n}, {\n  title:\"Data Structures\",\n  instructor:\"Brodal Q.\",\n  name:\"Albert Gonzalez\",\n  score:56,\n  grade:\"F\"\n},{\n  title:\"Data Structures\",\n  instructor:\"Brodal Q.\",\n  name:\"Hack Kerr\",\n  score:89,\n  grade:\"B\"\n},{\n  title:\"Data Structures\",\n  instructor:\"Brodal Q.\",\n  name:\"Kevin Mitnick\",\n  score:40,\n  grade:\"F\"\n}, {\n  title:\"Networks\",\n  instructor:\"Van Emde Boas\",\n  name:\"Albert Gonzalez\",\n  score:52,\n  grade:\"F\"\n}, {\n  title:\"Networks\",\n  instructor:\"Van Emde Boas\",\n  name:\"Hack Kerr\",\n  score:102,\n  grade:\"F\"\n}, {\n  title:\"Networks\",\n  instructor:\"Van Emde Boas\",\n  name:\"Kevin Mitnick\",\n  score:37,\n  grade:\"F\"\n}];\nexport default suspectData;\n')"
+          ]
+        },
         {
           "description": "Use `reduce` to sum the numbers in the `practice` array",
           "tests": [
-            "07/01"
+            "07/02"
           ],
           "actions": [
             "open('07-reduce.js')",
@@ -517,25 +527,15 @@
         {
           "description": "Not all reduce functions are so easy. `reduce` is a little more difficult to master.\n\n`map` over each course and use `reduce` to calculate the class averages for each class. Set `averages` to the resulting array of all class averages.",
           "tests": [
-            "07/02"
+            "07/03"
           ],
           "actions": [
-            "insert('\nconst averages = courses.map(function(course) {\n  const sum = course.students.reduce(function(total, student) {\n    ::>\n\n  });\n  return Math.round(sum / course.students.length, 0);\n});\n')"
+            "insert('\nconst averages = courses.map((course) => {\n  const sum = course.students.reduce((total, student) => {\n    ::>\n\n  });\n  return Math.round(sum / course.students.length, 0);\n});\n')"
           ],
           "hints": [
             "set the initialValue to 0",
             "like this: `reduce(function () {}, 0)`",
             "return the sum of `student.score` and `total`"
-          ]
-        },
-        {
-          "description": "load suspectData",
-          "tests": [
-            "07/03"
-          ],
-          "actions": [
-            "open('data/suspectData.js')",
-            "set('const suspectData = [{\n  title:\"Relational Databases\",\n  instructor:\"Sean Quentin Lewis\",\n  name:\"Albert Gonzalez\",\n  score:35,\n  grade:\"F\"\n}, {\n  title:\"Relational Databases\",\n  instructor:\"Sean Quentin Lewis\",\n  name:\"Hack Kerr\",\n  score:85,\n  grade:\"F\"\n}, {\n  title:\"Relational Databases\",\n  instructor:\"Sean Quentin Lewis\",\n  name:\"Kevin Mitnick\",\n  score:72,\n  grade:\"C\"\n}, {\n  title:\"3D Computer Graphics\",\n  instructor:\"G.L. Webb\",\n  name:\"Albert Gonzalez\",\n  score:37,\n  grade:\"F\"\n}, {\n  title:\"3D Computer Graphics\",\n  instructor:\"G.L. Webb\",\n  name:\"Hack Kerr\",\n  score:86,\n  grade:\"F\"\n}, {\n  title:\"3D Computer Graphics\",\n  instructor:\"G.L. Webb\",\n  name:\"Kevin Mitnick\",\n  score:52,\n  grade:\"F\"\n}, {\n  title:\"Front End Web Development\",\n  instructor:\"Moe Zaick\",\n  name:\"Albert Gonzalez\",\n  score:73,\n  grade:\"C\"\n}, {\n  title:\"Front End Web Development\",\n  instructor:\"Moe Zaick\",\n  name:\"Hack Kerr\",\n  score:92,\n  grade:\"C\"\n}, {\n  title:\"Front End Web Development\",\n  instructor:\"Moe Zaick\",\n  name:\"Kevin Mitnick\",\n  score:47,\n  grade:\"F\"\n}, {\n  title:\"Web Security\",\n  instructor:\"Sue Denim\",\n  name:\"Albert Gonzalez\",\n  score:74,\n  grade:\"C\"\n}, {\n  title:\"Web Security\",\n  instructor:\"Sue Denim\",\n  name:\"Hack Kerr\",\n  score:75,\n  grade:\"F\"\n}, {\n  title:\"Web Security\",\n  instructor:\"Sue Denim\",\n  name:\"Kevin Mitnick\",\n  score:89,\n  grade:\"B\"\n}, {\n  title:\"Javascript Fundamentals\",\n  instructor:\"Jay Kweerie\",\n  name:\"Albert Gonzalez\",\n  score:94,\n  grade:\"A\"\n}, {\n  title:\"Javascript Fundamentals\",\n  instructor:\"Jay Kweerie\",\n  name:\"Hack Kerr\",\n  score:83,\n  grade:\"F\"\n}, {\n  title:\"Javascript Fundamentals\",\n  instructor:\"Jay Kweerie\",\n  name:\"Kevin Mitnick\",\n  score:47,\n  grade:\"F\"\n},{\n  title:\"Data Science\",\n  instructor:\"Ford Fulkerson\",\n  name:\"Albert Gonzalez\",\n  score:67,\n  grade:\"D\"\n}, {\n  title:\"Data Science\",\n  instructor:\"Ford Fulkerson\",\n  name:\"Hack Kerr\",\n  score:96,\n  grade:\"A\"\n}, {\n  title:\"Data Science\",\n  instructor:\"Ford Fulkerson\",\n  name:\"Kevin Mitnick\",\n  score:75,\n  grade:\"C\"\n}, {\n  title:\"Algorithm Design\",\n  instructor:\"Gale Shapely\",\n  name:\"Albert Gonzalez\",\n  score:39,\n  grade:\"F\"\n}, {\n  title:\"Algorithm Design\",\n  instructor:\"Gale Shapely\",\n  name:\"Hack Kerr\",\n  score:94,\n  grade:\"A\"\n}, {\n  title:\"Algorithm Design\",\n  instructor:\"Gale Shapely\",\n  name:\"Kevin Mitnick\",\n  score:81,\n  grade:\"B\"\n}, {\n  title:\"Data Abstraction\",\n  instructor:\"Aster Ricks\",\n  name:\"Albert Gonzalez\",\n  score:70,\n  grade:\"C\"\n}, {\n  title:\"Data Abstraction\",\n  instructor:\"Aster Ricks\",\n  name:\"Hack Kerr\",\n  score:87,\n  grade:\"F\"\n}, {\n  title:\"Data Abstraction\",\n  instructor:\"Aster Ricks\",\n  name:\"Kevin Mitnick\",\n  score:41,\n  grade:\"F\"\n}, {\n  title:\"Data Structures\",\n  instructor:\"Brodal Q.\",\n  name:\"Albert Gonzalez\",\n  score:56,\n  grade:\"F\"\n},{\n  title:\"Data Structures\",\n  instructor:\"Brodal Q.\",\n  name:\"Hack Kerr\",\n  score:89,\n  grade:\"B\"\n},{\n  title:\"Data Structures\",\n  instructor:\"Brodal Q.\",\n  name:\"Kevin Mitnick\",\n  score:40,\n  grade:\"F\"\n}, {\n  title:\"Networks\",\n  instructor:\"Van Emde Boas\",\n  name:\"Albert Gonzalez\",\n  score:52,\n  grade:\"F\"\n}, {\n  title:\"Networks\",\n  instructor:\"Van Emde Boas\",\n  name:\"Hack Kerr\",\n  score:102,\n  grade:\"F\"\n}, {\n  title:\"Networks\",\n  instructor:\"Van Emde Boas\",\n  name:\"Kevin Mitnick\",\n  score:37,\n  grade:\"F\"\n}];\nexport default suspectData;\n')"
           ]
         },
         {
@@ -545,7 +545,7 @@
           ],
           "actions": [
             "open('07-reduce.js')",
-            "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]\nconst suspectScores = suspectData.reduce(function(total, next) {\n  // see if suspect name has a list yet\n  const index = total.findIndex(function(suspect) {\n    return suspect.name === next.name;\n  });\n  if (index < 0) {\n    total.push({\n      ::>\n\n    });\n  } else {\n    // push the next score onto the suspects scores\n    total[index].scores.push();\n  }\n  return total;\n}, []);\n\n')"
+            "insert('\n// [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]\nconst suspectScores = suspectData.reduce((total, next) => {\n  // see if suspect name has a list yet\n  const index = total.findIndex((suspect) => suspect.name === next.name);\n  if (index < 0) {\n    total.push({\n      ::>\n\n    });\n  } else {\n    // push the next score onto the suspects scores\n    total[index].scores.push();\n  }\n  return total;\n}, []);\n\n')"
           ],
           "hints": [
             "if the name is new, push an object with name & scores: `{ name: '', scores: [42]}`",
@@ -560,7 +560,7 @@
             "07/05"
           ],
           "actions": [
-            "insert('\nconst suspectStats = suspectScores.map(function(suspect) {\n    // calculate the total difference in scores from the averages\n    const difference = suspect.scores.reduce(::>);\n\n    return {\n      name: suspect.name,\n      scores: suspect.scores,\n      difference: difference\n    };\n});\n')"
+            "insert('\nconst suspectStats = suspectScores.map((suspect) => {\n    // calculate the total difference in scores from the averages\n    const difference = suspect.scores.reduce(::>);\n\n    return {\n      name: suspect.name,\n      scores: suspect.scores,\n      difference: difference\n    };\n});\n')"
           ],
           "hints": [
             "You may want to use a second param: `index`",
@@ -574,7 +574,7 @@
             "07/06"
           ],
           "actions": [
-            "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nconst likelySuspects = suspectStats.reduce(function(::>) {}, []);\n')"
+            "insert('\nfunction isCheater(suspect) {\n  return suspect.difference > 200;\n}\n\n// reduce down to a string of likely suspects\nconst likelySuspects = suspectStats.reduce((::>) => {}, []);\n')"
           ],
           "hints": [
             "use `.join(', ')`"

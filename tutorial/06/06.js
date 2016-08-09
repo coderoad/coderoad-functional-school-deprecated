@@ -16,7 +16,7 @@ describe('06 const newSuspects', () => {
 
 });
 
-describe('05 const suspectData', () => {
+describe('06 const suspectData', () => {
 
   const suspectData = concat.__get__('suspectData');
 

@@ -460,9 +460,7 @@ You may have noticed we've already used `reduce` to `flatten` our arrays.
 
 ```js
 Array.prototype.flatten = function() {
-  return this.reduce(function(a, b) {
-    return a.concat(b);
-  }, []);
+  return this.reduce((a, b) => a.concat(b), []);
 };
 ```
 

@@ -1,9 +1,9 @@
-describe('03 suspectData', () => {
+describe('03 const averages', () => {
 
-  const suspectData = require('BASE/data/suspectData.js');
+  const averages = reduce.__get__('averages');
 
-  it('should be loaded in "data/courses2.js"', () => {
-    expect(suspectData).to.be.defined;
+  it('should calculate the average of each class', () => {
+    expect(averages).to.deep.equal([57, 67, 70, 70, 71, 62, 67, 73, 62, 57]);
   });
 
 });

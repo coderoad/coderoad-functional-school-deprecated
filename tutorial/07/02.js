@@ -1,9 +1,13 @@
-describe('02 const averages', () => {
+const expect = require('chai').expect;
 
-  const averages = reduce.__get__('averages');
+const reduce = require('BASE/07-reduce.js');
 
-  it('should calculate the average of each class', () => {
-    expect(averages).to.deep.equal([57, 67, 70, 70, 71, 62, 67, 73, 62, 57]);
-  });
+describe('02 const total', () => {
+
+  const total = reduce.__get__('total');
+
+	it('should add the numbers up', () => {
+		expect(total).to.equal(54);
+	});
 
 });

@@ -1,13 +1,9 @@
-const expect = require('chai').expect;
+describe('01 suspectData', () => {
 
-const reduce = require('BASE/07-reduce.js');
+  const suspectData = require('BASE/data/suspectData.js');
 
-describe('01 const total', () => {
-
-  const total = reduce.__get__('total');
-
-	it('should add the numbers up', () => {
-		expect(total).to.equal(54);
-	});
+  it('should be loaded in "data/suspectData.js"', () => {
+    expect(suspectData).to.be.defined;
+  });
 
 });

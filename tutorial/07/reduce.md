@@ -37,9 +37,7 @@ You may have noticed we've already used `reduce` to `flatten` our arrays.
 
 ```js
 Array.prototype.flatten = function() {
-  return this.reduce(function(a, b) {
-    return a.concat(b);
-  }, []);
+  return this.reduce((a, b) => a.concat(b), []);
 };
 ```
 
@@ -47,50 +45,8 @@ With `flatten`, the initialValue was set to an empty array which each value was 
 
 Do some practice with `reduce`, before you use it to narrow down a cheating suspect.
 
-
-+ Use `reduce` to sum the numbers in the `practice` array
++ load suspectData. We will come back to this after some practice;
 @test('07/01')
-@action(open('07-reduce.js'))
-@action(set(
-```
-import courses from './data/courses2';
-// Array.reduce(fn(a, b), initialValue)
-
-const practice = [1, 1, 2, 3, 5, 8, 13, 21];
-
-function add(a, b) {
-  return a + b;
-}
-
-// total the numbers using a reduce function
-const total = practice.reduce(::>);
-```
-))
-@hint('with only numbers, the initialValue defaults to 0')
-@hint('just call `reduce` with `add`')
-
-+ Not all reduce functions are so easy. `reduce` is a little more difficult to master.
-
-`map` over each course and use `reduce` to calculate the class averages for each class. Set `averages` to the resulting array of all class averages.
-@test('07/02')
-@action(insert(
-```
-
-const averages = courses.map(function(course) {
-  const sum = course.students.reduce(function(total, student) {
-    ::>
-
-  });
-  return Math.round(sum / course.students.length, 0);
-});
-```
-))
-@hint('set the initialValue to 0')
-@hint('like this: `reduce(function () {}, 0)`')
-@hint('return the sum of `student.score` and `total`')
-
-+ load suspectData
-@test('07/03')
 @action(open('data/suspectData.js'))
 @action(set(
 ```
@@ -279,6 +235,46 @@ export default suspectData;
 ```  
 ))
 
++ Use `reduce` to sum the numbers in the `practice` array
+@test('07/02')
+@action(open('07-reduce.js'))
+@action(set(
+```
+import courses from './data/courses2';
+// Array.reduce(fn(a, b), initialValue)
+
+const practice = [1, 1, 2, 3, 5, 8, 13, 21];
+
+function add(a, b) {
+  return a + b;
+}
+
+// total the numbers using a reduce function
+const total = practice.reduce(::>);
+```
+))
+@hint('with only numbers, the initialValue defaults to 0')
+@hint('just call `reduce` with `add`')
+
++ Not all reduce functions are so easy. `reduce` is a little more difficult to master.
+
+`map` over each course and use `reduce` to calculate the class averages for each class. Set `averages` to the resulting array of all class averages.
+@test('07/03')
+@action(insert(
+```
+
+const averages = courses.map((course) => {
+  const sum = course.students.reduce((total, student) => {
+    ::>
+
+  });
+  return Math.round(sum / course.students.length, 0);
+});
+```
+))
+@hint('set the initialValue to 0')
+@hint('like this: `reduce(function () {}, 0)`')
+@hint('return the sum of `student.score` and `total`')
 
 + `reduce` to an array of suspect scores from the `suspectData` we collected previously.
 @test('07/04')
@@ -287,11 +283,9 @@ export default suspectData;
 ```
 
 // [{ name: 'suspectName', scores: [ 50, 65, 75, 85...] } ...]
-const suspectScores = suspectData.reduce(function(total, next) {
+const suspectScores = suspectData.reduce((total, next) => {
   // see if suspect name has a list yet
-  const index = total.findIndex(function(suspect) {
-    return suspect.name === next.name;
-  });
+  const index = total.findIndex((suspect) => suspect.name === next.name);
   if (index < 0) {
     total.push({
       ::>
@@ -323,7 +317,7 @@ const suspectScores = suspectData.reduce(function(total, next) {
 @action(insert(
 ```
 
-const suspectStats = suspectScores.map(function(suspect) {
+const suspectStats = suspectScores.map((suspect) => {
     // calculate the total difference in scores from the averages
     const difference = suspect.scores.reduce(::>);
 
@@ -352,7 +346,7 @@ function isCheater(suspect) {
 }
 
 // reduce down to a string of likely suspects
-const likelySuspects = suspectStats.reduce(function(::>) {}, []);
+const likelySuspects = suspectStats.reduce((::>) => {}, []);
 ```
 ))
 @hint('use `.join(', ')`')
