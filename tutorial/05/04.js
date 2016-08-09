@@ -7,9 +7,7 @@ describe('04 const unknownStudentList', () => {
   });
 
   it('should find 10 unknown students across classes', () => {
-    const names = unknownStudentList.map((student) => {
-      return student.name;
-    }).join('');
+    const names = unknownStudentList.map((student) => student.name).join('');
     expect(names).to.equal('!findthebestrevenge!');
   });
 

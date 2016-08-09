@@ -1,4 +1,4 @@
-const students = [{
+const courses = [{
   title: "Relational Databases",
   instructor: "Sean Quentin Lewis",
   name: "!f",
@@ -959,4 +959,4 @@ const students = [{
   score: 62,
   grade: "D"
 }];
-export default students;
+export default courses;

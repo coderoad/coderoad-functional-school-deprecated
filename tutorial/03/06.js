@@ -17,7 +17,7 @@ describe('06 function getGrade', () => {
 
 });
 
-describe('05 const mySlightlyChanged', () => {
+describe('06 const mySlightlyChanged', () => {
 
   const mySlightlyChanged = map.__get__('mySlightlyChanged');
 

@@ -15,23 +15,22 @@ describe('04 function increaseScore', () => {
   });
 
   it('should try changing the `score` first before returning the changed object', () => {
-    var regex = /return [a-zA-Z]+\.score/;
-    var func = increaseScore.toString();
+    const regex = /return [a-zA-Z]+\.score/;
+    const func = increaseScore.toString();
     expect(func.match(regex)).to.be.null;
   });
 
   it('should increment scores by 12 points', () => {
-    var test = {
-      score: 50
+    const test = {
+      score: 50,
+      grade: 'D'
     };
-    expect(increaseScore(test)).to.deep.equal({
-      score: 62
-    });
+    expect(increaseScore(test).score).to.equal(62);
   });
 
 });
 
-describe('03 var mySlightlyChanged', () => {
+describe('04 const mySlightlyChanged', () => {
 
   const mySlightlyChanged = map.__get__('mySlightlyChanged');
 
@@ -44,9 +43,7 @@ describe('03 var mySlightlyChanged', () => {
   });
 
   it('should increment scores by 12', () => {
-    var scores = mySlightlyChanged.map(function(x) {
-      return x.score;
-    });
+    const scores = mySlightlyChanged.map((x) => x.score);
     expect(Math.min.apply(Math, scores)).to.equal(70);
   });
 

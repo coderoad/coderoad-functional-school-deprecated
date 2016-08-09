@@ -27,10 +27,10 @@ Find is great for performantly matching unique values in data, such as an "id", 
 
 + load "students" data
 @test('05/01')
-@action(open('data/students2.js'))
+@action(open('data/myCourses2.js'))
 @action(set(
 ```
-const students = [{
+const myCourses = [{
   title: "Relational Databases",
   instructor: "Sean Quentin Lewis",
   name: "!f",
@@ -991,24 +991,25 @@ const students = [{
   score: 62,
   grade: "D"
 }];
-export default students;
+export default myCourses;
 ```  
 ))
 
-+ `filter` to `students` in the class titled "Web Security"
++ `filter` to `courses` in the class titled "Web Security"
 @test('05/02')
 @action(open('05-find.js'))
 @action(set(
 ```
-import students from './data/students2';
+import courses from './data/myCourses2';
 // Array.find(fn)
 
-// filter for the student title matches "Web Security"
-const myClass = students.filter(::>);
+// filter for the course title matching "Web Security"
+const myClass = courses.filter(::>);
 ```
 ))
-@hint('create a `filter` function')
-@hint('filter for `student.title === "Web Security"`')
+@hint('create a `filter` function that takes a param `course`')
+@hint('return `true` if a condition matches, otherwise `false`')
+@hint('filter for `course.title === "Web Security"`')
 
 + `find` the name in `myClass` that isn't in the list of known students
 @test('05/03')
@@ -1035,13 +1036,13 @@ const unknownStudent = myClass.find();
 @hint('use `otherStudents.indexOf(x) === -1` to find what doesn't match')
 @hint('match for `student.name`')
 
-+ `filter` down to students without known names
++ `filter` down to students from courses without known names
 @test('05/04')
 @action(insert(
 ```
 
 // filter using `notInList`
-const unknownStudentList = students.filter(::>);
+const unknownStudentList = courses.filter(::>);
 ```  
 ))
 @hint('consider reusing a function')
@@ -1056,6 +1057,7 @@ const unknownStudentNames = unknownStudentList.map(::>);
 ```  
 ))
 @hint('use `map` to return only the `student.name`')
+@hint('try this inside of your map call: `student => student.name`')
 
 + `join('')` the array of names to output the result as a string
 @test('05/06')

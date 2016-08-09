@@ -16,32 +16,28 @@ describe('05 function increaseScore', () => {
 
   it('shouldn\'t change scores under 95', () => {
     const test = {
-      score: 82
+      score: 82,
+      grade: 'A',
     };
-    expect(increaseScore(test)).to.deep.equal({
-      score: 94
-    });
+    expect(increaseScore(test).score).to.equal(94);
   });
 
   it('should change scores over 95 to 95', () => {
     const test = {
-      score: 84
+      score: 84,
+      grade: 'A',
     };
-    expect(increaseScore(test)).to.deep.equal({
-      score: 95
-    });
+    expect(increaseScore(test).score).to.equal(95);
   });
 
 });
 
-describe('04 var mySlightlyChanged', () => {
+describe('05 const mySlightlyChanged', () => {
 
   const mySlightlyChanged = map.__get__('mySlightlyChanged');
 
   it('should cap scores at 95', () => {
-    const scores = mySlightlyChanged.map(function(x) {
-      return x.score;
-    });
+    const scores = mySlightlyChanged.map((x) => x.score);
     expect(Math.max.apply(Math, scores)).to.equal(95);
   });
 

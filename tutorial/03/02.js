@@ -16,10 +16,17 @@ describe('02 function changeGrade', () => {
 		expect(changeGrade).to.have.length(1);
 	});
 
-	it('should try changing `student.grade` first before returning `student`', () => {
+	it('should try changing `course.grade` first before returning `course`', () => {
 		const regex = /return [a-zA-Z]+\.grade/;
 		const func = changeGrade.toString();
 		expect(func.match(regex)).to.be.null;
+	});
+
+	it('doesn\'t return anything', () => {
+		const test = {
+			grade: 'D'
+		};
+		expect(changeGrade(test)).to.be.defined;
 	});
 
 	it('should change grades from a D to an A', () => {

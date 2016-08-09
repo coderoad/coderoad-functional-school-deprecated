@@ -8,9 +8,9 @@ Keywords: javascript, functional
 Length: 1-2 hours
 
 
-<!-- @import('00/setup') -->
-<!-- @import('01/filter') -->
-<!-- @import('02/sort') -->
+@import('00/setup')
+@import('01/filter')
+@import('02/sort')
 @import('03/map')
 @import('04/forEach')
 @import('05/find')

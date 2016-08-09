@@ -1,11 +1,11 @@
 const expect = require('chai').expect;
 
-describe('01 students2 data', () => {
+describe('01 courses2 data', () => {
 
-  const students = require('BASE/data/students2.js');
+  const courses = require('BASE/data/courses2.js');
 
-  it('should be loaded in "data/students2.js"', () => {
-    expect(students).to.be.defined;
+  it('should be loaded in "data/courses2.js"', () => {
+    expect(courses).to.be.defined;
   });
 
 });

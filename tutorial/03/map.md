@@ -183,16 +183,16 @@ const mySlightlyChanged = myCourses;
 
 + Wait. Now you're getting 105 in "Algorithm Design" class. Fix `increaseScore` so that the maximum score is 95. That should be less suspicious.
 @test('03/05')
-@hint('use an if clause within `increaseScore`')
-@hint('try `if (student.score >= 95) { student.score = 95 }`')
+@hint('Use `Math.min(x, y)`')
+@hint('set `course.score` to `Math.min(95, course.score + 12)`')
 
-+ One more problem. Now the scores don't match the grades. you have 95 score in "3D Computer Graphics", but only a "B" grade. Set `myFixed` as the result of using the `getGrade` function to set grades according to their new scores.
++ One more problem. Now the scores don't match the grades. you have 95 score in "3D Computer Graphics", but only a "B" grade. Update your `increaseScore` function to also update the grade by using the `getGrade` function
 @test('03/06')
 @action(insert(
 ```
 
-// change `getGrade` to accept a "course" instead of a "score"
-// and return that updated "course"
+// use getGrade to set the course grade
+// update `increaseScore` to also update the grade
 function getGrade(score) {
   switch (true) {
     case (score >= 90):
@@ -208,13 +208,10 @@ function getGrade(score) {
   }
 }
 
-// map `myFixed` to update grades to the new scores
-const myFixed = mySlightlyChanged;
 ```
 ))
-@hint('change `getGrade` to take a `course` param instead of `score`')
-@hint('change the grade and return the `course`')
-@hint('set `course.grade = "A"` and return `course`')
+@hint('call `getGrade` inside of `increaseScore`')
+@hint('the `increaseScore` function should set course.grade equal to `getGrade(course.score)`')
 
 + Check to make sure everything is working. Set `scoresAndGrades` to an array of scores and grades only.
 @test('03/07')
@@ -223,11 +220,12 @@ const myFixed = mySlightlyChanged;
 
 // set `scoresAndGrades` to an array of scores and grades
 // it should return an array of objects like this: {score: 75, grade: 'C'}
-const scoresAndGrades = myFixed::>
+const scoresAndGrades = mySlightlyChanged.map(::>)
 ```
 ))
 @hint('use `map` to return only the "score" & "grade" fields')
 @hint('map with a function with a parameter, call it "student"')
-@hint('return `{ score: student.score, grade: student.grade }`')
+@hint('you can destructure the param to be `function({score, grade})`')
+@hint('then simply return { score, grade }')
 
 @onPageComplete('In the next step we'll compare `map` with `forEach`')
