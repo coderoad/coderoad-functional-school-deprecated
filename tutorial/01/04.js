@@ -3,7 +3,7 @@ describe('04 const myBest', () => {
   const myBest = filter.__get__('myBest');
 
   it('doesn\'t exist', () => {
-    expect(myBest).to.be.defined;
+    expect(myBest).to.not.be.undefined;
   });
 
   it('doesn\'t output an array', () => {

@@ -3,7 +3,7 @@ describe('06 function getGrade', () => {
   const getGrade = map.__get__('getGrade');
 
   it('doesn\'t exist', () => {
-    expect(getGrade).to.be.defined;
+    expect(getGrade).to.not.be.undefined;
   });
 
   it('should be a function', () => {

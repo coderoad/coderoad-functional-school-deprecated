@@ -3,7 +3,7 @@ describe('05 const mySorted', () => {
   const mySorted = sort.__get__('mySorted');
 
   it('doesn\'t exist', () => {
-    expect(mySorted).to.be.defined;
+    expect(mySorted).to.not.be.undefined;
   });
 
   it('doesn\'t output an array', () => {

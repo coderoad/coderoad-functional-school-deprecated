@@ -4,7 +4,7 @@ describe('03 const myName', () => {
   const myName = setup.__get__('myName');
 
   it('should exist', () => {
-    expect(myName).to.be.defined;
+    expect(myName).to.not.be.undefined;
   });
 
   it('should be a string', () => {

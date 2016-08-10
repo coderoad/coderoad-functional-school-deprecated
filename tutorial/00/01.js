@@ -9,7 +9,7 @@ describe('01 student data', () => {
   const students = require('BASE/data/students.js');
 
   it('should be loaded in "data/students.js"', () => {
-    expect(students).to.be.defined;
+    expect(students).to.not.be.undefined;
   });
 
 });

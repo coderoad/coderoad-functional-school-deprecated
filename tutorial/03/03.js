@@ -3,7 +3,7 @@ describe('03 const myChanged', () => {
   const myChanged = map.__get__('myChanged');
 
   it('doesn\'t exist', () => {
-    expect(myChanged).to.be.defined;
+    expect(myChanged).to.not.be.undefined;
   });
 
   it('isn\'t an array', () => {

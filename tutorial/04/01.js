@@ -13,7 +13,7 @@ describe('01 myFixed data', () => {
   const myFixed = require('BASE/data/myFixed.js');
 
   it('should be loaded in "data/myFixed.js"', () => {
-    expect(myFixed).to.be.defined;
+    expect(myFixed).to.not.be.undefined;
   });
 
 });

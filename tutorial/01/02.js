@@ -3,7 +3,7 @@ describe('02 const myData', () => {
   const myData = filter.__get__('myData');
 
   it('doesn\'t exist', () => {
-    expect(myData).to.be.defined;
+    expect(myData).to.not.be.undefined;
   });
 
   it('doesn\'t output an array', () => {

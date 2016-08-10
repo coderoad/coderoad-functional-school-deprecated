@@ -5,7 +5,7 @@ describe('01 myCourses data', () => {
   const myCourses = require('BASE/data/myCourses.js');
 
   it('should be loaded in "data/myCourses.js"', () => {
-    expect(myCourses).to.be.defined;
+    expect(myCourses).to.not.be.undefined;
   });
 
 });

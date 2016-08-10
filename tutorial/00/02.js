@@ -6,7 +6,7 @@ describe('02 const first', () => {
 	const first = setup.__get__('first');
 
 	it('should exist', () => {
-		expect(first).to.be.defined;
+		expect(first).to.not.be.undefined;
 	});
 
 	it('should be an object', () => {
