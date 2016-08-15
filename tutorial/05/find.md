@@ -7,7 +7,7 @@ You quickly put together a list of other students in class. If someone changed y
 
 `find` works similar to `filter`, but returns only the first match.
 
-```
+```js
 const data = [1, 2, 3, 4, 5, 6];
 
 function isEven(num) {
