@@ -27,8 +27,8 @@
   "dependencies": {
     "chai": "3.5.0",
     "chai-spies": "0.7.1",
-    "mocha": "^2.5.3",
-    "mocha-coderoad": "^0.8.1"
+    "mocha": "3.0.2",
+    "mocha-coderoad": "^0.10.0"
   },
   "license": "MIT",
   "config": {

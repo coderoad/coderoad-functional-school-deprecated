@@ -2,10 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.6.0] - 2016-08-06
+## [0.6.0] - 2016-08-15
 - update for mocha-coderoad v0.10
 - removed loaders in favor of new syntax
-- updated for es6
+- updated for es6 import/exports
 
 ## [0.5.0] - 2016-05-02
 - remove "chapters"
