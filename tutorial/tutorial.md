@@ -16,5 +16,3 @@ Length: 1-2 hours
 @import('05/find')
 @import('06/concat')
 @import('07/reduce')
-<!-- @import('08/challenge-1') -->
-<!-- @import('09/challenge-2') -->

@@ -161,7 +161,7 @@ export default myFixed;
 @action(open('04-forEach.js'))
 @action(set(
 ```
-import myFixed from './data/myFixed';
+const myFixed = require('./data/myFixed').default;
 // Array.forEach(fn)
 
 function logCourse(course) {

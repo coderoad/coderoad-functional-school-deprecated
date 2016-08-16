@@ -131,15 +131,16 @@ export default myCourses;
 @action(open('03-map.js'))
 @action(set(
 ```
-import myCourses from './data/myCourses';
+const myCourses = require('./data/myCourses').default;
 // Array.map(fn)
 
 /*
-  change any `course.grade`'s into an 'A'
-
-  example:
-  changeGrade({ grade: 'F' }) === { grade: 'A' };
+ * change any the `course.grade` into an 'A'
+ *
+ * for example:
+ * changeGrade({ grade: 'F' }) === { grade: 'A' };
 */
+
 function changeGrade(course) {
   ::>
 }

@@ -1,6 +1,6 @@
 {
   "name": "coderoad-functional-school",
-  "version": "0.6.1",
+  "version": "1.0.0",
   "description": "Coderoad tutorial",
   "author": "Shawn McKay <shawn.j.mckay@gmail.com> (http://shmck.com)",
   "contributers": [
@@ -22,7 +22,7 @@
     "url": "https://github.com/coderoad/coderoad-functional-school/issues"
   },
   "engines": {
-    "node" : ">=0.10.3"
+    "node" : ">=4.0.0"
   },
   "dependencies": {
     "chai": "3.5.0",

@@ -1002,7 +1002,7 @@ export default students;
 @action(set(
 ```
 // Welcome to CodeRoad!
-import students from './data/students';
+const students = require('./data/students').default;
 
 var first = ::>
 ```

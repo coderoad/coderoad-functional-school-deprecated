@@ -790,7 +790,7 @@ export default courses;
 @action(open('06-concat.js'))
 @action(set(
 ```
-import courses from './data/courses2';
+const courses = require('./data/courses2').default;
 // Array.concat(any)
 
 // Array.prototype can be used to create new Array methods

@@ -89,7 +89,7 @@ export default myBest;
 @action(open('02-sort.js'))
 @action(set(
 ```
-import myBest from './data/myBest';
+const myBest = require('./data/myBest').default;
 // Array.sort(fn)
 
 function compareScore(a, b) {

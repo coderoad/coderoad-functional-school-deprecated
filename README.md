@@ -9,10 +9,6 @@ Keywords: javascript, functional
 Length: 1-2 hours
 
 
-<!-- @import('08/challenge-1') -->
-<!-- @import('09/challenge-2') -->
-
-
 ## CodeRoad
 
 CodeRoad is an open-sourced interactive tutorial platform for the Atom Editor. Learn more at [CodeRoad.io](http://coderoad.io).
@@ -67,7 +63,7 @@ It would be great if you could `filter` the scores that your parents will see.
 
 `filter` takes a matching condition function and only returns items that result in true. As an example, look at `isA` below:
 
-```
+```js
 function isA(x) {
   return x === 'a';
 }
@@ -76,7 +72,7 @@ function isA(x) {
 
 Like all of the methods in this chapter, `filter` is already part of the `Array.prototype`, so you can run it following any array. Each item in the array is passed into the params of the condition function, one by one. [Learn more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
 
-```
+```js
 const list = ['a', 'b'];
 list.filter(isA);
 
@@ -88,7 +84,7 @@ list.filter(isA);
 
 If your data was composed of objects, we could use dot notation to find matches. Checkout `isB` below.
 
-```
+```js
 function isB(x) {
   return x.item === 'b'
 }
@@ -102,7 +98,7 @@ Where were we? Back to filtering our grades.
 
 There's too much student data in the computer system. We'll have to sort through it. Have a look at an example below:
 
-```
+```js
 console.log(students[0]);
 //> { course: 'Web Security',
 //    instructor: 'Sue Denim',
@@ -304,7 +300,7 @@ You quickly put together a list of other students in class. If someone changed y
 
 `find` works similar to `filter`, but returns only the first match.
 
-```
+```js
 const data = [1, 2, 3, 4, 5, 6];
 
 function isEven(num) {

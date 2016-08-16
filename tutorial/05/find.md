@@ -1000,7 +1000,7 @@ export default myCourses;
 @action(open('05-find.js'))
 @action(set(
 ```
-import courses from './data/myCourses2';
+const courses = require('./data/myCourses2');
 // Array.find(fn)
 
 // filter for the course title matching "Web Security"
