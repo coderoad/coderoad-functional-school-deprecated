@@ -2,10 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.7.0] - 2016-08-16
+## [1.1.0] - 2016-08-16
 - use new "writeFromFile" action in atom-coderoad@0.12
 
-## [0.6.0] - 2016-08-15
+## [1.0.0] - 2016-08-15
 - update for mocha-coderoad v0.10
 - removed loaders in favor of new syntax
 - updated for es6 import/exports
