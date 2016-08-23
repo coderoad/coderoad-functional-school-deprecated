@@ -9,7 +9,7 @@
       "description": "Understanding the Data Set\n\nOver this tutorial series, we'll be changing and working with two different data sets. It'll be a big help to first understand what the data looks like.\n\n```json\nvar students = [\n  {\n    \"title\": \"Relational Databases\",\n    \"instructor\": \"Sean Quentin Lewis\",\n    \"name\": \"Ada Lovelace\",\n    \"score\": 91,\n    \"grade\": \"A\"\n  },\n  ...\n]\n```\n\nHere we have an array of \"student\" objects. To get the first item in the array, you can use the array index. Array indexes start at 0.\n\n```js\nconsole.log(\n  'first instructor', students[0].instructor\n);\n// first instructor Sean Quentin Lewis\n```",
       "tasks": [
         {
-          "description": "Look in \"data/students.js\". This is the data we will be working with. Run save to continue.\n@open('data/students.js')",
+          "description": "Look in \"data/students.js\". This is the data we will be working with. Run save to continue.",
           "tests": [
             "00/01"
           ],

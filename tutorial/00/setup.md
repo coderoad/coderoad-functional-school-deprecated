@@ -28,7 +28,6 @@ console.log(
 + Look in "data/students.js". This is the data we will be working with. Run save to continue.
 @test('00/01')
 @action(writeFromFile('data/students.js', '00/data.js'))
-@open('data/students.js')
 
 + Set `first` to the first item in the `students` array.
 @test('00/02')
