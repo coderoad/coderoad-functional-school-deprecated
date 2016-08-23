@@ -1,4 +1,4 @@
-const setup = require('BASE/00-setup.js');
+const setup = require('BASE/setup.js');
 
 describe('02 const first', () => {
 

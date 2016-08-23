@@ -23,7 +23,7 @@
             "00/02"
           ],
           "actions": [
-            "open('00-setup.js')",
+            "open('setup.js')",
             "set('// Welcome to CodeRoad!\nconst students = require('./data/students').default;\n\nvar first = ::>\n')"
           ],
           "hints": [

@@ -31,7 +31,7 @@ console.log(
 
 + Set `first` to the first item in the `students` array.
 @test('00/02')
-@action(open('00-setup.js'))
+@action(open('setup.js'))
 @action(set(
 ```
 // Welcome to CodeRoad!
