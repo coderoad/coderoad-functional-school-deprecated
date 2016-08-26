@@ -56,7 +56,7 @@ console.log(students[0]);
 @action(open('01-filter.js'))
 @action(set(
 ```
-const students = require('./data/students').default;
+import students from './data/students';
 // Array.filter(fn)
 
 function isAda(student) {

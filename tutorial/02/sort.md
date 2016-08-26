@@ -42,7 +42,7 @@ First you'll need to write a sort condition function called `compareScore`.
 @action(open('02-sort.js'))
 @action(set(
 ```
-const myBest = require('./data/myBest').default;
+import myBest from './data/myBest';
 // Array.sort(fn)
 
 function compareScore(a, b) {

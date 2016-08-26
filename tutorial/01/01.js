@@ -1,5 +1,6 @@
 var expect = require('chai').expect;
 
+const students = require('BASE/data/students.js');
 const filter = require('BASE/01-filter.js');
 
 describe('01 function isAda', () => {

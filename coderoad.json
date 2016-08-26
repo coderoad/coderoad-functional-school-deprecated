@@ -72,7 +72,7 @@
           ],
           "actions": [
             "open('01-filter.js')",
-            "set('const students = require('./data/students').default;\n// Array.filter(fn)\n\nfunction isAda(student) {\n  // return true if student name\n  // matches \"Ada Lovelace\"\n  ::>\n}\n')"
+            "set('import students from './data/students';\n// Array.filter(fn)\n\nfunction isAda(student) {\n  // return true if student name\n  // matches \"Ada Lovelace\"\n  ::>\n}\n')"
           ],
           "hints": [
             "Some tasks have hints",
@@ -139,7 +139,7 @@
           ],
           "actions": [
             "open('02-sort.js')",
-            "set('const myBest = require('./data/myBest').default;\n// Array.sort(fn)\n\nfunction compareScore(a, b) {\n  switch (true) {\n    case b.score > a.score:\n      // it should return 1 if b's score is more than a's\n      return ::>\n    case 'set condition here':\n      // it should return -1 if b's score is less than a's\n\n    default:\n      // it should return 0 if b and a have the same score\n\n  }\n}\n')"
+            "set('import myBest from './data/myBest';\n// Array.sort(fn)\n\nfunction compareScore(a, b) {\n  switch (true) {\n    case b.score > a.score:\n      // it should return 1 if b's score is more than a's\n      return ::>\n    case 'set condition here':\n      // it should return -1 if b's score is less than a's\n\n    default:\n      // it should return 0 if b and a have the same score\n\n  }\n}\n')"
           ]
         },
         {
@@ -196,7 +196,7 @@
           ],
           "actions": [
             "open('03-map.js')",
-            "set('const myCourses = require('./data/myCourses').default;\n// Array.map(fn)\n\n/*\n * change any the `course.grade` into an 'A'\n *\n * for example:\n * changeGrade({ grade: 'F' }) === { grade: 'A' };\n*/\n\nfunction changeGrade(course) {\n  ::>\n}\n\n')"
+            "set('import myCourses from './data/myCourses';\n// Array.map(fn)\n\n/*\n * change any the `course.grade` into an 'A'\n *\n * for example:\n * changeGrade({ grade: 'F' }) === { grade: 'A' };\n*/\n\nfunction changeGrade(course) {\n  ::>\n}\n\n')"
           ],
           "hints": [
             "give `changeGrade` a parameter, call it \"course\"",
@@ -292,7 +292,7 @@
           ],
           "actions": [
             "open('04-forEach.js')",
-            "set('const myFixed = require('./data/myFixed').default;\n// Array.forEach(fn)\n\nfunction logCourse(course) {\n  console.log(`${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console\nmyFixed.forEach(::>);\n')"
+            "set('import myFixed from './data/myFixed';\n// Array.forEach(fn)\n\nfunction logCourse(course) {\n  console.log(`${course.grade}  ${course.score}  ${course.title}`);\n}\n\n// log your grades to the console\nmyFixed.forEach(::>);\n')"
           ],
           "hints": [
             "call `forEach` with `logCourse`"
@@ -357,7 +357,7 @@
           ],
           "actions": [
             "open('05-find.js')",
-            "set('const courses = require('./data/myCourses2');\n// Array.find(fn)\n\n// filter for the course title matching \"Web Security\"\nconst myClass = courses.filter(::>);\n')"
+            "set('import courses from './data/myCourses2';\n// Array.find(fn)\n\n// filter for the course title matching \"Web Security\"\nconst myClass = courses.filter(::>);\n')"
           ],
           "hints": [
             "create a `filter` function that takes a param `course`",
@@ -435,69 +435,15 @@
           ]
         },
         {
-          "description": "First, test out `flatten` on the `flattenedArray`",
+          "description": "First, test out `flatten` on the `flattenedArray`\nArray -> anything\n\nWe know our likely suspect is also in the school computer system. Perhaps our suspect also changed his grades.\n\nYou can't be sure who is a cheater, but you can assume if the grades are well above the average, the person is likely to be the culprit. For this, we'll have to do some basic statistical calculations. We'll need a new tool for transforming arrays into different data representations.\n\n`map` has a major limitation: it will always output the same number of elements as the input array.\n\nWhen you want to transform data into something different, you'll likely want to use `reduce`.\n\nReduce requires two parameters:\n\n  * the running total (set by an initialValue)\n  * the next value in the array\n\n```js\nfunction add(total, next) {\n    console.log(`add(${total}, ${next}) -> ${total + next}`)\n    return total + next\n}\n\nconst initialValue = 100;\n[1, 5, 10].reduce(add, initialValue); // initial value\n\n// add(100, 1) -> 101\n// add(101, 5) -> 106\n// add(106, 10) -> 116\n//> 116\n```\n\nNotice in the example we input an array of 3 items and output a single number. The data has been transformed.\n\nIt takes a while to wrap your head around `reduce`, but once you do, you'll see it's usefulness everywhere.\n\nYou may have noticed we've already used `reduce` to `flatten` our arrays.\n\n```js\nArray.prototype.flatten = function() {\n  return this.reduce((a, b) => a.concat(b), []);\n};\n```\n\nWith `flatten`, the initialValue was set to an empty array which each value was `concat` onto.\n\nDo some practice with `reduce`, before you use it to narrow down a cheating suspect.",
           "tests": [
             "06/02"
           ],
           "actions": [
             "open('06-concat.js')",
-            "set('const courses = require('./data/courses2').default;\n// Array.concat(any)\n\n// Array.prototype can be used to create new Array methods\nArray.prototype.flatten = function() {\n  return this.reduce((a, b) => a.concat(b), []);\n};\n')",
-            "insert('\nconst numberedList = [[1, 2], [3, 4]];\n\n// use `flatten` on `numberedList`\nconst flattenedArray = numberedList::>;\n')"
-          ],
-          "hints": [
-            "call `.flatten()` on `numberedList`"
+            "set('```\nimport courses from './data/courses2');\n// Array.concat(any)\n\n// Array.prototype can be used to create new Array methods\nArray.prototype.flatten = function() {\n  return this.reduce((a, b) => a.concat(b), []);\n};\n```\n))\n@action(insert(\n```\n\nconst numberedList = [[1, 2], [3, 4]];\n\n// use `flatten` on `numberedList`\nconst flattenedArray = numberedList::>;\n```  \n))\n@hint('call `.flatten()` on `numberedList`')\n\n\n+ Now `map` over the courses array, and `map` over the students array inside of it.\nReturn the fields:\n\n  * title\n  * instructor\n  * name\n  * grade\n  * score\n@test('06/03')\n@action(insert(\n```\n\n// map over courses then\n// map over students inside of courses\nconst doubleArray = courses.map((course) => {\n    return course.students.map((student) => {\n      return {\n        // fill in the fields\n        title: ::>'',\n        instructor: '',\n        name: '',\n        score: '',\n        grade: ''\n      };\n    });\n});\n\n```\n))\n@hint('pair `course.title`')\n@hint('pair `student.name`')\n\n+ Use `flatten` to put all data into a single array. Set `students` to the result.\n@test('06/04')\n@action(insert(\n```\n// `flatten` doubleArray\nconst students = doubleArray::>;\n```\n))\n@hint('call `.flatten()` on `doubleArray`')\n\n+ Use the `suspects` array to `filter` to only data matching the names in the `suspects` array\n@test('06/05')\n@action(insert(\n```\n\nconst suspects = [\"Hack Kerr\"];\n// filter to data matching `suspects`\n\nconst suspectData = students::>;\n```\n))\n\n+ You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`.\n\n```js\nconst newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];\n```\n\n`concat` the `newSuspects` onto the `suspects` list.\n@test('06/06')\n@hint('call `suspects.concat()` with `newSuspects`')\n\n\n## redu')"
           ]
         },
-        {
-          "description": "Now `map` over the courses array, and `map` over the students array inside of it.\nReturn the fields:\n\n  * title\n  * instructor\n  * name\n  * grade\n  * score",
-          "tests": [
-            "06/03"
-          ],
-          "actions": [
-            "insert('\n// map over courses then\n// map over students inside of courses\nconst doubleArray = courses.map((course) => {\n    return course.students.map((student) => {\n      return {\n        // fill in the fields\n        title: ::>'',\n        instructor: '',\n        name: '',\n        score: '',\n        grade: ''\n      };\n    });\n});\n\n')"
-          ],
-          "hints": [
-            "pair `course.title`",
-            "pair `student.name`"
-          ]
-        },
-        {
-          "description": "Use `flatten` to put all data into a single array. Set `students` to the result.",
-          "tests": [
-            "06/04"
-          ],
-          "actions": [
-            "insert('// `flatten` doubleArray\nconst students = doubleArray::>;\n')"
-          ],
-          "hints": [
-            "call `.flatten()` on `doubleArray`"
-          ]
-        },
-        {
-          "description": "Use the `suspects` array to `filter` to only data matching the names in the `suspects` array",
-          "tests": [
-            "06/05"
-          ],
-          "actions": [
-            "insert('\nconst suspects = [\"Hack Kerr\"];\n// filter to data matching `suspects`\n\nconst suspectData = students::>;\n')"
-          ]
-        },
-        {
-          "description": "You just thought of two more suspects! Make a new variable called `newSuspects` and add it above `suspects`.\n\n```js\nconst newSuspects = ['Albert Gonzalez', 'Kevin Mitnick'];\n```\n\n`concat` the `newSuspects` onto the `suspects` list.",
-          "tests": [
-            "06/06"
-          ],
-          "hints": [
-            "call `suspects.concat()` with `newSuspects`"
-          ]
-        }
-      ],
-      "onPageComplete": "In the next step, we'll look at using one of the most powerful methods: `reduce`"
-    },
-    {
-      "title": "reduce",
-      "description": "Array -> anything\n\nWe know our likely suspect is also in the school computer system. Perhaps our suspect also changed his grades.\n\nYou can't be sure who is a cheater, but you can assume if the grades are well above the average, the person is likely to be the culprit. For this, we'll have to do some basic statistical calculations. We'll need a new tool for transforming arrays into different data representations.\n\n`map` has a major limitation: it will always output the same number of elements as the input array.\n\nWhen you want to transform data into something different, you'll likely want to use `reduce`.\n\nReduce requires two parameters:\n\n  * the running total (set by an initialValue)\n  * the next value in the array\n\n```js\nfunction add(total, next) {\n    console.log(`add(${total}, ${next}) -> ${total + next}`)\n    return total + next\n}\n\nconst initialValue = 100;\n[1, 5, 10].reduce(add, initialValue); // initial value\n\n// add(100, 1) -> 101\n// add(101, 5) -> 106\n// add(106, 10) -> 116\n//> 116\n```\n\nNotice in the example we input an array of 3 items and output a single number. The data has been transformed.\n\nIt takes a while to wrap your head around `reduce`, but once you do, you'll see it's usefulness everywhere.\n\nYou may have noticed we've already used `reduce` to `flatten` our arrays.\n\n```js\nArray.prototype.flatten = function() {\n  return this.reduce((a, b) => a.concat(b), []);\n};\n```\n\nWith `flatten`, the initialValue was set to an empty array which each value was `concat` onto.\n\nDo some practice with `reduce`, before you use it to narrow down a cheating suspect.",
-      "tasks": [
         {
           "description": "load suspectData. We will come back to this after some practice;",
           "tests": [
@@ -515,7 +461,7 @@
           ],
           "actions": [
             "open('07-reduce.js')",
-            "set('const courses = require('./data/courses2');\n// Array.reduce(fn(a, b), initialValue)\n\nconst practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\nfunction add(a, b) {\n  return a + b;\n}\n\n// total the numbers using a reduce function\nconst total = practice.reduce(::>);\n')"
+            "set('import courses from './data/courses2';\n// Array.reduce(fn(a, b), initialValue)\n\nconst practice = [1, 1, 2, 3, 5, 8, 13, 21];\n\nfunction add(a, b) {\n  return a + b;\n}\n\n// total the numbers using a reduce function\nconst total = practice.reduce(::>);\n')"
           ],
           "hints": [
             "with only numbers, the initialValue defaults to 0",
@@ -587,7 +533,8 @@
             "insert('console.log(likelySuspects);\n')"
           ]
         }
-      ]
+      ],
+      "onPageComplete": "In the next step, we'll look at using one of the most powerful methods: `reduce`"
     }
   ]
 }

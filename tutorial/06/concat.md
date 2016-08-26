@@ -105,7 +105,7 @@ We'll test out flatten, then re-create our student array of data from the origin
 @action(open('06-concat.js'))
 @action(set(
 ```
-const courses = require('./data/courses2').default;
+import courses from './data/courses2');
 // Array.concat(any)
 
 // Array.prototype can be used to create new Array methods

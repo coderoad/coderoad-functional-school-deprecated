@@ -96,7 +96,7 @@ Now that we see how `forEach` works, let's use it to make calls to the `console`
 @action(open('04-forEach.js'))
 @action(set(
 ```
-const myFixed = require('./data/myFixed').default;
+import myFixed from './data/myFixed';
 // Array.forEach(fn)
 
 function logCourse(course) {

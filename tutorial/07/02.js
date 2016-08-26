@@ -1,5 +1,3 @@
-const expect = require('chai').expect;
-
 const reduce = require('BASE/07-reduce.js');
 
 describe('02 const total', () => {

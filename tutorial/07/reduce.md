@@ -55,7 +55,7 @@ Do some practice with `reduce`, before you use it to narrow down a cheating susp
 @action(open('07-reduce.js'))
 @action(set(
 ```
-const courses = require('./data/courses2');
+import courses from './data/courses2';
 // Array.reduce(fn(a, b), initialValue)
 
 const practice = [1, 1, 2, 3, 5, 8, 13, 21];

@@ -35,7 +35,7 @@ Find is great for performantly matching unique values in data, such as an "id", 
 @action(open('05-find.js'))
 @action(set(
 ```
-const courses = require('./data/myCourses2');
+import courses from './data/myCourses2';
 // Array.find(fn)
 
 // filter for the course title matching "Web Security"

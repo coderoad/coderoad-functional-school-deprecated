@@ -66,7 +66,7 @@ Let's go back to before we filtered out the bad grades, and instead change the g
 @action(open('03-map.js'))
 @action(set(
 ```
-const myCourses = require('./data/myCourses').default;
+import myCourses from './data/myCourses';
 // Array.map(fn)
 
 /*
